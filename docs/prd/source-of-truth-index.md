@@ -1,0 +1,39 @@
+# PRD Source of Truth Index
+
+> Status: approved
+> Normative: yes
+> Canonical owner: Product architecture / PRD maintainers
+> Consumers: product, design, frontend, backend, ops, support, agents
+> Depends on: `/docs/prd/prd.md`
+> Supersedes: implicit "search the PRD and guess" workflow
+> Last reviewed: 2026-04-22
+
+## Purpose
+
+This file is the navigation layer for the documentation system. Every high-risk topic gets one execution source. Agents and humans should start here when they need the final rule for a topic.
+
+## Canonical Rules
+
+1. Change the canonical document first.
+2. Update this index second.
+3. Update the PRD summary section third.
+4. Do not keep a second complete rule table anywhere else.
+
+## Topic Index
+
+| Topic | Canonical document | PRD summary sections | Primary consumers | Write owner | Parallel safe with | Notes |
+|---|---|---|---|---|---|---|
+| Documentation protocol | [`agent-conventions.md`](./agent-conventions.md) | `文档维护规则` and all sections that reference execution sources | all teams, all agents | product architecture | all specs except PRD summary edits | Defines how normative docs are written and linked |
+| MkSaaS boundary | [`specs/mksaas-boundary-contract.md`](./specs/mksaas-boundary-contract.md) | `14. 模板与上站策略`, `18.6 与 MkSaaS 的融合方式` | product, backend, frontend, architecture | platform architecture | safe with issue specs after framework is in place | Template cannot define business semantics |
+| Capability entitlements | [`specs/capability-entitlements.md`](./specs/capability-entitlements.md) | `6.2 音色入口`, `6.4 交付结果`, `7.2 SRT 标准`, `7.3 局部修复`, `19.5-19.8` | product, growth, frontend, support, ops | product | safe with lifecycle, billing, guest specs | Owns clone scope and user-facing capability matrix |
+| Project and run lifecycle | [`specs/project-run-lifecycle.md`](./specs/project-run-lifecycle.md) | `6.3 生成工作流`, `15. 数据库与租户策略`, `16. 项目与运行视图`, `19.9-19.10` | backend, frontend, support, ops | backend architecture | safe with capability and billing specs | Owns canonical statuses and failure stages |
+| Billing and usage semantics | [`specs/billing-usage-semantics.md`](./specs/billing-usage-semantics.md) | `19.3-19.11`, `15. usage_ledger / billing_events` | billing, backend, support, product, ops | product + backend | safe with capability, lifecycle, guest specs | Owns metering, compensation, display balance rules |
+| Guest trial identity | [`specs/guest-trial-identity.md`](./specs/guest-trial-identity.md) | `8. V1 范围`, `15. 租户模型`, `19.3 免费层策略`, `22.7 风控阈值` | auth, growth, backend, support, ops | auth / backend | safe with billing and lifecycle specs | Owns anonymous trial identity and claim flow |
+| Content source governance | [`specs/content-source-governance.md`](./specs/content-source-governance.md) | `12. Content Source of Truth`, `17. Discoverability Layer` | product, design, frontend, SEO, content ops | content system owner | safe with voice schema after framework is in place | Owns publish flow and content ownership |
+| Voice metadata schema | [`specs/voice-metadata-schema.md`](./specs/voice-metadata-schema.md) | `10.7 音色元数据模型`, `12. Content Source of Truth`, `15. 数据库与租户策略` | backend, frontend, content, ops | data / backend architecture | safe with content governance after framework is in place | Owns field placement and canonical field ownership |
+
+## Update Checklist
+
+1. If a new high-risk topic appears, add it here before updating the PRD.
+2. If a canonical document is renamed, update this index and every PRD execution-source link in the same change.
+3. If two documents start carrying the same complete rule table, keep the canonical one and collapse the other to a summary plus link.
