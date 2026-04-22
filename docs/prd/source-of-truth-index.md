@@ -31,6 +31,16 @@ This file is the navigation layer for the documentation system. Every high-risk 
 | Guest trial identity | [`specs/guest-trial-identity.md`](./specs/guest-trial-identity.md) | `8. V1 范围`, `15. 租户模型`, `19.3 免费层策略`, `22.7 风控阈值` | auth, growth, backend, support, ops | auth / backend | safe with billing and lifecycle specs | Owns anonymous trial identity and claim flow |
 | Content source governance | [`specs/content-source-governance.md`](./specs/content-source-governance.md) | `12. Content Source of Truth`, `17. Discoverability Layer` | product, design, frontend, SEO, content ops | content system owner | safe with voice schema after framework is in place | Owns publish flow and content ownership |
 | Voice metadata schema | [`specs/voice-metadata-schema.md`](./specs/voice-metadata-schema.md) | `10.7 音色元数据模型`, `12. Content Source of Truth`, `15. 数据库与租户策略` | backend, frontend, content, ops | data / backend architecture | safe with content governance after framework is in place | Owns field placement and canonical field ownership |
+| QualityOps and automation | [`specs/quality-ops-and-automation.md`](./specs/quality-ops-and-automation.md) | `16. 运营后台与管理视图`, `22.2 邮件系统`, `22.3 定时任务系统` | product, ops, backend, support, frontend | product + ops architecture | safe with roadmap/plans once truth exists | Owns quality scorecard, dashboard scope, and automation taxonomy |
+
+## Execution Orchestration Docs
+
+These docs own sequencing and execution planning only. They do not own product rules and must not override `docs/prd/`.
+
+| Doc | Role | Canonical owner | Notes |
+|---|---|---|---|
+| [`/docs/roadmap/roadmap.md`](../roadmap/roadmap.md) | Phase order, milestone sequencing, parallelization guidance | product architecture / delivery | Execution-order truth |
+| [`/docs/plans/README.md`](../plans/README.md) | Plan library contract and work-package planning rules | product architecture / delivery | Execution-plan truth |
 
 ## Update Checklist
 
