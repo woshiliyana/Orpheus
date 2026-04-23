@@ -6,11 +6,11 @@
 > Consumers: product, growth, frontend, content, SEO, agents
 > Depends on: `/docs/prd/source-of-truth-index.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/guest-trial-identity.md`
 > Supersedes: distribution rules implied only by PRD summary or roadmap phase wording
-> Last reviewed: 2026-04-22
+> Last reviewed: 2026-04-23
 
 ## Purpose
 
-This spec defines the V1 distribution surface for Orpheus: homepage promise, no-login trial role, tool-page matrix, and the boundary between the English full product and multilingual SEO landing pages. It exists so marketing, roadmap, and plan docs do not invent separate funnel rules.
+This spec defines the V1 distribution surface for Orpheus: homepage promise, the first technical-feasibility boundary, no-login trial role, tool-page matrix, and the boundary between the English full product and multilingual SEO landing pages. It exists so marketing, roadmap, and plan docs do not invent separate funnel rules.
 
 ## Canonical Terms
 
@@ -28,15 +28,15 @@ This spec defines the V1 distribution surface for Orpheus: homepage promise, no-
 
 | Surface | V1 status | Truth owner |
 |---|---|---|
-| English homepage | Required | This spec + PRD homepage IA |
-| English pricing page | Required | This spec + `capability-entitlements.md` |
-| English workspace and project workflow | Required | PRD/spec workflow docs |
-| No-login trial entrypoint | Required | This spec + `guest-trial-identity.md` |
-| Tool page: `script-to-voice` | Required | This spec |
-| Tool page: `voice-comparison` | Required | This spec |
-| Tool page: `audio-to-srt` | Optional expansion | This spec |
+| English homepage | Required first gate | This spec + PRD homepage IA |
+| English pricing page | Later V1 layer | This spec + `capability-entitlements.md` |
+| English workspace and project workflow | Required first gate | PRD/spec workflow docs |
+| No-login trial entrypoint | Later V1 layer | This spec + `guest-trial-identity.md` |
+| Tool page: `script-to-voice` | Later V1 layer | This spec |
+| Tool page: `voice-comparison` | Later V1 layer | This spec |
+| Tool page: `audio-to-srt` | Optional later expansion | This spec |
 | Tool page: `youtube-disclosure-generator` | Optional expansion | This spec |
-| Multilingual SEO landing pages | Required for selected locales | This spec + `content-source-governance.md` |
+| Multilingual SEO landing pages | Later V1 layer for selected locales | This spec + `content-source-governance.md` |
 | Non-English full workspace | Not part of V1 | Not promised in V1 |
 
 ### 2. Homepage / Hero Constraints
@@ -44,10 +44,12 @@ This spec defines the V1 distribution surface for Orpheus: homepage promise, no-
 | Rule | Required in V1 |
 |---|---|
 | Name the target audience directly | Yes |
-| Lead with low-friction trial | Yes |
+| Lead with stable long-form narration promise | Yes |
+| Lead with low-friction trial immediately | No, not before technical feasibility is proven |
 | Promise a concrete result, not generic AI capability | Yes |
-| Mention many starter voice choices for free users | Yes |
-| Mention full workflow value for paid users | Yes |
+| Promise stable long-text-to-audio for explainer creators | Yes |
+| Mention many starter voice choices for free users as the lead hook | No |
+| Mention subtitles or automated visuals as already solved in the first release | No |
 | Claim unlimited free usage | No |
 | Claim full multilingual product support in V1 | No |
 | Claim self-serve clone access for everyone | No |
@@ -56,10 +58,10 @@ This spec defines the V1 distribution surface for Orpheus: homepage promise, no-
 
 | Step | Rule |
 |---|---|
-| Entry | Homepage and required tool pages must expose a no-login trial CTA |
-| First value moment | User should reach a real trial output before being forced into a full signup wall |
-| Signup gating | Signup may be required to unlock longer usage, saved history, and paid-only workflow depth |
-| Trial truth | Trial promise must remain within `guest_trial` rules and current starter-library access |
+| Entry | Before hosted feasibility is proven, homepage may use demo, waitlist, or founder-led onboarding instead of public trial |
+| First value moment | The first promised value is stable long-form narration output, not a broad workflow bundle |
+| Signup gating | Public trial and plan gating should not move ahead of technical feasibility proof |
+| Trial truth | Any future trial promise must remain within `guest_trial` rules and the actual stable-audio envelope |
 
 ### 4. Language Boundary
 
@@ -73,27 +75,28 @@ This spec defines the V1 distribution surface for Orpheus: homepage promise, no-
 
 | Tool page | V1 role | Primary CTA |
 |---|---|---|
-| `script-to-voice` | Direct acquisition for long-script narration trial | Try a voice with no login |
-| `voice-comparison` | Showcase starter and flagship voice positioning | Compare voices, then start trial |
-| `audio-to-srt` | Workflow credibility and SEO expansion | Try subtitle extraction or move to paid workflow |
+| `script-to-voice` | Later-layer acquisition surface after stable-audio feasibility is proven | Request access or join waitlist |
+| `voice-comparison` | Later-layer voice positioning surface after stable-audio feasibility is proven | Explore voice positioning or request access |
+| `audio-to-srt` | Workflow credibility and SEO expansion after the stable-audio path exists | Request access for subtitle workflow |
 | `youtube-disclosure-generator` | Creator-adjacent acquisition and trust builder | Generate disclosure text, then move to narration workflow |
 
 ### 6. Allowed Distribution Promises
 
 | Promise type | Allowed in V1 |
 |---|---|
-| Many AI starter voices in the active V1 niche cluster | Yes |
-| Flagship voices with stronger consistency for paid plans | Yes |
-| No-login real trial | Yes |
+| Stable long-form narration for educational explainer creators | Yes |
+| Many AI starter voices in the active V1 niche cluster as a first-wave promise | No |
+| Flagship voices with stronger consistency for paid plans | Yes, but not as the first technical promise |
+| No-login real trial | Yes, but only after technical feasibility is proven |
 | Unlimited free narration | No |
 | All-language full workflow support | No |
 | Broad self-serve clone for free users | No |
 
 ## Narrative Notes
 
-1. V1 borrows Raphael-style distribution patterns without copying Raphael's unlimited-free economics.
+1. V1 may still borrow Raphael-style distribution patterns, but public promises must not move ahead of the stable-audio feasibility boundary.
 2. Distribution pages may be sharper and more specific than the product shell, but they must still reflect current product truth.
-3. The funnel promise is "easy to try and rich in voice choice", not "free forever for everything".
+3. The first public promise is "stable long-form narration for explainer creators", not "free forever for everything" and not "full AI video automation".
 
 ## Update Checklist
 

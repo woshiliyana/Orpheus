@@ -5,7 +5,7 @@
 > Normative for product rules: no
 > Canonical owner: Product architecture / delivery
 > Depends on truth docs: `/docs/prd/prd.md`, `/docs/prd/source-of-truth-index.md`
-> Last reviewed: 2026-04-22
+> Last reviewed: 2026-04-23
 
 ## Purpose
 
@@ -30,14 +30,14 @@ This roadmap is the execution-order source of truth for Orpheus V1. It defines w
 
 | Phase | Primary goal | Why it is here | Tracks involved | Parallel guidance | Detail |
 |---|---|---|---|---|---|
-| `Phase 0` | Freeze truth system, ratify quality truth, and lock V1 distribution narrative | Prevents semantic drift before code work starts | Experience, Workflow, QualityOps | Mostly sequential | [phase-00-truth-freeze-quality-scorecard](./phases/phase-00-truth-freeze-quality-scorecard.md) |
-| `Phase 1` | Launch experience and distribution foundation | UX, brand, trial funnel, and shell must start immediately | Experience, Workflow | Experience, distribution, and shell scaffolding can run together | [phase-01-experience-foundation-platform-shell](./phases/phase-01-experience-foundation-platform-shell.md) |
-| `Phase 2` | Deliver core render workflow for the English story-first documentary slice | First real product value is long-form audio generation in the narrowed V1 scope | Workflow, Experience | Limited parallelism; keep project/run semantics unified | [phase-02-core-render-workflow](./phases/phase-02-core-render-workflow.md) |
+| `Phase 0` | Freeze truth system and lock the educational-explainer audio wedge | Prevents semantic drift before feasibility work starts | Experience, Workflow, QualityOps | Mostly sequential | [phase-00-truth-freeze-quality-scorecard](./phases/phase-00-truth-freeze-quality-scorecard.md) |
+| `Phase 1` | Launch minimal experience shell and product framing | UX and shell should exist, but public promises must stay inside the feasibility envelope | Experience, Workflow | Shell work can run in parallel with technical spike prep | [phase-01-experience-foundation-platform-shell](./phases/phase-01-experience-foundation-platform-shell.md) |
+| `Phase 2` | Prove hosted long-form audio feasibility and core render workflow | First real product value is stable long-form audio generation without user-side manual chunking | Workflow, Experience | Limited parallelism; keep project/run semantics unified | [phase-02-core-render-workflow](./phases/phase-02-core-render-workflow.md) |
 | `Phase 3` | Stand up QualityOps baseline and live quality dashboard | Quality measurement cannot wait until final hardening | QualityOps, Workflow | Can overlap with workflow stabilization, not with truth changes | [phase-03-qualityops-baseline](./phases/phase-03-qualityops-baseline.md) |
 | `Phase 4` | Add SRT export and segment repair | Full creator workflow needs repair and subtitle support | Workflow, Experience, QualityOps | Can overlap with dashboard refinements | [phase-04-srt-segment-repair](./phases/phase-04-srt-segment-repair.md) |
 | `Phase 5` | Add entitlements, guest trial, billing, and risk | Commercial gating should ride on stable workflow semantics | Workflow, QualityOps | Billing and risk stay tightly coupled | [phase-05-entitlements-guest-trial-billing-risk](./phases/phase-05-entitlements-guest-trial-billing-risk.md) |
 | `Phase 6` | Add notifications, cron, and ops automation | Messaging and reminders are part of real operations | QualityOps, Workflow, Experience | Split ops alerts and marketing automation, but keep one system view | [phase-06-notifications-cron-ops-automation](./phases/phase-06-notifications-cron-ops-automation.md) |
-| `Phase 7` | Expand multilingual SEO and public growth surface | Public promises must match real capability, but broad growth expansion now comes after the first distribution foundation | Experience, Workflow | Can fan out across locales once core truth is stable | [phase-07-public-site-seo-localized-growth](./phases/phase-07-public-site-seo-localized-growth.md) |
+| `Phase 7` | Expand multilingual SEO and public growth surface | Broad public growth comes after audio stability, billing, and later workflow layers are already grounded | Experience, Workflow | Can fan out across locales once core truth is stable | [phase-07-public-site-seo-localized-growth](./phases/phase-07-public-site-seo-localized-growth.md) |
 | `Phase 8` | Expand controlled clone beta and harden quality | Clone rollout comes after stable quality, billing, and ops | Workflow, QualityOps | Keep clone changes isolated from unrelated growth work | [phase-08-controlled-clone-quality-hardening](./phases/phase-08-controlled-clone-quality-hardening.md) |
 
 ## Global Gates

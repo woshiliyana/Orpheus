@@ -5,7 +5,7 @@
 > Normative for product rules: no
 > Canonical owner: Product architecture / delivery
 > Depends on truth docs: `/docs/prd/prd.md`, `/docs/prd/source-of-truth-index.md`, `/docs/prd/specs/billing-usage-semantics.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/quality-ops-and-automation.md`, `/docs/prd/specs/distribution-and-growth-surface.md`
-> Last reviewed: 2026-04-22
+> Last reviewed: 2026-04-23
 
 ## Goal
 
@@ -32,9 +32,9 @@ Without a frozen rule set and a canonical quality/automation/distribution vocabu
 2. Ratify the V1 quality scorecard and automation taxonomy from the canonical truth docs.
 3. Confirm the narrowed V1 slice:
    - English complete product
-   - story-first documentary
-   - `3-5` flagship voices
-   - free large starter library
+   - full-time `YPP`-driven educational explainers
+   - first sellable result = `long text -> stable audio`
+   - hosted-first technical feasibility
 4. Confirm the minimum evaluation corpus and sampling dimensions used by later phases.
 
 ## Parallel Guidance

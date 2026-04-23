@@ -5,15 +5,15 @@
 > Normative for product rules: no
 > Canonical owner: Product architecture / delivery
 > Depends on truth docs: `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/billing-usage-semantics.md`
-> Last reviewed: 2026-04-22
+> Last reviewed: 2026-04-23
 
 ## Goal
 
-Complete the creator workflow by adding exportable SRT, segment preview, and segment repair on top of the stable full-render path.
+Complete the next creator-workflow layer by adding exportable SRT, segment preview, and segment repair on top of the already proven stable long-form audio path.
 
 ## Why This Phase Comes Here
 
-SRT and repair are essential to real creator workflow, but they should ride on stable lifecycle and quality observation instead of becoming the very first moving pieces.
+SRT and repair are essential to real creator workflow, but they should ride on a proven stable-audio path instead of becoming the very first moving pieces.
 
 ## Tracks Involved
 

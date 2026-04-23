@@ -5,15 +5,15 @@
 > Normative for product rules: no
 > Canonical owner: Product architecture / delivery
 > Depends on truth docs: `/docs/prd/prd.md`, `/docs/prd/specs/content-source-governance.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/distribution-and-growth-surface.md`
-> Last reviewed: 2026-04-22
+> Last reviewed: 2026-04-23
 
 ## Goal
 
-Expand the public growth surface after the first funnel foundation exists: multilingual SEO pages, broader public growth pages, and localized expansion around the stable English product core.
+Expand the public growth surface only after the stable-audio path and later workflow layers are already grounded: multilingual SEO pages, broader public growth pages, and localized expansion around the stable English product core.
 
 ## Why This Phase Comes Here
 
-Public growth expansion should reflect real product capability, not become the first place where distribution is finally designed.
+Public growth expansion should reflect real product capability, not become the first place where distribution is finally designed or over-promised.
 
 ## Tracks Involved
 
