@@ -4,7 +4,7 @@
 > Normative: yes
 > Canonical owner: Product + growth architecture
 > Consumers: product, growth, frontend, content, SEO, agents
-> Depends on: `/docs/prd/source-of-truth-index.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/guest-trial-identity.md`
+> Depends on: `/docs/prd/source-of-truth-index.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/guest-trial-identity.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`
 > Supersedes: distribution rules implied only by PRD summary or roadmap phase wording
 > Last reviewed: 2026-04-23
 
@@ -29,7 +29,7 @@ This spec defines the V1 distribution surface for Orpheus: homepage promise, the
 | Surface | V1 status | Truth owner |
 |---|---|---|
 | English homepage | Required first gate | This spec + PRD homepage IA |
-| English pricing page | Later V1 layer | This spec + `capability-entitlements.md` |
+| English pricing page | Later V1 layer, only after the pricing spec, entitlements, and proven stable-audio envelope agree | This spec + `pricing-packaging-and-unit-economics.md` |
 | English workspace and project workflow | Required first gate | PRD/spec workflow docs |
 | No-login trial entrypoint | Later V1 layer | This spec + `guest-trial-identity.md` |
 | Tool page: `script-to-voice` | Later V1 layer | This spec |
@@ -61,6 +61,7 @@ This spec defines the V1 distribution surface for Orpheus: homepage promise, the
 | Entry | Before hosted feasibility is proven, homepage may use demo, waitlist, or founder-led onboarding instead of public trial |
 | First value moment | The first promised value is stable long-form narration output, not a broad workflow bundle |
 | Signup gating | Public trial and plan gating should not move ahead of technical feasibility proof |
+| Pricing rollout | Public pricing should not launch until the pricing spec, entitlement matrix, and proven stable-audio envelope agree |
 | Trial truth | Any future trial promise must remain within `guest_trial` rules and the actual stable-audio envelope |
 
 ### 4. Language Boundary
@@ -97,9 +98,12 @@ This spec defines the V1 distribution surface for Orpheus: homepage promise, the
 1. V1 may still borrow Raphael-style distribution patterns, but public promises must not move ahead of the stable-audio feasibility boundary.
 2. Distribution pages may be sharper and more specific than the product shell, but they must still reflect current product truth.
 3. The first public promise is "stable long-form narration for explainer creators", not "free forever for everything" and not "full AI video automation".
+4. Raphael-style packaging cues such as clean entry, clearer upgrade tiers, queue differences, and privacy positioning are allowed; Raphael-style unlimited free usage is not.
+5. Orpheus must not talk like long-form AI narration is an empty category. Existing products already handle long-form generation. The first public promise has to win on stability, creator-fit workflow, and alignment-ready delivery, not on the vague claim that long scripts are possible.
 
 ## Update Checklist
 
 1. Re-check PRD sections `1`, `4`, `8`, `17`, `19`, `26`, and `27` after any change.
 2. Re-check roadmap phases `0`, `1`, and `7` if funnel or page taxonomy changes.
 3. Re-check `capability-entitlements.md` if starter-library or flagship-library messaging changes.
+4. Re-check `pricing-packaging-and-unit-economics.md` if public pricing, minute copy, or plan positioning changes.

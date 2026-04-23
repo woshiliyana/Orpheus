@@ -4,12 +4,12 @@
 > Role: execution planning
 > Normative for product rules: no
 > Canonical owner: Delivery owner
-> Depends on truth docs: `/docs/prd/prd.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/distribution-and-growth-surface.md`
+> Depends on truth docs: `/docs/prd/prd.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/distribution-and-growth-surface.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`
 > Last reviewed: 2026-04-23
 
 ## Goal
 
-Answer the first execution question for Orpheus: can a hosted-first stack produce stable long-form narration for educational explainers at roughly `20-30` minute script lengths without requiring user-side manual chunking?
+Answer the first execution question for Orpheus: can a hosted-first stack produce stable long-form narration for educational explainers at roughly `20-30` minute script lengths without requiring user-side manual chunking, while also leaving credible alignment / subtitle evidence behind?
 
 ## Phase
 
@@ -23,8 +23,10 @@ Reference:
 ## Depends on Truth Docs
 
 1. [`/docs/prd/prd.md`](../../prd/prd.md)
-2. [`/docs/prd/specs/project-run-lifecycle.md`](../../prd/specs/project-run-lifecycle.md)
-3. [`/docs/prd/specs/distribution-and-growth-surface.md`](../../prd/specs/distribution-and-growth-surface.md)
+2. [`/docs/prd/specs/capability-entitlements.md`](../../prd/specs/capability-entitlements.md)
+3. [`/docs/prd/specs/project-run-lifecycle.md`](../../prd/specs/project-run-lifecycle.md)
+4. [`/docs/prd/specs/distribution-and-growth-surface.md`](../../prd/specs/distribution-and-growth-surface.md)
+5. [`/docs/prd/specs/pricing-packaging-and-unit-economics.md`](../../prd/specs/pricing-packaging-and-unit-economics.md)
 
 ## In Scope
 
@@ -41,7 +43,11 @@ Reference:
    - completion / non-completion
    - retry behavior
    - whether backend-only orchestration is required
-   - output consistency and obvious artifacts
+   - chunk count / stitch count when orchestration is used
+   - output consistency, seam defects, and obvious artifacts
+   - internal alignment asset coverage for successful runs
+   - provider timestamp usefulness versus final-audio alignment truth
+   - subtitle text fidelity risk, including normalization drift or obvious wording mismatch
    - time-to-result
    - effective cost per completed output
 6. Repeat each key representative run enough times to distinguish one-off flakiness from structural instability.
@@ -53,7 +59,7 @@ Reference:
 ## Out of Scope
 
 1. Public self-serve launch
-2. `SRT` export
+2. User-facing `SRT` export
 3. Segment repair
 4. Full pricing-page rollout
 5. Self-hosted engine productionization
@@ -63,20 +69,25 @@ Reference:
 
 1. A run log covering the control, `~20` minute, and `~30` minute cases for both hosted providers
 2. A provider comparison summary
-3. A feasibility decision memo that names the next action
+3. At least one successful-run artifact packet containing final audio, orchestration notes, offset data, internal alignment assets, and a brief alignment / subtitle QA note for a viable provider
+4. A feasibility decision memo that names the next action
+5. A pricing review snapshot updated with observed `cost_per_completed_audio_minute` and fallback behavior for the preferred path
 
 ## Backfill Required
 
 1. If the real stable-audio envelope is narrower than the current PRD promise, update `docs/prd/prd.md` and `docs/prd/specs/distribution-and-growth-surface.md` before broad implementation.
 2. If lifecycle semantics need to change because of orchestration behavior, update `project-run-lifecycle.md` before build work continues.
-3. If cost data invalidates current pricing assumptions, update the relevant PRD pricing sections before launch planning expands.
+3. If the first paid path or single-project duration promise changes, update `capability-entitlements.md` before pricing work expands.
+4. If cost data invalidates current pricing assumptions, update `pricing-packaging-and-unit-economics.md` and the PRD pricing summary before launch planning expands.
 
 ## Validation
 
 1. One hosted provider can complete representative long-form scripts with repeatable behavior.
 2. No successful result requires user-side manual chunking.
 3. The comparison records at least one shorter control, one `~20` minute case, and one `~30` minute case.
-4. The decision memo includes explicit go / hold / fallback language, not just raw observations.
+4. Successful runs generate internal alignment assets even though user-facing `SRT` export is still out of scope.
+5. The evidence packet includes an initial timing-quality and subtitle-text-quality note, not just raw audio success.
+6. The decision memo includes explicit go / hold / fallback language, not just raw observations.
 
 ## Risks / Blockers
 
@@ -91,3 +102,4 @@ Reference:
 2. Reuse real educational-explainer scripts, not generic placeholder copy.
 3. Treat this as a decision package, not a benchmark vanity exercise.
 4. If both hosted providers fail the `~30` minute case but one is strong at shorter lengths, the memo must explicitly say whether a shorter first release is acceptable or whether the wedge should pause.
+5. A pass may use backend-hidden chunking, but the memo must name chunk counts, seam risk, and whether the approach is implementation-worthy.
