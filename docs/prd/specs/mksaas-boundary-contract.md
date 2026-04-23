@@ -31,7 +31,7 @@
 | Billing UI shell | Yes | No | Plan gating and ledger semantics come from entitlement and billing specs |
 | Provider SDK calls from the browser | No | No | Frontend must call Orpheus-owned `/api/**`; provider auth, orchestration, and artifact signing stay server-side |
 | Admin shell / dashboard chrome | Yes | No | Admin views must reflect Orpheus lifecycle and risk states |
-| i18n routing shell | Yes | No | Locale strategy and content publish flow come from content governance |
+| i18n routing shell | Yes | No | Workspace UI remains English-first in V1; landing-page localization and future UI expansion follow distribution and content governance |
 | Database starter schema | No as final truth | No | Existing tables may inspire implementation, but canonical schema is Orpheus-owned |
 | Webhook handler patterns | Yes | No | Event mapping must follow Orpheus billing semantics and security rules |
 | Queue / async helpers | Yes where useful | No | Run lifecycle and retry semantics are Orpheus-owned |

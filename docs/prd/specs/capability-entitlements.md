@@ -22,7 +22,7 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 | `segment repair` | Re-running only targeted project segments and stitching them back into the project output |
 | `private clone` | A user-owned clone voice that never becomes part of the public platform library |
 | `closed_beta` | A capability exists in V1 but is disabled by default until ops explicitly enables it for an account |
-| `starter library` | The broad, lower-cost AI voice catalog intended to give users meaningful free choice inside the active V1 niche cluster |
+| `starter library` | The broad, lower-cost AI voice catalog intended to give users meaningful free choice inside the active V1 niche cluster and approved first-gate render-language boundary |
 | `flagship library` | The smaller curated voice set with stronger consistency, sharper persona definition, and paid-plan positioning |
 | `hidden_orchestration` | Backend-only chunking, retry, stitching, and reconciliation that absorbs provider limits without becoming a user task |
 
@@ -63,7 +63,7 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 
 | Capability | Default launch state | Activation rule |
 |---|---|---|
-| Starter library access | open | Starter library must remain broad enough for meaningful free voice choice within the active V1 niche cluster |
+| Starter library access | open | Starter library must remain broad enough for meaningful free voice choice within the active V1 niche cluster and approved EN/ES output boundary |
 | Flagship library access | open for entitled plans | Available only to paid plans |
 | `SRT` export | open for entitled plans | Available only after a successful run produces exportable subtitle output |
 | Backend-only long-form orchestration | open | Required whenever provider request limits would otherwise force user-side manual chunking |
@@ -96,7 +96,7 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 3. This lets the platform keep one workflow pipeline while still enforcing differentiated plans.
 4. Private clone creation is intentionally scoped as a controlled V1 capability to avoid making unsupported self-serve promises.
 5. `hidden_orchestration` is allowed and expected in V1, but it must remain backend-only so users still experience one project, not a manual chunking workflow.
-6. The first paid path must align with the stable-audio envelope validated in `Phase 2`; until evidence says otherwise, the development-entry assumption is `Pro` supports up to `30` minutes per project.
+6. The first paid path must align with the stable-audio envelope validated in `Phase 2`; until evidence says otherwise, the development-entry assumption is `Pro` supports up to `30` minutes per project within the approved EN/ES render boundary.
 
 ## Update Checklist
 

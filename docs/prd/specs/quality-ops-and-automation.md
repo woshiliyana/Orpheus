@@ -17,7 +17,7 @@ This spec defines the canonical quality scorecard, the minimum V1 observability 
 | Term | Canonical meaning |
 |---|---|
 | `quality_scorecard` | The fixed set of quality metrics used to judge render, voice, long-audio, subtitle timing, and subtitle text quality |
-| `quality_record` | A persisted result tied to an evaluation run, provider, voice, language, and output context |
+| `quality_record` | A persisted result tied to an evaluation run, provider, voice, output language, and output context |
 | `quality_dashboard` | The live ops-facing view that surfaces current and historical quality behavior |
 | `automation_task` | A scheduled or event-driven task that sends user-facing or ops-facing notifications or runs recurring jobs |
 | `transactional_notification` | User-facing message triggered by lifecycle, billing, entitlement, or risk events |
@@ -45,7 +45,7 @@ This spec defines the canonical quality scorecard, the minimum V1 observability 
 
 | Dimension | Required in V1 | Purpose |
 |---|---|---|
-| `language` | Yes | Multi-language quality tracking |
+| `language` | Yes | Track English and Spanish output / timing readiness separately in the first gate without implying full multilingual workspace parity |
 | `voice_id` | Yes | Voice-level quality comparison |
 | `provider` | Yes | Provider routing and fallback evaluation |
 | `duration_band` | Yes | Long-audio behavior tracking |
@@ -59,7 +59,7 @@ This spec defines the canonical quality scorecard, the minimum V1 observability 
 | `quality_overview` | Current quality scorecard summary and trend deltas |
 | `provider_health` | Run success, failure stages, latency, long-audio stability, and cost per completed minute by provider |
 | `voice_quality` | Quality score slices by `voice_id`, persona fit, and commercial visibility |
-| `language_quality` | Quality score slices by language and duration band |
+| `language_quality` | Quality score slices by language and duration band, with English vs Spanish first-gate visibility |
 | `subtitle_quality` | `SRT` success rate, internal alignment asset success, timing quality, subtitle text fidelity, and retry outcomes |
 | `automation_health` | Notification task state, failed jobs, backlog, and alert counts |
 
@@ -88,6 +88,7 @@ This spec defines the canonical quality scorecard, the minimum V1 observability 
 2. Automation is part of the operating system, not just infrastructure plumbing.
 3. Long-form orchestration quality, alignment-asset readiness, and subtitle-text fidelity are product concerns, not hidden implementation trivia.
 4. Roadmap phases may sequence these systems, but they must reference this spec for what the systems mean.
+5. The first gate must show English and Spanish output / timing quality separately even while the workspace UI remains English-first.
 
 ## Update Checklist
 

@@ -118,6 +118,7 @@ This spec defines the canonical lifecycle for projects and project runs, includi
 | `source_script_hash` | Yes | Stable reference to the submitted source text |
 | `provider_summary` | Yes | Primary provider, fallback provider if any, and selected voice |
 | `orchestration_summary` | Yes | Chunk count, stitch count, retry count, and notable warning flags |
+| `output_language` | Yes | Requested generation language used for render, timing, and quality tracking |
 | `final_audio_asset_ref` | Yes | Deliverable audio object reference |
 | `final_audio_duration_seconds` | Yes | Final delivered audio duration |
 | `internal_alignment_asset_ref` | Yes, if generated | Reference to alignment / subtitle-prep artifacts or explicit failure reason |
@@ -133,6 +134,7 @@ This spec defines the canonical lifecycle for projects and project runs, includi
 4. A single visible `project_run` may fan out into multiple provider sub-requests through `hidden_orchestration`; this never creates multiple user-visible projects.
 5. Successful runs may generate `internal_alignment_asset` records even when the current plan cannot export `SRT`.
 6. The `artifact_manifest` is the bridge between lifecycle truth, billing truth, and later subtitle / repair work; do not replace it with ad hoc per-provider fields.
+7. First-gate evidence must keep English and Spanish output / timing results distinguishable at the run level even while the workspace UI remains English-first.
 
 ## Update Checklist
 

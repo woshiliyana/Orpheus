@@ -9,7 +9,7 @@
 
 ## Purpose
 
-Give the first build / test agent one bounded implementation slice that proves Orpheus can ingest an English long-form script, render stable hosted audio through a backend-owned pipeline, persist evidence, and hand back enough quality and cost data to make a go / hold / fallback decision.
+Give the first build / test agent one bounded implementation slice that proves Orpheus can ingest a long-form script through an English-first workspace, render stable hosted audio through a backend-owned pipeline, persist evidence, and hand back enough bilingual quality and cost data to make a go / hold / fallback decision.
 
 ## Read Order
 
@@ -23,25 +23,28 @@ Give the first build / test agent one bounded implementation slice that proves O
 8. `/docs/prd/specs/quality-ops-and-automation.md`
 9. `/docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`
 10. `/docs/plans/phase-02-core-render/02-development-entry-checklist.md`
+11. Supporting benchmark input only: `/docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md`
 
 ## Goal
 
-Build the smallest Phase 2 slice that can move one user-visible project from submission to downloadable final audio while keeping orchestration hidden, lifecycle states canonical, and pricing / evidence traces audit-friendly.
+Build the smallest Phase 2 slice that can move one user-visible project from submission to downloadable final audio while keeping orchestration hidden, lifecycle states canonical, pricing / evidence traces audit-friendly, and provider-cost reality measurable enough to judge whether `Pro = $20 / 90 min` is still a defensible working package.
 
 ## In Scope
 
 1. Minimal authenticated project creation and project-detail retrieval
-2. English script paste and supported file ingest
-3. Basic English voice-selection path
-4. Server-owned provider adapter for `Inworld TTS 1.5 Max` as the primary test path
-5. Secondary benchmark path for `Cartesia` during feasibility testing
+2. English-first script paste and supported file ingest
+3. Basic voice-selection path covering the approved first-gate English and Spanish corpus voices
+4. Server-owned provider adapter for `Inworld TTS 1.5 Max` as the primary implementation path
+5. Same-corpus benchmark path for `Cartesia` during the first benchmark cycle
 6. Hidden chunk planning with deterministic chunk IDs and retry tracking
 7. Asynchronous render execution with canonical run statuses
 8. Final audio storage plus server-owned delivery path
 9. Successful-run `artifact_manifest` persistence
 10. Internal alignment-asset job or placeholder record tied to final audio
 11. UI / API exposure of status, warnings, and download link
-12. Provider run-log capture and cost-snapshot update for the frozen corpus
+12. Provider run-log capture and cost-snapshot update for the frozen `EN + ES` corpus
+13. One short benchmark note against the prevailing public self-serve long-form workflow, with `ElevenLabs` as the reference point
+14. One explicit `EN + ES` output / timing readiness note for the first gate
 
 ## Out of Scope
 
@@ -52,6 +55,7 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 5. Video automation
 6. Self-serve private clone
 7. Full multilingual workspace support
+8. Full provider marketplace or runtime multi-provider routing
 
 ## Acceptance Gates
 
@@ -61,18 +65,25 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 4. Successful runs persist final audio plus an `artifact_manifest` with provider, orchestration, billing, and alignment references.
 5. `audio success + alignment failure` resolves to `completed_with_warnings` / `succeeded_with_warnings`, not a full failed rerun state.
 6. Billing records bill audio only, never the entire project again for alignment retry or segment repair semantics.
-7. At least one provider completes the frozen `control-short`, `control-medium`, and `control-long` corpus with repeatable behavior, or the agent produces an explicit hold memo naming the limiting envelope.
-8. A pricing review snapshot is updated using observed `cost_per_completed_audio_minute`, retry overhead, and fallback behavior.
+7. The benchmark packet covers the frozen `en-control-short`, `en-control-medium`, `en-control-long`, `es-control-short`, `es-control-medium`, and `es-control-long` corpus and yields explicit `ready` / `warning` / `blocked` output and timing verdicts for English and Spanish, or the agent produces an explicit hold memo naming the blocked language and limiting envelope.
+8. The benchmark packet includes one second-provider cost / quality scenario, not just the primary provider.
+9. A pricing review snapshot is updated using observed `cost_per_completed_audio_minute`, retry overhead, and fallback behavior.
 
 ## Required Deliverables
 
 1. Implemented code or tested stubs for the workflow slice above
 2. One successful-run artifact packet
-3. Provider run log for the frozen corpus
+3. Provider run log for the frozen `EN + ES` corpus
 4. Updated pricing / unit-economics snapshot
-5. Go / hold / fallback memo
-6. Truth-doc backfill list for any semantic mismatches discovered during implementation
-7. One short benchmark note explaining whether the current Orpheus slice is differentiated enough from the prevailing self-serve long-form workflow
+5. One provider-scenario table showing how the result looks under at least:
+   - current primary scenario
+   - one higher-cost fallback scenario
+   - one second-provider scenario
+6. One `EN + ES` readiness summary showing output / timing verdicts per language
+7. Go / hold / fallback memo
+8. Truth-doc backfill list for any semantic mismatches discovered during implementation
+9. One short benchmark note explaining whether the current Orpheus slice is differentiated enough from the prevailing self-serve long-form workflow
+10. One explicit recommendation on whether the team should keep `Inworld-first`, switch primary provider, or keep the current mix but tighten packaging
 
 ## Minimum Automated Tests
 
@@ -81,37 +92,44 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 - Billing tests for full render success, segment repair success, and `audio success + alignment failure`
 - Artifact-manifest persistence tests
 - Provider-boundary tests proving the client never calls providers directly
+- Cost-calculation tests that fail when a provider scenario drops below the target margin floor without an explicit doc update
 
 ## Manual Review Tasks
 
 - Audible seam review on long-form stitched outputs
-- Spot-check final-audio timing against internal alignment assets
-- Spot-check subtitle-text fidelity against source and normalized text
+- Spot-check English and Spanish final-audio timing against internal alignment assets
+- Spot-check English and Spanish subtitle-text fidelity against source and normalized text
 - Review cost snapshot against the plan assumptions in the pricing spec
-- Write a short comparison note on whether the observed Orpheus flow actually reduces operator burden versus the prevailing self-serve long-form workflow
+- Compare operator burden against the current public self-serve reference workflow, using `ElevenLabs` as the default market benchmark
+- Write one short note on whether `Paste the whole script once. Get stable narration with subtitle-ready timing.` is now honestly supported by the observed workflow
 
 ## Suggested Task Order
 
-1. Freeze the three-script corpus and selected voices.
+1. Freeze the `EN + ES` corpus and selected voices.
 2. Implement the project / run data model plus lifecycle enums.
-3. Add the provider adapter behind an Orpheus-owned server boundary.
+3. Add the `Inworld` provider adapter behind an Orpheus-owned server boundary.
 4. Implement hidden chunk planning, retry tracking, and orchestration summary capture.
 5. Persist final audio and the `artifact_manifest`.
 6. Add the internal alignment-asset job / record path.
 7. Expose project status and download in UI or API.
-8. Run the frozen corpus, update the scorecard, and write the decision memo.
+8. Run the frozen corpus on `Inworld`, then run the same corpus on `Cartesia`.
+9. Update the scorecard, workbook snapshot, `EN + ES` readiness note, and decision memo.
+10. Write the public-market comparison note before any broader pricing or trial decision.
 
 ## Backfill Required
 
 1. If implementation discovers missing lifecycle meaning, update `project-run-lifecycle.md` before proceeding.
 2. If implementation discovers a narrower stable envelope, update `capability-entitlements.md`, `distribution-and-growth-surface.md`, and PRD pricing summary before broadening the promise.
 3. If implementation changes effective cost materially, update `pricing-packaging-and-unit-economics.md` and the workbook snapshot in the same change set.
+4. If provider-cost evidence shows `Pro $20 / 90 min` does not clear the guardrail, do not leave the package untouched out of convenience. Update the package or mark public rollout blocked.
+5. If English and Spanish do not both achieve the required output / timing evidence, record that constraint explicitly instead of silently degrading the gate back to English-only.
 
 ## Validation
 
 1. The build can complete at least one full successful run with downloadable audio.
-2. The evidence packet contains audio, manifest, and alignment-ready traces.
+2. The evidence packet contains audio, manifest, alignment-ready traces, and `EN + ES` readiness notes.
 3. The run log and memo are sufficient for a founder to make a go / hold / fallback decision without re-reading raw provider logs.
+4. The benchmark packet is sufficient for pricing and distribution decisions without redoing basic provider math.
 
 ## Execution Notes
 
@@ -119,3 +137,5 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 2. Do not solve public subtitle export before internal alignment truth exists.
 3. Do not treat provider request limits as permission to push chunking work to users.
 4. When in doubt, preserve evidence and make the failure stage explicit.
+5. `Inworld-first` is the current implementation choice, not a religious belief. The build is allowed to keep that choice only if the benchmark packet justifies it.
+6. English-first workspace UI remains the default in this phase even though the evidence packet must cover English and Spanish output / timing readiness.

@@ -9,7 +9,7 @@
 
 ## Goal
 
-Answer the first execution question for Orpheus: can a hosted-first stack produce stable long-form narration for educational explainers at roughly `20-30` minute script lengths without requiring user-side manual chunking, while also leaving credible alignment / subtitle evidence behind?
+Answer the first execution question for Orpheus: can a hosted-first stack produce stable long-form narration for the English educational-explainer wedge at roughly `20-30` minute script lengths without requiring user-side manual chunking, while also leaving credible `EN + ES` output, alignment, and subtitle-ready timing evidence behind?
 
 ## Phase
 
@@ -18,7 +18,8 @@ Answer the first execution question for Orpheus: can a hosted-first stack produc
 Reference:
 
 1. [`/docs/roadmap/phases/phase-02-core-render-workflow.md`](../../roadmap/phases/phase-02-core-render-workflow.md)
-2. Supporting rationale only: [`/docs/prd/design-2026-04-23-longform-audio-wedge.md`](../../prd/design-2026-04-23-longform-audio-wedge.md)
+2. Required benchmark context only: [`/docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md`](../../prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md)
+3. Supporting rationale only (non-truth): [`/docs/prd/design-2026-04-23-longform-audio-wedge.md`](../../prd/design-2026-04-23-longform-audio-wedge.md)
 
 ## Depends on Truth Docs
 
@@ -30,28 +31,34 @@ Reference:
 
 ## In Scope
 
-1. Freeze one shorter control script plus one representative `~20` minute script and one representative `~30` minute script from the educational-explainer wedge before provider testing starts.
+1. Freeze an explicit bilingual first-gate corpus before provider testing starts. The corpus must remain frozen for all providers and repeat runs in the benchmark cycle.
 2. Use this exact corpus rule:
-   - `control-short`: founder-supplied English educational-explainer script, roughly `1,500-2,500` words
-   - `control-medium`: founder-supplied English educational-explainer script, roughly `8,000-10,000` words and targeting `~20` minutes
-   - `control-long`: founder-supplied English educational-explainer script, roughly `12,000-15,000` words and targeting `~30` minutes
-3. Reuse the same three frozen scripts for both providers and all repeat runs.
-4. Run hosted-first evaluation in this order:
-   - `Inworld TTS 1.5 Max`
-   - `Cartesia`
-5. Record for each provider:
+   - `en-control-short`: founder-supplied English educational-explainer script, roughly `1,500-2,500` words
+   - `en-control-medium`: founder-supplied English educational-explainer script, roughly `8,000-10,000` words and targeting `~20` minutes
+   - `en-control-long`: founder-supplied English educational-explainer script, roughly `12,000-15,000` words and targeting `~30` minutes
+   - `es-control-short`: founder-supplied Spanish educational-explainer script targeting the same shorter control band as `en-control-short`
+   - `es-control-medium`: founder-supplied Spanish educational-explainer script targeting `~20` minutes
+   - `es-control-long`: founder-supplied Spanish educational-explainer script targeting `~30` minutes
+3. Freeze the exact script IDs, source filenames, and selected voices before provider testing begins. Spanish fixtures may be paired translations or distinct Spanish-native scripts, but they may not be swapped mid-cycle.
+4. Reuse the same six frozen scripts for both providers and all repeat runs.
+5. Run hosted-first evaluation in this order:
+   - `Inworld TTS 1.5 Max` as the primary implementation path
+   - `Cartesia` as the required same-cycle benchmark
+6. Record for each provider and language:
    - completion / non-completion
    - retry behavior
    - whether backend-only orchestration is required
    - chunk count / stitch count when orchestration is used
+   - output readiness for the tested language
+   - timing readiness for the tested language
    - output consistency, seam defects, and obvious artifacts
    - internal alignment asset coverage for successful runs
    - provider timestamp usefulness versus final-audio alignment truth
    - subtitle text fidelity risk, including normalization drift or obvious wording mismatch
    - time-to-result
    - effective cost per completed output
-6. Repeat each key representative run enough times to distinguish one-off flakiness from structural instability.
-7. Produce a written decision memo with one of:
+7. Repeat each key representative run enough times to distinguish one-off flakiness from structural instability.
+8. Produce a written decision memo with one of:
    - `proceed with hosted-first implementation`
    - `proceed with hosted-first but constrain max script length`
    - `pause and revisit wedge`
@@ -67,11 +74,13 @@ Reference:
 
 ## Deliverables
 
-1. A run log covering the control, `~20` minute, and `~30` minute cases for both hosted providers
-2. A provider comparison summary
-3. At least one successful-run artifact packet containing final audio, orchestration notes, offset data, internal alignment assets, and a brief alignment / subtitle QA note for a viable provider
-4. A feasibility decision memo that names the next action
-5. A pricing review snapshot updated with observed `cost_per_completed_audio_minute` and fallback behavior for the preferred path
+1. A run log covering the frozen `EN + ES` corpus for both hosted providers
+2. A provider comparison summary with English and Spanish readiness verdicts
+3. At least one successful-run artifact packet for each language marked `ready`, containing final audio, orchestration notes, offset data, internal alignment assets, and a brief alignment / subtitle QA note for a viable provider
+4. A feasibility decision memo that names the next action, the primary-provider recommendation, and any hold / fallback posture for language readiness
+5. A pricing review snapshot and `v0.41` planning workbook updated with observed `cost_per_completed_audio_minute` and fallback behavior for the preferred path
+6. One provider-scenario table showing the primary provider case, one higher-cost fallback case, and one second-provider case
+7. One short benchmark note against the prevailing public self-serve long-form workflow, using `ElevenLabs` as the primary reference
 
 ## Backfill Required
 
@@ -79,22 +88,25 @@ Reference:
 2. If lifecycle semantics need to change because of orchestration behavior, update `project-run-lifecycle.md` before build work continues.
 3. If the first paid path or single-project duration promise changes, update `capability-entitlements.md` before pricing work expands.
 4. If cost data invalidates current pricing assumptions, update `pricing-packaging-and-unit-economics.md` and the PRD pricing summary before launch planning expands.
+5. If English and Spanish do not both achieve the required output / timing evidence, record the blocked language explicitly instead of silently collapsing the gate back to English-only.
 
 ## Validation
 
-1. One hosted provider can complete representative long-form scripts with repeatable behavior.
-2. No successful result requires user-side manual chunking.
-3. The comparison records at least one shorter control, one `~20` minute case, and one `~30` minute case.
-4. Successful runs generate internal alignment assets even though user-facing `SRT` export is still out of scope.
-5. The evidence packet includes an initial timing-quality and subtitle-text-quality note, not just raw audio success.
-6. The decision memo includes explicit go / hold / fallback language, not just raw observations.
+1. The evidence packet includes explicit English and Spanish results across the frozen corpus. English-only evidence is insufficient for this gate.
+2. At least one hosted provider can complete representative long-form scripts with repeatable behavior, or the memo explicitly names the blocked language and limiting envelope.
+3. No successful result requires user-side manual chunking.
+4. The comparison records at least one shorter control, one `~20` minute case, and one `~30` minute case for both English and Spanish.
+5. Successful runs generate internal alignment assets even though user-facing `SRT` export is still out of scope.
+6. The evidence packet includes an initial timing-quality and subtitle-text-quality note for both English and Spanish readiness, not just raw audio success.
+7. The decision memo includes explicit go / hold / fallback language, not just raw observations.
 
 ## Risks / Blockers
 
 1. Hosted providers may succeed only with hidden internal chunking, which is acceptable only if fully absorbed by backend orchestration.
-2. Long-form quality may drift even when runs technically complete.
+2. Long-form quality may drift differently by language even when runs technically complete.
 3. Founder pricing or API plan constraints may distort the true unit-economics picture.
 4. Real scripts may expose content-length or style pathologies not visible in synthetic tests.
+5. Spanish readiness evidence could be over-read as a promise of a full multilingual workspace if the packet does not keep that boundary explicit.
 
 ## Execution Notes
 
@@ -103,3 +115,5 @@ Reference:
 3. Treat this as a decision package, not a benchmark vanity exercise.
 4. If both hosted providers fail the `~30` minute case but one is strong at shorter lengths, the memo must explicitly say whether a shorter first release is acceptable or whether the wedge should pause.
 5. A pass may use backend-hidden chunking, but the memo must name chunk counts, seam risk, and whether the approach is implementation-worthy.
+6. Keep the corpus explicit and frozen. Do not swap scripts mid-cycle to rescue a provider result.
+7. English-first workspace UI remains acceptable for this phase. The bilingual gate is about output and timing readiness, not full Spanish workspace parity.
