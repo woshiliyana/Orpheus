@@ -4,16 +4,16 @@
 > Role: execution orchestration
 > Normative for product rules: no
 > Canonical owner: Product architecture / delivery
-> Depends on truth docs: `/docs/prd/prd.md`, `/docs/prd/specs/content-source-governance.md`, `/docs/prd/specs/capability-entitlements.md`
+> Depends on truth docs: `/docs/prd/prd.md`, `/docs/prd/specs/content-source-governance.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/distribution-and-growth-surface.md`
 > Last reviewed: 2026-04-22
 
 ## Goal
 
-Bring the public growth surface to production quality: homepage, pricing, language pages, niche pages, voice pages, and localized SEO structure.
+Expand the public growth surface after the first funnel foundation exists: multilingual SEO pages, broader public growth pages, and localized expansion around the stable English product core.
 
 ## Why This Phase Comes Here
 
-Public growth surfaces should reflect real product capability, not promises that are still ahead of implementation.
+Public growth expansion should reflect real product capability, not become the first place where distribution is finally designed.
 
 ## Tracks Involved
 
@@ -27,11 +27,11 @@ Public growth surfaces should reflect real product capability, not promises that
 
 ## In-Phase Focus
 
-1. Homepage and pricing page hardening
-2. Locale routing and language pages
-3. Niche pages and voice pages
-4. Structured metadata, robots, sitemap, hreflang
-5. Localized content operations through the content truth system
+1. Multilingual SEO landing-page expansion
+2. Additional niche pages and voice pages
+3. Structured metadata, robots, sitemap, hreflang
+4. Localized content operations through the content truth system
+5. Growth-surface expansion beyond the first funnel foundation
 
 ## Parallel Guidance
 

@@ -9,11 +9,11 @@
 
 ## Goal
 
-Turn the stable workflow into a public SaaS by adding guest trial, plan gating, billing, quota management, compensation, and risk controls.
+Turn the stable workflow and pre-modeled voice tiers into a public SaaS by adding guest trial, entitlement enforcement, billing, quota management, compensation, and risk controls.
 
 ## Why This Phase Comes Here
 
-Commercial systems should sit on top of a stable workflow and quality baseline, not define them prematurely.
+Commercial systems should sit on top of a stable workflow and quality baseline, but they must make the public trial and starter-vs-flagship promises enforceable before broad rollout.
 
 ## Tracks Involved
 
@@ -28,8 +28,8 @@ Commercial systems should sit on top of a stable workflow and quality baseline, 
 ## In-Phase Focus
 
 1. Guest trial identity and claim flow
-2. Plan entitlements
-3. Usage ledger and balance logic
+2. Starter-vs-flagship entitlement enforcement
+3. Full plan entitlements, quotas, and balance logic
 4. Paddle checkout and webhook sync
 5. Compensation and admin adjustments
 6. Risk controls for guest, render, repair, uploads, and downloads

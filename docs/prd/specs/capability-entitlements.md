@@ -22,6 +22,8 @@ This spec closes V1 scope questions for clone access, SRT export, and segment re
 | `segment repair` | Re-running only targeted project segments and stitching them back into the project output |
 | `private clone` | A user-owned clone voice that never becomes part of the public platform library |
 | `closed_beta` | A capability exists in V1 but is disabled by default until ops explicitly enables it for an account |
+| `starter library` | The broad, lower-cost AI voice catalog intended to give users meaningful free choice inside the active V1 niche cluster |
+| `flagship library` | The smaller curated voice set with stronger consistency, sharper persona definition, and paid-plan positioning |
 
 ## Decision Tables
 
@@ -35,6 +37,8 @@ This spec closes V1 scope questions for clone access, SRT export, and segment re
 | Segment preview | Core workflow capability | Open to every successful project |
 | Segment repair | Core workflow capability | Gated by plan entitlement |
 | Private clone creation | Controlled V1 capability | `closed_beta` and plan-gated |
+| Starter library access | Core growth capability | Open broadly, with guest vs free limits |
+| Flagship library access | Core premium capability | Paid-plan gated |
 
 ### 2. Entitlement Matrix
 
@@ -45,6 +49,9 @@ This spec closes V1 scope questions for clone access, SRT export, and segment re
 | Segment preview | Yes | Yes | Yes | Yes |
 | Export SRT | No | No | Yes | Yes |
 | Trigger segment repair | No | No | Yes | Yes |
+| Browse starter library | Yes | Yes | Yes | Yes |
+| Use starter library for generation | Yes, trial-safe subset | Yes, large library | Yes | Yes |
+| Use flagship library for generation | No | No | Yes | Yes |
 | Request private clone creation | No | No | `closed_beta`, manual enable | `closed_beta`, manual enable |
 | Max active private clones | 0 | 0 | 1 | 3 |
 | Queue priority | low | low | standard | high |
@@ -54,6 +61,8 @@ This spec closes V1 scope questions for clone access, SRT export, and segment re
 
 | Capability | Default launch state | Activation rule |
 |---|---|---|
+| Starter library access | open | Starter library must remain broad enough for meaningful free voice choice within the active V1 niche cluster |
+| Flagship library access | open for entitled plans | Available only to paid plans |
 | SRT export | open for entitled plans | Available as soon as a successful run produces exportable SRT |
 | Segment repair | open for entitled plans | Available only on completed or completed-with-warnings projects |
 | Private clone creation | `closed_beta` | Requires account-level enablement by ops and a successful rights review |
@@ -72,16 +81,17 @@ This spec closes V1 scope questions for clone access, SRT export, and segment re
 
 | Surface | Allowed wording |
 |---|---|
-| Free plan copy | Emphasize real trial, audio takeaway, and starter voice access |
-| Pro plan copy | Emphasize full workflow, including SRT export and segment repair |
-| Ultimate plan copy | Emphasize higher limits, faster queue, and stronger controlled clone access |
+| Free plan copy | Emphasize real trial, audio takeaway, and large starter-library access |
+| Pro plan copy | Emphasize flagship voices plus full workflow, including SRT export and segment repair |
+| Ultimate plan copy | Emphasize higher limits, broader flagship access, faster queue, and stronger controlled clone access |
 | Clone marketing copy | Must say controlled or gated access until launch state changes from `closed_beta` |
 
 ## Narrative Notes
 
 1. The system may generate internal subtitle assets for all successful projects, but only entitled plans may export SRT.
-2. This lets the platform keep one workflow pipeline while still enforcing differentiated plans.
-3. Private clone creation is intentionally scoped as a controlled V1 capability to avoid making unsupported self-serve promises.
+2. Free users should feel meaningful voice abundance through the starter library without receiving the same voice tier as paid users.
+3. This lets the platform keep one workflow pipeline while still enforcing differentiated plans.
+4. Private clone creation is intentionally scoped as a controlled V1 capability to avoid making unsupported self-serve promises.
 
 ## Update Checklist
 
