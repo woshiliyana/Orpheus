@@ -1,0 +1,761 @@
+diff --git a/.agents/skills/orpheus-change-verification/SKILL.md b/.agents/skills/orpheus-change-verification/SKILL.md
+new file mode 100644
+index 0000000..d1724be
+--- /dev/null
++++ b/.agents/skills/orpheus-change-verification/SKILL.md
+@@ -0,0 +1,52 @@
++---
++name: orpheus-change-verification
++description: Use before handoff, patch creation, or PR submission. Reviews Orpheus changes against current truth, verifies that checks were run where possible, and catches silent scope drift or missing doc backfills.
++---
++
++# Orpheus Change Verification
++
++## Goal
++
++Catch correctness, scope, and documentation problems before the change is handed back.
++
++## Review inputs
++
++- current diff
++- task request
++- touched canonical docs
++- touched execution docs
++- any benchmark or workbook updates
++- any test/check output already produced
++
++## Verification steps
++
++1. Review the diff against the original request.
++2. Review the diff against the touched canonical docs.
++3. Check for duplicate truth:
++   - no second complete rule table in a non-canonical file
++   - no stale PRD summary contradicting the spec
++4. Check Orpheus invariants:
++   - provider calls remain server-owned
++   - hidden chunking remains backend-owned
++   - successful runs persist `artifact_manifest`
++   - `audio success + alignment failure` still resolves to warning-bearing completion semantics
++   - pricing/package claims still match current cost truth
++   - public promise still matches the documented gate
++5. For code changes:
++   - inspect the real repo for available commands
++   - run relevant checks that actually exist
++   - if the repo does not yet contain runnable checks for that area, say so directly instead of inventing commands
++6. For docs changes:
++   - confirm canonical-first edit order
++   - confirm required downstream sync happened
++   - confirm wording does not quietly broaden language, pricing, or rollout promises
++
++## Output
++
++Return:
++
++- blockers
++- non-blocking risks
++- missing checks
++- missing doc sync
++- ready / not-ready verdict
+diff --git a/.agents/skills/orpheus-doc-sync/SKILL.md b/.agents/skills/orpheus-doc-sync/SKILL.md
+new file mode 100644
+index 0000000..cc0a2cd
+--- /dev/null
++++ b/.agents/skills/orpheus-doc-sync/SKILL.md
+@@ -0,0 +1,53 @@
++---
++name: orpheus-doc-sync
++description: Use when implementation, benchmark evidence, or a discovered mismatch means the Orpheus docs must be synchronized. Updates canonical truth first, then summaries and execution docs, without leaving stale promises behind.
++---
++
++# Orpheus Doc Sync
++
++## Goal
++
++Backfill the documentation correctly when implementation or benchmark evidence changes the real meaning of the system.
++
++## Trigger examples
++
++- stable-audio envelope is narrower than current truth
++- `EN + ES` gate changes
++- provider cost changes package viability
++- lifecycle or warning semantics change
++- entitlement boundaries change
++- rollout or landing-page promises change
++- MkSaaS boundary assumptions change
++
++## Procedure
++
++1. Identify whether the change is:
++   - canonical rule change
++   - summary sync
++   - execution-doc sync
++   - benchmark/reference refresh
++2. Update the canonical doc first.
++3. If a canonical topic was renamed or added, update `docs/prd/source-of-truth-index.md`.
++4. Update the PRD summary sections that now disagree.
++5. Update execution docs if they now contradict truth:
++   - feasibility spike
++   - development-entry checklist
++   - agent build/test brief
++   - provider scorecard template
++6. Run a term scan across the relevant `docs/prd/` and `docs/plans/` files to find stale wording.
++7. State explicitly what was intentionally left unchanged.
++
++## Mandatory special cases
++
++- If pricing/package economics change materially, update the pricing spec and workbook in the same change.
++- If public language or readiness promises change, update the distribution spec and the benchmark/brief docs in the same change.
++- If lifecycle semantics change, update the lifecycle spec before downstream implementation guidance.
++
++## Output
++
++Return:
++
++- canonical docs changed
++- summary docs changed
++- execution docs changed
++- remaining follow-up docs, if any
+diff --git a/.agents/skills/orpheus-parallel-lanes/SKILL.md b/.agents/skills/orpheus-parallel-lanes/SKILL.md
+new file mode 100644
+index 0000000..3107427
+--- /dev/null
++++ b/.agents/skills/orpheus-parallel-lanes/SKILL.md
+@@ -0,0 +1,60 @@
++---
++name: orpheus-parallel-lanes
++description: Use before spawning subagents or splitting work across multiple tracks. Builds a safe lane map for Orpheus and blocks parallelization when canonical docs, PRD summaries, or shared evidence artifacts would collide.
++---
++
++# Orpheus Parallel Lanes
++
++## Goal
++
++Split work only when it is genuinely safe. Prevent multi-agent collisions on canonical specs, shared summaries, and benchmark artifacts.
++
++## Inputs
++
++- task request
++- candidate files or directories
++- desired outcome
++- time or review constraints, if any
++
++## Lane planning procedure
++
++1. Build a lane table with:
++   - lane name
++   - objective
++   - files touched
++   - owner
++   - done condition
++   - parallel-safe: yes/no
++   - merge order
++2. Mark a lane **not parallel-safe** if it shares any of the following with another lane:
++   - the same canonical spec
++   - the same PRD summary section
++   - the pricing workbook
++   - the same generated benchmark packet
++   - a shared schema/enum file whose meaning other lanes depend on
++3. Keep one canonical truth file with one writer at a time.
++4. Keep the controller responsible for final integration, cross-lane conflict resolution, and final review.
++5. If the task is not parallel-safe, propose a serial plan instead of forcing parallelism.
++
++## Suggested safe lane patterns for Orpheus
++
++| Lane | Usually safe? | Notes |
++|---|---|---|
++| workflow backend vs benchmark harness | sometimes | only if shared lifecycle/schema files are not both edited |
++| UI status surface vs review lane | yes | review lane should not mutate files unless explicitly reassigned |
++| docs handoff note vs code lane | yes | only if the doc lane does not change canonical truth |
++| benchmark workbook vs pricing spec | no | one ownership stream |
++| two lanes editing `docs/prd/specs/*.md` on the same topic cluster | no | one truth writer only |
++
++## Subagent rule
++
++Codex only spawns subagents when explicitly asked. After the lane map is approved, spawn only the safe lanes and wait for all of them before integrating.
++
++## Output
++
++Return:
++
++- the lane map
++- unsafe collision reasons, if any
++- recommended spawn prompts for each safe lane
++- integration and review order
+diff --git a/.agents/skills/orpheus-phase2-stable-audio/SKILL.md b/.agents/skills/orpheus-phase2-stable-audio/SKILL.md
+new file mode 100644
+index 0000000..397a8aa
+--- /dev/null
++++ b/.agents/skills/orpheus-phase2-stable-audio/SKILL.md
+@@ -0,0 +1,62 @@
++---
++name: orpheus-phase2-stable-audio
++description: Use when implementing or testing the current Phase 2 stable long-form audio slice, including backend orchestration, provider integration, artifact persistence, EN plus ES readiness evidence, and the first build/test gate.
++---
++
++# Orpheus Phase 2 Stable Audio
++
++## Goal
++
++Build or test the smallest trustworthy slice that proves Orpheus can accept a long-form project, run backend-owned hidden orchestration, return downloadable final audio, and leave enough evidence to judge the `EN + ES` first gate.
++
++## Mandatory reads
++
++1. `docs/prd/source-of-truth-index.md`
++2. `docs/prd/prd.md`
++3. `docs/prd/specs/project-run-lifecycle.md`
++4. `docs/prd/specs/capability-entitlements.md`
++5. `docs/prd/specs/billing-usage-semantics.md`
++6. `docs/prd/specs/pricing-packaging-and-unit-economics.md`
++7. `docs/prd/specs/distribution-and-growth-surface.md`
++8. `docs/prd/specs/quality-ops-and-automation.md`
++9. `docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`
++10. `docs/plans/phase-02-core-render/02-development-entry-checklist.md`
++11. `docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md`
++
++## Current gate summary
++
++Keep this exact boundary unless canonical docs change:
++
++- English-first workspace
++- stable narration is the first promised value
++- `EN + ES` output/timing readiness is the first language gate
++- `Inworld TTS 1.5 Max` is the primary path
++- `Cartesia` is required in the same benchmark cycle
++- backend-hidden chunking is allowed
++- user-side manual chunking is not acceptable
++- no public `SRT` export, no broad public pricing rollout, and no public no-login long-form trial in the first gate
++
++## Required implementation behaviors
++
++- The browser and public client must never call TTS, STT, or storage providers directly.
++- One user-visible project must map to one canonical run history even if the backend fans out into many provider sub-requests.
++- Successful runs must persist final audio plus an `artifact_manifest`.
++- Alignment failure after audio success must land in the warning completion path, not full rerun failure semantics.
++- Billing must charge audio only, not rebill the full project for alignment retry or repair follow-up.
++
++## Required evidence
++
++- one successful run artifact packet
++- provider run logs for the frozen `EN + ES` corpus
++- cost snapshot update
++- one readiness summary for `EN + ES`
++- one go/hold/fallback recommendation
++
++## Stop conditions
++
++Invoke `$orpheus-doc-sync` instead of pushing ahead silently if:
++
++- the stable envelope is narrower than current package/public truth
++- one language is blocked for timing/output readiness
++- lifecycle meaning changes
++- cost evidence breaks the current packaging guardrail
+diff --git a/.agents/skills/orpheus-provider-benchmark/SKILL.md b/.agents/skills/orpheus-provider-benchmark/SKILL.md
+new file mode 100644
+index 0000000..e332485
+--- /dev/null
++++ b/.agents/skills/orpheus-provider-benchmark/SKILL.md
+@@ -0,0 +1,63 @@
++---
++name: orpheus-provider-benchmark
++description: Use when comparing Inworld, Cartesia, ElevenLabs-relative positioning, provider costs, retry behavior, margin pressure, and the EN plus ES first-gate benchmark packet for Orpheus.
++---
++
++# Orpheus Provider Benchmark
++
++## Goal
++
++Run or structure the benchmark work needed to decide whether the current Orpheus package and provider mix remain defensible.
++
++## Read first
++
++1. `docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md`
++2. `docs/prd/specs/pricing-packaging-and-unit-economics.md`
++3. `docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`
++4. `docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md`
++5. `docs/plans/phase-02-core-render/04-provider-evidence-scorecard-template.md`
++6. `docs/plans/phase-02-core-render/05-pricing-unit-economics-model-v0.41.xlsx`
++
++## Benchmark rules
++
++- Keep the frozen `EN + ES` corpus fixed across providers.
++- Keep the selected voices fixed inside the benchmark cycle.
++- Treat `Inworld TTS 1.5 Max` as the primary implementation scenario.
++- Treat `Cartesia` as the required second-provider scenario in the same cycle.
++- Use `ElevenLabs` as the default public self-serve comparison point when writing the short market benchmark note.
++
++## Record for each provider and language
++
++- completion / non-completion
++- retry behavior
++- whether backend-only orchestration is required
++- chunk count / stitch count when orchestration is used
++- output readiness
++- timing readiness
++- seam defects or obvious artifacts
++- internal alignment asset coverage
++- provider timestamp usefulness versus final-audio alignment truth
++- subtitle fidelity risk
++- time to result
++- effective cost per completed output
++- effective cost per completed audio minute
++
++## Packaging pressure test
++
++Update the pricing snapshot with at least:
++
++- current primary scenario
++- one higher-cost fallback scenario
++- one second-provider scenario
++
++If the observed scenario does not clear the target margin floor, do not leave package claims untouched. Mark the package blocked or propose the updated package explicitly.
++
++## Output
++
++Produce:
++
++- scorecard
++- pricing snapshot update
++- `EN + ES` readiness note
++- short public-market comparison note
++- go/hold/fallback memo
+diff --git a/.agents/skills/orpheus-truth-router/SKILL.md b/.agents/skills/orpheus-truth-router/SKILL.md
+new file mode 100644
+index 0000000..b4a3fbf
+--- /dev/null
++++ b/.agents/skills/orpheus-truth-router/SKILL.md
+@@ -0,0 +1,60 @@
++---
++name: orpheus-truth-router
++description: Use when a task touches product rules, docs/prd, pricing, packaging, lifecycle, billing, public promises, language boundaries, or any change that risks creating duplicate truth. Routes the task to the canonical Orpheus documents before editing.
++---
++
++# Orpheus Truth Router
++
++## Goal
++
++Pick the correct Orpheus source-of-truth documents before making changes, and prevent duplicate rule tables from spreading across the repo.
++
++## Inputs
++
++- User request
++- Candidate files already mentioned by the request
++- Current diff, if one exists
++
++## Required read order
++
++1. `docs/prd/source-of-truth-index.md`
++2. `docs/prd/agent-conventions.md`
++3. The canonical spec(s) for the topic
++4. The relevant PRD summary section only after the canonical spec is understood
++
++## Topic routing map
++
++| Task signal | Canonical destination |
++|---|---|
++| pricing, package, plan, minutes, margin, top-up, overage, cost model | `docs/prd/specs/pricing-packaging-and-unit-economics.md` plus the pricing workbook |
++| capability gating, SRT access, segment repair, clone access, plan matrix | `docs/prd/specs/capability-entitlements.md` |
++| billing records, usage metering, compensation, retry billing, ledger meaning | `docs/prd/specs/billing-usage-semantics.md` |
++| statuses, warnings, artifact manifest, retries, run meaning | `docs/prd/specs/project-run-lifecycle.md` |
++| homepage promise, trials, landing pages, language boundary, public scope | `docs/prd/specs/distribution-and-growth-surface.md` |
++| provider benchmark, public comparison, market check | `docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md` plus execution docs if benchmark scope changes |
++| MkSaaS ownership boundary | `docs/prd/specs/mksaas-boundary-contract.md` |
++| automation, alerts, quality dashboard, ops taxonomy | `docs/prd/specs/quality-ops-and-automation.md` |
++
++## Procedure
++
++1. Classify the request as one of:
++   - canonical rule change
++   - summary-only sync
++   - execution-plan change
++   - benchmark/reference update
++   - implementation-only change
++2. Read only the canonical files needed for the affected topic cluster.
++3. Name the canonical file(s) before editing.
++4. Edit the canonical file first.
++5. Update the PRD summary or execution docs only if they now disagree.
++6. Never create a second complete rule table in a handoff note, benchmark note, or implementation memo.
++7. If the task introduces a new high-risk topic with no canonical home, stop and propose the new canonical home before scattering rules elsewhere.
++
++## Output
++
++Return:
++
++- the canonical file(s) chosen
++- why they were chosen
++- what downstream docs must be synced after the canonical edit
++- any topics that must stay out of scope
+diff --git a/AGENTS.md b/AGENTS.md
+new file mode 100644
+index 0000000..3a9f7c8
+--- /dev/null
++++ b/AGENTS.md
+@@ -0,0 +1,119 @@
++# AGENTS.md
++
++## Scope and baseline
++
++This file is the repo-root instruction layer for Orpheus. It is aligned to the current remote baseline that already includes `v0.41 benchmark + bilingual gate` work in commit `128c7b2`.
++
++Treat this repository as **docs-first, truth-driven, and gate-controlled**:
++
++- Product truth lives under `docs/prd/`.
++- Execution planning lives under `docs/plans/` and `docs/roadmap/`.
++- Benchmark and market-reference material informs decisions but does not override canonical specs.
++- Do not invent product rules in code comments, task notes, or ad hoc markdown.
++
++## Mandatory read order
++
++Read these before changing product rules or Phase 2 implementation behavior:
++
++1. `docs/prd/source-of-truth-index.md`
++2. `docs/prd/agent-conventions.md`
++3. If the task touches Phase 2 build/test work:
++   - `docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md`
++   - `docs/plans/phase-02-core-render/02-development-entry-checklist.md`
++   - `docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`
++4. If the task touches pricing, packaging, margins, plan limits, or rollout economics:
++   - `docs/prd/specs/pricing-packaging-and-unit-economics.md`
++   - `docs/plans/phase-02-core-render/05-pricing-unit-economics-model-v0.41.xlsx`
++5. If the task touches public promises, landing pages, trials, or language scope:
++   - `docs/prd/specs/distribution-and-growth-surface.md`
++6. If the task touches statuses, warnings, artifacts, or retries:
++   - `docs/prd/specs/project-run-lifecycle.md`
++7. If the task touches capability gating:
++   - `docs/prd/specs/capability-entitlements.md`
++8. If the task touches billing, usage, compensation, or top-ups:
++   - `docs/prd/specs/billing-usage-semantics.md`
++
++## Current non-negotiable product truth
++
++Do not broaden or silently weaken these without updating the canonical docs first:
++
++- The first real promise is stable long-form narration for the educational-explainer wedge.
++- The workspace is English-first.
++- The first output/timing readiness gate is `EN + ES`, not full multilingual workspace support.
++- Backend-owned hidden chunking is allowed. User-side manual chunking is not an acceptable first-gate workflow.
++- `Inworld TTS 1.5 Max` is the primary implementation path for the first build slice.
++- `Cartesia` must still be benchmarked on the same frozen corpus in the first benchmark cycle.
++- Public `SRT` export, public no-login long-form trial, and a broad public pricing rollout are later layers, not first-gate deliverables.
++- Do not position “supports long text” as the differentiator by itself.
++- If observed provider cost or retry behavior breaks packaging assumptions, update pricing/package truth instead of leaving stale promises in place.
++
++## Canonical edit rules
++
++- Change the canonical document first.
++- Update summary docs second.
++- Update execution docs third if they now conflict with truth.
++- Never create a second “temporary rules” file outside the canonical set.
++- If a topic is high-risk and lacks a canonical home, add that home intentionally before spreading rules elsewhere.
++- Normative docs must follow the writing discipline in `docs/prd/agent-conventions.md`.
++
++## Code and system rules
++
++When implementation begins, these stay in force even if the repo grows beyond docs-only:
++
++- Never let the browser or public client call TTS, STT, or storage providers directly.
++- Hidden chunking, retries, and stitch/orchestration details belong to backend-owned workflow code.
++- Successful runs must persist final audio plus a durable `artifact_manifest`.
++- `audio success + alignment failure` must resolve to a warning-bearing completion path, not a full rerun-billing path.
++- Do not invent build/test commands. Inspect the actual repo first, then run the relevant commands that genuinely exist.
++- Do not add provider- or framework-specific behavior to MkSaaS boundaries unless the canonical boundary docs are updated as part of the same change.
++
++## Skill routing
++
++Use repo-local skills before generic methodology packs:
++
++- `$orpheus-truth-router` for rule routing and canonical-doc selection.
++- `$orpheus-phase2-stable-audio` for the current build/test slice and stable-audio implementation work.
++- `$orpheus-provider-benchmark` for provider comparison, cost updates, and packaging pressure tests.
++- `$orpheus-parallel-lanes` before any multi-lane or subagent work.
++- `$orpheus-doc-sync` when implementation or benchmark evidence changes the docs.
++- `$orpheus-change-verification` before handing work back.
++
++If you use Codex skills implicitly, keep task descriptions precise enough for the right skill to trigger.
++
++## Parallel and subagent policy
++
++Codex only spawns subagents when explicitly asked. Do not assume invisible background parallelism.
++
++Before parallel work:
++
++1. Invoke `$orpheus-parallel-lanes`.
++2. Produce a lane map with file ownership, merge order, and done conditions.
++3. Keep one canonical truth file owned by one writer at a time.
++4. Do not let multiple lanes edit the same canonical spec, PRD summary section, or pricing workbook.
++5. Merge canonical truth before summaries, and merge evidence before packaging changes.
++
++Use `docs/ops/agent-execution-policy.md` for the full controller/worker policy.
++
++## Optional Superpowers usage
++
++Superpowers is allowed as an optional accelerator, not as the governing constitution of the repo.
++
++Recommended optional mapping if Superpowers is installed locally:
++
++- `brainstorming` for open-ended scoping
++- `writing-plans` for turning approved scope into an implementation plan
++- `systematic-debugging` for provider, stitching, or alignment failures
++- `code-review` for a second review pass
++- `using-git-worktrees` only when you truly need isolation
++
++Orpheus repo truth still wins over any generic Superpowers behavior. Do not let an external skill redefine product scope, pricing, language promises, lifecycle meanings, or rollout gates.
++
++## Handoff standard
++
++Every meaningful handoff should include:
++
++- What changed
++- Which canonical docs or execution docs were read
++- Which checks were run
++- What remains uncertain
++- Whether any truth-doc backfill is still required
+diff --git a/AGENT_PROMPT_PLAYBOOK.md b/AGENT_PROMPT_PLAYBOOK.md
+new file mode 100644
+index 0000000..6d8e365
+--- /dev/null
++++ b/AGENT_PROMPT_PLAYBOOK.md
+@@ -0,0 +1,141 @@
++# AGENT_PROMPT_PLAYBOOK.md
++
++This file contains copy-paste prompts for Codex or other repo-aware coding agents working on Orpheus after commit `128c7b2`.
++
++Use these prompts after the repo-root `AGENTS.md` and `.agents/skills/` are present.
++
++## 1) Start a bounded Phase 2 implementation slice
++
++```text
++Read AGENTS.md first, then use $orpheus-phase2-stable-audio.
++
++Work on the current repo state only. Build the smallest Phase 2 slice that can take one authenticated project from script submission to downloadable final audio through a backend-owned workflow.
++
++Hard constraints:
++- English-first workspace
++- EN + ES benchmark/output-timing gate
++- Inworld TTS 1.5 Max as primary path
++- Cartesia same-corpus benchmark in the first cycle
++- hidden chunking only in backend orchestration
++- no public SRT export
++- no public no-login long-form trial
++- no direct provider calls from browser/client
++
++Before coding, show:
++1. files you need to read
++2. the minimal code/data model surface you will touch
++3. the acceptance gates you will prove
++```
++
++## 2) Run a provider benchmark and packaging pressure test
++
++```text
++Use $orpheus-provider-benchmark.
++
++Evaluate the current long-form narration workflow against the frozen EN + ES corpus and selected voices. Keep Inworld as the primary scenario and Cartesia as the second-provider scenario.
++
++Required outputs:
++- provider comparison table
++- EN + ES output/timing readiness note
++- effective cost per completed audio minute
++- retry overhead observation
++- one packaging note explaining whether Pro = $20 / 90 min still clears the target margin guardrail
++- one short benchmark note against the current public self-serve long-form workflow with ElevenLabs as the default comparison point
++
++If the observed envelope or cost invalidates the current packaging, do not leave the docs stale. Invoke $orpheus-doc-sync and name the blocked or revised package explicitly.
++```
++
++## 3) Update canonical docs after implementation evidence changes scope
++
++```text
++Use $orpheus-doc-sync.
++
++A recent implementation or benchmark result changed product truth. Determine whether the change affects:
++- capability entitlements
++- project/run lifecycle
++- billing semantics
++- pricing/package economics
++- distribution/language boundary
++- MkSaaS boundary
++- quality ops
++
++Update the canonical source first, then summary docs, then any execution docs that are now stale.
++
++Return:
++1. canonical files changed
++2. summary/execution docs changed
++3. the exact rule that changed
++4. follow-up docs that intentionally remain unchanged
++```
++
++## 4) Plan safe multi-lane work before spawning subagents
++
++```text
++Use $orpheus-parallel-lanes.
++
++I want to split this work across parallel lanes, but only if it is safe. Build a lane map with:
++- lane name
++- goal
++- files touched
++- owner
++- whether it is parallel-safe
++- merge order
++- review order
++
++Do not let two lanes touch the same canonical spec, the same PRD summary section, or the pricing workbook. If the task is not parallel-safe, say so and propose a serial plan instead.
++
++After the lane map is approved, spawn only the safe lanes and wait for all of them before integrating.
++```
++
++## 5) Review a diff against Orpheus truth and current gate
++
++```text
++Use $orpheus-change-verification.
++
++Review the current diff against:
++- AGENTS.md
++- docs/prd/source-of-truth-index.md
++- docs/prd/agent-conventions.md
++- the relevant canonical specs
++- the current Phase 2 brief/checklist if the change touches implementation
++
++Verify:
++- no duplicate truth was created
++- no public promise was broadened silently
++- client/provider boundaries remain correct
++- artifact_manifest and warning-state semantics remain intact
++- EN + ES benchmark/timing claims still match evidence
++- pricing/package claims still match the latest cost truth
++
++Return:
++1. blocking issues
++2. non-blocking risks
++3. missing tests/checks
++4. missing doc backfills
++5. ready/not-ready verdict
++```
++
++## 6) Optional Superpowers-assisted flow
++
++Use this only if Superpowers is installed locally and you want the extra workflow discipline.
++
++```text
++Follow AGENTS.md first.
++
++If the scope is still fuzzy, use brainstorming.
++Once scope is approved, use writing-plans.
++If we need safe parallel execution, use $orpheus-parallel-lanes first, then use subagent-driven-development only for lanes marked safe.
++For instability or provider weirdness, use systematic-debugging.
++Before handoff, use code-review and then $orpheus-change-verification.
++```
++
++## 7) One-shot controller prompt for a strong default start
++
++```text
++Read AGENTS.md first. Then use $orpheus-truth-router to choose the right canonical docs, and follow with the repo-local skill that best matches the task.
++
++Do not invent product truth. Do not broaden the promise. Do not skip doc backfill if implementation evidence changes the package, language gate, lifecycle semantics, or public scope.
++
++If the task can be parallelized safely, invoke $orpheus-parallel-lanes before spawning any subagents.
++If the task ends in a diff or patch, finish with $orpheus-change-verification.
++```
+diff --git a/docs/ops/agent-execution-policy.md b/docs/ops/agent-execution-policy.md
+new file mode 100644
+index 0000000..fd9983e
+--- /dev/null
++++ b/docs/ops/agent-execution-policy.md
+@@ -0,0 +1,97 @@
++# Agent Execution Policy
++
++> Status: active
++> Role: execution policy
++> Normative for product rules: no
++> Canonical owner: engineering lead + delivery owner
++> Depends on: `AGENTS.md`, `docs/prd/source-of-truth-index.md`, `docs/prd/agent-conventions.md`
++> Last reviewed: 2026-04-23
++
++## Purpose
++
++This file defines how agents should execute work in the Orpheus repo without corrupting canonical truth, packaging assumptions, or the first-gate Phase 2 scope.
++
++It governs controller/worker behavior, multi-lane safety, merge order, review order, and handoff shape. It does **not** own product rules.
++
++## Controller vs worker responsibilities
++
++| Role | Responsibility |
++|---|---|
++| `controller` | Reads the task, picks the right skills, maps touched files, decides whether the work is serial or parallel, integrates results, and performs final review |
++| `worker` | Executes one bounded lane only, within approved files and scope |
++| `reviewer` | Performs an independent verification pass and does not silently expand scope |
++
++## Lane safety rules
++
++A lane is parallel-safe only if all of the following are true:
++
++1. Its file set is disjoint from every other lane.
++2. It does not share a canonical spec with another lane.
++3. It does not share the same PRD summary section with another lane.
++4. It does not share the pricing workbook or other generated evidence packets with another lane.
++5. The lane goal can be reviewed independently before integration.
++
++If any rule fails, keep the work serial.
++
++## Current Orpheus-safe lane shapes
++
++| Lane shape | Usually safe? | Notes |
++|---|---|---|
++| Backend workflow implementation vs provider benchmark harness | Often yes | Only if lifecycle enums and shared adapter surfaces are not edited by both lanes |
++| UI status surface vs benchmark note write-up | Often yes | Only if no shared canonical docs are edited in both lanes |
++| Independent review lane | Yes | Review lane should not modify files unless explicitly reassigned |
++| Pricing/package doc edits vs provider benchmark workbook edits | No | These belong in one ownership stream |
++| Two lanes editing `docs/prd/specs/*.md` for the same topic cluster | No | One truth file = one writer |
++
++## Merge order
++
++Use this merge order unless there is a strong reason not to:
++
++1. Canonical truth docs
++2. Shared schema/enums/lifecycle code
++3. Provider adapters and orchestration code
++4. UI/status/read-model surfaces
++5. Evidence artifacts and benchmark notes
++6. Summary docs, handoff notes, and prompt/playbook updates
++
++## Required review order
++
++1. Worker self-check
++2. Controller diff review
++3. Independent reviewer or `$orpheus-change-verification`
++4. Final integration note
++
++## Handoff packet
++
++Every lane handoff should contain:
++
++- lane goal
++- files changed
++- checks run
++- assumptions taken
++- unresolved risks
++- whether canonical docs were changed or should be changed next
++
++## When to stop and sync docs
++
++Stop and invoke `$orpheus-doc-sync` if any of these becomes true:
++
++- The stable-audio envelope is narrower than the current public/package promise.
++- `EN + ES` readiness changes to a different language boundary.
++- Provider cost or retry overhead materially changes package viability.
++- Lifecycle states or warning semantics need new meanings.
++- MkSaaS or provider boundaries need a different ownership split.
++
++## Optional Superpowers interop
++
++If Superpowers is installed, it can help with planning and review, but it remains subordinate to repo-local truth.
++
++Recommended sequence:
++
++1. `brainstorming` only for open-ended scope
++2. `writing-plans` only after scope is approved
++3. `using-git-worktrees` only when isolation is actually needed
++4. `systematic-debugging` for provider instability, chunk/stitch issues, or timing/alignment weirdness
++5. `code-review` before final handoff
++
++Do not let Superpowers create replacement truth docs or override Orpheus lane safety rules.
