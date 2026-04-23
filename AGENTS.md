@@ -11,6 +11,24 @@ Treat this repository as **docs-first, truth-driven, and gate-controlled**:
 - Benchmark and market-reference material informs decisions but does not override canonical specs.
 - Do not invent product rules in code comments, task notes, or ad hoc markdown.
 
+## Current stack snapshot
+
+This is a runtime reference for execution, not a second source of product truth:
+
+- App shell: `MkSaaS + Next.js + Vercel`
+- Primary TTS path: `Inworld TTS 1.5 Max`
+- Same-cycle benchmark path: `Cartesia`
+- Data: `Postgres / Neon`
+- Storage: `Cloudflare R2`
+- Payments: `Paddle`
+- Email: `Resend`
+- Scheduled triggers: `cron-job.org`
+- Human verification: `Cloudflare Turnstile`
+- In-app chat: `Crisp`
+- Community: `Discord`
+
+If this runtime snapshot ever diverges from canonical product or execution truth, the canonical docs win.
+
 ## Mandatory read order
 
 Read these before changing product rules or Phase 2 implementation behavior:
