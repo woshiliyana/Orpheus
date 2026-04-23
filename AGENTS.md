@@ -72,6 +72,7 @@ When implementation begins, these stay in force even if the repo grows beyond do
 Use repo-local skills before generic methodology packs:
 
 - `$orpheus-truth-router` for rule routing and canonical-doc selection.
+- `$orpheus-system-design` for backend-facing system design before implementation work begins.
 - `$orpheus-phase2-stable-audio` for the current build/test slice and stable-audio implementation work.
 - `$orpheus-provider-benchmark` for provider comparison, cost updates, and packaging pressure tests.
 - `$orpheus-parallel-lanes` before any multi-lane or subagent work.

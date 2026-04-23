@@ -4,7 +4,28 @@ This file contains copy-paste prompts for Codex or other repo-aware coding agent
 
 Use these prompts after the repo-root `AGENTS.md` and `.agents/skills/` are present.
 
-## 1) Start a bounded Phase 2 implementation slice
+## 1) Design backend/system boundaries before implementation
+
+```text
+Read AGENTS.md first, then use $orpheus-system-design.
+
+Work from current canonical truth only.
+Do not invent product rules.
+
+Focus on:
+- bounded units
+- interfaces
+- artifact/lifecycle/provider boundaries
+- failure semantics
+- EN + ES gate implications where relevant
+
+Before proposing a design, state:
+1. canonical docs you read
+2. which boundaries you will not cross
+3. 2-3 architecture options with trade-offs
+```
+
+## 2) Start a bounded Phase 2 implementation slice
 
 ```text
 Read AGENTS.md first, then use $orpheus-phase2-stable-audio.
@@ -27,7 +48,7 @@ Before coding, show:
 3. the acceptance gates you will prove
 ```
 
-## 2) Run a provider benchmark and packaging pressure test
+## 3) Run a provider benchmark and packaging pressure test
 
 ```text
 Use $orpheus-provider-benchmark.
@@ -45,7 +66,7 @@ Required outputs:
 If the observed envelope or cost invalidates the current packaging, do not leave the docs stale. Invoke $orpheus-doc-sync and name the blocked or revised package explicitly.
 ```
 
-## 3) Update canonical docs after implementation evidence changes scope
+## 4) Update canonical docs after implementation evidence changes scope
 
 ```text
 Use $orpheus-doc-sync.
@@ -68,7 +89,7 @@ Return:
 4. follow-up docs that intentionally remain unchanged
 ```
 
-## 4) Plan safe multi-lane work before spawning subagents
+## 5) Plan safe multi-lane work before spawning subagents
 
 ```text
 Use $orpheus-parallel-lanes.
@@ -87,7 +108,7 @@ Do not let two lanes touch the same canonical spec, the same PRD summary section
 After the lane map is approved, spawn only the safe lanes and wait for all of them before integrating.
 ```
 
-## 5) Review a diff against Orpheus truth and current gate
+## 6) Review a diff against Orpheus truth and current gate
 
 ```text
 Use $orpheus-change-verification.
@@ -115,7 +136,7 @@ Return:
 5. ready/not-ready verdict
 ```
 
-## 6) Optional Superpowers-assisted flow
+## 7) Optional Superpowers-assisted flow
 
 Use this only if Superpowers is installed locally and you want the extra workflow discipline.
 
@@ -129,7 +150,7 @@ For instability or provider weirdness, use systematic-debugging.
 Before handoff, use code-review and then $orpheus-change-verification.
 ```
 
-## 7) One-shot controller prompt for a strong default start
+## 8) One-shot controller prompt for a strong default start
 
 ```text
 Read AGENTS.md first. Then use $orpheus-truth-router to choose the right canonical docs, and follow with the repo-local skill that best matches the task.
