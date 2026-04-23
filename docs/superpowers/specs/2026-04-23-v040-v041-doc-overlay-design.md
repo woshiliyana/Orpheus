@@ -12,16 +12,17 @@ The integration must preserve three things at once:
 
 1. `v0.40` is the primary baseline for the docs it explicitly owns.
 2. Current repo-only truth and support docs that `v0.40` does not replace must remain in place.
-3. `v0.41` must land as an execution-focused increment on top of `v0.40`, with only the parts that should become canonical actually promoted into truth docs.
+3. `v0.41` must land first as an execution-focused increment on top of `v0.40`, with only the parts that should become canonical actually promoted into truth docs.
 
 ## Design Goals
 
 1. Keep Markdown as the only canonical truth.
 2. Treat `v0.40` as the primary overlay for overlapping docs.
-3. Treat `v0.41` as an incremental tightening layer, not a replacement baseline.
-4. Preserve already validated review fixes even when a bundle version differs.
-5. Expand the first technical gate to cover English and Spanish output and timing readiness, while keeping the workspace UI English-first.
-6. Keep the import bundles as backup artifacts, not living sources of truth.
+3. Prioritize `v0.41`’s pricing / benchmark / distribution tightening before any broader secondary cleanup.
+4. Treat `v0.41` as an incremental tightening layer, not a replacement baseline.
+5. Preserve already validated review fixes even when a bundle version differs.
+6. Expand the first technical gate to cover English and Spanish output and timing readiness, while keeping the workspace UI English-first.
+7. Keep the import bundles as backup artifacts, not living sources of truth.
 
 ## Decisions Locked
 
@@ -68,6 +69,16 @@ The first technical gate expands from English-only output to bilingual output re
 - Chinese workspace UI: not part of the initial full end-user product promise
 
 This means Phase 2 feasibility work must use both English and Spanish corpus variants, not English alone.
+
+### 5. Priority order
+
+The integration order is intentionally not “apply everything evenly.”
+
+The first priority is:
+
+1. absorb `v0.41` benchmark, provider-cost, and hook-tightening changes
+2. lock the EN/ES output + timing boundary in truth and plans
+3. only then finish the rest of the `v0.40` overlay cleanup where it does not conflict
 
 ## File Ownership Model
 
@@ -229,10 +240,10 @@ It only decides:
 
 After this design is approved in writing, create a writing-plans implementation plan that executes the integration in this order:
 
-1. apply `v0.40` overlay by file ownership
-2. add bundle-only new plan/spec files
-3. layer `v0.41` truth + benchmark changes
-4. expand language boundary to EN/ES output + timing and English-first workspace UI
+1. layer `v0.41` truth + benchmark changes first
+2. lock EN/ES output + timing and English-first workspace UI
+3. apply the rest of the `v0.40` overlay by file ownership
+4. add bundle-only new plan/spec files and workbook placement
 5. re-apply mandatory review fixes
 6. run review + verification
 7. commit and push
