@@ -7,7 +7,7 @@ Use these prompts after the repo-root `AGENTS.md` and `.agents/skills/` are pres
 ## 1) Design backend/system boundaries before implementation
 
 ```text
-Read AGENTS.md first, then use $orpheus-system-design.
+Read AGENTS.md first, then use $orpheus-truth-router, then use $orpheus-system-design.
 
 Work from current canonical truth only.
 Do not invent product rules.

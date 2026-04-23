@@ -15,6 +15,7 @@ Design backend and orchestration boundaries for Orpheus before implementation be
 2. `docs/prd/agent-conventions.md`
 3. The canonical spec for the touched topic
 4. The relevant execution packet if the design affects current Phase 2 work
+5. If the touched topic cluster is not already explicit, route through `$orpheus-truth-router` before doing design work
 
 ## Use this skill for
 
@@ -36,12 +37,13 @@ Design backend and orchestration boundaries for Orpheus before implementation be
 
 ## Required process
 
-1. Name the canonical docs that govern the area before proposing design options.
-2. State which boundaries are fixed by current truth and must not be redefined here.
-3. Identify the bounded units, their responsibilities, and their interfaces.
-4. Propose 2-3 architecture options with trade-offs.
-5. Recommend one option and explain why it best fits the current truth and execution goal.
-6. Write the result as a design artifact or design note before implementation planning starts.
+1. Use `$orpheus-truth-router` first unless the canonical topic set is already explicit from the task and current diff.
+2. Name the canonical docs that govern the area before proposing design options.
+3. State which boundaries are fixed by current truth and must not be redefined here.
+4. Identify the bounded units, their responsibilities, and their interfaces.
+5. Propose 2-3 architecture options with trade-offs.
+6. Recommend one option and explain why it best fits the current truth and execution goal.
+7. Write the result as a design artifact or design note that maps current truth into implementation boundaries, not a replacement rule table.
 
 ## Stop and reroute if
 
