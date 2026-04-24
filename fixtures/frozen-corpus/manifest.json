@@ -1,0 +1,20 @@
+[
+  {
+    "id": "en-control-short",
+    "language": "en",
+    "voiceId": "Ashley",
+    "scriptPath": "scripts/en-control-short.txt"
+  },
+  {
+    "id": "en-control-medium",
+    "language": "en",
+    "voiceId": "Ashley",
+    "scriptPath": "scripts/en-control-medium.txt"
+  },
+  {
+    "id": "en-control-long",
+    "language": "en",
+    "voiceId": "Ashley",
+    "scriptPath": "scripts/en-control-long.txt"
+  }
+]
