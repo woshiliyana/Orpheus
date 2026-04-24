@@ -24,17 +24,22 @@ Split work only when it is genuinely safe. Prevent multi-agent collisions on can
    - files touched
    - owner
    - done condition
+   - needs live smoke: yes/no
+   - needs user acceptance: yes/no
    - parallel-safe: yes/no
    - merge order
-2. Mark a lane **not parallel-safe** if it shares any of the following with another lane:
+2. Do not plan more than 3 concurrent non-main worktrees.
+3. Mark a lane **not parallel-safe** if it shares any of the following with another lane:
    - the same canonical spec
    - the same PRD summary section
    - the pricing workbook
    - the same generated benchmark packet
    - a shared schema/enum file whose meaning other lanes depend on
-3. Keep one canonical truth file with one writer at a time.
-4. Keep the controller responsible for final integration, cross-lane conflict resolution, and final review.
-5. If the task is not parallel-safe, propose a serial plan instead of forcing parallelism.
+4. Keep one canonical truth file with one writer at a time.
+5. Every implementation lane must start with a reviewed task brief before code begins.
+6. Treat `debug` as mandatory before a lane becomes PR-ready.
+7. Keep the controller responsible for final integration, cross-lane conflict resolution, and final review.
+8. If the task is not parallel-safe, propose a serial plan instead of forcing parallelism.
 
 ## Suggested safe lane patterns for Orpheus
 

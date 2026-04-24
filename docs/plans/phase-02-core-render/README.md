@@ -12,3 +12,4 @@ Typical work-package types here include:
 4. `provider-comparison-memo`
 
 Keep project/run semantics changes tightly coordinated.
+5. `live-smoke-checklist`

@@ -1,0 +1,30 @@
+{
+  "taskId": "ORP-YYYYMMDD-A",
+  "title": "Describe the lane in one sentence",
+  "branch": "feat/orp-example",
+  "worktreePath": "../orpheus-wt-example",
+  "stage": "plan",
+  "status": "draft",
+  "reviewStatus": "pending",
+  "requiresUserAcceptance": true,
+  "userAcceptanceStatus": "pending",
+  "liveSmokeRequired": true,
+  "liveSmokeStatus": "pending",
+  "allowedPaths": [
+    "src/**",
+    "tests/**"
+  ],
+  "forbiddenPaths": [
+    ".env",
+    ".env.*",
+    "secrets/**",
+    ".agent/**",
+    ".claude/settings.local.json",
+    "runs/**",
+    "benchmark-results/**"
+  ],
+  "requiredChecks": [
+    "./scripts/checks/run-required.sh"
+  ],
+  "notes": []
+}

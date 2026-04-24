@@ -30,3 +30,9 @@ pnpm-debug.log*
 
 # TypeScript
 *.tsbuildinfo
+
+# Agent runtime
+.agent/
+.claude/settings.local.json
+runs/
+benchmark-results/

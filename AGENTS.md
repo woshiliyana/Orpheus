@@ -2,12 +2,13 @@
 
 ## Scope and baseline
 
-This file is the repo-root instruction layer for Orpheus. It is aligned to the current remote baseline that already includes `v0.41 benchmark + bilingual gate` work in commit `128c7b2`.
+This file is the repo-root instruction layer for Orpheus. It is aligned to the current remote baseline that already includes `v0.41 benchmark + bilingual gate` work in commit `128c7b2` and the current code baseline at `c3af4c7`.
 
 Treat this repository as **docs-first, truth-driven, and gate-controlled**:
 
 - Product truth lives under `docs/prd/`.
 - Execution planning lives under `docs/plans/` and `docs/roadmap/`.
+- Ops and delivery workflow live under `docs/ops/`.
 - Benchmark and market-reference material informs decisions but does not override canonical specs.
 - Do not invent product rules in code comments, task notes, or ad hoc markdown.
 
@@ -39,16 +40,20 @@ Read these before changing product rules or Phase 2 implementation behavior:
    - `docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md`
    - `docs/plans/phase-02-core-render/02-development-entry-checklist.md`
    - `docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`
-4. If the task touches pricing, packaging, margins, plan limits, or rollout economics:
+   - `docs/ops/phase2-live-smoke.md`
+4. If the task touches parallel lanes, worktrees, or staged acceptance flow:
+   - `docs/ops/agent-execution-policy.md`
+   - `docs/ops/worktree-parallel-development.md`
+5. If the task touches pricing, packaging, margins, plan limits, or rollout economics:
    - `docs/prd/specs/pricing-packaging-and-unit-economics.md`
    - `docs/plans/phase-02-core-render/05-pricing-unit-economics-model-v0.41.xlsx`
-5. If the task touches public promises, landing pages, trials, or language scope:
+6. If the task touches public promises, landing pages, trials, or language scope:
    - `docs/prd/specs/distribution-and-growth-surface.md`
-6. If the task touches statuses, warnings, artifacts, or retries:
+7. If the task touches statuses, warnings, artifacts, or retries:
    - `docs/prd/specs/project-run-lifecycle.md`
-7. If the task touches capability gating:
+8. If the task touches capability gating:
    - `docs/prd/specs/capability-entitlements.md`
-8. If the task touches billing, usage, compensation, or top-ups:
+9. If the task touches billing, usage, compensation, or top-ups:
    - `docs/prd/specs/billing-usage-semantics.md`
 
 ## Current non-negotiable product truth
@@ -94,6 +99,7 @@ Use repo-local skills before generic methodology packs:
 - `$orpheus-phase2-stable-audio` for the current build/test slice and stable-audio implementation work.
 - `$orpheus-provider-benchmark` for provider comparison, cost updates, and packaging pressure tests.
 - `$orpheus-parallel-lanes` before any multi-lane or subagent work.
+- `$orpheus-worktree-flow` before creating or advancing a worktree lane.
 - `$orpheus-doc-sync` when implementation or benchmark evidence changes the docs.
 - `$orpheus-change-verification` before handing work back.
 
@@ -106,12 +112,17 @@ Codex only spawns subagents when explicitly asked. Do not assume invisible backg
 Before parallel work:
 
 1. Invoke `$orpheus-parallel-lanes`.
-2. Produce a lane map with file ownership, merge order, and done conditions.
-3. Keep one canonical truth file owned by one writer at a time.
-4. Do not let multiple lanes edit the same canonical spec, PRD summary section, or pricing workbook.
-5. Merge canonical truth before summaries, and merge evidence before packaging changes.
+2. Invoke `$orpheus-worktree-flow`.
+3. Keep at most 3 concurrent non-main worktrees.
+4. Produce a lane map with file ownership, merge order, done conditions, smoke requirement, and acceptance requirement.
+5. Keep one canonical truth file owned by one writer at a time.
+6. Do not let multiple lanes edit the same canonical spec, PRD summary section, or pricing workbook.
+7. Review the lane brief before implementation begins.
+8. Treat `debug` as mandatory, not optional polish.
+9. Stop at `awaiting_user_acceptance` whenever a gated stage requires human confirmation.
+10. Merge canonical truth before summaries, and merge evidence before packaging changes.
 
-Use `docs/ops/agent-execution-policy.md` for the full controller/worker policy.
+Use `docs/ops/agent-execution-policy.md` and `docs/ops/worktree-parallel-development.md` for the full controller/worker policy.
 
 ## Optional Superpowers usage
 

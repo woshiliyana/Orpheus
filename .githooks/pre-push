@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root=$(git rev-parse --show-toplevel)
+cd "$repo_root"
+
+pushing_main=false
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ -n "${local_ref:-}" ] || continue
+  if [ "$remote_ref" = "refs/heads/main" ] || [ "$remote_ref" = "refs/heads/master" ]; then
+    pushing_main=true
+  fi
+done
+
+python3 "$repo_root/scripts/lib/task_brief.py" assert-push-ready $( [ "$pushing_main" = true ] && printf '%s' '--pushing-main' )
+
+if [ "${ORPHEUS_SKIP_CHECKS:-0}" != "1" ]; then
+  "$repo_root/scripts/checks/run-required.sh"
+fi

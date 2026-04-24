@@ -23,7 +23,8 @@ Give the first build / test agent one bounded implementation slice that proves O
 8. `/docs/prd/specs/quality-ops-and-automation.md`
 9. `/docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`
 10. `/docs/plans/phase-02-core-render/02-development-entry-checklist.md`
-11. Supporting benchmark input only: `/docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md`
+11. `/docs/ops/phase2-live-smoke.md`
+12. Supporting benchmark input only: `/docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md`
 
 ## Goal
 
@@ -80,10 +81,11 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
    - one higher-cost fallback scenario
    - one second-provider scenario
 6. One `EN + ES` readiness summary showing output / timing verdicts per language
-7. Go / hold / fallback memo
-8. Truth-doc backfill list for any semantic mismatches discovered during implementation
-9. One short benchmark note explaining whether the current Orpheus slice is differentiated enough from the prevailing self-serve long-form workflow
-10. One explicit recommendation on whether the team should keep `Inworld-first`, switch primary provider, or keep the current mix but tighten packaging
+7. One live-smoke evidence packet when the slice touches real provider behavior
+8. Go / hold / fallback memo
+9. Truth-doc backfill list for any semantic mismatches discovered during implementation
+10. One short benchmark note explaining whether the current Orpheus slice is differentiated enough from the prevailing self-serve long-form workflow
+11. One explicit recommendation on whether the team should keep `Inworld-first`, switch primary provider, or keep the current mix but tighten packaging
 
 ## Minimum Automated Tests
 

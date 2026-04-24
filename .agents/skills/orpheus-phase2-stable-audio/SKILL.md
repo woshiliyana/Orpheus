@@ -50,6 +50,7 @@ Keep this exact boundary unless canonical docs change:
 - provider run logs for the frozen `EN + ES` corpus
 - cost snapshot update
 - one readiness summary for `EN + ES`
+- one live-smoke packet before merge readiness when real provider behavior matters
 - one go/hold/fallback recommendation
 
 ## Stop conditions

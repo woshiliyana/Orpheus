@@ -1,0 +1,1559 @@
+diff --git a/.agents/skills/orpheus-parallel-lanes/SKILL.md b/.agents/skills/orpheus-parallel-lanes/SKILL.md
+index 3107427..374932e 100644
+--- a/.agents/skills/orpheus-parallel-lanes/SKILL.md
++++ b/.agents/skills/orpheus-parallel-lanes/SKILL.md
+@@ -24,17 +24,22 @@ Split work only when it is genuinely safe. Prevent multi-agent collisions on can
+    - files touched
+    - owner
+    - done condition
++   - needs live smoke: yes/no
++   - needs user acceptance: yes/no
+    - parallel-safe: yes/no
+    - merge order
+-2. Mark a lane **not parallel-safe** if it shares any of the following with another lane:
++2. Do not plan more than 3 concurrent non-main worktrees.
++3. Mark a lane **not parallel-safe** if it shares any of the following with another lane:
+    - the same canonical spec
+    - the same PRD summary section
+    - the pricing workbook
+    - the same generated benchmark packet
+    - a shared schema/enum file whose meaning other lanes depend on
+-3. Keep one canonical truth file with one writer at a time.
+-4. Keep the controller responsible for final integration, cross-lane conflict resolution, and final review.
+-5. If the task is not parallel-safe, propose a serial plan instead of forcing parallelism.
++4. Keep one canonical truth file with one writer at a time.
++5. Every implementation lane must start with a reviewed task brief before code begins.
++6. Treat `debug` as mandatory before a lane becomes PR-ready.
++7. Keep the controller responsible for final integration, cross-lane conflict resolution, and final review.
++8. If the task is not parallel-safe, propose a serial plan instead of forcing parallelism.
+ 
+ ## Suggested safe lane patterns for Orpheus
+ 
+diff --git a/.agents/skills/orpheus-phase2-stable-audio/SKILL.md b/.agents/skills/orpheus-phase2-stable-audio/SKILL.md
+index 397a8aa..b9d0ad1 100644
+--- a/.agents/skills/orpheus-phase2-stable-audio/SKILL.md
++++ b/.agents/skills/orpheus-phase2-stable-audio/SKILL.md
+@@ -50,6 +50,7 @@ Keep this exact boundary unless canonical docs change:
+ - provider run logs for the frozen `EN + ES` corpus
+ - cost snapshot update
+ - one readiness summary for `EN + ES`
++- one live-smoke packet before merge readiness when real provider behavior matters
+ - one go/hold/fallback recommendation
+ 
+ ## Stop conditions
+diff --git a/.agents/skills/orpheus-worktree-flow/SKILL.md b/.agents/skills/orpheus-worktree-flow/SKILL.md
+new file mode 100644
+index 0000000..6f680f8
+--- /dev/null
++++ b/.agents/skills/orpheus-worktree-flow/SKILL.md
+@@ -0,0 +1,74 @@
++---
++name: orpheus-worktree-flow
++description: Use before creating or advancing a worktree lane. Enforces the Orpheus stage model, max-3 concurrent worktree cap, task-brief review before implementation, mandatory debug, optional live smoke, and human acceptance gates.
++---
++
++# Orpheus Worktree Flow
++
++## Goal
++
++Keep multi-lane implementation predictable. No free-form “just open another branch and vibe” workflow.
++
++## When to use
++
++- before creating a new worktree lane
++- before moving a lane from planning into implementation
++- before declaring a lane merge-ready
++- before asking for acceptance on a gated stage
++
++## Rules
++
++1. Max 3 concurrent non-main worktrees.
++2. Every lane owns `.agent/task-brief.json`.
++3. `reviewStatus=approved` is required before `implementation`.
++4. `debug` is mandatory after `self_test`.
++5. If provider-backed behavior matters, `live_smoke` is mandatory before `merge_ready`.
++6. If the lane requires founder or user signoff, stop at `awaiting_user_acceptance` until acceptance is explicit.
++
++## Default lane sequence
++
++`plan -> review -> implementation -> self_test -> debug -> live_smoke? -> pr_prep -> awaiting_user_acceptance? -> merge_ready -> merged -> cleaned_up`
++
++## Expected outputs
++
++- lane plan
++- file ownership
++- required checks
++- smoke requirement
++- acceptance requirement
++- merge order note
++
++## Commands
++
++Create lane:
++
++```bash
++./scripts/worktree/create.sh <task-id> <branch> <worktree-path> --allow 'src/**'
++```
++
++Advance status:
++
++```bash
++./scripts/worktree/update-status.sh reviewStatus=approved stage=implementation status=in_progress
++```
++
++Run required checks:
++
++```bash
++./scripts/checks/run-required.sh
++```
++
++Run live smoke:
++
++```bash
++./scripts/live-smoke/phase2-live-smoke.sh --provider inworld --voice Ashley --script fixtures/frozen-corpus/scripts/en-control-medium.txt
++```
++
++## Stop conditions
++
++Do not mark the lane complete if:
++
++- review is still pending
++- live smoke is required and not passed
++- user acceptance is required and not accepted
++- the lane has not reached `merge_ready`
+diff --git a/.claude/hooks/pre-bash-worktree-guard.sh b/.claude/hooks/pre-bash-worktree-guard.sh
+new file mode 100644
+index 0000000..6b03fee
+--- /dev/null
++++ b/.claude/hooks/pre-bash-worktree-guard.sh
+@@ -0,0 +1,37 @@
++#!/usr/bin/env bash
++set -euo pipefail
++input=$(cat)
++command=$(python3 - <<'PY' "$input"
++import json, sys
++payload=json.loads(sys.argv[1])
++print(payload.get('tool_input',{}).get('command',''))
++PY
++)
++
++block() {
++  echo "$1" >&2
++  exit 2
++}
++
++case "$command" in
++  *"git push --force"*|*"git push -f"*)
++    block "Blocked: force pushes are not allowed in Orpheus agent flow."
++    ;;
++  "git add ."|"git add . "*|"git add -A"|"git add -A "*)
++    block "Blocked: use explicit git add paths, not blanket staging."
++    ;;
++  *"git worktree add"*)
++    block "Blocked: use ./scripts/worktree/create.sh so lane limits and task-brief initialization are enforced."
++    ;;
++  *"git worktree remove"*)
++    block "Blocked: use ./scripts/worktree/cleanup.sh for deterministic cleanup."
++    ;;
++  *"git push origin main"*|*"git push origin HEAD:main"*|*"git push origin master"*)
++    block "Blocked: do not push directly to main from an agent shell. Go through review and acceptance gates first."
++    ;;
++  *"git reset --hard"*|*"git clean -fd"*|*"rm -rf"*)
++    block "Blocked: destructive workspace commands are not allowed in the default Orpheus flow."
++    ;;
++esac
++
++exit 0
+diff --git a/.claude/hooks/pre-edit-boundary.sh b/.claude/hooks/pre-edit-boundary.sh
+new file mode 100644
+index 0000000..46ddbcd
+--- /dev/null
++++ b/.claude/hooks/pre-edit-boundary.sh
+@@ -0,0 +1,23 @@
++#!/usr/bin/env bash
++set -euo pipefail
++input=$(cat)
++repo_root=$(git rev-parse --show-toplevel)
++cd "$repo_root"
++
++file_path=$(python3 - <<'PY' "$input"
++import json, sys
++payload=json.loads(sys.argv[1])
++print(payload.get('tool_input',{}).get('file_path',''))
++PY
++)
++
++[ -n "$file_path" ] || exit 0
++
++if [ "$file_path" = "$repo_root/.agent/task-brief.json" ] || [ "$file_path" = ".agent/task-brief.json" ]; then
++  exit 0
++fi
++
++branch=$(git rev-parse --abbrev-ref HEAD)
++if [ "$branch" != "main" ]; then
++  python3 "$repo_root/scripts/lib/task_brief.py" assert-paths --require-brief "$file_path"
++fi
+diff --git a/.claude/hooks/session-start-context.sh b/.claude/hooks/session-start-context.sh
+new file mode 100644
+index 0000000..07b32da
+--- /dev/null
++++ b/.claude/hooks/session-start-context.sh
+@@ -0,0 +1,11 @@
++#!/usr/bin/env bash
++set -euo pipefail
++repo_root=$(git rev-parse --show-toplevel)
++cd "$repo_root"
++
++echo "Orpheus execution flow: max 3 concurrent non-main worktrees. Required stage order: plan -> review -> implementation -> self_test -> debug -> live_smoke (if required) -> pr_prep -> awaiting_user_acceptance (if required) -> merge_ready -> merged -> cleaned_up."
++if [ -f .agent/task-brief.json ]; then
++  python3 scripts/lib/task_brief.py show-context
++else
++  echo "No .agent/task-brief.json in this worktree yet. Use ./scripts/worktree/create.sh or initialize a task brief before editing code."
++fi
+diff --git a/.claude/hooks/task-completed-worktree-gate.sh b/.claude/hooks/task-completed-worktree-gate.sh
+new file mode 100644
+index 0000000..bc7f9de
+--- /dev/null
++++ b/.claude/hooks/task-completed-worktree-gate.sh
+@@ -0,0 +1,5 @@
++#!/usr/bin/env bash
++set -euo pipefail
++repo_root=$(git rev-parse --show-toplevel)
++cd "$repo_root"
++python3 "$repo_root/scripts/lib/task_brief.py" assert-task-complete
+diff --git a/.claude/settings.json b/.claude/settings.json
+new file mode 100644
+index 0000000..3e6e2cb
+--- /dev/null
++++ b/.claude/settings.json
+@@ -0,0 +1,70 @@
++{
++  "$schema": "https://json.schemastore.org/claude-code-settings.json",
++  "permissions": {
++    "deny": [
++      "Read(./.env)",
++      "Read(./.env.*)",
++      "Read(./secrets/**)",
++      "Read(./.claude/settings.local.json)",
++      "Bash(git push --force *)",
++      "Bash(git push -f *)",
++      "Bash(git add .*)",
++      "Bash(git add -A*)",
++      "Bash(git worktree add *)",
++      "Bash(git worktree remove *)",
++      "Bash(git reset --hard *)",
++      "Bash(git clean -fd*)",
++      "Bash(rm -rf *)"
++    ]
++  },
++  "hooks": {
++    "SessionStart": [
++      {
++        "matcher": "",
++        "hooks": [
++          {
++            "type": "command",
++            "command": "./.claude/hooks/session-start-context.sh"
++          }
++        ]
++      }
++    ],
++    "PreToolUse": [
++      {
++        "matcher": "Bash",
++        "hooks": [
++          {
++            "if": "Bash(git *)",
++            "type": "command",
++            "command": "./.claude/hooks/pre-bash-worktree-guard.sh"
++          },
++          {
++            "if": "Bash(rm *)",
++            "type": "command",
++            "command": "./.claude/hooks/pre-bash-worktree-guard.sh"
++          }
++        ]
++      },
++      {
++        "matcher": "Write|Edit",
++        "hooks": [
++          {
++            "type": "command",
++            "command": "./.claude/hooks/pre-edit-boundary.sh"
++          }
++        ]
++      }
++    ],
++    "TaskCompleted": [
++      {
++        "matcher": "",
++        "hooks": [
++          {
++            "type": "command",
++            "command": "./.claude/hooks/task-completed-worktree-gate.sh"
++          }
++        ]
++      }
++    ]
++  }
++}
+diff --git a/.githooks/commit-msg b/.githooks/commit-msg
+new file mode 100644
+index 0000000..8dcf44c
+--- /dev/null
++++ b/.githooks/commit-msg
+@@ -0,0 +1,14 @@
++#!/usr/bin/env bash
++set -euo pipefail
++msg_file="$1"
++subject=$(head -n 1 "$msg_file")
++
++case "$subject" in
++  feat:*|fix:*|docs:*|chore:*|test:*|refactor:* )
++    exit 0
++    ;;
++  * )
++    echo "Commit subject should use conventional prefix like feat:, fix:, docs:, chore:, test:, refactor:." >&2
++    exit 2
++    ;;
++esac
+diff --git a/.githooks/pre-commit b/.githooks/pre-commit
+new file mode 100644
+index 0000000..e98ce13
+--- /dev/null
++++ b/.githooks/pre-commit
+@@ -0,0 +1,24 @@
++#!/usr/bin/env bash
++set -euo pipefail
++
++repo_root=$(git rev-parse --show-toplevel)
++cd "$repo_root"
++
++staged_files=$(git diff --cached --name-only)
++[ -n "$staged_files" ] || exit 0
++
++branch=$(git rev-parse --abbrev-ref HEAD)
++
++if [ "$branch" = "main" ] && echo "$staged_files" | grep -E '^(src/|tests/|package.json|pnpm-lock.yaml)'; then
++  echo "Blocked: do not commit product code directly on main. Use a worktree branch." >&2
++  exit 2
++fi
++
++if echo "$staged_files" | grep -E '^(\.env($|\.)|secrets/|\.agent/|runs/|benchmark-results/)'; then
++  echo "Blocked: staged files include secrets or runtime artifacts." >&2
++  exit 2
++fi
++
++if [ "$branch" != "main" ]; then
++  python3 "$repo_root/scripts/lib/task_brief.py" assert-paths --require-brief $staged_files
++fi
+diff --git a/.githooks/pre-push b/.githooks/pre-push
+new file mode 100644
+index 0000000..b80e393
+--- /dev/null
++++ b/.githooks/pre-push
+@@ -0,0 +1,19 @@
++#!/usr/bin/env bash
++set -euo pipefail
++
++repo_root=$(git rev-parse --show-toplevel)
++cd "$repo_root"
++
++pushing_main=false
++while read -r local_ref local_sha remote_ref remote_sha; do
++  [ -n "${local_ref:-}" ] || continue
++  if [ "$remote_ref" = "refs/heads/main" ] || [ "$remote_ref" = "refs/heads/master" ]; then
++    pushing_main=true
++  fi
++done
++
++python3 "$repo_root/scripts/lib/task_brief.py" assert-push-ready $( [ "$pushing_main" = true ] && printf '%s' '--pushing-main' )
++
++if [ "${ORPHEUS_SKIP_CHECKS:-0}" != "1" ]; then
++  "$repo_root/scripts/checks/run-required.sh"
++fi
+diff --git a/.github/pull_request_template.md b/.github/pull_request_template.md
+new file mode 100644
+index 0000000..fb2343b
+--- /dev/null
++++ b/.github/pull_request_template.md
+@@ -0,0 +1,38 @@
++## Scope
++
++- What changed:
++- Why this lane exists:
++
++## Lane brief
++
++- Task ID:
++- Branch:
++- Worktree path:
++- Stage reached:
++
++## Checks
++
++- [ ] `./scripts/checks/run-required.sh`
++- [ ] additional lane-specific checks documented
++- [ ] live smoke passed, if required
++- [ ] user acceptance recorded, if required
++
++## Orpheus constraints
++
++- [ ] No browser/client provider calls were introduced
++- [ ] Hidden chunking remains backend-owned
++- [ ] `artifact_manifest` semantics remain intact
++- [ ] Warning-bearing completion behavior remains intact
++- [ ] Inworld stays primary unless this PR explicitly changes the decision
++- [ ] Cartesia remains benchmark-only unless explicitly approved
++- [ ] Public scope or pricing claims were not broadened silently
++
++## Risk
++
++- Low / Medium / High
++
++## Follow-up
++
++- Required doc sync:
++- Required live smoke evidence:
++- Required acceptance note:
+diff --git a/.gitignore b/.gitignore
+index ac22272..3eec12b 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -30,3 +30,9 @@ pnpm-debug.log*
+ 
+ # TypeScript
+ *.tsbuildinfo
++
++# Agent runtime
++.agent/
++.claude/settings.local.json
++runs/
++benchmark-results/
+diff --git a/AGENTS.md b/AGENTS.md
+index d834725..1275c42 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -2,12 +2,13 @@
+ 
+ ## Scope and baseline
+ 
+-This file is the repo-root instruction layer for Orpheus. It is aligned to the current remote baseline that already includes `v0.41 benchmark + bilingual gate` work in commit `128c7b2`.
++This file is the repo-root instruction layer for Orpheus. It is aligned to the current remote baseline that already includes `v0.41 benchmark + bilingual gate` work in commit `128c7b2` and the current code baseline at `c3af4c7`.
+ 
+ Treat this repository as **docs-first, truth-driven, and gate-controlled**:
+ 
+ - Product truth lives under `docs/prd/`.
+ - Execution planning lives under `docs/plans/` and `docs/roadmap/`.
++- Ops and delivery workflow live under `docs/ops/`.
+ - Benchmark and market-reference material informs decisions but does not override canonical specs.
+ - Do not invent product rules in code comments, task notes, or ad hoc markdown.
+ 
+@@ -39,16 +40,20 @@ Read these before changing product rules or Phase 2 implementation behavior:
+    - `docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md`
+    - `docs/plans/phase-02-core-render/02-development-entry-checklist.md`
+    - `docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`
+-4. If the task touches pricing, packaging, margins, plan limits, or rollout economics:
++   - `docs/ops/phase2-live-smoke.md`
++4. If the task touches parallel lanes, worktrees, or staged acceptance flow:
++   - `docs/ops/agent-execution-policy.md`
++   - `docs/ops/worktree-parallel-development.md`
++5. If the task touches pricing, packaging, margins, plan limits, or rollout economics:
+    - `docs/prd/specs/pricing-packaging-and-unit-economics.md`
+    - `docs/plans/phase-02-core-render/05-pricing-unit-economics-model-v0.41.xlsx`
+-5. If the task touches public promises, landing pages, trials, or language scope:
++6. If the task touches public promises, landing pages, trials, or language scope:
+    - `docs/prd/specs/distribution-and-growth-surface.md`
+-6. If the task touches statuses, warnings, artifacts, or retries:
++7. If the task touches statuses, warnings, artifacts, or retries:
+    - `docs/prd/specs/project-run-lifecycle.md`
+-7. If the task touches capability gating:
++8. If the task touches capability gating:
+    - `docs/prd/specs/capability-entitlements.md`
+-8. If the task touches billing, usage, compensation, or top-ups:
++9. If the task touches billing, usage, compensation, or top-ups:
+    - `docs/prd/specs/billing-usage-semantics.md`
+ 
+ ## Current non-negotiable product truth
+@@ -94,6 +99,7 @@ Use repo-local skills before generic methodology packs:
+ - `$orpheus-phase2-stable-audio` for the current build/test slice and stable-audio implementation work.
+ - `$orpheus-provider-benchmark` for provider comparison, cost updates, and packaging pressure tests.
+ - `$orpheus-parallel-lanes` before any multi-lane or subagent work.
++- `$orpheus-worktree-flow` before creating or advancing a worktree lane.
+ - `$orpheus-doc-sync` when implementation or benchmark evidence changes the docs.
+ - `$orpheus-change-verification` before handing work back.
+ 
+@@ -106,12 +112,17 @@ Codex only spawns subagents when explicitly asked. Do not assume invisible backg
+ Before parallel work:
+ 
+ 1. Invoke `$orpheus-parallel-lanes`.
+-2. Produce a lane map with file ownership, merge order, and done conditions.
+-3. Keep one canonical truth file owned by one writer at a time.
+-4. Do not let multiple lanes edit the same canonical spec, PRD summary section, or pricing workbook.
+-5. Merge canonical truth before summaries, and merge evidence before packaging changes.
+-
+-Use `docs/ops/agent-execution-policy.md` for the full controller/worker policy.
++2. Invoke `$orpheus-worktree-flow`.
++3. Keep at most 3 concurrent non-main worktrees.
++4. Produce a lane map with file ownership, merge order, done conditions, smoke requirement, and acceptance requirement.
++5. Keep one canonical truth file owned by one writer at a time.
++6. Do not let multiple lanes edit the same canonical spec, PRD summary section, or pricing workbook.
++7. Review the lane brief before implementation begins.
++8. Treat `debug` as mandatory, not optional polish.
++9. Stop at `awaiting_user_acceptance` whenever a gated stage requires human confirmation.
++10. Merge canonical truth before summaries, and merge evidence before packaging changes.
++
++Use `docs/ops/agent-execution-policy.md` and `docs/ops/worktree-parallel-development.md` for the full controller/worker policy.
+ 
+ ## Optional Superpowers usage
+ 
+diff --git a/AGENT_PROMPT_PLAYBOOK.md b/AGENT_PROMPT_PLAYBOOK.md
+index 585835b..46e7252 100644
+--- a/AGENT_PROMPT_PLAYBOOK.md
++++ b/AGENT_PROMPT_PLAYBOOK.md
+@@ -136,21 +136,40 @@ Return:
+ 5. ready/not-ready verdict
+ ```
+ 
+-## 7) Optional Superpowers-assisted flow
++## 7) Create or advance a worktree lane safely
+ 
+-Use this only if Superpowers is installed locally and you want the extra workflow discipline.
++```text
++Read AGENTS.md first, then use $orpheus-parallel-lanes and $orpheus-worktree-flow.
++
++I want to work in a separate worktree lane.
++
++Before coding:
++1. propose the lane name, branch name, and allowed files
++2. decide whether this lane needs live smoke
++3. decide whether this lane needs explicit user acceptance
++4. draft `.agent/task-brief.json`
++5. do not move to implementation until the brief is reviewed and approved
++
++When the lane is ready, use the repo scripts instead of raw git worktree commands.
++```
++
++## 8) Prepare a lane for live smoke and acceptance
+ 
+ ```text
+-Follow AGENTS.md first.
++Read AGENTS.md first, then use $orpheus-worktree-flow and $orpheus-change-verification.
++
++This lane is approaching merge readiness.
+ 
+-If the scope is still fuzzy, use brainstorming.
+-Once scope is approved, use writing-plans.
+-If we need safe parallel execution, use $orpheus-parallel-lanes first, then use subagent-driven-development only for lanes marked safe.
+-For instability or provider weirdness, use systematic-debugging.
+-Before handoff, use code-review and then $orpheus-change-verification.
++Do all of the following in order:
++1. verify the task brief is approved
++2. run the required automated checks
++3. move the lane through debug/stabilize
++4. if live smoke is required, run the Phase 2 smoke path and record evidence
++5. if user acceptance is required, stop at awaiting_user_acceptance instead of claiming the task is complete
++6. return the exact command outputs, evidence files, and next gate
+ ```
+ 
+-## 8) One-shot controller prompt for a strong default start
++## 9) One-shot controller prompt for a strong default start
+ 
+ ```text
+ Read AGENTS.md first. Then use $orpheus-truth-router to choose the right canonical docs, and follow with the repo-local skill that best matches the task.
+@@ -158,5 +177,6 @@ Read AGENTS.md first. Then use $orpheus-truth-router to choose the right canonic
+ Do not invent product truth. Do not broaden the promise. Do not skip doc backfill if implementation evidence changes the package, language gate, lifecycle semantics, or public scope.
+ 
+ If the task can be parallelized safely, invoke $orpheus-parallel-lanes before spawning any subagents.
++If the task needs a separate lane, invoke $orpheus-worktree-flow before creating or advancing a worktree.
+ If the task ends in a diff or patch, finish with $orpheus-change-verification.
+ ```
+diff --git a/docs/ops/agent-execution-policy.md b/docs/ops/agent-execution-policy.md
+index fd9983e..2fd022d 100644
+--- a/docs/ops/agent-execution-policy.md
++++ b/docs/ops/agent-execution-policy.md
+@@ -11,7 +11,7 @@
+ 
+ This file defines how agents should execute work in the Orpheus repo without corrupting canonical truth, packaging assumptions, or the first-gate Phase 2 scope.
+ 
+-It governs controller/worker behavior, multi-lane safety, merge order, review order, and handoff shape. It does **not** own product rules.
++It governs controller/worker behavior, multi-lane safety, worktree staging, review order, live-smoke gates, user-acceptance gates, merge order, and handoff shape. It does **not** own product rules.
+ 
+ ## Controller vs worker responsibilities
+ 
+@@ -23,6 +23,13 @@ It governs controller/worker behavior, multi-lane safety, merge order, review or
+ 
+ ## Lane safety rules
+ 
++Default operating limits:
++
++- max 3 concurrent non-main worktrees
++- every worktree lane must own `.agent/task-brief.json`
++- every task brief must be reviewed before implementation begins
++- `debug` is mandatory before a lane becomes PR-ready
++
+ A lane is parallel-safe only if all of the following are true:
+ 
+ 1. Its file set is disjoint from every other lane.
+@@ -43,6 +50,24 @@ If any rule fails, keep the work serial.
+ | Pricing/package doc edits vs provider benchmark workbook edits | No | These belong in one ownership stream |
+ | Two lanes editing `docs/prd/specs/*.md` for the same topic cluster | No | One truth file = one writer |
+ 
++## Stage order
++
++Use this execution order inside each implementation lane unless the controller explicitly narrows it for docs-only or review-only work:
++
++1. `plan`
++2. `review`
++3. `implementation`
++4. `self_test`
++5. `debug`
++6. `live_smoke` when required
++7. `pr_prep`
++8. `awaiting_user_acceptance` when required
++9. `merge_ready`
++10. `merged`
++11. `cleaned_up`
++
++A lane is not complete while it is waiting for required smoke or required user acceptance.
++
+ ## Merge order
+ 
+ Use this merge order unless there is a strong reason not to:
+@@ -57,9 +82,12 @@ Use this merge order unless there is a strong reason not to:
+ ## Required review order
+ 
+ 1. Worker self-check
+-2. Controller diff review
+-3. Independent reviewer or `$orpheus-change-verification`
+-4. Final integration note
++2. Mandatory debug/stabilize pass
++3. Controller diff review
++4. Independent reviewer or `$orpheus-change-verification`
++5. Live smoke review when required
++6. Human acceptance when required
++7. Final integration note
+ 
+ ## Handoff packet
+ 
+diff --git a/docs/ops/phase2-live-smoke.md b/docs/ops/phase2-live-smoke.md
+new file mode 100644
+index 0000000..f76fe48
+--- /dev/null
++++ b/docs/ops/phase2-live-smoke.md
+@@ -0,0 +1,73 @@
++# Phase 2 Live Smoke
++
++> Status: ready
++> Role: execution checklist
++> Normative for product rules: no
++> Canonical owner: delivery owner + engineering lead
++> Depends on: `docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md`, `docs/ops/worktree-parallel-development.md`
++> Last reviewed: 2026-04-24
++
++## Purpose
++
++Provide one repeatable live-provider smoke path after automated checks pass and before a lane is treated as merge-ready for the current Phase 2 narration slice.
++
++## Preconditions
++
++1. `reviewStatus=approved`
++2. automated checks pass locally
++3. provider credentials are present
++4. one chosen script and voice are recorded in the lane brief
++5. the lane already passed `debug`
++
++## Default smoke command
++
++```bash
++./scripts/live-smoke/phase2-live-smoke.sh \
++  --provider inworld \
++  --voice Ashley \
++  --script fixtures/frozen-corpus/scripts/en-control-medium.txt
++```
++
++## Evidence packet to keep
++
++- stdout JSON from the smoke run
++- final audio file
++- `artifact-manifest.json`
++- `metrics.json`
++- one short seam-quality note
++- one short timing / warning note
++
++## Pass criteria
++
++1. command returns success
++2. final audio is generated
++3. `artifact-manifest.json` exists
++4. `metrics.json` exists
++5. no unexpected fatal warnings
++6. subjective seam review is acceptable for the tested script
++
++## Hold criteria
++
++Treat the lane as held, not merge-ready, if any of these happen:
++
++- provider credentials fail
++- audio generation succeeds but artifacts are incomplete
++- warnings indicate broken timing integrity
++- stitched output has audible seam regressions
++- observed retry behavior is materially worse than expected
++
++## After smoke
++
++If the smoke passes:
++
++```bash
++./scripts/worktree/update-status.sh liveSmokeStatus=passed stage=pr_prep
++```
++
++If the lane also needs founder signoff:
++
++```bash
++./scripts/worktree/update-status.sh stage=awaiting_user_acceptance status=awaiting_user_acceptance
++```
++
++Do not mark the lane complete until acceptance, when required, is explicit.
+diff --git a/docs/ops/worktree-parallel-development.md b/docs/ops/worktree-parallel-development.md
+new file mode 100644
+index 0000000..cc6d3f4
+--- /dev/null
++++ b/docs/ops/worktree-parallel-development.md
+@@ -0,0 +1,161 @@
++# Worktree Parallel Development
++
++> Status: active
++> Role: execution policy
++> Normative for product rules: no
++> Canonical owner: engineering lead + delivery owner
++> Depends on: `AGENTS.md`, `docs/ops/agent-execution-policy.md`, `docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md`
++> Last reviewed: 2026-04-24
++
++## Purpose
++
++Define the default Orpheus flow for parallel agent work without letting multiple lanes stomp on each other, skip review, or merge half-debugged code into `main`.
++
++## Core rules
++
++1. Keep at most **3 concurrent non-main worktrees**.
++2. Every lane starts with a written task brief before code changes.
++3. Every task brief gets a plan review before implementation begins.
++4. `debug / stabilize` is a mandatory stage. “Code compiles” is not a merge criterion.
++5. Live smoke is required for any phase gate that touches real provider behavior, artifact integrity, or release confidence.
++6. If a lane is marked `requiresUserAcceptance`, the agent may keep developing inside the lane but must stop at `awaiting_user_acceptance` until a human explicitly accepts the stage.
++7. `main` only receives work that has already passed branch-local checks, required smoke, and final review.
++
++## Stage model
++
++Use this exact stage order unless the controller explicitly narrows it for a docs-only or review-only lane:
++
++1. `plan`
++2. `review`
++3. `implementation`
++4. `self_test`
++5. `debug`
++6. `live_smoke` when required
++7. `pr_prep`
++8. `awaiting_user_acceptance` when required
++9. `merge_ready`
++10. `merged`
++11. `cleaned_up`
++
++## Runtime task brief
++
++Each worktree owns one untracked runtime file:
++
++```text
++.agent/task-brief.json
++```
++
++Minimum fields:
++
++- `taskId`
++- `branch`
++- `worktreePath`
++- `stage`
++- `status`
++- `reviewStatus`
++- `requiresUserAcceptance`
++- `userAcceptanceStatus`
++- `liveSmokeRequired`
++- `liveSmokeStatus`
++- `allowedPaths`
++- `forbiddenPaths`
++- `requiredChecks`
++
++Use `docs/templates/worktree-task-brief.json` as the starting schema.
++
++## Create a lane
++
++Always create lanes with the wrapper so the concurrency cap and task-brief bootstrap are enforced:
++
++```bash
++./scripts/worktree/create.sh ORP-042-A feat/orp-042-inworld ../orpheus-wt-inworld \
++  --title "Inworld adapter hardening" \
++  --acceptance yes \
++  --live-smoke yes \
++  --allow 'src/providers/inworld.ts' \
++  --allow 'src/pipeline/**' \
++  --allow 'tests/**'
++```
++
++After creation:
++
++1. fill in any missing `allowedPaths`
++2. review the plan
++3. update the brief to `reviewStatus=approved stage=implementation status=in_progress`
++
++Example:
++
++```bash
++./scripts/worktree/update-status.sh reviewStatus=approved stage=implementation status=in_progress
++```
++
++## Required checks before PR or merge
++
++Run the shared wrapper unless a lane explicitly needs more:
++
++```bash
++./scripts/checks/run-required.sh
++```
++
++This is the baseline for `self_test` and again before `merge_ready`.
++
++## Live smoke gate
++
++If `liveSmokeRequired=true`, run the provider-backed smoke before the lane can become `merge_ready`:
++
++```bash
++./scripts/live-smoke/phase2-live-smoke.sh \
++  --provider inworld \
++  --voice Ashley \
++  --script fixtures/frozen-corpus/scripts/en-control-medium.txt
++```
++
++Capture and review:
++
++- final audio
++- `artifact-manifest.json`
++- `metrics.json`
++- seam quality note
++- timing / warning note
++
++Then update the task brief:
++
++```bash
++./scripts/worktree/update-status.sh liveSmokeStatus=passed stage=pr_prep
++```
++
++## User acceptance gate
++
++For lanes that require human signoff:
++
++1. set `stage=awaiting_user_acceptance`
++2. keep the branch open
++3. do not mark the task complete
++4. do not merge to `main`
++
++After acceptance:
++
++```bash
++./scripts/worktree/update-status.sh userAcceptanceStatus=accepted stage=merge_ready status=merge_ready
++```
++
++## Merge and cleanup
++
++After review and merge:
++
++```bash
++./scripts/worktree/update-status.sh stage=merged status=completed
++./scripts/worktree/cleanup.sh ../orpheus-wt-inworld
++```
++
++Then return to `main`, pull, and rerun the required checks.
++
++## Hook enforcement
++
++Three layers enforce this flow:
++
++1. `.claude/settings.json` project hooks for Claude Code sessions
++2. `.githooks/` for git commit / push enforcement
++3. `scripts/lib/task_brief.py` as the shared policy checker
++
++If the hooks and the docs disagree, update the docs and the scripts in the same change.
+diff --git a/docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md b/docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md
+index c9b68b2..e1da692 100644
+--- a/docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md
++++ b/docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md
+@@ -23,7 +23,8 @@ Give the first build / test agent one bounded implementation slice that proves O
+ 8. `/docs/prd/specs/quality-ops-and-automation.md`
+ 9. `/docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`
+ 10. `/docs/plans/phase-02-core-render/02-development-entry-checklist.md`
+-11. Supporting benchmark input only: `/docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md`
++11. `/docs/ops/phase2-live-smoke.md`
++12. Supporting benchmark input only: `/docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md`
+ 
+ ## Goal
+ 
+@@ -80,10 +81,11 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
+    - one higher-cost fallback scenario
+    - one second-provider scenario
+ 6. One `EN + ES` readiness summary showing output / timing verdicts per language
+-7. Go / hold / fallback memo
+-8. Truth-doc backfill list for any semantic mismatches discovered during implementation
+-9. One short benchmark note explaining whether the current Orpheus slice is differentiated enough from the prevailing self-serve long-form workflow
+-10. One explicit recommendation on whether the team should keep `Inworld-first`, switch primary provider, or keep the current mix but tighten packaging
++7. One live-smoke evidence packet when the slice touches real provider behavior
++8. Go / hold / fallback memo
++9. Truth-doc backfill list for any semantic mismatches discovered during implementation
++10. One short benchmark note explaining whether the current Orpheus slice is differentiated enough from the prevailing self-serve long-form workflow
++11. One explicit recommendation on whether the team should keep `Inworld-first`, switch primary provider, or keep the current mix but tighten packaging
+ 
+ ## Minimum Automated Tests
+ 
+diff --git a/docs/plans/phase-02-core-render/06-live-smoke-checklist.md b/docs/plans/phase-02-core-render/06-live-smoke-checklist.md
+new file mode 100644
+index 0000000..7d12e6d
+--- /dev/null
++++ b/docs/plans/phase-02-core-render/06-live-smoke-checklist.md
+@@ -0,0 +1,17 @@
++# Live Smoke Checklist
++
++> Status: ready
++> Role: execution checklist
++> Normative for product rules: no
++> Canonical owner: delivery owner + engineering lead
++> Depends on: `/docs/ops/phase2-live-smoke.md`
++> Last reviewed: 2026-04-24
++
++This file is the phase-local pointer for the Phase 2 live smoke process.
++
++Use:
++
++- `/docs/ops/phase2-live-smoke.md` for the real checklist
++- `./scripts/live-smoke/phase2-live-smoke.sh` for the default command path
++
++Do not mark a provider-backed lane `merge_ready` until the required live smoke packet exists.
+diff --git a/docs/plans/phase-02-core-render/README.md b/docs/plans/phase-02-core-render/README.md
+index 800fd9d..6cf00eb 100644
+--- a/docs/plans/phase-02-core-render/README.md
++++ b/docs/plans/phase-02-core-render/README.md
+@@ -12,3 +12,4 @@ Typical work-package types here include:
+ 4. `provider-comparison-memo`
+ 
+ Keep project/run semantics changes tightly coordinated.
++5. `live-smoke-checklist`
+diff --git a/docs/templates/worktree-task-brief.json b/docs/templates/worktree-task-brief.json
+new file mode 100644
+index 0000000..47b3aea
+--- /dev/null
++++ b/docs/templates/worktree-task-brief.json
+@@ -0,0 +1,30 @@
++{
++  "taskId": "ORP-YYYYMMDD-A",
++  "title": "Describe the lane in one sentence",
++  "branch": "feat/orp-example",
++  "worktreePath": "../orpheus-wt-example",
++  "stage": "plan",
++  "status": "draft",
++  "reviewStatus": "pending",
++  "requiresUserAcceptance": true,
++  "userAcceptanceStatus": "pending",
++  "liveSmokeRequired": true,
++  "liveSmokeStatus": "pending",
++  "allowedPaths": [
++    "src/**",
++    "tests/**"
++  ],
++  "forbiddenPaths": [
++    ".env",
++    ".env.*",
++    "secrets/**",
++    ".agent/**",
++    ".claude/settings.local.json",
++    "runs/**",
++    "benchmark-results/**"
++  ],
++  "requiredChecks": [
++    "./scripts/checks/run-required.sh"
++  ],
++  "notes": []
++}
+diff --git a/docs/templates/worktree-task-brief.md b/docs/templates/worktree-task-brief.md
+new file mode 100644
+index 0000000..ee4d0fc
+--- /dev/null
++++ b/docs/templates/worktree-task-brief.md
+@@ -0,0 +1,39 @@
++# Worktree Task Brief
++
++Use this as the human-readable companion to `.agent/task-brief.json`.
++
++## Summary
++
++- Task ID:
++- Title:
++- Branch:
++- Worktree path:
++- Owner:
++
++## Scope
++
++- Goal:
++- Allowed paths:
++- Forbidden paths:
++- Out of scope:
++
++## Gates
++
++- Review required before implementation: yes / no
++- Live smoke required: yes / no
++- User acceptance required: yes / no
++- Required checks:
++
++## Current status
++
++- Stage:
++- Status:
++- Review status:
++- Live smoke status:
++- User acceptance status:
++
++## Notes
++
++- Risks:
++- Debug findings:
++- Merge order dependencies:
+diff --git a/scripts/checks/run-required.sh b/scripts/checks/run-required.sh
+new file mode 100644
+index 0000000..360bc78
+--- /dev/null
++++ b/scripts/checks/run-required.sh
+@@ -0,0 +1,22 @@
++#!/usr/bin/env bash
++set -euo pipefail
++
++repo_root=$(git rev-parse --show-toplevel)
++cd "$repo_root"
++
++echo "[orpheus] running required checks from $repo_root"
++
++npm run typecheck
++
++if npm test; then
++  exit 0
++fi
++
++if [ -f /usr/local/lib/node_modules/ts-node/esm.mjs ]; then
++  echo "[orpheus] npm test failed, retrying tests with global ts-node loader fallback"
++  node --loader /usr/local/lib/node_modules/ts-node/esm.mjs --test tests/*.test.ts
++  exit 0
++fi
++
++echo "[orpheus] tests failed and no fallback loader is available" >&2
++exit 1
+diff --git a/scripts/install-git-hooks.sh b/scripts/install-git-hooks.sh
+new file mode 100644
+index 0000000..d8768f0
+--- /dev/null
++++ b/scripts/install-git-hooks.sh
+@@ -0,0 +1,7 @@
++#!/usr/bin/env bash
++set -euo pipefail
++repo_root=$(git rev-parse --show-toplevel)
++cd "$repo_root"
++
++git config core.hooksPath .githooks
++echo "Installed git hooks from .githooks"
+diff --git a/scripts/lib/task_brief.py b/scripts/lib/task_brief.py
+new file mode 100644
+index 0000000..307881c
+--- /dev/null
++++ b/scripts/lib/task_brief.py
+@@ -0,0 +1,281 @@
++#!/usr/bin/env python3
++from __future__ import annotations
++
++import argparse
++import json
++import os
++import subprocess
++import sys
++from fnmatch import fnmatch
++from pathlib import Path
++from typing import Any
++
++DEFAULT_FORBIDDEN = [
++    ".env",
++    ".env.*",
++    "secrets/**",
++    ".agent/**",
++    ".claude/settings.local.json",
++    "runs/**",
++    "benchmark-results/**",
++]
++DEFAULT_CHECKS = [
++    "./scripts/checks/run-required.sh",
++]
++FINAL_STAGES = {"merge_ready", "merged", "cleaned_up", "completed"}
++
++
++def repo_root(cwd: str | None = None) -> Path:
++    out = subprocess.check_output(["git", "rev-parse", "--show-toplevel"], cwd=cwd, text=True)
++    return Path(out.strip())
++
++
++def brief_path(root: Path, explicit: str | None = None) -> Path:
++    return Path(explicit) if explicit else root / ".agent" / "task-brief.json"
++
++
++def load_json(path: Path) -> dict[str, Any]:
++    return json.loads(path.read_text(encoding="utf-8"))
++
++
++def save_json(path: Path, data: dict[str, Any]) -> None:
++    path.parent.mkdir(parents=True, exist_ok=True)
++    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
++
++
++def normalize_bool(value: str | bool) -> bool:
++    if isinstance(value, bool):
++        return value
++    lowered = value.strip().lower()
++    return lowered in {"1", "true", "yes", "y", "on"}
++
++
++def normalize_path(path: str, root: Path) -> str:
++    candidate = Path(path)
++    if candidate.is_absolute():
++        rel = candidate.resolve().relative_to(root.resolve())
++        return rel.as_posix()
++    return candidate.as_posix().lstrip("./")
++
++
++def is_path_allowed(rel_path: str, allowed: list[str], forbidden: list[str]) -> tuple[bool, str | None]:
++    normalized = rel_path.lstrip("./")
++    for pattern in forbidden:
++        if fnmatch(normalized, pattern):
++            return False, f"path '{normalized}' matches forbidden pattern '{pattern}'"
++    if normalized == ".agent/task-brief.json":
++        return True, None
++    if not allowed:
++        return False, f"path '{normalized}' is outside task scope because allowedPaths is empty"
++    for pattern in allowed:
++        if fnmatch(normalized, pattern):
++            return True, None
++    return False, f"path '{normalized}' is outside allowedPaths"
++
++
++def cmd_init(args: argparse.Namespace) -> int:
++    root = repo_root()
++    target = brief_path(root, args.output)
++    data = {
++        "taskId": args.task_id,
++        "title": args.title or "",
++        "branch": args.branch,
++        "worktreePath": args.worktree_path,
++        "stage": "plan",
++        "status": "draft",
++        "reviewStatus": "pending",
++        "requiresUserAcceptance": normalize_bool(args.requires_user_acceptance),
++        "userAcceptanceStatus": "pending" if normalize_bool(args.requires_user_acceptance) else "not_required",
++        "liveSmokeRequired": normalize_bool(args.live_smoke_required),
++        "liveSmokeStatus": "pending" if normalize_bool(args.live_smoke_required) else "not_required",
++        "allowedPaths": args.allowed_path or [],
++        "forbiddenPaths": (args.forbidden_path or []) + [item for item in DEFAULT_FORBIDDEN if item not in (args.forbidden_path or [])],
++        "requiredChecks": args.required_check or DEFAULT_CHECKS,
++        "notes": [],
++    }
++    save_json(target, data)
++    return 0
++
++
++def load_brief_or_fail(path: Path) -> dict[str, Any]:
++    if not path.exists():
++        print(f"Missing task brief: {path}", file=sys.stderr)
++        raise SystemExit(2)
++    return load_json(path)
++
++
++def cmd_show_context(args: argparse.Namespace) -> int:
++    root = repo_root()
++    path = brief_path(root, args.path)
++    if not path.exists():
++        print("No active .agent/task-brief.json found.")
++        return 0
++    brief = load_json(path)
++    allowed = ", ".join(brief.get("allowedPaths", [])) or "<none>"
++    print(
++        f"task={brief.get('taskId','')} branch={brief.get('branch','')} stage={brief.get('stage','')} "
++        f"review={brief.get('reviewStatus','')} live_smoke={brief.get('liveSmokeStatus','')} "
++        f"user_acceptance={brief.get('userAcceptanceStatus','')} allowed={allowed}"
++    )
++    return 0
++
++
++def cmd_assert_paths(args: argparse.Namespace) -> int:
++    root = repo_root()
++    path = brief_path(root, args.path)
++    if not path.exists():
++        if args.require_brief:
++            print("Missing .agent/task-brief.json. Initialize the lane before editing or committing.", file=sys.stderr)
++            return 2
++        return 0
++    brief = load_json(path)
++    allowed = brief.get("allowedPaths", [])
++    forbidden = brief.get("forbiddenPaths", DEFAULT_FORBIDDEN)
++    violations: list[str] = []
++    for file_path in args.files:
++        rel = normalize_path(file_path, root)
++        ok, reason = is_path_allowed(rel, allowed, forbidden)
++        if not ok and reason is not None:
++            violations.append(reason)
++    if violations:
++        print("Task brief boundary violation:", file=sys.stderr)
++        for violation in violations:
++            print(f"- {violation}", file=sys.stderr)
++        return 2
++    return 0
++
++
++def cmd_assert_push_ready(args: argparse.Namespace) -> int:
++    root = repo_root()
++    path = brief_path(root, args.path)
++    if not path.exists():
++        return 0
++    brief = load_json(path)
++
++    review = brief.get("reviewStatus", "pending")
++    if review != "approved":
++        print("Cannot push this lane yet: task brief plan has not been approved.", file=sys.stderr)
++        return 2
++
++    stage = brief.get("stage", "plan")
++    if stage in {"plan", "review", "implementation"}:
++        print(f"Cannot push this lane yet: current stage '{stage}' is too early.", file=sys.stderr)
++        return 2
++
++    if args.pushing_main:
++        if brief.get("liveSmokeRequired", False) and brief.get("liveSmokeStatus") != "passed":
++            print("Cannot push/merge to main: live smoke is required and has not passed.", file=sys.stderr)
++            return 2
++        if brief.get("requiresUserAcceptance", False) and brief.get("userAcceptanceStatus") != "accepted":
++            print("Cannot push/merge to main: user acceptance is still pending.", file=sys.stderr)
++            return 2
++        if stage not in FINAL_STAGES:
++            print(f"Cannot push/merge to main: lane stage '{stage}' is not merge-ready.", file=sys.stderr)
++            return 2
++    return 0
++
++
++def cmd_assert_task_complete(args: argparse.Namespace) -> int:
++    root = repo_root()
++    path = brief_path(root, args.path)
++    if not path.exists():
++        return 0
++    brief = load_json(path)
++
++    if brief.get("reviewStatus", "pending") != "approved":
++        print("Task cannot be marked complete: plan review is not approved.", file=sys.stderr)
++        return 2
++
++    if brief.get("liveSmokeRequired", False) and brief.get("liveSmokeStatus") != "passed":
++        print("Task cannot be marked complete: required live smoke has not passed.", file=sys.stderr)
++        return 2
++
++    if brief.get("requiresUserAcceptance", False) and brief.get("userAcceptanceStatus") != "accepted":
++        print("Task cannot be marked complete: this lane still requires user acceptance.", file=sys.stderr)
++        return 2
++
++    stage = brief.get("stage", "plan")
++    if stage not in FINAL_STAGES:
++        print(
++            "Task cannot be marked complete: move the lane through debug, PR prep, and merge-ready before finishing.",
++            file=sys.stderr,
++        )
++        return 2
++    return 0
++
++
++def cmd_set(args: argparse.Namespace) -> int:
++    root = repo_root()
++    path = brief_path(root, args.path)
++    brief = load_brief_or_fail(path)
++    for item in args.assignment:
++        if "=" not in item:
++            print(f"Invalid assignment '{item}'. Use key=value.", file=sys.stderr)
++            return 2
++        key, value = item.split("=", 1)
++        if key not in brief:
++            print(f"Unknown task brief field '{key}'.", file=sys.stderr)
++            return 2
++        current = brief[key]
++        if isinstance(current, bool):
++            brief[key] = normalize_bool(value)
++        elif isinstance(current, list):
++            brief[key] = [part for part in value.split(",") if part]
++        else:
++            brief[key] = value
++    save_json(path, brief)
++    return 0
++
++
++def build_parser() -> argparse.ArgumentParser:
++    parser = argparse.ArgumentParser(description="Orpheus task brief helper")
++    subparsers = parser.add_subparsers(dest="command", required=True)
++
++    init = subparsers.add_parser("init")
++    init.add_argument("--output")
++    init.add_argument("--task-id", required=True)
++    init.add_argument("--title")
++    init.add_argument("--branch", required=True)
++    init.add_argument("--worktree-path", required=True)
++    init.add_argument("--requires-user-acceptance", default="false")
++    init.add_argument("--live-smoke-required", default="false")
++    init.add_argument("--allowed-path", action="append")
++    init.add_argument("--forbidden-path", action="append")
++    init.add_argument("--required-check", action="append")
++    init.set_defaults(func=cmd_init)
++
++    show = subparsers.add_parser("show-context")
++    show.add_argument("--path")
++    show.set_defaults(func=cmd_show_context)
++
++    assert_paths = subparsers.add_parser("assert-paths")
++    assert_paths.add_argument("files", nargs="+")
++    assert_paths.add_argument("--path")
++    assert_paths.add_argument("--require-brief", action="store_true")
++    assert_paths.set_defaults(func=cmd_assert_paths)
++
++    assert_push = subparsers.add_parser("assert-push-ready")
++    assert_push.add_argument("--path")
++    assert_push.add_argument("--pushing-main", action="store_true")
++    assert_push.set_defaults(func=cmd_assert_push_ready)
++
++    assert_task = subparsers.add_parser("assert-task-complete")
++    assert_task.add_argument("--path")
++    assert_task.set_defaults(func=cmd_assert_task_complete)
++
++    set_parser = subparsers.add_parser("set")
++    set_parser.add_argument("assignment", nargs="+")
++    set_parser.add_argument("--path")
++    set_parser.set_defaults(func=cmd_set)
++
++    return parser
++
++
++def main() -> int:
++    parser = build_parser()
++    args = parser.parse_args()
++    return args.func(args)
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+diff --git a/scripts/live-smoke/phase2-live-smoke.sh b/scripts/live-smoke/phase2-live-smoke.sh
+new file mode 100644
+index 0000000..8864057
+--- /dev/null
++++ b/scripts/live-smoke/phase2-live-smoke.sh
+@@ -0,0 +1,53 @@
++#!/usr/bin/env bash
++set -euo pipefail
++
++PROVIDER="inworld"
++VOICE="Ashley"
++SCRIPT_PATH="fixtures/frozen-corpus/scripts/en-control-medium.txt"
++REQUEST_ID="live-smoke-$(date +%Y%m%d-%H%M%S)"
++OUTPUT_DIR="runs/live-smoke"
++FORMAT="mp3"
++
++while [ "$#" -gt 0 ]; do
++  case "$1" in
++    --provider)
++      PROVIDER="$2"; shift 2 ;;
++    --voice)
++      VOICE="$2"; shift 2 ;;
++    --script)
++      SCRIPT_PATH="$2"; shift 2 ;;
++    --request-id)
++      REQUEST_ID="$2"; shift 2 ;;
++    --output-dir)
++      OUTPUT_DIR="$2"; shift 2 ;;
++    --format)
++      FORMAT="$2"; shift 2 ;;
++    *)
++      echo "Unknown option: $1" >&2; exit 2 ;;
++  esac
++done
++
++repo_root=$(git rev-parse --show-toplevel)
++cd "$repo_root"
++
++if [ ! -f "$SCRIPT_PATH" ]; then
++  echo "Missing script file: $SCRIPT_PATH" >&2
++  exit 2
++fi
++
++case "$PROVIDER" in
++  inworld)
++    [ -n "${INWORLD_API_KEY:-}" ] || { echo "INWORLD_API_KEY is required for live smoke" >&2; exit 2; }
++    ;;
++  cartesia)
++    [ -n "${CARTESIA_API_KEY:-}" ] || { echo "CARTESIA_API_KEY is required for live smoke" >&2; exit 2; }
++    ;;
++  *)
++    echo "Unsupported provider: $PROVIDER" >&2
++    exit 2
++    ;;
++esac
++
++mkdir -p "$OUTPUT_DIR"
++
++npm run narrate -- --provider "$PROVIDER" --voice "$VOICE" --script-file "$SCRIPT_PATH" --request-id "$REQUEST_ID" --output-dir "$OUTPUT_DIR" --format "$FORMAT"
+diff --git a/scripts/worktree/cleanup.sh b/scripts/worktree/cleanup.sh
+new file mode 100644
+index 0000000..9ab0e13
+--- /dev/null
++++ b/scripts/worktree/cleanup.sh
+@@ -0,0 +1,14 @@
++#!/usr/bin/env bash
++set -euo pipefail
++
++if [ "$#" -ne 1 ]; then
++  echo "Usage: ./scripts/worktree/cleanup.sh <worktree-path>" >&2
++  exit 2
++fi
++
++WORKTREE_PATH="$1"
++repo_root=$(git rev-parse --show-toplevel)
++cd "$repo_root"
++
++git worktree remove --force "$WORKTREE_PATH"
++echo "Removed worktree: $WORKTREE_PATH"
+diff --git a/scripts/worktree/create.sh b/scripts/worktree/create.sh
+new file mode 100644
+index 0000000..46ce8b5
+--- /dev/null
++++ b/scripts/worktree/create.sh
+@@ -0,0 +1,102 @@
++#!/usr/bin/env bash
++set -euo pipefail
++
++usage() {
++  cat <<'EOF'
++Usage:
++  ./scripts/worktree/create.sh <task-id> <branch> <worktree-path> [--title "..."] [--acceptance yes|no] [--live-smoke yes|no] [--allow <glob>] [--forbid <glob>]
++EOF
++}
++
++if [ "$#" -lt 3 ]; then
++  usage >&2
++  exit 2
++fi
++
++TASK_ID="$1"
++BRANCH="$2"
++WORKTREE_PATH="$3"
++shift 3
++
++TITLE=""
++REQUIRES_ACCEPTANCE="false"
++LIVE_SMOKE_REQUIRED="false"
++ALLOWED_ARGS=()
++FORBIDDEN_ARGS=()
++
++while [ "$#" -gt 0 ]; do
++  case "$1" in
++    --title)
++      TITLE="$2"
++      shift 2
++      ;;
++    --acceptance)
++      REQUIRES_ACCEPTANCE="$2"
++      shift 2
++      ;;
++    --live-smoke)
++      LIVE_SMOKE_REQUIRED="$2"
++      shift 2
++      ;;
++    --allow)
++      ALLOWED_ARGS+=("--allowed-path" "$2")
++      shift 2
++      ;;
++    --forbid)
++      FORBIDDEN_ARGS+=("--forbidden-path" "$2")
++      shift 2
++      ;;
++    *)
++      echo "Unknown option: $1" >&2
++      usage >&2
++      exit 2
++      ;;
++  esac
++done
++
++repo_root=$(git rev-parse --show-toplevel)
++cd "$repo_root"
++
++if ! git fetch origin; then
++  echo "Warning: could not fetch origin. Continuing with local refs." >&2
++fi
++
++active_feature_count=$(git worktree list --porcelain | awk '
++  /^worktree / { wt=$2; next }
++  /^branch refs\/heads\// { branch=$2; sub(/^refs\/heads\//, "", branch); if (branch != "main") count++ }
++  END { print count+0 }
++')
++
++if [ "$active_feature_count" -ge 3 ]; then
++  echo "Blocked: Orpheus allows at most 3 concurrent non-main worktrees." >&2
++  exit 2
++fi
++
++if git show-ref --verify --quiet "refs/heads/$BRANCH"; then
++  echo "Blocked: local branch '$BRANCH' already exists." >&2
++  exit 2
++fi
++
++git worktree add -b "$BRANCH" "$WORKTREE_PATH" origin/main
++
++python3 "$repo_root/scripts/lib/task_brief.py" init \
++  --output "$WORKTREE_PATH/.agent/task-brief.json" \
++  --task-id "$TASK_ID" \
++  --title "$TITLE" \
++  --branch "$BRANCH" \
++  --worktree-path "$WORKTREE_PATH" \
++  --requires-user-acceptance "$REQUIRES_ACCEPTANCE" \
++  --live-smoke-required "$LIVE_SMOKE_REQUIRED" \
++  "${ALLOWED_ARGS[@]}" \
++  "${FORBIDDEN_ARGS[@]}"
++
++cat <<EOF
++Created worktree: $WORKTREE_PATH
++Branch: $BRANCH
++Task brief: $WORKTREE_PATH/.agent/task-brief.json
++
++Next steps:
++1. Fill in allowedPaths in the task brief if you did not pass --allow.
++2. Review and approve the plan before implementation.
++3. Move stage to implementation only after review approval.
++EOF
+diff --git a/scripts/worktree/update-status.sh b/scripts/worktree/update-status.sh
+new file mode 100644
+index 0000000..8d254cf
+--- /dev/null
++++ b/scripts/worktree/update-status.sh
+@@ -0,0 +1,11 @@
++#!/usr/bin/env bash
++set -euo pipefail
++repo_root=$(git rev-parse --show-toplevel)
++cd "$repo_root"
++
++if [ "$#" -lt 1 ]; then
++  echo "Usage: ./scripts/worktree/update-status.sh key=value [key=value ...]" >&2
++  exit 2
++fi
++
++python3 "$repo_root/scripts/lib/task_brief.py" set "$@"

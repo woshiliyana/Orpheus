@@ -11,7 +11,7 @@
 
 This file defines how agents should execute work in the Orpheus repo without corrupting canonical truth, packaging assumptions, or the first-gate Phase 2 scope.
 
-It governs controller/worker behavior, multi-lane safety, merge order, review order, and handoff shape. It does **not** own product rules.
+It governs controller/worker behavior, multi-lane safety, worktree staging, review order, live-smoke gates, user-acceptance gates, merge order, and handoff shape. It does **not** own product rules.
 
 ## Controller vs worker responsibilities
 
@@ -22,6 +22,13 @@ It governs controller/worker behavior, multi-lane safety, merge order, review or
 | `reviewer` | Performs an independent verification pass and does not silently expand scope |
 
 ## Lane safety rules
+
+Default operating limits:
+
+- max 3 concurrent non-main worktrees
+- every worktree lane must own `.agent/task-brief.json`
+- every task brief must be reviewed before implementation begins
+- `debug` is mandatory before a lane becomes PR-ready
 
 A lane is parallel-safe only if all of the following are true:
 
@@ -43,6 +50,24 @@ If any rule fails, keep the work serial.
 | Pricing/package doc edits vs provider benchmark workbook edits | No | These belong in one ownership stream |
 | Two lanes editing `docs/prd/specs/*.md` for the same topic cluster | No | One truth file = one writer |
 
+## Stage order
+
+Use this execution order inside each implementation lane unless the controller explicitly narrows it for docs-only or review-only work:
+
+1. `plan`
+2. `review`
+3. `implementation`
+4. `self_test`
+5. `debug`
+6. `live_smoke` when required
+7. `pr_prep`
+8. `awaiting_user_acceptance` when required
+9. `merge_ready`
+10. `merged`
+11. `cleaned_up`
+
+A lane is not complete while it is waiting for required smoke or required user acceptance.
+
 ## Merge order
 
 Use this merge order unless there is a strong reason not to:
@@ -57,9 +82,12 @@ Use this merge order unless there is a strong reason not to:
 ## Required review order
 
 1. Worker self-check
-2. Controller diff review
-3. Independent reviewer or `$orpheus-change-verification`
-4. Final integration note
+2. Mandatory debug/stabilize pass
+3. Controller diff review
+4. Independent reviewer or `$orpheus-change-verification`
+5. Live smoke review when required
+6. Human acceptance when required
+7. Final integration note
 
 ## Handoff packet
 

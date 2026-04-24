@@ -136,21 +136,40 @@ Return:
 5. ready/not-ready verdict
 ```
 
-## 7) Optional Superpowers-assisted flow
-
-Use this only if Superpowers is installed locally and you want the extra workflow discipline.
+## 7) Create or advance a worktree lane safely
 
 ```text
-Follow AGENTS.md first.
+Read AGENTS.md first, then use $orpheus-parallel-lanes and $orpheus-worktree-flow.
 
-If the scope is still fuzzy, use brainstorming.
-Once scope is approved, use writing-plans.
-If we need safe parallel execution, use $orpheus-parallel-lanes first, then use subagent-driven-development only for lanes marked safe.
-For instability or provider weirdness, use systematic-debugging.
-Before handoff, use code-review and then $orpheus-change-verification.
+I want to work in a separate worktree lane.
+
+Before coding:
+1. propose the lane name, branch name, and allowed files
+2. decide whether this lane needs live smoke
+3. decide whether this lane needs explicit user acceptance
+4. draft `.agent/task-brief.json`
+5. do not move to implementation until the brief is reviewed and approved
+
+When the lane is ready, use the repo scripts instead of raw git worktree commands.
 ```
 
-## 8) One-shot controller prompt for a strong default start
+## 8) Prepare a lane for live smoke and acceptance
+
+```text
+Read AGENTS.md first, then use $orpheus-worktree-flow and $orpheus-change-verification.
+
+This lane is approaching merge readiness.
+
+Do all of the following in order:
+1. verify the task brief is approved
+2. run the required automated checks
+3. move the lane through debug/stabilize
+4. if live smoke is required, run the Phase 2 smoke path and record evidence
+5. if user acceptance is required, stop at awaiting_user_acceptance instead of claiming the task is complete
+6. return the exact command outputs, evidence files, and next gate
+```
+
+## 9) One-shot controller prompt for a strong default start
 
 ```text
 Read AGENTS.md first. Then use $orpheus-truth-router to choose the right canonical docs, and follow with the repo-local skill that best matches the task.
@@ -158,5 +177,6 @@ Read AGENTS.md first. Then use $orpheus-truth-router to choose the right canonic
 Do not invent product truth. Do not broaden the promise. Do not skip doc backfill if implementation evidence changes the package, language gate, lifecycle semantics, or public scope.
 
 If the task can be parallelized safely, invoke $orpheus-parallel-lanes before spawning any subagents.
+If the task needs a separate lane, invoke $orpheus-worktree-flow before creating or advancing a worktree.
 If the task ends in a diff or patch, finish with $orpheus-change-verification.
 ```
