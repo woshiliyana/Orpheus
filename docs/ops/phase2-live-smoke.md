@@ -15,7 +15,7 @@ Provide one repeatable live-provider smoke path after automated checks pass and 
 
 1. `reviewStatus=approved`
 2. automated checks pass locally
-3. provider credentials are present
+3. provider credentials are present in the shell, this repo's shared env file `.git/orpheus.server.env`, or repo-root `.env.local`
 4. one chosen script and voice are recorded in the lane brief
 5. the lane already passed `debug`
 

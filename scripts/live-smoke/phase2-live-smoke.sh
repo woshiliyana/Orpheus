@@ -36,11 +36,7 @@ if [ ! -f "$SCRIPT_PATH" ]; then
 fi
 
 case "$PROVIDER" in
-  inworld)
-    [ -n "${INWORLD_API_KEY:-}" ] || { echo "INWORLD_API_KEY is required for live smoke" >&2; exit 2; }
-    ;;
-  cartesia)
-    [ -n "${CARTESIA_API_KEY:-}" ] || { echo "CARTESIA_API_KEY is required for live smoke" >&2; exit 2; }
+  inworld|cartesia)
     ;;
   *)
     echo "Unsupported provider: $PROVIDER" >&2

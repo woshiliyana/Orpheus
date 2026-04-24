@@ -14,7 +14,9 @@ if [ "$branch" = "main" ] && echo "$staged_files" | grep -E '^(src/|tests/|packa
   exit 2
 fi
 
-if echo "$staged_files" | grep -E '^(\.env($|\.)|secrets/|\.agent/|runs/|benchmark-results/)'; then
+if echo "$staged_files" \
+  | grep -E '^(\.env($|\.)|secrets/|\.agent/|runs/|benchmark-results/)' \
+  | grep -Ev '^\.env\.example$' >/dev/null; then
   echo "Blocked: staged files include secrets or runtime artifacts." >&2
   exit 2
 fi

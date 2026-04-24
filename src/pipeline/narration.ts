@@ -12,6 +12,7 @@ import type {
   ScriptChunk,
   TtsProviderAdapter,
 } from "../domain/types.js";
+import { readNumberEnv } from "../config/env.js";
 import { buildRunMetrics } from "../observability/metrics.js";
 import { chunkScript } from "./chunking.js";
 import { stitchAudioSegments } from "./stitch.js";
@@ -239,8 +240,8 @@ export async function runNarrationJob(
         0,
       ),
       providerRateUsdPer1mChars: provider.rateUsdPer1mChars,
-      alignmentComputePerAudioMinuteUsd: Number.parseFloat(process.env.ALIGNMENT_COMPUTE_PER_AUDIO_MINUTE_USD ?? "0.01"),
-      storageDeliveryPerAudioMinuteUsd: Number.parseFloat(process.env.STORAGE_DELIVERY_PER_AUDIO_MINUTE_USD ?? "0.002"),
+      alignmentComputePerAudioMinuteUsd: readNumberEnv("ALIGNMENT_COMPUTE_PER_AUDIO_MINUTE_USD", 0.01),
+      storageDeliveryPerAudioMinuteUsd: readNumberEnv("STORAGE_DELIVERY_PER_AUDIO_MINUTE_USD", 0.002),
       sttFallbackPerAudioMinuteUsd: 0,
     });
     await writeJson(metricsPath, metrics);
@@ -304,8 +305,8 @@ export async function runNarrationJob(
       wordsWithTimestamps: 0,
       providerCharactersAttempted,
       providerRateUsdPer1mChars: provider.rateUsdPer1mChars,
-      alignmentComputePerAudioMinuteUsd: Number.parseFloat(process.env.ALIGNMENT_COMPUTE_PER_AUDIO_MINUTE_USD ?? "0.01"),
-      storageDeliveryPerAudioMinuteUsd: Number.parseFloat(process.env.STORAGE_DELIVERY_PER_AUDIO_MINUTE_USD ?? "0.002"),
+      alignmentComputePerAudioMinuteUsd: readNumberEnv("ALIGNMENT_COMPUTE_PER_AUDIO_MINUTE_USD", 0.01),
+      storageDeliveryPerAudioMinuteUsd: readNumberEnv("STORAGE_DELIVERY_PER_AUDIO_MINUTE_USD", 0.002),
       sttFallbackPerAudioMinuteUsd: 0,
       failureReason: getErrorMessage(error),
     });
