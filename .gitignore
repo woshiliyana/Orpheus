@@ -28,6 +28,10 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Python
+__pycache__/
+*.pyc
+
 # TypeScript
 *.tsbuildinfo
 
