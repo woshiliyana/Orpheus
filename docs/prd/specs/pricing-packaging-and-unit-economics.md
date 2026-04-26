@@ -6,7 +6,7 @@
 > Consumers: product, growth, billing, ops, support, frontend, agents
 > Depends on: `/docs/prd/source-of-truth-index.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/billing-usage-semantics.md`, `/docs/prd/specs/distribution-and-growth-surface.md`, `/docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md`
 > Supersedes: pricing and cost assumptions scattered across `/docs/prd/prd.md`
-> Last reviewed: 2026-04-23
+> Last reviewed: 2026-04-25
 
 ## Purpose
 
@@ -80,10 +80,11 @@ These scenarios exist to keep the team from pretending that one optimistic provi
 
 | Scenario | Public source logic | Effective TTS rate / 1M chars | Current planning meaning | `Pro $20 / 90 min / 70% GM` status |
 |---|---|---:|---|---|
+| `inworld_on_demand_current` | Current account usage screen and On-Demand / Creator visible rate | `$50.00` | Current live-smoke testing and invoice-equivalent account rate | Fails hard |
+| `inworld_creator_equivalent` | Inworld Creator visible rate | `$50.00` | Small-plan paid tier; monthly credits do not reduce the TTS Max unit rate | Fails hard |
+| `inworld_developer_equivalent` | Inworld Developer visible discounted rate | `$40.00` | 20% discounted tier and higher-fixed-cost fallback | Fails |
+| `inworld_growth_equivalent` | Inworld Growth visible discounted rate | `$30.00` | 40% discounted tier and target negotiation / scale anchor | Barely passes |
 | `inworld_marketing_doc_equivalent` | TTS-1.5 Max public TTS page | `$10.00` | Optimistic marketing / docs signal; cannot be launch truth by itself | Comfortable |
-| `inworld_growth_equivalent` | Inworld pricing page growth-tier visible rate | `$30.00` | Conservative working anchor | Barely passes |
-| `inworld_developer_equivalent` | Inworld pricing page developer-tier visible rate | `$40.00` | Higher-cost realistic fallback if no stronger rate is secured | Fails |
-| `inworld_creator_equivalent` | Inworld pricing page creator-tier visible rate | `$50.00` | Worst visible self-serve reference in the current public table | Fails hard |
 | `cartesia_scale_equivalent` | `$239 / 8M credits`, `1 credit = 1 char` | `$29.875` | Negotiated / higher-volume fallback band | Barely passes |
 | `cartesia_startup_equivalent` | `$39 / 1.25M credits`, `1 credit = 1 char` | `$31.20` | Realistic second-provider benchmark band | Borderline |
 | `cartesia_pro_equivalent` | `$4 / 100K credits`, `1 credit = 1 char` | `$40.00` | Small-scale fallback band | Fails |
@@ -95,7 +96,7 @@ The snapshot must carry explicit editable inputs. The spreadsheet model may form
 | Input | Required meaning | Current working default |
 |---|---|---:|
 | `chars_per_audio_minute` | Average source characters needed for one delivered audio minute | `900` |
-| `primary_tts_rate_per_1m_chars` | Planning TTS rate for the main hosted provider path | `$30` |
+| `primary_tts_rate_per_1m_chars` | Current invoice-equivalent TTS rate for the main hosted provider path | `$50` |
 | `stt_rate_per_audio_minute` | Cost of the alignment / transcription support path per audio minute | `$0.016` |
 | `alignment_compute_per_audio_minute` | Extra alignment or forced-alignment compute allowance per minute | `$0.010` |
 | `retry_overhead_factor` | Multiplier covering retry, re-stitch, and orchestration overhead | `1.15` |
@@ -126,6 +127,10 @@ Using the current defaults above:
 | Metric | Current value |
 |---|---:|
 | `non_tts_cost_per_completed_minute` | `$0.0280` |
+| `current_primary_tts_rate_per_1m_chars` | `$50.00` |
+| `current_primary_cost_per_completed_audio_minute` | `~$0.0798` |
+| `current_primary_full_included_exposure_cost_for_Pro_90_min` | `~$7.18` |
+| `current_primary_gross_margin_after_fees_for_Pro_90_min` | `~61.1%` |
 | `plan_exposure_guardrail` for `Pro $20` at `70% GM` and `3%` payment fees | `$5.40` |
 | `max_allowed_total_variable_cost_per_minute` for `Pro 90 min` | `$0.0600` |
 | `max_allowed_tts_rate_per_1m_chars` for `Pro 90 min` | `~$30.92` |
@@ -133,8 +138,10 @@ Using the current defaults above:
 Practical reading:
 
 - `Pro $20 / 90 min` is acceptable only if the invoice-equivalent TTS rate is roughly `<= $30.92 / 1M chars` under the current non-TTS assumptions.
-- If the realized TTS rate behaves more like `$40 / 1M chars`, then `Pro` must either reduce included minutes to roughly the mid-`70s`, raise price, or remain non-public until usage evidence offsets the exposure view.
-- The current `$30 / 1M chars` planning anchor is not comfortable; it is a narrow pass.
+- The current live-smoke account rate is `$50 / 1M chars`, so `Pro $20 / 90 min` does not clear the full-included exposure guardrail at the current invoice-equivalent rate.
+- If the realized TTS rate behaves like `$50 / 1M chars`, then `Pro` must either reduce included minutes to roughly the high-`60s`, raise price, obtain a discounted provider tier, or remain non-public until realized-usage evidence offsets the exposure view.
+- If the realized TTS rate behaves more like `$40 / 1M chars`, then `Pro` must either reduce included minutes to roughly the high-`70s`, raise price, or remain non-public until usage evidence offsets the exposure view.
+- The `$30 / 1M chars` Growth-tier planning anchor is not the current account truth; it is the target discount / scale scenario that narrowly clears the full-exposure guardrail.
 
 ### 9. Review Cadence and Required Snapshot Fields
 

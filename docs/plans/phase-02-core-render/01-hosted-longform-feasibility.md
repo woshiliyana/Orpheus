@@ -104,7 +104,7 @@ Reference:
 
 1. Hosted providers may succeed only with hidden internal chunking, which is acceptable only if fully absorbed by backend orchestration.
 2. Long-form quality may drift differently by language even when runs technically complete.
-3. Founder pricing or API plan constraints may distort the true unit-economics picture.
+3. Current On-Demand / Creator pricing or higher fixed-cost provider-plan constraints may distort the true unit-economics picture.
 4. Real scripts may expose content-length or style pathologies not visible in synthetic tests.
 5. Spanish readiness evidence could be over-read as a promise of a full multilingual workspace if the packet does not keep that boundary explicit.
 
