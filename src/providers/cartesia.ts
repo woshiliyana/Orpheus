@@ -38,15 +38,15 @@ function buildOutputFormat(outputFormat: ChunkSynthesisInput["outputFormat"]): R
   if (outputFormat === "wav") {
     return {
       container: "wav",
-      sample_rate: 44100,
+      sample_rate: 48000,
       encoding: "pcm_s16le",
     };
   }
 
   return {
     container: "mp3",
-    sample_rate: 44100,
-    bit_rate: 128000,
+    sample_rate: 48000,
+    bit_rate: 192000,
   };
 }
 

@@ -67,9 +67,11 @@ test("Inworld adapter counts provider characters across retry attempts", async (
   const input = makeChunkInput(tmpDir, "Retry cost accounting should include failed attempts.");
   const originalFetch = globalThis.fetch;
   let attempts = 0;
+  let requestBody: Record<string, unknown> | undefined;
 
-  globalThis.fetch = async () => {
+  globalThis.fetch = async (_url, init) => {
     attempts += 1;
+    requestBody = JSON.parse(String(init?.body)) as Record<string, unknown>;
     if (attempts === 1) {
       return makeJsonResponse(429, { error: { message: "rate limited" } });
     }
@@ -84,6 +86,11 @@ test("Inworld adapter counts provider characters across retry attempts", async (
     assert.equal(result.attemptCount, 2);
     assert.equal(result.providerCharactersProcessed, input.chunk.text.length * 2);
     assert.equal(result.rawResponsePaths.length, 2);
+    assert.deepEqual(requestBody?.audioConfig, {
+      audioEncoding: "MP3",
+      sampleRateHertz: 48000,
+      bitRate: 192000,
+    });
   } finally {
     globalThis.fetch = originalFetch;
   }
@@ -94,8 +101,12 @@ test("Cartesia adapter writes raw SSE before parsing malformed responses", async
   const input = makeChunkInput(tmpDir, "Malformed SSE should still be persisted.");
   const originalFetch = globalThis.fetch;
   const malformedSse = "event: chunk\ndata: {\"type\":\"chunk\",\"data\":\"abc\"\n\n";
+  let requestBody: Record<string, unknown> | undefined;
 
-  globalThis.fetch = async () => makeTextResponse(200, malformedSse);
+  globalThis.fetch = async (_url, init) => {
+    requestBody = JSON.parse(String(init?.body)) as Record<string, unknown>;
+    return makeTextResponse(200, malformedSse);
+  };
 
   try {
     const adapter = new CartesiaProviderAdapter({ apiKey: "test-key", maxAttempts: 1 });
@@ -103,6 +114,11 @@ test("Cartesia adapter writes raw SSE before parsing malformed responses", async
 
     const rawResponse = await readFile(path.join(tmpDir, "attempt-1.sse.txt"), "utf8");
     assert.equal(rawResponse, malformedSse);
+    assert.deepEqual(requestBody?.output_format, {
+      container: "mp3",
+      sample_rate: 48000,
+      bit_rate: 192000,
+    });
   } finally {
     globalThis.fetch = originalFetch;
   }

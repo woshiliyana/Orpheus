@@ -23,6 +23,9 @@ This spec defines the canonical lifecycle for projects and project runs, includi
 | `hidden_orchestration` | Backend-only chunk planning, retry, stitching, and reconciliation performed within one user-visible project run |
 | `artifact_manifest` | The canonical machine-readable record that ties together final audio, orchestration facts, alignment assets, billing facts, and delivery handles for one run |
 | `internal_alignment_asset` | A non-user-facing alignment artifact produced from the final audio to support subtitle export, QA, or later repair work |
+| `audio_format_policy` | The per-run record of requested format, provider source encoding, production-master target, delivery derivative, and final format verdict |
+| `production_master_audio` | The highest-fidelity audio artifact retained for QA, post-processing, video assembly, and future derivative generation |
+| `delivery_audio` | The audio artifact exposed to the user for download or playback |
 
 ## Decision Tables
 
@@ -121,6 +124,9 @@ This spec defines the canonical lifecycle for projects and project runs, includi
 | `output_language` | Yes | Requested generation language used for render, timing, and quality tracking |
 | `final_audio_asset_ref` | Yes | Deliverable audio object reference |
 | `final_audio_duration_seconds` | Yes | Final delivered audio duration |
+| `audio_format_policy` | Yes | Requested output format, whether the asset is provider-native or derived, provider source encoding, production-master target, delivery format, sample rate / bitrate when known, and `audio_format_verdict` |
+| `production_master_audio_ref` | Yes, if generated | Higher-fidelity master asset reference or explicit reason it was not generated |
+| `delivery_audio_ref` | Yes | User-facing download or playback asset reference |
 | `internal_alignment_asset_ref` | Yes, if generated | Reference to alignment / subtitle-prep artifacts or explicit failure reason |
 | `billing_fact` | Yes | Final `billable_seconds` and usage-event type |
 | `delivery_ref` | Yes | Delivery handle or signed-download object reference |
@@ -135,6 +141,8 @@ This spec defines the canonical lifecycle for projects and project runs, includi
 5. Successful runs may generate `internal_alignment_asset` records even when the current plan cannot export `SRT`.
 6. The `artifact_manifest` is the bridge between lifecycle truth, billing truth, and later subtitle / repair work; do not replace it with ad hoc per-provider fields.
 7. First-gate evidence must keep English and Spanish output / timing results distinguishable at the run level even while the workspace UI remains English-first.
+8. A successful run may expose `MP3` as the only user-facing `delivery_audio` while retaining `WAV` / Linear PCM as `production_master_audio`. This is acceptable only when the manifest records the format policy and the evidence packet records the format verdict.
+9. Audio-format testing must judge commercial delivery, production-master use, and export readiness separately. A format can be `ready_for_internal_master`, `ready_for_delivery`, `ready_for_export`, `hold_for_export`, or `blocked`; the verdict must name the observed reason.
 
 ## Update Checklist
 
@@ -142,3 +150,4 @@ This spec defines the canonical lifecycle for projects and project runs, includi
 2. Re-check PRD sections `6.3`, `15`, `16.5`, and `19.9-19.10` after lifecycle changes.
 3. Re-check `guest-trial-identity.md` if guest runs are allowed to behave differently from registered runs.
 4. Re-check `quality-ops-and-automation.md` if the artifact manifest or alignment states gain new quality meaning.
+5. Re-check `capability-entitlements.md`, Phase 2 live-smoke evidence templates, and provider scorecards after any audio-format policy change.

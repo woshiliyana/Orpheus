@@ -55,14 +55,14 @@ function buildAudioConfig(outputFormat: ChunkSynthesisInput["outputFormat"]): Re
   if (outputFormat === "wav") {
     return {
       audioEncoding: "LINEAR16",
-      sampleRateHertz: 44100,
+      sampleRateHertz: 48000,
     };
   }
 
   return {
     audioEncoding: "MP3",
-    sampleRateHertz: 44100,
-    bitRate: 128000,
+    sampleRateHertz: 48000,
+    bitRate: 192000,
   };
 }
 

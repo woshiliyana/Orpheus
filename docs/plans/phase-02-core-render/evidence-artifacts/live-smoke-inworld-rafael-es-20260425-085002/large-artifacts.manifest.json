@@ -1,0 +1,24 @@
+{
+  "attempt_id": "live-smoke-inworld-rafael-es-20260425-085002",
+  "policy": "large_binaries_manifest_only",
+  "last_reviewed": "2026-04-25",
+  "artifacts": [
+    {
+      "name": "final.transcoded-from-mp3.wav",
+      "role": "zero-provider-cost WAV derivative for packaging and download checks",
+      "retention": "external_local_copy_not_git",
+      "reason_not_tracked": "The file is 169397164 bytes, exceeds GitHub normal Git's 100 MiB hard limit, and does not prove provider-native WAV quality.",
+      "source": "Derived from final.mp3 with ffmpeg -acodec pcm_s16le.",
+      "local_path": "/Volumes/woshiliyana/黑暗心理学频道/西班牙语频道/04/0418/音频/final.transcoded-from-mp3.wav",
+      "size_bytes": 169397164,
+      "container": "wav",
+      "codec": "pcm_s16le",
+      "sample_rate_hz": 44100,
+      "channels": 1,
+      "bit_rate_bps": 705600,
+      "duration_seconds": 1920.602,
+      "sha256": "b728d9c549f71b624b6bd0ba5b922f3f6d3363a8beee46515381df69f528d6b5",
+      "format_verdict": "hold_for_export"
+    }
+  ]
+}

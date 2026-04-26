@@ -25,8 +25,11 @@ Provide one repeatable live-provider smoke path after automated checks pass and 
 ./scripts/live-smoke/phase2-live-smoke.sh \
   --provider inworld \
   --voice Ashley \
-  --script fixtures/frozen-corpus/scripts/en-control-medium.txt
+  --script fixtures/frozen-corpus/scripts/en-control-medium.txt \
+  --format mp3
 ```
+
+Do not run a paired provider-native `--format wav` smoke by default. If the product question is only download packaging, derive a clearly labeled WAV from the existing MP3 artifact at zero provider cost. Run provider-native `--format wav` only when the lane explicitly needs to decide whether WAV / Linear PCM is ready to serve as an internal production master or user-facing export.
 
 ## Evidence packet to keep
 
@@ -36,6 +39,17 @@ Provide one repeatable live-provider smoke path after automated checks pass and 
 - `metrics.json`
 - one short seam-quality note
 - one short timing / warning note
+- requested output format, observed container / codec, sample rate, bitrate when applicable, and file size
+- one `audio_format_verdict` using `ready_for_internal_master`, `ready_for_delivery`, `ready_for_export`, `hold_for_export`, or `blocked`
+- for MP3 delivery, explicit judgment against the commercial default target of `>=192 kbps`
+
+The evidence packet must not remain only in ignored `runs/` output or in a temporary worktree. Before a live-smoke lane reaches `merge_ready`, copy the selected packet into a merge-tracked evidence directory, preferably:
+
+```text
+docs/plans/phase-02-core-render/evidence-artifacts/<attempt_id>/
+```
+
+At minimum, promote the final audio when it is small enough for normal Git, or a large-artifact manifest with hash / size / retention path when it is not. Also promote `artifact-manifest.json`, `metrics.json`, splice report when present, subtitle / timing artifacts when present, probe metadata, and a short review note. Raw provider responses may be promoted only after checking that they contain no credentials or private account tokens.
 
 ## Pass criteria
 
@@ -45,6 +59,7 @@ Provide one repeatable live-provider smoke path after automated checks pass and 
 4. `metrics.json` exists
 5. no unexpected fatal warnings
 6. subjective seam review is acceptable for the tested script
+7. the evidence packet records whether the tested format is commercially acceptable for delivery, internal-master use, both, or neither
 
 ## Hold criteria
 
@@ -55,6 +70,7 @@ Treat the lane as held, not merge-ready, if any of these happen:
 - warnings indicate broken timing integrity
 - stitched output has audible seam regressions
 - observed retry behavior is materially worse than expected
+- the output format cannot be decoded, cannot be stitched cleanly, creates unacceptable artifacts, or has storage / delivery characteristics that make it unsuitable for the claimed use
 
 ## After smoke
 
@@ -64,6 +80,8 @@ If the smoke passes:
 ./scripts/worktree/update-status.sh liveSmokeStatus=passed stage=pr_prep
 ```
 
+Then promote the evidence packet and confirm `git status` shows the promoted files before the lane is marked `merge_ready`.
+
 If the lane also needs founder signoff:
 
 ```bash
@@ -71,3 +89,5 @@ If the lane also needs founder signoff:
 ```
 
 Do not mark the lane complete until acceptance, when required, is explicit.
+
+Do not clean up the worktree until the promoted evidence packet has either been merged into `main` or explicitly waived in the lane closeout note.

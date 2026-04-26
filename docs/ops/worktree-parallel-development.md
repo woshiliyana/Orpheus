@@ -120,6 +120,14 @@ Capture and review:
 - seam quality note
 - timing / warning note
 
+Before moving out of `live_smoke`, promote the selected evidence packet out of ignored `runs/` output and into a merge-tracked evidence directory such as:
+
+```text
+docs/plans/phase-02-core-render/evidence-artifacts/<attempt_id>/
+```
+
+The promoted packet should include the final audio when it is small enough for normal Git, or a large-artifact manifest with hash / size / retention path when it is not. It should also include artifact manifest, metrics, splice / subtitle / timing artifacts when present, probe metadata, and the short human review note. Do not leave the only copy of smoke evidence inside a disposable worktree.
+
 Then update the task brief:
 
 ```bash
@@ -151,6 +159,8 @@ After review and merge:
 ```
 
 Then return to `main`, pull, and rerun the required checks.
+
+Cleanup is blocked if required live-smoke artifacts still exist only under ignored `runs/`, `benchmark-results/`, or another worktree-local path. Either merge the promoted evidence packet first or write an explicit closeout waiver naming why that artifact is not retained.
 
 ## Hook enforcement
 

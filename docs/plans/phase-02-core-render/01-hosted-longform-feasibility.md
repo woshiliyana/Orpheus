@@ -77,10 +77,11 @@ Reference:
 1. A run log covering the frozen `EN + ES` corpus for both hosted providers
 2. A provider comparison summary with English and Spanish readiness verdicts
 3. At least one successful-run artifact packet for each language marked `ready`, containing final audio, orchestration notes, offset data, internal alignment assets, and a brief alignment / subtitle QA note for a viable provider
-4. A feasibility decision memo that names the next action, the primary-provider recommendation, and any hold / fallback posture for language readiness
-5. A pricing review snapshot and `v0.41` planning workbook updated with observed `cost_per_completed_audio_minute` and fallback behavior for the preferred path
-6. One provider-scenario table showing the primary provider case, one higher-cost fallback case, and one second-provider case
-7. One short benchmark note against the prevailing public self-serve long-form workflow, using `ElevenLabs` as the primary reference
+4. An audio-format verdict that names the default delivery format, the production-master target, and whether user-facing `WAV` export remains held
+5. A feasibility decision memo that names the next action, the primary-provider recommendation, and any hold / fallback posture for language readiness
+6. A pricing review snapshot and `v0.41` planning workbook updated with observed `cost_per_completed_audio_minute` and fallback behavior for the preferred path
+7. One provider-scenario table showing the primary provider case, one higher-cost fallback case, and one second-provider case
+8. One short benchmark note against the prevailing public self-serve long-form workflow, using `ElevenLabs` as the primary reference
 
 ## Backfill Required
 
@@ -98,7 +99,8 @@ Reference:
 4. The comparison records at least one shorter control, one `~20` minute case, and one `~30` minute case for both English and Spanish.
 5. Successful runs generate internal alignment assets even though user-facing `SRT` export is still out of scope.
 6. The evidence packet includes an initial timing-quality and subtitle-text-quality note for both English and Spanish readiness, not just raw audio success.
-7. The decision memo includes explicit go / hold / fallback language, not just raw observations.
+7. The evidence packet includes explicit `MP3` delivery and `WAV` / Linear PCM production-master format judgments before the memo recommends a product format.
+8. The decision memo includes explicit go / hold / fallback language, not just raw observations.
 
 ## Risks / Blockers
 

@@ -615,7 +615,19 @@ V1 至少要具备：
 
 ### 7.1 音频输出
 
-V1 应支持可下载的生产可用格式，例如 `MP3` 与 `WAV`。
+执行真源：
+
+1. [Capability Entitlements](./specs/capability-entitlements.md)
+2. [Project and Run Lifecycle](./specs/project-run-lifecycle.md)
+
+本节只保留音频格式摘要，不重复能力矩阵。
+
+当前产品姿态是：
+
+1. 默认用户交付格式为可下载 `MP3`
+2. 平台内部优先验证并保留 `WAV` / Linear PCM 生产母版
+3. 商业默认 `MP3` 目标为 `>=192 kbps`
+4. 用户侧 `WAV` 导出必须等待 Phase 2 `audio_format_verdict` 明确通过后再开放为产品承诺
 
 ### 7.2 SRT 标准
 

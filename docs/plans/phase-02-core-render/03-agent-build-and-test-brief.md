@@ -43,9 +43,10 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 9. Successful-run `artifact_manifest` persistence
 10. Internal alignment-asset job or placeholder record tied to final audio
 11. UI / API exposure of status, warnings, and download link
-12. Provider run-log capture and cost-snapshot update for the frozen `EN + ES` corpus
-13. One short benchmark note against the prevailing public self-serve long-form workflow, with `ElevenLabs` as the reference point
-14. One explicit `EN + ES` output / timing readiness note for the first gate
+12. Audio-format policy evidence covering default `MP3` delivery and `WAV` / Linear PCM production-master readiness
+13. Provider run-log capture and cost-snapshot update for the frozen `EN + ES` corpus
+14. One short benchmark note against the prevailing public self-serve long-form workflow, with `ElevenLabs` as the reference point
+15. One explicit `EN + ES` output / timing readiness note for the first gate
 
 ## Out of Scope
 
@@ -64,11 +65,12 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 2. No browser or public client directly calls TTS, STT, or storage providers.
 3. Long-form requests above provider request limits are handled only through backend-owned orchestration.
 4. Successful runs persist final audio plus an `artifact_manifest` with provider, orchestration, billing, and alignment references.
-5. `audio success + alignment failure` resolves to `completed_with_warnings` / `succeeded_with_warnings`, not a full failed rerun state.
-6. Billing records bill audio only, never the entire project again for alignment retry or segment repair semantics.
-7. The benchmark packet covers the frozen `en-control-short`, `en-control-medium`, `en-control-long`, `es-control-short`, `es-control-medium`, and `es-control-long` corpus and yields explicit `ready` / `warning` / `blocked` output and timing verdicts for English and Spanish, or the agent produces an explicit hold memo naming the blocked language and limiting envelope.
-8. The benchmark packet includes one second-provider cost / quality scenario, not just the primary provider.
-9. A pricing review snapshot is updated using observed `cost_per_completed_audio_minute`, retry overhead, and fallback behavior.
+5. Successful runs record an `audio_format_policy` or equivalent evidence entry that names requested format, observed container / codec, sample rate, bitrate when relevant, delivery verdict, and production-master verdict.
+6. `audio success + alignment failure` resolves to `completed_with_warnings` / `succeeded_with_warnings`, not a full failed rerun state.
+7. Billing records bill audio only, never the entire project again for alignment retry or segment repair semantics.
+8. The benchmark packet covers the frozen `en-control-short`, `en-control-medium`, `en-control-long`, `es-control-short`, `es-control-medium`, and `es-control-long` corpus and yields explicit `ready` / `warning` / `blocked` output and timing verdicts for English and Spanish, or the agent produces an explicit hold memo naming the blocked language and limiting envelope.
+9. The benchmark packet includes one second-provider cost / quality scenario, not just the primary provider.
+10. A pricing review snapshot is updated using observed `cost_per_completed_audio_minute`, retry overhead, and fallback behavior.
 
 ## Required Deliverables
 
@@ -76,16 +78,19 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 2. One successful-run artifact packet
 3. Provider run log for the frozen `EN + ES` corpus
 4. Updated pricing / unit-economics snapshot
-5. One provider-scenario table showing how the result looks under at least:
+5. One audio-format verdict table that says whether `MP3` is ready for default delivery, whether `WAV` / Linear PCM is ready for internal master use, and whether user-facing `WAV` export remains held
+6. One provider-scenario table showing how the result looks under at least:
    - current primary scenario
    - one higher-cost fallback scenario
    - one second-provider scenario
-6. One `EN + ES` readiness summary showing output / timing verdicts per language
-7. One live-smoke evidence packet when the slice touches real provider behavior
-8. Go / hold / fallback memo
-9. Truth-doc backfill list for any semantic mismatches discovered during implementation
-10. One short benchmark note explaining whether the current Orpheus slice is differentiated enough from the prevailing self-serve long-form workflow
-11. One explicit recommendation on whether the team should keep `Inworld-first`, switch primary provider, or keep the current mix but tighten packaging
+7. One `EN + ES` readiness summary showing output / timing verdicts per language
+8. One live-smoke evidence packet when the slice touches real provider behavior
+9. Go / hold / fallback memo
+10. Truth-doc backfill list for any semantic mismatches discovered during implementation
+11. One short benchmark note explaining whether the current Orpheus slice is differentiated enough from the prevailing self-serve long-form workflow
+12. One explicit recommendation on whether the team should keep `Inworld-first`, switch primary provider, or keep the current mix but tighten packaging
+
+Provider-backed evidence must be promoted into a merge-tracked artifact packet before worktree cleanup. A local-only path under `runs/` is not a completed deliverable.
 
 ## Minimum Automated Tests
 
@@ -93,12 +98,14 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 - Lifecycle transition tests for `queued -> validating -> rendering -> aligning -> packaging -> success/warning/failure`
 - Billing tests for full render success, segment repair success, and `audio success + alignment failure`
 - Artifact-manifest persistence tests
+- Audio-format policy tests for requested format, observed asset metadata, delivery verdict, and production-master verdict
 - Provider-boundary tests proving the client never calls providers directly
 - Cost-calculation tests that fail when a provider scenario drops below the target margin floor without an explicit doc update
 
 ## Manual Review Tasks
 
 - Audible seam review on long-form stitched outputs
+- Audio-format review comparing default `MP3` delivery against zero-cost WAV derivative packaging when possible; use provider-native `WAV` / Linear PCM only when the lane explicitly needs production-master quality evidence
 - Spot-check English and Spanish final-audio timing against internal alignment assets
 - Spot-check English and Spanish subtitle-text fidelity against source and normalized text
 - Review cost snapshot against the plan assumptions in the pricing spec

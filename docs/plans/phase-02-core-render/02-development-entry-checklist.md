@@ -51,6 +51,8 @@ This checklist prevents Orpheus from entering `Phase 2` with contradictory promi
 - [ ] The system treats one user project as one canonical run history even if the backend fans out into many provider sub-requests.
 - [ ] The `artifact_manifest` schema is frozen before broad implementation.
 - [ ] Successful runs persist an artifact manifest containing final audio, key run metadata, billing fact, and the minimum offset data needed for later subtitle / export work.
+- [ ] Successful runs record the audio-format policy: requested format, observed container / codec, sample rate, bitrate when relevant, delivery verdict, and production-master verdict.
+- [ ] Provider-backed live-smoke artifacts are promoted out of ignored `runs/` output into a merge-tracked evidence packet before any worktree cleanup.
 - [ ] Frontend code never calls TTS, STT, or storage providers directly. All provider access, retry logic, and signed delivery flow through Orpheus-owned server boundaries.
 
 ## P0: Alignment and Subtitle Readiness
@@ -58,6 +60,7 @@ This checklist prevents Orpheus from entering `Phase 2` with contradictory promi
 - [ ] `source_script`, `normalized_alignment_text`, and `display_subtitle_text` are modeled as separate fields or artifacts.
 - [ ] Successful runs produce internal alignment assets even when public `SRT` export is still disabled.
 - [ ] The team can explain which layer is canonical for each job: final audio for timing truth, normalized text for alignment truth, and display text for subtitle UX truth.
+- [ ] The team can explain which audio asset is the default user-facing delivery file and which asset, if any, is the production master for post-processing and future export.
 - [ ] Provider timestamps are treated as helper signals, not the only source of subtitle timing truth.
 - [ ] English and Spanish output / timing readiness are judged separately in the first gate; Spanish is not inferred from English-only success.
 - [ ] A basic subtitle-text-fidelity review rubric exists before broad internal testing expands.
