@@ -20,6 +20,8 @@ import { buildSubtitleCues, renderSrt, renderVtt } from "./subtitles.js";
 import { mapWithConcurrency } from "../utils/async.js";
 import { ensureDir, writeJson } from "../utils/files.js";
 
+const PHASE2_READINESS_LANGUAGES = new Set(["en", "es"]);
+
 function hashScript(script: string): string {
   return createHash("sha256").update(script).digest("hex");
 }
@@ -160,8 +162,8 @@ export async function runNarrationJob(
   provider: TtsProviderAdapter,
 ): Promise<NarrationRunResult> {
   const language = input.language.toLowerCase();
-  if (language !== "en") {
-    throw new Error("Phase 1 launch language is currently locked to English");
+  if (!PHASE2_READINESS_LANGUAGES.has(language)) {
+    throw new Error("Phase 2 readiness language is currently limited to EN + ES");
   }
 
   const startedAt = Date.now();

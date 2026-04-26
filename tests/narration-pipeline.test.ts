@@ -119,6 +119,30 @@ test("runNarrationJob writes the full artifact packet for a >2000-char English s
   assert.ok(manifest.orchestration_summary.chunk_count >= 2);
 });
 
+test("runNarrationJob allows Spanish Phase 2 readiness smoke runs", async () => {
+  const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-pipeline-es-"));
+  const result = await runNarrationJob({
+    requestId: "req_phase2_es",
+    projectId: "project_phase2_es",
+    provider: "inworld",
+    language: "es",
+    voiceId: "Rafael",
+    outputFormat: "mp3",
+    script: "Hola. Esta es una prueba breve de voz en espanol.",
+    outputDir: tmpDir,
+  }, new FakeProvider());
+
+  assert.ok(result.durationSec > 0);
+  assert.ok(result.timings.length > 0);
+
+  const manifest = JSON.parse(await readFile(result.artifactManifestPath, "utf8")) as {
+    output_language: string;
+    provider_summary: { selected_voice: string };
+  };
+  assert.equal(manifest.output_language, "es");
+  assert.equal(manifest.provider_summary.selected_voice, "Rafael");
+});
+
 test("runNarrationJob persists failure metrics and artifact manifest when synthesis fails", async () => {
   const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-pipeline-fail-"));
   const requestId = "req_failed_phase1";
