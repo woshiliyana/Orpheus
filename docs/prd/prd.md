@@ -1,12 +1,18 @@
 # 产品 PRD（工作名：Orpheus）
 
 > 状态：初版需求文档，尚未进入开发实现
-> 当前版本：v0.41
+> 当前版本：v0.42
 > 首次创建：2026-04-21
-> 最近更新：2026-04-23
+> 最近更新：2026-04-25
 > 文档定位：当前阶段唯一主 PRD，后续迭代默认持续更新本文件
 
 ## 更新记录
+
+### 2026-04-25 v0.42
+
+1. 将 Inworld 当前真实测试费率更新为 On-Demand / Creator `$50 / 1M chars`，并保留 Developer `$40 / 1M chars` 与 Growth `$30 / 1M chars` 作为折扣场景。
+2. 明确 `$30 / 1M chars` 不再是当前账号默认真相，而是 Growth / 谈判目标场景；`Pro $20 / 90 min` 仍需通过 provider-rate 或 realized-usage 证据后才能公开承诺。
+3. 将早期采用建议调整为继续用 On-Demand / Creator 做 feasibility，不在真实消耗和用户验证不足前直接升级到更高固定月费计划。
 
 ### 2026-04-23 v0.41
 
@@ -1951,20 +1957,20 @@ PRD 当前只保留以下决策级结论：
 
 1. 当前第三方质量基准中处于第一梯队
 2. 当前公开的时间戳 / alignment readiness 信号以英语和西班牙语最可信，足以支撑 `English-first workspace UI + EN/ES output/timing readiness` 的当前真相边界
-3. 当前公开 Founder pricing 对单位经济模型非常关键
+3. 当前真实 On-Demand / Creator 费率为 `$50 / 1M chars`，Developer / Growth 折扣档分别约为 `$40 / 1M chars` 与 `$30 / 1M chars`，单位经济模型必须按这些实际档位分场景核算
 4. 更适合作为“20-30 分钟长文本稳定性”第一轮技术放行基线
 
-其中一个重要商业时间点是：
+其中一个重要商业约束是：
 
-1. 如果选择 `Inworld` 路线，需要尽快评估是否在 `2026-05-07` 前锁定 Founder pricing
-2. 若无法锁定 Founder pricing，则需要重新核算 `Pro / Ultimate` 的分钟额度与毛利空间
+1. 当前测试可以继续使用 On-Demand / Creator 档，避免在真实消耗和用户验证不足前承担更高固定月费
+2. 若要维持 `Pro $20 / 90 min` 的 full-included exposure 口径，需要争取接近 Growth `$30 / 1M chars` 的实际费率，或重新核算 `Pro / Ultimate` 的分钟额度、价格和毛利空间
 
 ### 21.4 当前推荐的早期采用方式
 
 在当前阶段，推荐采用方式不是“一上来购买更重的计划”，而是先完成 hosted feasibility spike：
 
 1. 主渲染能力优先评估 `Inworld TTS 1.5 Max`
-2. 账号计划优先从 `Founder Creator` 起步
+2. 账号计划优先继续使用当前 On-Demand / Creator 路径，并在定价模型中保留 Developer 与 Growth 折扣场景
 3. 以 `Cartesia` 作为同阶段备选比较路径
 4. 不建议在还没有真实用户和真实消耗数据前，直接上更重的 `Developer` 或 `Growth` 级计划
 5. 不建议在第一放行前把自托管稳定性证明当作硬前提
@@ -1972,7 +1978,7 @@ PRD 当前只保留以下决策级结论：
 这样做的原因是：
 
 1. `Max` 更符合本产品的品牌承诺和首体验要求
-2. `Founder Creator` 的固定成本更容易承受
+2. 当前 On-Demand / Creator 路径固定成本更容易承受，但其 `$50 / 1M chars` 单位费率不能当作公开分钟包的安全毛利口径
 3. 早期技术风险应先由托管稳定性基线回答，而不是先啃自托管运维复杂度
 4. 早期成本控制应主要通过产品规则和风控完成，而不是依赖用户先付很多钱后再慢慢摸索
 

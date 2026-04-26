@@ -46,12 +46,12 @@ Use one companion scenario table per benchmark packet so pricing review stays co
 
 | Scenario | Required | Notes |
 |---|---|---|
-| `scenario_id` | Yes | `primary`, `fallback-higher-cost`, or `second-provider` |
+| `scenario_id` | Yes | `primary-current-account`, `discounted-provider-tier`, `fallback-higher-cost`, or `second-provider` |
 | `provider` | Yes | Usually `Inworld` or `Cartesia` in the first cycle |
 | `language_scope` | Yes | `en`, `es`, or `en+es` depending on the scenario |
 | `effective_cost_per_completed_audio_minute_usd` | Yes | Should match the workbook assumptions or explain drift |
 | `retry_overhead_note` | Yes | Include material retry or stitch amplification |
-| `gross_margin_estimate` | Yes | Compare against the current markdown guardrail |
+| `gross_margin_estimate` | Yes | Compare against the current markdown guardrail and name the provider tier used |
 | `package_verdict` | Yes | keep / tighten / block |
 | `notes` | Yes | State what changed and why |
 

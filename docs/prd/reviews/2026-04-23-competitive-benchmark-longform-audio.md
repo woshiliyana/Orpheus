@@ -36,11 +36,11 @@ The differentiator must be `lower operator burden on a publish-ready explainer w
 
 ### 3. Commercial pressure
 
-With the current working inputs from `pricing-packaging-and-unit-economics.md`, `Pro = $20 / 90 min` only clears the `70%` gross-margin floor if the realized TTS rate is about `<= $30.92 / 1M chars` or non-TTS costs come down. This means the current package is viable against a conservative `~$30 / 1M chars` planning anchor, but it does **not** safely hold if the actual contracted rate behaves more like Inworld's visible `$40 / 1M chars` developer-tier rate or Cartesia's `$40 / 1M chars` small-plan equivalent.
+With the current working inputs from `pricing-packaging-and-unit-economics.md`, `Pro = $20 / 90 min` only clears the `70%` gross-margin floor if the realized TTS rate is about `<= $30.92 / 1M chars` or non-TTS costs come down. The April 25 Spanish Inworld live smoke used the current On-Demand account rate of about `$50 / 1M chars`, which means the current account truth does **not** clear the full-included exposure guardrail. Keep the `$50`, `$40`, and `$30` Inworld tiers in the pricing model, but treat `$50 / 1M chars` as the current invoice-equivalent test rate and `$30 / 1M chars` as a Growth-tier / negotiated target scenario, not present truth.
 
 ### 4. Build-path conclusion
 
-Phase 2 should still build against `Inworld` first, because it matches the current product truth best: official long-text chunking guidance, SDK-owned chunking/retry helpers, timestamp support, and a plausible cost story if the realized rate lands close to the conservative working anchor. But Phase 2 should **not** postpone the second-provider benchmark. `Cartesia` should be run on the same frozen corpus during the first benchmark cycle, and ElevenLabs should remain the public-market reference point for workflow comparison.
+Phase 2 should still build against `Inworld` first, because it matches the current product truth best: official long-text chunking guidance, SDK-owned chunking/retry helpers, timestamp support, and current live-smoke evidence. But Phase 2 should **not** harden public included-minute promises while the current account rate is `$50 / 1M chars`, and it should **not** postpone the second-provider benchmark. `Cartesia` should be run on the same frozen corpus during the first benchmark cycle, and ElevenLabs should remain the public-market reference point for workflow comparison.
 
 ### 5. Boundary readout
 
@@ -51,7 +51,7 @@ The honest first product boundary is still narrower than a full multilingual wor
 | Company / product | Relevant public offer | Long-form capability signal | Timestamp / subtitle signal | Packaging signal | What it means for Orpheus |
 |---|---|---|---|---|---|
 | ElevenLabs | Studio + TTS + Scribe + Forced Alignment | Strong | Strong | Mature self-serve | Cannot compete on `long text exists`; must compete on workflow and price-value clarity |
-| Inworld | TTS API + Node SDK + pricing tiers | Medium to strong | Good for English / Spanish | Cost story promising but publicly inconsistent | Best first build candidate if invoice-equivalent rate validates |
+| Inworld | TTS API + Node SDK + pricing tiers | Medium to strong | Good for English / Spanish | Current testing rate is `$50 / 1M chars`; discounted tiers reach `$40` and `$30` | Best first build candidate technically, but public packaging must stay gated by real cost |
 | Cartesia | Sonic TTS + Ink STT | Medium to strong | Good | Similar cost band to conservative Inworld | Good second-provider benchmark and potential fallback |
 | Murf | PAYG API + Falcon | Medium | Limited public subtitle story in the surfaced benchmark | Cheap API signals | Reference for low-cost API pressure, less relevant for the first wedge |
 | WellSaid | Studio plans | Medium | Caption export on higher plans | Workflow-first, not bargain-first | Shows customers will pay for workflow and caption convenience |
@@ -85,16 +85,16 @@ The right comparison is not `Can we narrate 30 minutes?` but `Does Orpheus reduc
 - Inworld's Node SDK says it automatically handles long-text chunking, retries with exponential backoff, and connection management.
 - Inworld TTS 1.5 timestamp support includes word and character timing, phonetic details, and visemes; alignment currently supports English and Spanish, with other languages experimental.
 - The TTS API docs also note a `16MB` maximum output size and recommend compressed output or streaming for longer texts.
-- The public cost story is inconsistent. One Inworld marketing / TTS page states `TTS-1.5 Max` is `$10 / 1M chars`, while the public pricing page shows visible tier rates that place `TTS Max` at `$50`, `$40`, or `$30 / 1M chars` depending on plan tier.
+- The public cost story is inconsistent. One Inworld marketing / TTS page states `TTS-1.5 Max` is `$10 / 1M chars`, while the public pricing page and current account usage put visible `TTS Max` rates at `$50`, `$40`, or `$30 / 1M chars` depending on plan tier.
 - Inworld billing docs state that paid plans include credits equal to the plan price and that usage beyond included credits is charged at the plan rate.
 
 #### Strategic reading
 
-The workflow story is strong enough for Orpheus: backend-owned chunking is officially aligned with how Inworld itself tells developers to solve long text. The danger is commercial, not technical. Public marketing claims and public pricing-page tiers do not align cleanly enough to treat the lowest number as launch truth.
+The workflow story is strong enough for Orpheus: backend-owned chunking is officially aligned with how Inworld itself tells developers to solve long text, and the April 25 Spanish live smoke completed a `32` minute output on the current account. The danger is commercial, not technical. The current testing rate is `$50 / 1M chars`, while the `$30 / 1M chars` case only appears at Growth-scale pricing. Public marketing claims and public pricing-page tiers do not align cleanly enough to treat the lowest number as launch truth.
 
 #### Implication for Orpheus
 
-Use Inworld first in Phase 2, but do not let the public pricing story or included-minute promises harden until the benchmark packet includes an invoice-equivalent cost assumption that the team can actually buy.
+Use Inworld first in Phase 2, but do not let the public pricing story or included-minute promises harden until the benchmark packet includes the current `$50 / 1M chars` account scenario plus the `$40` Developer and `$30` Growth discount scenarios.
 
 ### C. Cartesia is the required second-provider benchmark
 
@@ -199,7 +199,7 @@ Those are either already crowded, economically dangerous, or not yet proven.
 ## Recommended Founder Questions Before Broader Rollout
 
 1. Does the first successful benchmark packet genuinely prove `one-submit stability`, or only prove that the backend can eventually brute-force a result?
-2. If the realized TTS rate behaves like `$40 / 1M chars`, does the team want to shrink included minutes, raise price, or delay public self-serve?
+2. If the realized TTS rate remains at the current `$50 / 1M chars` On-Demand / Creator rate, does the team want to shrink included minutes, raise price, obtain a discounted provider tier, or delay public self-serve?
 3. Is the core hook strong enough that a creator immediately sees why Orpheus exists next to ElevenLabs?
 4. Can a no-login or low-friction demo show real value within `<= 120s` of audio without blowing up unit economics?
 
