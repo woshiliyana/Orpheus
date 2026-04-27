@@ -5,11 +5,13 @@
 > Normative for product rules: no
 > Canonical owner: delivery owner + engineering lead
 > Depends on: `docs/plans/phase-02-core-render/03-agent-build-and-test-brief.md`, `docs/ops/worktree-parallel-development.md`
-> Last reviewed: 2026-04-23
+> Last reviewed: 2026-04-26
 
 ## Purpose
 
 Provide one repeatable live-provider smoke path after automated checks pass and before a lane is treated as merge-ready for the current Phase 2 narration slice.
+
+The smoke packet feeds the canonical `tts_ux_readiness_scorecard` in `/docs/prd/specs/quality-ops-and-automation.md`. Audio generation can pass with warnings while broader product readiness remains blocked by missing evidence.
 
 ## Preconditions
 
@@ -42,6 +44,12 @@ Do not run a paired provider-native `--format wav` smoke by default. If the prod
 - requested output format, observed container / codec, sample rate, bitrate when applicable, and file size
 - one `audio_format_verdict` using `ready_for_internal_master`, `ready_for_delivery`, `ready_for_export`, `hold_for_export`, or `blocked`
 - for MP3 delivery, explicit judgment against the commercial default target of `>=192 kbps`
+- `final-evaluation.json` or an equivalent evaluation note that records:
+  - `scorecard=tts_ux_readiness_scorecard`
+  - hard-gate verdict before weighted score
+  - per-dimension coverage status
+  - missing evidence and manual reviews
+  - `audio_generation_smoke` verdict and broader product-readiness verdict separately
 
 The evidence packet must not remain only in ignored `runs/` output or in a temporary worktree. Before a live-smoke lane reaches `merge_ready`, copy the selected packet into a merge-tracked evidence directory, preferably:
 
@@ -60,6 +68,7 @@ At minimum, promote the final audio when it is small enough for normal Git, or a
 5. no unexpected fatal warnings
 6. subjective seam review is acceptable for the tested script
 7. the evidence packet records whether the tested format is commercially acceptable for delivery, internal-master use, both, or neither
+8. the packet records whether missing evidence blocks broader `product_readiness_evaluation`
 
 ## Hold criteria
 
@@ -71,6 +80,7 @@ Treat the lane as held, not merge-ready, if any of these happen:
 - stitched output has audible seam regressions
 - observed retry behavior is materially worse than expected
 - the output format cannot be decoded, cannot be stitched cleanly, creates unacceptable artifacts, or has storage / delivery characteristics that make it unsuitable for the claimed use
+- the packet lacks required readiness evidence and no explicit `blocked_by_missing_evidence` evaluation note is retained
 
 ## After smoke
 

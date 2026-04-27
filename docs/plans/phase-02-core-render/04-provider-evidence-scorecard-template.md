@@ -5,11 +5,11 @@
 > Normative for product rules: no
 > Canonical owner: Delivery owner
 > Depends on truth docs: `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/quality-ops-and-automation.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`, `/docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`
-> Last reviewed: 2026-04-23
+> Last reviewed: 2026-04-26
 
 ## Purpose
 
-Standardize the run-log fields, review notes, and memo outline used when comparing hosted providers for the frozen English-and-Spanish long-form feasibility gate.
+Standardize the run-log fields, review notes, and memo outline used when comparing hosted providers for the frozen English-and-Spanish long-form feasibility gate. The canonical TTS UX readiness contract is `tts_ux_readiness_scorecard` in `/docs/prd/specs/quality-ops-and-automation.md`; this template only captures the execution fields needed to populate it.
 
 ## Scorecard Row Schema
 
@@ -47,6 +47,11 @@ Standardize the run-log fields, review notes, and memo outline used when compari
 | `subtitle_text_fidelity_notes` | Yes | Normalization drift, wording mismatch, readability risk |
 | `audio_format_verdict` | Yes | `ready_for_internal_master`, `ready_for_delivery`, `ready_for_export`, `hold_for_export`, or `blocked`, with reason in notes |
 | `audio_format_notes` | Yes | Commercial delivery judgment, internal-master judgment, whether the format is provider-native or derived, and any storage / download concern |
+| `tts_ux_scorecard_version` | Yes | Review date or version of the canonical `tts_ux_readiness_scorecard` |
+| `hard_gate_verdict` | Yes | `ready`, `warning`, `blocked`, `manual_required`, `unknown`, or `blocked_by_missing_evidence` before weighted scoring |
+| `weighted_score` | No | Allowed only when hard gates and required evidence coverage pass |
+| `final_evaluation_artifact` | Yes | Path to `final-evaluation.json` or an equivalent retrospective evaluation note |
+| `missing_evidence_summary` | Yes | Short list of absent artifacts or reviews; do not drop missing dimensions from the scorecard |
 | `evidence_artifact_path` | Yes | Merge-tracked evidence packet path, not only a disposable `runs/` path |
 | `decision_flag` | Yes | keep testing / viable / hold / reject |
 
@@ -76,6 +81,7 @@ Use one companion scenario table per benchmark packet so pricing review stays co
 | Language readiness | Do English and Spanish both have enough evidence to support the planned first-gate claim? |
 | Subtitle text quality | Would a founder trust the first subtitle draft enough to keep iterating on this path? |
 | Commercial viability | Does observed cost still fit the current pricing envelope? |
+| UX readiness gates | Do hard gates and required evidence coverage pass before anyone reads the weighted score? |
 
 ## Memo Outline
 
@@ -85,7 +91,8 @@ Use one companion scenario table per benchmark packet so pricing review stays co
 4. `Audio format`: recommended master format, default delivery format, and whether WAV export stays held
 5. `Quality`: seam behavior, drift, timing credibility, subtitle-text-fidelity risk
 6. `Economics`: observed cost per completed minute and any fallback / retry concern
-7. `Decision`: `go`, `hold`, or `fallback` plus the next action
+7. `TTS UX readiness`: final verdict from the canonical scorecard, missing evidence, and any manual review still required
+8. `Decision`: `go`, `hold`, or `fallback` plus the next action
 
 ## Out of Scope
 
@@ -105,7 +112,8 @@ Use one companion scenario table per benchmark packet so pricing review stays co
 3. The scenario table stays reconcilable with `/docs/plans/phase-02-core-render/05-pricing-unit-economics-model-v0.41.xlsx`.
 4. Audio-format verdicts are present for both default delivery and production-master candidates before the memo recommends a product format.
 5. The evidence artifact path resolves to a packet that survives worktree cleanup and is included in the merge.
-6. The memo can be written directly from the scorecard without reopening raw provider logs.
+6. The row records hard-gate status and missing evidence before any weighted score is used.
+7. The memo can be written directly from the scorecard without reopening raw provider logs.
 
 ## Execution Notes
 
@@ -113,3 +121,4 @@ Use one companion scenario table per benchmark packet so pricing review stays co
 2. Use the exact lifecycle enums from the canonical spec.
 3. If a field is missing, record `unknown` and create a backfill action instead of silently dropping it.
 4. The workbook is a required planning companion for the scenario table, but it is not canonical truth. If the workbook and markdown notes disagree, reconcile them in the same change instead of letting both stand.
+5. Do not copy the fixed TTS UX dimension table into this template. Link to `/docs/prd/specs/quality-ops-and-automation.md` and record per-run coverage only.

@@ -5,7 +5,7 @@
 > Normative for product rules: no
 > Canonical owner: Delivery owner
 > Depends on truth docs: `/docs/prd/prd.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/billing-usage-semantics.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`, `/docs/prd/specs/quality-ops-and-automation.md`, `/docs/prd/specs/mksaas-boundary-contract.md`
-> Last reviewed: 2026-04-23
+> Last reviewed: 2026-04-26
 
 ## Purpose
 
@@ -38,6 +38,7 @@ This checklist prevents Orpheus from entering `Phase 2` with contradictory promi
 - [ ] The frozen corpus includes named source files and approved voices before benchmarking starts. Spanish fixtures may be paired translations or Spanish-native scripts, but they may not change mid-cycle.
 - [ ] The corpus contains real educational-explainer scripts rather than synthetic placeholder copy.
 - [ ] Provider comparison fields are frozen before testing begins: language, success / failure, retry behavior, latency, chunk count, stitch count, seam defects, output readiness, timing readiness, effective cost, alignment-asset coverage, provider timestamp usefulness, and subtitle-text-fidelity risk.
+- [ ] The `tts_ux_readiness_scorecard` contract is frozen through `quality-ops-and-automation.md`, including hard-gate-before-score semantics and the required verdict states.
 - [ ] A go / hold / fallback memo template exists before the first provider test run.
 - [ ] `Inworld` is explicitly accepted as the primary implementation path for the first benchmark cycle.
 - [ ] `Cartesia` is explicitly accepted as the required second-provider benchmark in the same benchmark cycle.
@@ -77,6 +78,7 @@ This checklist prevents Orpheus from entering `Phase 2` with contradictory promi
 
 - [ ] Dashboards slice by `provider`, `language`, `duration_band`, and `run_type`.
 - [ ] Long-form scorecards include at least `long_audio_stability`, `stitch_artifact_rate`, `alignment_asset_success_rate`, `srt_alignment_quality`, `subtitle_text_fidelity`, `run_success_rate`, and cost per completed audio minute.
+- [ ] TTS UX readiness evaluations record hard-gate verdict, per-dimension evidence coverage, missing evidence, manual review requirements, and final verdict before any weighted score is interpreted.
 - [ ] Stuck-run alerts, provider-health alerts, and failed-alignment alerts exist before broad internal testing expands.
 - [ ] There is a manual review rubric for long-form drift, audible seams, timestamp credibility, and subtitle-text fidelity.
 
@@ -97,3 +99,4 @@ This checklist prevents Orpheus from entering `Phase 2` with contradictory promi
 6. Updated truth-doc backfill list for any envelope, lifecycle, or pricing change
 7. One competitor benchmark note against the current public self-serve long-form reference workflow
 8. One explicit provider-cost scenario table showing whether the working `Pro` package still clears the margin floor
+9. One `final-evaluation.json` or equivalent evaluation note using `tts_ux_readiness_scorecard`

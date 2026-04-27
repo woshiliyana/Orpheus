@@ -14,12 +14,13 @@
 | `source-script.md` | Copied from `/Volumes/woshiliyana/黑暗心理学频道/西班牙语频道/04/0418/psicologia-maquiavelica-inteligencia-oscura.md` | Source manuscript snapshot used to reopen the Spanish smoke input after worktree cleanup |
 | `final.mp3` | Recovered from `/Volumes/woshiliyana/黑暗心理学频道/西班牙语频道/04/0418/音频/final.mp3` | Provider-native MP3 output from the Spanish Inworld live smoke |
 | `large-artifacts.manifest.json` | Records the external retained WAV derivative | Manifest-only retention for the 162MB WAV file that must not enter normal Git |
+| `retrospective-tts-ux-evaluation.md` | Local retrospective using the R1 `tts_ux_readiness_scorecard` | Records what this packet proves and which UX-readiness evidence is missing |
 
 ## Source Probe
 
-| File | Words | Characters | Size |
+| File | Words | Input characters | Size |
 |---|---:|---:|---:|
-| `source-script.md` | 4,734 | 29,047 | 28KB |
+| `source-script.md` | 4,734 | 28,543 | 28KB |
 
 ## Audio Probe
 

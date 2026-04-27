@@ -5,7 +5,7 @@
 > Normative for product rules: no
 > Canonical owner: Delivery owner + engineering lead
 > Depends on truth docs: `/docs/prd/source-of-truth-index.md`, `/docs/prd/prd.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/billing-usage-semantics.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`, `/docs/prd/specs/distribution-and-growth-surface.md`, `/docs/prd/specs/quality-ops-and-automation.md`, `/docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`, `/docs/plans/phase-02-core-render/02-development-entry-checklist.md`
-> Last reviewed: 2026-04-23
+> Last reviewed: 2026-04-26
 
 ## Purpose
 
@@ -47,6 +47,7 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 13. Provider run-log capture and cost-snapshot update for the frozen `EN + ES` corpus
 14. One short benchmark note against the prevailing public self-serve long-form workflow, with `ElevenLabs` as the reference point
 15. One explicit `EN + ES` output / timing readiness note for the first gate
+16. One `tts_ux_readiness_scorecard` evaluation artifact that records hard gates, evidence coverage, missing evidence, manual review requirements, and final verdict before weighted scoring
 
 ## Out of Scope
 
@@ -71,6 +72,7 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 8. The benchmark packet covers the frozen `en-control-short`, `en-control-medium`, `en-control-long`, `es-control-short`, `es-control-medium`, and `es-control-long` corpus and yields explicit `ready` / `warning` / `blocked` output and timing verdicts for English and Spanish, or the agent produces an explicit hold memo naming the blocked language and limiting envelope.
 9. The benchmark packet includes one second-provider cost / quality scenario, not just the primary provider.
 10. A pricing review snapshot is updated using observed `cost_per_completed_audio_minute`, retry overhead, and fallback behavior.
+11. Hard-gate and required-evidence failures cannot be overridden by an average or weighted UX score.
 
 ## Required Deliverables
 
@@ -89,6 +91,7 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 10. Truth-doc backfill list for any semantic mismatches discovered during implementation
 11. One short benchmark note explaining whether the current Orpheus slice is differentiated enough from the prevailing self-serve long-form workflow
 12. One explicit recommendation on whether the team should keep `Inworld-first`, switch primary provider, or keep the current mix but tighten packaging
+13. One `final-evaluation.json` or equivalent scorecard note using the canonical `tts_ux_readiness_scorecard`
 
 Provider-backed evidence must be promoted into a merge-tracked artifact packet before worktree cleanup. A local-only path under `runs/` is not a completed deliverable.
 
@@ -101,10 +104,12 @@ Provider-backed evidence must be promoted into a merge-tracked artifact packet b
 - Audio-format policy tests for requested format, observed asset metadata, delivery verdict, and production-master verdict
 - Provider-boundary tests proving the client never calls providers directly
 - Cost-calculation tests that fail when a provider scenario drops below the target margin floor without an explicit doc update
+- Scorecard-shape tests or schema checks once `final-evaluation.json` generation exists
 
 ## Manual Review Tasks
 
 - Audible seam review on long-form stitched outputs
+- TTS UX readiness review using the canonical scorecard, with missing evidence recorded as `blocked_by_missing_evidence` when required artifacts are absent
 - Audio-format review comparing default `MP3` delivery against zero-cost WAV derivative packaging when possible; use provider-native `WAV` / Linear PCM only when the lane explicitly needs production-master quality evidence
 - Spot-check English and Spanish final-audio timing against internal alignment assets
 - Spot-check English and Spanish subtitle-text fidelity against source and normalized text
@@ -123,7 +128,8 @@ Provider-backed evidence must be promoted into a merge-tracked artifact packet b
 7. Expose project status and download in UI or API.
 8. Run the frozen corpus on `Inworld`, then run the same corpus on `Cartesia`.
 9. Update the scorecard, workbook snapshot, `EN + ES` readiness note, and decision memo.
-10. Write the public-market comparison note before any broader pricing or trial decision.
+10. Write the `tts_ux_readiness_scorecard` evaluation artifact before interpreting weighted quality or UX scores.
+11. Write the public-market comparison note before any broader pricing or trial decision.
 
 ## Backfill Required
 
@@ -139,6 +145,7 @@ Provider-backed evidence must be promoted into a merge-tracked artifact packet b
 2. The evidence packet contains audio, manifest, alignment-ready traces, and `EN + ES` readiness notes.
 3. The run log and memo are sufficient for a founder to make a go / hold / fallback decision without re-reading raw provider logs.
 4. The benchmark packet is sufficient for pricing and distribution decisions without redoing basic provider math.
+5. The scorecard separates `audio_generation_smoke` from broader `product_readiness_evaluation`.
 
 ## Execution Notes
 

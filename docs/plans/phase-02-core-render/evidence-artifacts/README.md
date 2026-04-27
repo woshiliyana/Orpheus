@@ -5,7 +5,7 @@
 > Normative for product rules: no
 > Canonical owner: Delivery owner + engineering lead
 > Depends on: `/docs/ops/phase2-live-smoke.md`, `/docs/ops/worktree-parallel-development.md`
-> Last reviewed: 2026-04-25
+> Last reviewed: 2026-04-26
 
 This directory is the default merge-tracked home for selected Phase 2 provider-backed evidence packets.
 
@@ -22,8 +22,11 @@ This directory is the default merge-tracked home for selected Phase 2 provider-b
    - splice report when present
    - subtitle and timing artifacts when present
    - audio probe metadata
+   - `final-evaluation.json` or an equivalent evaluation note using the canonical `tts_ux_readiness_scorecard`
    - one short review note
 4. Raw provider responses may be retained only after checking that they do not contain credentials, private account tokens, or unrelated sensitive payloads.
 5. Large binaries must not be committed through normal Git when they exceed GitHub's repository file limits or make the repo costly to clone.
 6. If an artifact is too large for normal Git history, stop before cleanup and choose an explicit durable storage path plus a tracked manifest. Do not silently delete it with the worktree.
 7. Commercial delivery audio belongs in product storage, not GitHub. Repo evidence should retain the manifest needed to verify the product-storage object.
+8. Future packets must record hard-gate verdict, per-dimension coverage status, missing evidence, manual review requirements, and final verdict before any weighted score is interpreted.
+9. Missing artifacts must be named as `blocked_by_missing_evidence` when they are required for product readiness. A healthy decode or loudness probe is not enough to claim UX readiness.
