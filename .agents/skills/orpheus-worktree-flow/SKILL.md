@@ -24,6 +24,7 @@ Keep multi-lane implementation predictable. No free-form “just open another br
 4. `debug` is mandatory after `self_test`.
 5. If provider-backed behavior matters, `live_smoke` is mandatory before `merge_ready`.
 6. If the lane requires founder or user signoff, stop at `awaiting_user_acceptance` until acceptance is explicit.
+7. After merge, run the local worktree cleanup and verify the lane no longer appears in `git worktree list --porcelain`; the lane is not complete until it reaches `cleaned_up`.
 
 ## Default lane sequence
 
@@ -70,6 +71,14 @@ Run live smoke:
 ./scripts/live-smoke/phase2-live-smoke.sh --provider inworld --voice Ashley --script fixtures/frozen-corpus/scripts/en-control-medium.txt
 ```
 
+Clean up after merge:
+
+```bash
+./scripts/worktree/cleanup.sh <worktree-path>
+git worktree list --porcelain
+git worktree prune --dry-run --verbose
+```
+
 ## Stop conditions
 
 Do not mark the lane complete if:
@@ -78,3 +87,4 @@ Do not mark the lane complete if:
 - live smoke is required and not passed
 - user acceptance is required and not accepted
 - the lane has not reached `merge_ready`
+- the merged lane's local worktree has not been removed

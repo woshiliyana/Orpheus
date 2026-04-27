@@ -20,6 +20,7 @@ Define the default Orpheus flow for parallel agent work without letting multiple
 5. Live smoke is required for any phase gate that touches real provider behavior, artifact integrity, or release confidence.
 6. If a lane is marked `requiresUserAcceptance`, the agent may keep developing inside the lane but must stop at `awaiting_user_acceptance` until a human explicitly accepts the stage.
 7. `main` only receives work that has already passed branch-local checks, required smoke, and final review.
+8. After merge, the lane is not complete until the local worktree has been removed and any lane-specific stale worktree metadata has been checked or pruned.
 
 ## Stage model
 
@@ -159,6 +160,15 @@ After review and merge:
 ```
 
 Then return to `main`, pull, and rerun the required checks.
+
+Cleanup is mandatory for merged lanes. Do not hand off a merged lane as finished while its local worktree directory still exists. If cleanup is blocked, leave the lane in a tail debt state and name the blocker, the path, and the next cleanup command.
+
+After cleanup, verify that the lane is gone from the local worktree registry:
+
+```bash
+git worktree list --porcelain
+git worktree prune --dry-run --verbose
+```
 
 Cleanup is blocked if required live-smoke artifacts still exist only under ignored `runs/`, `benchmark-results/`, or another worktree-local path. Either merge the promoted evidence packet first or write an explicit closeout waiver naming why that artifact is not retained.
 

@@ -29,6 +29,7 @@ Default operating limits:
 - every worktree lane must own `.agent/task-brief.json`
 - every task brief must be reviewed before implementation begins
 - `debug` is mandatory before a lane becomes PR-ready
+- after a lane is merged, local worktree cleanup is mandatory before the lane can be called complete
 
 A lane is parallel-safe only if all of the following are true:
 
@@ -67,6 +68,7 @@ Use this execution order inside each implementation lane unless the controller e
 11. `cleaned_up`
 
 A lane is not complete while it is waiting for required smoke or required user acceptance.
+A merged lane is also not complete while its local worktree directory or lane-specific stale worktree metadata still remains unaddressed.
 
 ## Merge order
 
@@ -98,6 +100,7 @@ Every lane handoff should contain:
 - checks run
 - assumptions taken
 - unresolved risks
+- local worktree cleanup status
 - whether canonical docs were changed or should be changed next
 
 ## When to stop and sync docs
