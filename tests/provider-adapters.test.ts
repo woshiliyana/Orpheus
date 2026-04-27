@@ -1,5 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import os from "node:os";
 import path from "node:path";
 import { execFile } from "node:child_process";
@@ -53,6 +54,10 @@ function makeJsonResponse(status: number, payload: unknown): Response {
   } as Response;
 }
 
+function hashText(text: string): string {
+  return createHash("sha256").update(text).digest("hex");
+}
+
 function makeTextResponse(status: number, body: string): Response {
   return {
     ok: status >= 200 && status < 300,
@@ -91,6 +96,124 @@ test("Inworld adapter counts provider characters across retry attempts", async (
       sampleRateHertz: 48000,
       bitRate: 192000,
     });
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("Inworld adapter retries transient terminated responses and keeps attempt evidence", async () => {
+  const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-inworld-terminated-"));
+  const audioContent = await generateMp3Base64(tmpDir);
+  const input = makeChunkInput(tmpDir, "Network termination should be retried for one chunk.");
+  const originalFetch = globalThis.fetch;
+  let attempts = 0;
+
+  globalThis.fetch = async () => {
+    attempts += 1;
+    if (attempts === 1) {
+      const error = new Error("terminated") as Error & { code?: string };
+      error.code = "UND_ERR_SOCKET";
+      throw error;
+    }
+
+    return makeJsonResponse(200, { audioContent });
+  };
+
+  try {
+    const adapter = new InworldProviderAdapter({ apiKey: "test-key", maxAttempts: 2 });
+    const result = await adapter.synthesizeChunk(input);
+
+    assert.equal(attempts, 2);
+    assert.equal(result.attemptCount, 2);
+    assert.equal(result.providerCharactersProcessed, input.chunk.text.length * 2);
+    assert.equal(result.rawResponsePaths.length, 2);
+    assert.match(await readFile(path.join(tmpDir, "attempt-1.error.json"), "utf8"), /terminated/);
+    assert.match(await readFile(path.join(tmpDir, "chunk-result.json"), "utf8"), /chunkSha256/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("Inworld adapter reuses explicit chunk-result metadata without calling the provider", async () => {
+  const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-inworld-cache-metadata-"));
+  const input = makeChunkInput(tmpDir, "Cached chunks should avoid a second provider call.");
+  const audioContent = await generateMp3Base64(tmpDir);
+  const audioPath = path.join(tmpDir, "audio.mp3");
+  const rawResponsePath = path.join(tmpDir, "attempt-1.json");
+  const words = [{ text: "Cached", startSec: 0, endSec: 0.25 }];
+
+  await writeFile(audioPath, Buffer.from(audioContent, "base64"));
+  await writeFile(rawResponsePath, JSON.stringify({ audioContent, usage: { processedCharactersCount: input.chunk.text.length } }), "utf8");
+  await writeFile(path.join(tmpDir, "chunk-result.json"), JSON.stringify({
+    cacheVersion: 1,
+    provider: "inworld",
+    chunkId: input.chunk.id,
+    chunkSha256: hashText(input.chunk.text),
+    language: input.language,
+    voiceId: input.voiceId,
+    outputFormat: input.outputFormat,
+    audioPath,
+    durationSec: 1,
+    words,
+    rawResponsePaths: [rawResponsePath],
+    attemptCount: 1,
+    providerCharactersProcessed: input.chunk.text.length,
+  }, null, 2), "utf8");
+
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => {
+    throw new Error("fetch should not be called for cached chunks");
+  };
+
+  try {
+    const adapter = new InworldProviderAdapter({ apiKey: "test-key", maxAttempts: 1 });
+    const result = await adapter.synthesizeChunk({ ...input, reuseCompletedChunk: true });
+
+    assert.equal(result.cacheHit, true);
+    assert.equal(result.cacheSource, "chunk_result_metadata");
+    assert.equal(result.providerCharactersProcessed, input.chunk.text.length);
+    assert.deepEqual(result.words, words);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("Inworld adapter can reuse legacy raw response chunks when character counts match", async () => {
+  const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-inworld-cache-legacy-"));
+  const input = makeChunkInput(tmpDir, "Legacy cached chunks need safe reuse for failed smoke reruns.");
+  const audioContent = await generateMp3Base64(tmpDir);
+  const audioPath = path.join(tmpDir, "audio.mp3");
+
+  await writeFile(audioPath, Buffer.from(audioContent, "base64"));
+  await writeFile(path.join(tmpDir, "attempt-1.json"), JSON.stringify({
+    audioContent,
+    timestampInfo: {
+      wordAlignment: {
+        words: ["Legacy", "cached"],
+        wordStartTimeSeconds: [0, 0.3],
+        wordEndTimeSeconds: [0.2, 0.5],
+      },
+    },
+    usage: {
+      processedCharactersCount: input.chunk.text.length,
+      modelId: "inworld-tts-1.5-max",
+    },
+  }, null, 2), "utf8");
+
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => {
+    throw new Error("fetch should not be called for legacy cached chunks");
+  };
+
+  try {
+    const adapter = new InworldProviderAdapter({ apiKey: "test-key", maxAttempts: 1 });
+    const result = await adapter.synthesizeChunk({ ...input, reuseCompletedChunk: true });
+
+    assert.equal(result.cacheHit, true);
+    assert.equal(result.cacheSource, "legacy_provider_response");
+    assert.equal(result.providerCharactersProcessed, input.chunk.text.length);
+    assert.deepEqual(result.words.map((word) => word.text), ["Legacy", "cached"]);
+    assert.ok(result.durationSec > 0);
   } finally {
     globalThis.fetch = originalFetch;
   }

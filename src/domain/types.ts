@@ -33,6 +33,7 @@ export interface ChunkSynthesisInput {
   voiceId: string;
   outputFormat: OutputAudioFormat;
   outputDir: string;
+  reuseCompletedChunk?: boolean;
 }
 
 export interface ChunkSynthesisResult {
@@ -42,6 +43,8 @@ export interface ChunkSynthesisResult {
   rawResponsePaths: string[];
   attemptCount: number;
   providerCharactersProcessed: number;
+  cacheHit?: boolean;
+  cacheSource?: "chunk_result_metadata" | "legacy_provider_response";
 }
 
 export interface ProviderAttemptError extends Error {
@@ -63,6 +66,8 @@ export interface RunMetrics {
   scriptChars: number;
   chunkCount: number;
   chunkRetryCount: number;
+  cachedChunkCount?: number;
+  providerCharactersReused?: number;
   totalWallTimeMs: number;
   audioDurationSec: number;
   timestampCoveragePct: number;
@@ -88,6 +93,7 @@ export interface ArtifactManifest {
     chunk_count: number;
     stitch_count: number;
     retry_count: number;
+    cached_chunk_count?: number;
     warning_flags: string[];
   };
   output_language: string;
@@ -120,6 +126,7 @@ export interface NarrationJobInput {
   minChunkSize?: number;
   maxChunkSize?: number;
   concurrency?: number;
+  reuseCompletedChunks?: boolean;
 }
 
 export interface NarrationRunResult {

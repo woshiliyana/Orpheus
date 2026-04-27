@@ -9,6 +9,7 @@ export function createProviderAdapter(name: ProviderName): TtsProviderAdapter {
       apiKey: requireServerEnv("INWORLD_API_KEY"),
       rateUsdPer1mChars: readNumberEnv("INWORLD_RATE_USD_PER_1M_CHARS", 30),
       maxAttempts: readIntegerEnv("INWORLD_MAX_ATTEMPTS", 3),
+      requestTimeoutMs: readIntegerEnv("INWORLD_REQUEST_TIMEOUT_MS", 900_000),
     });
   }
 

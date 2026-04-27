@@ -27,6 +27,7 @@ async function main(): Promise<void> {
     outputFormat: (args.format ?? "mp3") as "mp3" | "wav",
     script,
     outputDir,
+    reuseCompletedChunks: args["resume-existing-chunks"] === "true",
   }, adapter);
 
   const output = {

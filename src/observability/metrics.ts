@@ -6,6 +6,8 @@ interface BuildRunMetricsInput {
   scriptChars: number;
   chunkCount: number;
   chunkRetryCount: number;
+  cachedChunkCount?: number;
+  providerCharactersReused?: number;
   totalWallTimeMs: number;
   audioDurationSec: number;
   wordsExpected: number;
@@ -36,7 +38,7 @@ export function buildRunMetrics(input: BuildRunMetricsInput): RunMetrics {
   const estimatedTotalCostUsd = estimatedTtsCostUsd + estimatedNonTtsCostUsd;
   const coverage = input.wordsExpected === 0
     ? 100
-    : (input.wordsWithTimestamps / input.wordsExpected) * 100;
+    : Math.min(100, (input.wordsWithTimestamps / input.wordsExpected) * 100);
 
   return {
     provider: input.provider,
@@ -44,6 +46,8 @@ export function buildRunMetrics(input: BuildRunMetricsInput): RunMetrics {
     scriptChars: input.scriptChars,
     chunkCount: input.chunkCount,
     chunkRetryCount: input.chunkRetryCount,
+    cachedChunkCount: input.cachedChunkCount,
+    providerCharactersReused: input.providerCharactersReused,
     totalWallTimeMs: input.totalWallTimeMs,
     audioDurationSec: round(input.audioDurationSec, 3),
     timestampCoveragePct: round(coverage, 2),

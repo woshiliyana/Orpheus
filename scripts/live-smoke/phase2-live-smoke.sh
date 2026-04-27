@@ -7,6 +7,7 @@ SCRIPT_PATH="fixtures/frozen-corpus/scripts/en-control-medium.txt"
 REQUEST_ID="live-smoke-$(date +%Y%m%d-%H%M%S)"
 OUTPUT_DIR="runs/live-smoke"
 FORMAT="mp3"
+RESUME_EXISTING_CHUNKS="false"
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
@@ -22,6 +23,8 @@ while [ "$#" -gt 0 ]; do
       OUTPUT_DIR="$2"; shift 2 ;;
     --format)
       FORMAT="$2"; shift 2 ;;
+    --resume-existing-chunks)
+      RESUME_EXISTING_CHUNKS="true"; shift ;;
     *)
       echo "Unknown option: $1" >&2; exit 2 ;;
   esac
@@ -46,4 +49,9 @@ esac
 
 mkdir -p "$OUTPUT_DIR"
 
-npm run narrate -- --provider "$PROVIDER" --voice "$VOICE" --script-file "$SCRIPT_PATH" --request-id "$REQUEST_ID" --output-dir "$OUTPUT_DIR" --format "$FORMAT"
+resume_args=()
+if [ "$RESUME_EXISTING_CHUNKS" = "true" ]; then
+  resume_args+=(--resume-existing-chunks)
+fi
+
+npm run narrate -- --provider "$PROVIDER" --voice "$VOICE" --script-file "$SCRIPT_PATH" --request-id "$REQUEST_ID" --output-dir "$OUTPUT_DIR" --format "$FORMAT" "${resume_args[@]}"

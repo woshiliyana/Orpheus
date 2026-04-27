@@ -73,6 +73,7 @@ function buildArtifactManifest(input: {
   language: string;
   chunkCount: number;
   retryCount: number;
+  cachedChunkCount: number;
   warnings: string[];
   finalAudioPath: string;
   durationSec: number;
@@ -94,6 +95,7 @@ function buildArtifactManifest(input: {
       chunk_count: input.chunkCount,
       stitch_count: Math.max(0, input.chunkCount - 1),
       retry_count: input.retryCount,
+      cached_chunk_count: input.cachedChunkCount,
       warning_flags: input.warnings,
     },
     output_language: input.language,
@@ -124,6 +126,7 @@ function buildFailureArtifactManifest(input: {
   language: string;
   chunkCount: number;
   retryCount: number;
+  cachedChunkCount: number;
   estimatedTotalCostUsd: number;
   failureReason: string;
 }): ArtifactManifest {
@@ -141,6 +144,7 @@ function buildFailureArtifactManifest(input: {
       chunk_count: input.chunkCount,
       stitch_count: 0,
       retry_count: input.retryCount,
+      cached_chunk_count: input.cachedChunkCount,
       warning_flags: ["run_failed"],
     },
     output_language: input.language,
@@ -155,6 +159,31 @@ function buildFailureArtifactManifest(input: {
 
 function getErrorMessage(error: unknown): string {
   return error instanceof Error ? error.message : String(error);
+}
+
+function countChunkRetries(chunkResults: Array<{ result: ChunkSynthesisResult }>): number {
+  return chunkResults.reduce(
+    (sum, chunkResult) => sum + Math.max(0, chunkResult.result.attemptCount - 1),
+    0,
+  );
+}
+
+function countCachedChunks(chunkResults: Array<{ result: ChunkSynthesisResult }>): number {
+  return chunkResults.filter((chunkResult) => chunkResult.result.cacheHit === true).length;
+}
+
+function countReusedCharacters(chunkResults: Array<{ chunk: ScriptChunk; result: ChunkSynthesisResult }>): number {
+  return chunkResults.reduce(
+    (sum, chunkResult) => sum + (chunkResult.result.cacheHit === true ? chunkResult.chunk.text.length : 0),
+    0,
+  );
+}
+
+function countProviderCharactersProcessed(chunkResults: Array<{ result: ChunkSynthesisResult }>): number {
+  return chunkResults.reduce(
+    (sum, chunkResult) => sum + chunkResult.result.providerCharactersProcessed,
+    0,
+  );
 }
 
 export async function runNarrationJob(
@@ -196,6 +225,7 @@ export async function runNarrationJob(
         voiceId: input.voiceId,
         outputFormat: input.outputFormat,
         outputDir: chunkDir,
+        reuseCompletedChunk: input.reuseCompletedChunks,
       });
 
       completedChunkResults.push({ chunk, result });
@@ -229,18 +259,14 @@ export async function runNarrationJob(
       requestId: input.requestId,
       scriptChars: input.script.length,
       chunkCount: chunks.length,
-      chunkRetryCount: chunkResults.reduce(
-        (sum, chunkResult) => sum + Math.max(0, chunkResult.result.attemptCount - 1),
-        0,
-      ),
+      chunkRetryCount: countChunkRetries(chunkResults),
+      cachedChunkCount: countCachedChunks(chunkResults),
       totalWallTimeMs: Date.now() - startedAt,
       audioDurationSec: stitched.totalDurationSec,
       wordsExpected,
       wordsWithTimestamps,
-      providerCharactersAttempted: chunkResults.reduce(
-        (sum, chunkResult) => sum + chunkResult.result.providerCharactersProcessed,
-        0,
-      ),
+      providerCharactersAttempted: countProviderCharactersProcessed(chunkResults),
+      providerCharactersReused: countReusedCharacters(chunkResults),
       providerRateUsdPer1mChars: provider.rateUsdPer1mChars,
       alignmentComputePerAudioMinuteUsd: readNumberEnv("ALIGNMENT_COMPUTE_PER_AUDIO_MINUTE_USD", 0.01),
       storageDeliveryPerAudioMinuteUsd: readNumberEnv("STORAGE_DELIVERY_PER_AUDIO_MINUTE_USD", 0.002),
@@ -257,6 +283,7 @@ export async function runNarrationJob(
       language,
       chunkCount: chunks.length,
       retryCount: metrics.chunkRetryCount,
+      cachedChunkCount: metrics.cachedChunkCount ?? 0,
       warnings,
       finalAudioPath: stitched.outputPath,
       durationSec: stitched.totalDurationSec,
@@ -283,17 +310,12 @@ export async function runNarrationJob(
   } catch (error) {
     const providerError = error as ProviderAttemptError;
     const chunkRetryCount =
-      completedChunkResults.reduce(
-        (sum, chunkResult) => sum + Math.max(0, chunkResult.result.attemptCount - 1),
-        0,
-      ) +
+      countChunkRetries(completedChunkResults) +
       Math.max(0, (providerError.attemptCount ?? 1) - 1);
     const providerCharactersAttempted =
-      completedChunkResults.reduce(
-        (sum, chunkResult) => sum + chunkResult.result.providerCharactersProcessed,
-        0,
-      ) +
+      countProviderCharactersProcessed(completedChunkResults) +
       (providerError.providerCharactersProcessed ?? 0);
+    const cachedChunkCount = countCachedChunks(completedChunkResults);
 
     const metrics = buildRunMetrics({
       provider: provider.name,
@@ -301,11 +323,13 @@ export async function runNarrationJob(
       scriptChars: input.script.length,
       chunkCount: chunks.length,
       chunkRetryCount,
+      cachedChunkCount,
       totalWallTimeMs: Date.now() - startedAt,
       audioDurationSec: 0,
       wordsExpected,
       wordsWithTimestamps: 0,
       providerCharactersAttempted,
+      providerCharactersReused: countReusedCharacters(completedChunkResults),
       providerRateUsdPer1mChars: provider.rateUsdPer1mChars,
       alignmentComputePerAudioMinuteUsd: readNumberEnv("ALIGNMENT_COMPUTE_PER_AUDIO_MINUTE_USD", 0.01),
       storageDeliveryPerAudioMinuteUsd: readNumberEnv("STORAGE_DELIVERY_PER_AUDIO_MINUTE_USD", 0.002),
@@ -323,6 +347,7 @@ export async function runNarrationJob(
       language,
       chunkCount: chunks.length,
       retryCount: chunkRetryCount,
+      cachedChunkCount,
       estimatedTotalCostUsd: metrics.estimatedTotalCostUsd,
       failureReason: getErrorMessage(error),
     });

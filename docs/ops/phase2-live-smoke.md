@@ -33,6 +33,14 @@ The smoke packet feeds the canonical `tts_ux_readiness_scorecard` in `/docs/prd/
 
 Do not run a paired provider-native `--format wav` smoke by default. If the product question is only download packaging, derive a clearly labeled WAV from the existing MP3 artifact at zero provider cost. Run provider-native `--format wav` only when the lane explicitly needs to decide whether WAV / Linear PCM is ready to serve as an internal production master or user-facing export.
 
+If a long-form run fails after some chunks have already produced valid provider audio, rerun the same `--request-id`, source script, provider, voice, and format with:
+
+```bash
+--resume-existing-chunks
+```
+
+This flag is explicit on purpose. It lets the backend reuse completed chunk artifacts in the same ignored `runs/` packet instead of paying to regenerate from zero, while keeping hidden chunking inside the backend-owned smoke path.
+
 ## Evidence packet to keep
 
 - stdout JSON from the smoke run
@@ -44,6 +52,7 @@ Do not run a paired provider-native `--format wav` smoke by default. If the prod
 - requested output format, observed container / codec, sample rate, bitrate when applicable, and file size
 - one `audio_format_verdict` using `ready_for_internal_master`, `ready_for_delivery`, `ready_for_export`, `hold_for_export`, or `blocked`
 - for MP3 delivery, explicit judgment against the commercial default target of `>=192 kbps`
+- if resumed, `cachedChunkCount`, retry evidence, and a note that chunk reuse stayed backend-owned
 - `final-evaluation.json` or an equivalent evaluation note that records:
   - `scorecard=tts_ux_readiness_scorecard`
   - hard-gate verdict before weighted score

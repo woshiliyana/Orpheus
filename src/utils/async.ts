@@ -18,9 +18,72 @@ function getStatusCode(error: unknown): number | undefined {
   return candidate.statusCode ?? candidate.status ?? candidate.cause?.statusCode ?? candidate.cause?.status;
 }
 
+function getErrorCodes(error: unknown): string[] {
+  if (typeof error !== "object" || error === null) {
+    return [];
+  }
+
+  const candidate = error as { code?: unknown; cause?: unknown };
+  const currentCode = typeof candidate.code === "string" ? [candidate.code] : [];
+  return [...currentCode, ...getErrorCodes(candidate.cause)];
+}
+
+function getErrorNames(error: unknown): string[] {
+  if (typeof error !== "object" || error === null) {
+    return [];
+  }
+
+  const candidate = error as { name?: unknown; cause?: unknown };
+  const currentName = typeof candidate.name === "string" ? [candidate.name] : [];
+  return [...currentName, ...getErrorNames(candidate.cause)];
+}
+
+function getErrorMessages(error: unknown): string[] {
+  if (error instanceof Error) {
+    return [error.message, ...getErrorMessages(error.cause)];
+  }
+
+  if (typeof error !== "object" || error === null) {
+    return [];
+  }
+
+  const candidate = error as { message?: unknown; cause?: unknown };
+  const currentMessage = typeof candidate.message === "string" ? [candidate.message] : [];
+  return [...currentMessage, ...getErrorMessages(candidate.cause)];
+}
+
+export function isTransientNetworkError(error: unknown): boolean {
+  const names = getErrorNames(error);
+  if (names.some((name) => name === "AbortError" || name === "TimeoutError")) {
+    return true;
+  }
+
+  const retryableCodes = new Set([
+    "ECONNRESET",
+    "ECONNREFUSED",
+    "EHOSTUNREACH",
+    "ENETDOWN",
+    "ENETRESET",
+    "ENETUNREACH",
+    "ETIMEDOUT",
+    "UND_ERR_ABORTED",
+    "UND_ERR_BODY_TIMEOUT",
+    "UND_ERR_CONNECT_TIMEOUT",
+    "UND_ERR_HEADERS_TIMEOUT",
+    "UND_ERR_SOCKET",
+  ]);
+  if (getErrorCodes(error).some((code) => retryableCodes.has(code))) {
+    return true;
+  }
+
+  return getErrorMessages(error).some((message) =>
+    /\b(terminated|fetch failed|network error|socket hang up|connection reset|aborted|timeout)\b/i.test(message),
+  );
+}
+
 export function isRetryableError(error: unknown): boolean {
   const statusCode = getStatusCode(error);
-  return statusCode === 429 || (statusCode !== undefined && statusCode >= 500 && statusCode < 600);
+  return statusCode === 429 || (statusCode !== undefined && statusCode >= 500 && statusCode < 600) || isTransientNetworkError(error);
 }
 
 export async function retryWithExponentialBackoff<T>(

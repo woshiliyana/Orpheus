@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { mapWithConcurrency, retryWithExponentialBackoff } from "../src/utils/async.js";
+import { isRetryableError, mapWithConcurrency, retryWithExponentialBackoff } from "../src/utils/async.js";
 
 test("retryWithExponentialBackoff retries 429 and 5xx responses with exponential delays", async () => {
   const seenDelays: number[] = [];
@@ -50,6 +50,13 @@ test("retryWithExponentialBackoff does not retry non-retryable errors", async ()
   );
 
   assert.equal(attempts, 1);
+});
+
+test("isRetryableError treats network termination as transient", () => {
+  const error = new Error("terminated") as Error & { code?: string };
+  error.code = "UND_ERR_SOCKET";
+
+  assert.equal(isRetryableError(error), true);
 });
 
 test("mapWithConcurrency never exceeds the configured parallelism", async () => {
