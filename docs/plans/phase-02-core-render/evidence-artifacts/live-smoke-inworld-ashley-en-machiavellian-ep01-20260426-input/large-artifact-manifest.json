@@ -1,0 +1,45 @@
+{
+  "attempt_id": "live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input",
+  "status": "successful_audio_retained_in_ignored_runs_with_tracked_hash_manifest",
+  "retention_note": "Final audio assets are large and remain under ignored runs/ output. This tracked manifest records hashes, probe metadata, and local retention paths.",
+  "artifacts": [
+    {
+      "role": "production_master_audio",
+      "path": "runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/final.wav",
+      "sha256": "daa9826b59a2cb35e47d76685d9de47b7bc331d4ecd2d495226e2b60171ad6b3",
+      "size_bytes": 208366158,
+      "duration_seconds": 2170.48,
+      "format_name": "wav",
+      "codec_name": "pcm_s16le",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "bit_rate_bps": 768000,
+      "audio_format_source": "provider_native",
+      "audio_format_verdict": "ready_for_internal_master",
+      "volumedetect": {
+        "mean_volume_db": -21.5,
+        "max_volume_db": -0.7,
+        "evidence_path": "final.wav.volumedetect.txt"
+      }
+    },
+    {
+      "role": "delivery_audio",
+      "path": "runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/final.derived-from-provider-wav.mp3",
+      "sha256": "4e0a5678e08baf53d34b8869c65cca788edda911ddd12809458953d038e4ef36",
+      "size_bytes": 52092908,
+      "duration_seconds": 2170.512,
+      "format_name": "mp3",
+      "codec_name": "mp3",
+      "sample_rate_hz": 48000,
+      "channels": 1,
+      "bit_rate_bps": 192000,
+      "audio_format_source": "derived_from_provider_native_wav",
+      "audio_format_verdict": "ready_for_delivery",
+      "volumedetect": {
+        "mean_volume_db": -21.8,
+        "max_volume_db": -1,
+        "evidence_path": "final.derived-from-provider-wav.mp3.volumedetect.txt"
+      }
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "attempt_id": "live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input",
+  "status": "partial_probe_only_no_final_audio",
+  "requested_format": "wav",
+  "final_audio_exists": false,
+  "mp3_derivative_created": false,
+  "reason_mp3_derivative_not_created": "final.wav was not produced because the provider run failed before stitch.",
+  "partial_chunk_summary": {
+    "completed_chunk_count": 6,
+    "planned_chunk_count": 21,
+    "total_partial_duration_seconds": 648.1,
+    "total_partial_audio_bytes": 62217864,
+    "codec_name": "pcm_s16le",
+    "sample_rate_hz": 48000,
+    "channels": 1
+  },
+  "chunks": [
+    {
+      "chunk_index": 0,
+      "audio_retention_path": "runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/000/audio.wav",
+      "audio_sha256": "6f3477ebf9fee595443c4940c306145b1273894d5c0e846b1614e0471f820472",
+      "audio_bytes": 10711724,
+      "audio_duration_seconds": 111.58,
+      "format_name": "wav",
+      "codec_name": "pcm_s16le",
+      "sample_rate_hz": 48000,
+      "channels": 1
+    },
+    {
+      "chunk_index": 1,
+      "audio_retention_path": "runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/001/audio.wav",
+      "audio_sha256": "4cd625cc380afad4ab3a402292adf66a958d25607c1ec5890a64987f08ca9907",
+      "audio_bytes": 9557804,
+      "audio_duration_seconds": 99.56,
+      "format_name": "wav",
+      "codec_name": "pcm_s16le",
+      "sample_rate_hz": 48000,
+      "channels": 1
+    },
+    {
+      "chunk_index": 2,
+      "audio_retention_path": "runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/002/audio.wav",
+      "audio_sha256": "17b343b4bf21a8b38c8a979c970770c74ed999396e73170d627917c61ee88108",
+      "audio_bytes": 10477484,
+      "audio_duration_seconds": 109.14,
+      "format_name": "wav",
+      "codec_name": "pcm_s16le",
+      "sample_rate_hz": 48000,
+      "channels": 1
+    },
+    {
+      "chunk_index": 3,
+      "audio_retention_path": "runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/003/audio.wav",
+      "audio_sha256": "b5b8353ee5fad42cfdd8b7a5be63343188208634697eb03be2b999e92a040215",
+      "audio_bytes": 10873004,
+      "audio_duration_seconds": 113.26,
+      "format_name": "wav",
+      "codec_name": "pcm_s16le",
+      "sample_rate_hz": 48000,
+      "channels": 1
+    },
+    {
+      "chunk_index": 4,
+      "audio_retention_path": "runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/004/audio.wav",
+      "audio_sha256": "d7dbc0ce446c264f3986736203c259205a0ee20d68f8f6614fa989a90b51a99b",
+      "audio_bytes": 10001324,
+      "audio_duration_seconds": 104.18,
+      "format_name": "wav",
+      "codec_name": "pcm_s16le",
+      "sample_rate_hz": 48000,
+      "channels": 1
+    },
+    {
+      "chunk_index": 5,
+      "audio_retention_path": "runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/005/audio.wav",
+      "audio_sha256": "27be0bb0640827679bf471587018169f5bd835c5dadca8ee2f75f3ea7d792f25",
+      "audio_bytes": 10596524,
+      "audio_duration_seconds": 110.38,
+      "format_name": "wav",
+      "codec_name": "pcm_s16le",
+      "sample_rate_hz": 48000,
+      "channels": 1
+    }
+  ]
+}

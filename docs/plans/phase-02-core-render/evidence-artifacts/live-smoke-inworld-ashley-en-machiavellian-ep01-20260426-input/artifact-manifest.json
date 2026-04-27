@@ -1,0 +1,32 @@
+{
+  "project_id": "live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input",
+  "run_id": "live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input",
+  "run_status": "succeeded",
+  "source_script_hash": "af598dba819c3b5cd16b596efa01cc17c5a91c301dcf6b0f3fe47c50a47ace70",
+  "provider_summary": {
+    "primary_provider": "inworld",
+    "selected_voice": "Ashley"
+  },
+  "orchestration_summary": {
+    "chunk_count": 21,
+    "stitch_count": 20,
+    "retry_count": 3,
+    "cached_chunk_count": 21,
+    "warning_flags": []
+  },
+  "output_language": "en",
+  "final_audio_asset_ref": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/final.wav",
+  "final_audio_duration_seconds": 2170.48,
+  "internal_alignment_asset_ref": {
+    "word_timings_json": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/word-timings.json",
+    "srt": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/subtitles.srt",
+    "vtt": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/subtitles.vtt",
+    "alignment_source": "provider_native"
+  },
+  "billing_fact": {
+    "billable_seconds": 2171,
+    "usage_event_type": "initial_render_success",
+    "estimated_total_cost_usd": 1.66
+  },
+  "delivery_ref": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/final.wav"
+}

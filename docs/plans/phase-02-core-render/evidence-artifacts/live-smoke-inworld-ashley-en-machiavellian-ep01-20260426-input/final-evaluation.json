@@ -1,0 +1,227 @@
+{
+  "attempt_id": "live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input",
+  "scorecard": "tts_ux_readiness_scorecard",
+  "scorecard_version": "2026-04-26",
+  "evidence_packet_path": "docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/",
+  "evaluation_scope": [
+    "audio_generation_smoke",
+    "format_delivery_check",
+    "product_readiness_evaluation"
+  ],
+  "run_result": {
+    "status": "succeeded",
+    "provider": "inworld",
+    "voice": "Ashley",
+    "language": "en",
+    "requested_format": "wav",
+    "final_audio_duration_seconds": 2170.48,
+    "chunk_count": 21,
+    "stitch_count": 20,
+    "retry_count": 3,
+    "cached_chunk_count": 21,
+    "estimated_total_cost_usd": 1.66,
+    "estimated_cost_per_completed_audio_minute_usd": 0.046
+  },
+  "format_verdicts": [
+    {
+      "format": "provider_native_wav",
+      "audio_format_source": "provider_native",
+      "verdict": "ready_for_internal_master",
+      "reason": "Final WAV decodes as PCM s16le, 48kHz mono, 768kbps, with retained hash and duration metadata."
+    },
+    {
+      "format": "derived_mp3_192kbps",
+      "audio_format_source": "derived_from_provider_native_wav",
+      "verdict": "ready_for_delivery",
+      "reason": "Derived MP3 decodes at 48kHz mono with observed bitrate 192002bps, meeting the >=192kbps delivery target."
+    },
+    {
+      "format": "user_facing_wav_export",
+      "audio_format_source": "provider_native",
+      "verdict": "hold_for_export",
+      "reason": "Internal master posture is proven technically, but public WAV export remains outside this first smoke scope."
+    }
+  ],
+  "dimensions": [
+    {
+      "dimension": "run_integrity",
+      "evidence_coverage_status": "covered",
+      "verdict": "ready",
+      "evidence": [
+        "artifact-manifest.json",
+        "metrics.json",
+        "live-smoke-command-resume-output.txt"
+      ],
+      "notes": "The resumed run completed with final WAV, manifest, metrics, timing assets, subtitles, and local MP3 derivative."
+    },
+    {
+      "dimension": "user_task_success",
+      "evidence_coverage_status": "covered",
+      "verdict": "warning",
+      "evidence": [
+        "large-artifact-manifest.json"
+      ],
+      "notes": "Usable audio exists locally; broader user-facing delivery path remains outside this CLI smoke."
+    },
+    {
+      "dimension": "script_profile",
+      "evidence_coverage_status": "covered",
+      "verdict": "warning",
+      "evidence": [
+        "source-script.md",
+        "source-input.manifest.json"
+      ],
+      "notes": "English over-30 pressure input; not full EN + ES gate completion."
+    },
+    {
+      "dimension": "cost_viability",
+      "evidence_coverage_status": "covered",
+      "verdict": "warning",
+      "evidence": [
+        "metrics.json"
+      ],
+      "notes": "Estimated total cost is 1.66 USD for 36.2 audio minutes; pricing/package verdict still needs same-cycle provider context."
+    },
+    {
+      "dimension": "latency_ux",
+      "evidence_coverage_status": "partial",
+      "verdict": "warning",
+      "evidence": [
+        "metrics.json",
+        "live-smoke-command-resume-output.txt"
+      ],
+      "notes": "Successful resumed generation completed; cache-regeneration timing is not the original end-to-end user wait and TTFB is not emitted."
+    },
+    {
+      "dimension": "perceptual_quality",
+      "evidence_coverage_status": "manual_required",
+      "verdict": "manual_required",
+      "evidence": [],
+      "notes": "Requires full listen-through / MOS-style review."
+    },
+    {
+      "dimension": "text_fidelity",
+      "evidence_coverage_status": "manual_required",
+      "verdict": "manual_required",
+      "evidence": [
+        "word-timings.json"
+      ],
+      "notes": "Provider timings exist, but source-vs-audio fidelity needs ASR diff or human review."
+    },
+    {
+      "dimension": "pronunciation_control",
+      "evidence_coverage_status": "manual_required",
+      "verdict": "manual_required",
+      "evidence": [],
+      "notes": "Pronunciation, accent, and name handling need human review."
+    },
+    {
+      "dimension": "long_form_stability",
+      "evidence_coverage_status": "covered",
+      "verdict": "ready",
+      "evidence": [
+        "artifact-manifest.json",
+        "large-artifact-manifest.json"
+      ],
+      "notes": "36:10.48 final audio completed after resumable hidden orchestration."
+    },
+    {
+      "dimension": "stitch_quality",
+      "evidence_coverage_status": "partial",
+      "verdict": "manual_required",
+      "evidence": [
+        "splice-report.json"
+      ],
+      "notes": "Splice report exists for 20 joins; audible seam review remains required."
+    },
+    {
+      "dimension": "subtitle_readiness",
+      "evidence_coverage_status": "partial",
+      "verdict": "manual_required",
+      "evidence": [
+        "word-timings.json",
+        "subtitles.srt",
+        "subtitles.vtt"
+      ],
+      "notes": "Timing assets were generated; timing QA and subtitle text fidelity still require review."
+    },
+    {
+      "dimension": "audio_technical_qc",
+      "evidence_coverage_status": "covered",
+      "verdict": "warning",
+      "evidence": [
+        "audio-probe-metadata.json",
+        "final.wav.volumedetect.txt",
+        "final.derived-from-provider-wav.mp3.volumedetect.txt"
+      ],
+      "notes": "Both WAV and MP3 decode with expected sample rate/channel/bitrate; machine volume probes do not replace final mastering judgment."
+    },
+    {
+      "dimension": "format_platform_delivery",
+      "evidence_coverage_status": "covered",
+      "verdict": "warning",
+      "evidence": [
+        "audio-probe-metadata.json",
+        "large-artifact-manifest.json"
+      ],
+      "notes": "WAV internal-master and MP3 delivery technical verdicts are present; public WAV export remains held."
+    },
+    {
+      "dimension": "repair_recovery_ux",
+      "evidence_coverage_status": "covered",
+      "verdict": "ready",
+      "evidence": [
+        "metrics.json"
+      ],
+      "notes": "The failed first pass recovered via backend-owned chunk reuse without a second provider-native MP3 run."
+    },
+    {
+      "dimension": "competitive_benchmark",
+      "evidence_coverage_status": "blocked_by_missing_evidence",
+      "verdict": "blocked_by_missing_evidence",
+      "evidence": [],
+      "notes": "Cartesia / public market comparison is out of scope for this English-only smoke."
+    },
+    {
+      "dimension": "trust_compliance",
+      "evidence_coverage_status": "covered",
+      "verdict": "warning",
+      "evidence": [
+        "large-artifact-manifest.json"
+      ],
+      "notes": "Raw provider responses and credentials were not promoted into the tracked docs packet; local large artifacts remain in ignored runs/ output."
+    },
+    {
+      "dimension": "final_verdict",
+      "evidence_coverage_status": "covered",
+      "verdict": "warning",
+      "evidence": [
+        "final-evaluation.json"
+      ],
+      "notes": "Audio generation smoke passes with warnings; broader product readiness remains blocked by missing EN + ES, Cartesia, and manual review evidence."
+    }
+  ],
+  "hard_gate_verdict": "warning",
+  "weighted_score": null,
+  "missing_evidence": [
+    "manual seam listening note",
+    "full perceptual quality review",
+    "pronunciation review",
+    "ASR diff or human text-fidelity review",
+    "timing/subtitle QA note",
+    "Spanish readiness evidence",
+    "Cartesia same-cycle benchmark evidence"
+  ],
+  "manual_review_required": [
+    "seam / splice listen-through",
+    "perceptual quality and fatigue review for the full 36:10 output",
+    "pronunciation and name handling review",
+    "text-fidelity review against source",
+    "subtitle timing QA against final audio"
+  ],
+  "public_promise_boundary": "This English pressure smoke does not broaden public SRT, pricing-page, no-login trial, user-facing WAV export, or multilingual workspace promises.",
+  "audio_generation_smoke_verdict": "warning",
+  "product_readiness_evaluation": "blocked_by_missing_evidence",
+  "final_verdict": "warning",
+  "recommended_next_step": "Run manual listening/timing review on the produced audio, then continue same-cycle EN + ES / Cartesia evidence before product readiness claims."
+}

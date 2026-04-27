@@ -1,0 +1,6 @@
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8): Bad file descriptor
+
+> orpheus-phase1-pipeline@0.1.0 narrate
+> tsx src/cli/run-narration.ts --provider inworld --voice Ashley --script-file docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/source-script.md --request-id live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input --output-dir runs/live-smoke --format wav
+
+Missing required environment variable: INWORLD_API_KEY. Set it in the shell, in ORPHEUS_SHARED_ENV_PATH, in this project's shared env file (.git/orpheus.server.env), or in repo-root .env.local.

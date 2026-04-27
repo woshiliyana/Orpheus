@@ -1,0 +1,16 @@
+{
+  "provider": "inworld",
+  "requestId": "live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input",
+  "scriptChars": 35394,
+  "chunkCount": 21,
+  "chunkRetryCount": 3,
+  "cachedChunkCount": 21,
+  "providerCharactersReused": 35394,
+  "totalWallTimeMs": 2429,
+  "audioDurationSec": 2170.48,
+  "timestampCoveragePct": 100,
+  "estimatedTtsCostUsd": 1.225,
+  "estimatedTotalCostUsd": 1.66,
+  "estimatedCostPerCompletedAudioMinuteUsd": 0.046,
+  "timestampWordCount": 11813
+}

@@ -1,0 +1,16 @@
+bash: warning: setlocale: LC_ALL: cannot change locale (C.UTF-8): Bad file descriptor
+
+> orpheus-phase1-pipeline@0.1.0 narrate
+> tsx src/cli/run-narration.ts --provider inworld --voice Ashley --script-file docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/source-script.md --request-id live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input --output-dir runs/live-smoke --format wav --resume-existing-chunks
+
+{
+  "requestId": "live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input",
+  "provider": "inworld",
+  "audioPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/final.wav",
+  "srtPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/subtitles.srt",
+  "vttPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/subtitles.vtt",
+  "wordTimingsPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/word-timings.json",
+  "spliceReportPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/splice-report.json",
+  "artifactManifestPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/artifact-manifest.json",
+  "metricsPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/metrics.json"
+}

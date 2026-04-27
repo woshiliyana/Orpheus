@@ -1,0 +1,75 @@
+{
+  "attempt_id": "live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input",
+  "status": "accepted_pressure_run_input",
+  "provider": "inworld",
+  "voice": "Ashley",
+  "language": "en",
+  "script_candidate_id": "en-machiavellian-psychology-ep01",
+  "script_role": "english_over_30_pressure_validation_input",
+  "source_script_original_path": "/Volumes/woshiliyana/黑暗心理学频道/英文频道/04/0426/machiavellian-psychology-ep01-voiceover.md",
+  "source_script_project_copy": "source-script.md",
+  "source_script_sha256": "af598dba819c3b5cd16b596efa01cc17c5a91c301dcf6b0f3fe47c50a47ace70",
+  "source_probe": {
+    "wc_words": 6004,
+    "word_like_tokens": 5895,
+    "utf8_characters": 35394,
+    "bytes": 35594,
+    "paragraphs": 152,
+    "numbered_sections": [
+      "No. 1",
+      "No. 2",
+      "No. 3",
+      "No. 4",
+      "No. 5",
+      "No. 6",
+      "No. 7",
+      "No. 8"
+    ],
+    "planned_chunk_count_default_500_1900": 21,
+    "planned_chunk_size_range": {
+      "min": 876,
+      "max": 1900,
+      "avg": 1685
+    },
+    "non_ascii_unique": [
+      "em_dash"
+    ]
+  },
+  "duration_estimate": {
+    "chars_per_audio_minute_model": 900,
+    "estimated_minutes_at_900_chars": 39.5,
+    "estimated_minutes_at_150_wpm": 39.3
+  },
+  "format_strategy": {
+    "single_paid_provider_run": {
+      "format": "wav",
+      "source": "provider_native",
+      "purpose": "Linear PCM source / internal production-master candidate plus baseline long-form smoke"
+    },
+    "local_delivery_derivative": {
+      "format": "mp3",
+      "source": "derived_from_provider_native_wav",
+      "target_bitrate_bps": 192000,
+      "purpose": "commercial delivery-format evaluation without a second provider charge"
+    },
+    "one_run_policy": "Do not run a second paid provider pass solely for MP3. Request provider-native WAV once, then derive MP3 locally for delivery evaluation.",
+    "transcoded_wav_policy": "A WAV derived from MP3 may validate packaging or download handling, but it must not be used as proof of production-master quality."
+  },
+  "fit_assessment": {
+    "script_completeness": "complete",
+    "content_type": "english educational-explainer voiceover",
+    "duration_band": "over_30_minute_pressure",
+    "canonical_corpus_fit": "accepted_for_english_pressure_validation_not_full_en_es_gate",
+    "notes": "Accepted for the English pressure validation run. It exceeds the current 20-30 minute target estimate, so do not treat it as full EN + ES first-gate completion."
+  },
+  "next_required_artifacts": [
+    "final audio or large-artifact manifest",
+    "artifact-manifest.json",
+    "metrics.json",
+    "splice report when present",
+    "word timing and subtitle artifacts when present",
+    "audio probe metadata",
+    "final evaluation or retrospective note"
+  ],
+  "product_readiness_evaluation": "blocked_by_missing_evidence"
+}

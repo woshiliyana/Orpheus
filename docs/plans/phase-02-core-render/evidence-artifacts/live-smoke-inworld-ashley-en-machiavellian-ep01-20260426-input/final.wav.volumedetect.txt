@@ -1,0 +1,29 @@
+[aist#0:0/pcm_s16le @ 0x13e504540] Guessed Channel Layout: mono
+Input #0, wav, from 'runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/final.wav':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Duration: 00:36:10.48, bitrate: 768 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 48000 Hz, mono, s16, 768 kb/s
+[Parsed_volumedetect_0 @ 0x13e5080d0] n_samples: 0
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf61.7.100
+  Stream #0:0: Audio: pcm_s16le, 48000 Hz, mono, s16, 768 kb/s
+      Metadata:
+        encoder         : Lavc61.19.101 pcm_s16le
+[Parsed_volumedetect_0 @ 0x13e022ee0] n_samples: 104183040
+[Parsed_volumedetect_0 @ 0x13e022ee0] mean_volume: -21.5 dB
+[Parsed_volumedetect_0 @ 0x13e022ee0] max_volume: -0.7 dB
+[Parsed_volumedetect_0 @ 0x13e022ee0] histogram_0db: 2
+[Parsed_volumedetect_0 @ 0x13e022ee0] histogram_1db: 78
+[Parsed_volumedetect_0 @ 0x13e022ee0] histogram_2db: 606
+[Parsed_volumedetect_0 @ 0x13e022ee0] histogram_3db: 2359
+[Parsed_volumedetect_0 @ 0x13e022ee0] histogram_4db: 7746
+[Parsed_volumedetect_0 @ 0x13e022ee0] histogram_5db: 21709
+[Parsed_volumedetect_0 @ 0x13e022ee0] histogram_6db: 53609
+[Parsed_volumedetect_0 @ 0x13e022ee0] histogram_7db: 114019
+[out#0/null @ 0x13e504e50] video:0KiB audio:203482KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+size=N/A time=00:36:10.48 bitrate=N/A speed=1.18e+04x    

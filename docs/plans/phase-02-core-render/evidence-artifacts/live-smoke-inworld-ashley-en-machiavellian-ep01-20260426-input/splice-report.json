@@ -1,0 +1,132 @@
+{
+  "outputPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/artifacts/final.wav",
+  "totalDurationSec": 2170.48,
+  "segmentReports": [
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/000/audio.wav",
+      "offsetStartSec": 0,
+      "offsetEndSec": 111.58,
+      "durationSec": 111.58
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/001/audio.wav",
+      "offsetStartSec": 111.58,
+      "offsetEndSec": 211.14,
+      "durationSec": 99.56
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/002/audio.wav",
+      "offsetStartSec": 211.14,
+      "offsetEndSec": 320.28,
+      "durationSec": 109.14
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/003/audio.wav",
+      "offsetStartSec": 320.28,
+      "offsetEndSec": 433.53999999999996,
+      "durationSec": 113.26
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/004/audio.wav",
+      "offsetStartSec": 433.53999999999996,
+      "offsetEndSec": 537.72,
+      "durationSec": 104.18
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/005/audio.wav",
+      "offsetStartSec": 537.72,
+      "offsetEndSec": 648.1,
+      "durationSec": 110.38
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/006/audio.wav",
+      "offsetStartSec": 648.1,
+      "offsetEndSec": 750.38,
+      "durationSec": 102.28
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/007/audio.wav",
+      "offsetStartSec": 750.38,
+      "offsetEndSec": 871.72,
+      "durationSec": 121.34
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/008/audio.wav",
+      "offsetStartSec": 871.72,
+      "offsetEndSec": 961.5,
+      "durationSec": 89.78
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/009/audio.wav",
+      "offsetStartSec": 961.5,
+      "offsetEndSec": 1076.98,
+      "durationSec": 115.48
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/010/audio.wav",
+      "offsetStartSec": 1076.98,
+      "offsetEndSec": 1193.84,
+      "durationSec": 116.86
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/011/audio.wav",
+      "offsetStartSec": 1193.84,
+      "offsetEndSec": 1287.6,
+      "durationSec": 93.76
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/012/audio.wav",
+      "offsetStartSec": 1287.6,
+      "offsetEndSec": 1391.3799999999999,
+      "durationSec": 103.78
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/013/audio.wav",
+      "offsetStartSec": 1391.3799999999999,
+      "offsetEndSec": 1502.1,
+      "durationSec": 110.72
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/014/audio.wav",
+      "offsetStartSec": 1502.1,
+      "offsetEndSec": 1603.78,
+      "durationSec": 101.68
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/015/audio.wav",
+      "offsetStartSec": 1603.78,
+      "offsetEndSec": 1707.12,
+      "durationSec": 103.34
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/016/audio.wav",
+      "offsetStartSec": 1707.12,
+      "offsetEndSec": 1810.36,
+      "durationSec": 103.24
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/017/audio.wav",
+      "offsetStartSec": 1810.36,
+      "offsetEndSec": 1906.86,
+      "durationSec": 96.5
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/018/audio.wav",
+      "offsetStartSec": 1906.86,
+      "offsetEndSec": 2011.2399999999998,
+      "durationSec": 104.38
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/019/audio.wav",
+      "offsetStartSec": 2011.2399999999998,
+      "offsetEndSec": 2117.9399999999996,
+      "durationSec": 106.7
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/chunks/020/audio.wav",
+      "offsetStartSec": 2117.9399999999996,
+      "offsetEndSec": 2170.4799999999996,
+      "durationSec": 52.54
+    }
+  ]
+}
