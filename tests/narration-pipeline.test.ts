@@ -7,9 +7,20 @@ import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 
 import { runNarrationJob } from "../src/pipeline/narration.js";
-import type { ChunkSynthesisInput, ChunkSynthesisResult, TtsProviderAdapter } from "../src/domain/types.js";
+import type {
+  ArtifactManifest,
+  ChunkSynthesisInput,
+  ChunkSynthesisResult,
+  ProviderInputChunkReport,
+  TtsProviderAdapter,
+} from "../src/domain/types.js";
 
 const execFileAsync = promisify(execFile);
+const BREAK_TAG_REGEX = /\s*<break\s+time=["']\d+(?:ms|s)["']\s*\/?>\s*/giu;
+
+function stripProviderMarkup(value: string): string {
+  return value.replace(BREAK_TAG_REGEX, " ");
+}
 
 class FakeProvider implements TtsProviderAdapter {
   readonly name = "inworld";
@@ -20,7 +31,7 @@ class FakeProvider implements TtsProviderAdapter {
     const audioPath = path.join(chunkDir, `chunk-${String(input.chunk.index).padStart(3, "0")}.mp3`);
     const rawResponsePath = path.join(chunkDir, `chunk-${String(input.chunk.index).padStart(3, "0")}.json`);
 
-    const words = input.chunk.text
+    const words = stripProviderMarkup(input.chunk.text)
       .trim()
       .split(/\s+/)
       .filter(Boolean)
@@ -72,6 +83,17 @@ class FailingProvider implements TtsProviderAdapter {
   }
 }
 
+class UnexpectedProviderCall implements TtsProviderAdapter {
+  readonly name = "inworld";
+  readonly rateUsdPer1mChars = 30;
+  called = false;
+
+  async synthesizeChunk(): Promise<ChunkSynthesisResult> {
+    this.called = true;
+    throw new Error("provider should not be called");
+  }
+}
+
 function makeLongScript(): string {
   const paragraph = "Paste the whole script once and get stable narration with subtitle-ready timing for an English educational explainer workflow.";
   return Array.from({ length: 30 }, () => paragraph).join("\n\n");
@@ -103,6 +125,12 @@ test("runNarrationJob writes the full artifact packet for a >2000-char English s
     result.spliceReportPath,
     result.artifactManifestPath,
     result.metricsPath,
+    result.sourceScriptPath,
+    result.spokenScriptPath,
+    result.providerInputPath,
+    result.providerInputChunksPath,
+    result.pacingPlanPath,
+    result.inputQualityReportPath,
   ]) {
     const artifactStats = await stat(artifactPath);
     assert.ok(artifactStats.size > 0, `${artifactPath} should not be empty`);
@@ -114,9 +142,24 @@ test("runNarrationJob writes the full artifact packet for a >2000-char English s
     assert.ok(timings[index]!.endSec >= timings[index]!.startSec);
   }
 
-  const manifest = JSON.parse(await readFile(result.artifactManifestPath, "utf8")) as { output_language: string; orchestration_summary: { chunk_count: number } };
+  const manifest = JSON.parse(await readFile(result.artifactManifestPath, "utf8")) as ArtifactManifest;
   assert.equal(manifest.output_language, "en");
   assert.ok(manifest.orchestration_summary.chunk_count >= 2);
+  assert.equal(manifest.input_adapter_ref?.pacing_mode, "natural_basic");
+  assert.equal(manifest.input_adapter_ref?.requested_pacing_mode, "natural_basic");
+  assert.equal(manifest.input_adapter_ref?.effective_pacing_mode, "natural_basic");
+  assert.equal(manifest.input_adapter_ref?.input_validation_mode, "strict");
+  assert.equal(manifest.input_adapter_ref?.token_preserved, true);
+  assert.ok((manifest.input_adapter_ref?.inserted_break_count ?? 0) > 0);
+
+  const providerInput = await readFile(result.providerInputPath, "utf8");
+  assert.match(providerInput, /<break time="600ms" \/>/);
+
+  const chunkReports = JSON.parse(await readFile(result.providerInputChunksPath, "utf8")) as ProviderInputChunkReport[];
+  assert.ok(chunkReports.length >= 2);
+  for (const chunkReport of chunkReports) {
+    assert.equal(chunkReport.breakTagCount <= 20, true);
+  }
 });
 
 test("runNarrationJob allows Spanish Phase 2 readiness smoke runs", async () => {
@@ -166,15 +209,103 @@ test("runNarrationJob persists failure metrics and artifact manifest when synthe
   const artifactManifestPath = path.join(tmpDir, requestId, "artifacts", "artifact-manifest.json");
 
   const metrics = JSON.parse(await readFile(metricsPath, "utf8")) as { failureReason?: string; chunkCount: number };
-  const manifest = JSON.parse(await readFile(artifactManifestPath, "utf8")) as {
-    run_status?: string;
-    failure_reason?: string;
-    billing_fact: { usage_event_type: string };
-  };
+  const manifest = JSON.parse(await readFile(artifactManifestPath, "utf8")) as ArtifactManifest;
 
   assert.match(metrics.failureReason ?? "", /synthetic provider failure/);
   assert.ok(metrics.chunkCount >= 2);
   assert.equal(manifest.run_status, "failed");
   assert.match(manifest.failure_reason ?? "", /synthetic provider failure/);
   assert.equal(manifest.billing_fact.usage_event_type, "non_billable_failure");
+  assert.equal(manifest.failure_stage, "rendering");
+  assert.equal(manifest.input_adapter_ref?.token_preserved, true);
+});
+
+test("runNarrationJob blocks strict unpunctuated input before provider calls", async () => {
+  const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-pipeline-input-block-"));
+  const requestId = "req_input_blocked";
+  const provider = new UnexpectedProviderCall();
+
+  await assert.rejects(
+    () =>
+      runNarrationJob({
+        requestId,
+        projectId: "project_input_blocked",
+        provider: "inworld",
+        language: "en",
+        voiceId: "Ashley",
+        outputFormat: "mp3",
+        script: Array.from({ length: 40 }, (_, index) => `word${index}`).join(" "),
+        outputDir: tmpDir,
+      }, provider),
+    /Narration input quality blocked/,
+  );
+
+  assert.equal(provider.called, false);
+
+  const artifactsDir = path.join(tmpDir, requestId, "artifacts");
+  const metricsPath = path.join(artifactsDir, "metrics.json");
+  const artifactManifestPath = path.join(artifactsDir, "artifact-manifest.json");
+  const inputQualityReportPath = path.join(artifactsDir, "input-quality-report.json");
+
+  const metrics = JSON.parse(await readFile(metricsPath, "utf8")) as { failureReason?: string };
+  const manifest = JSON.parse(await readFile(artifactManifestPath, "utf8")) as ArtifactManifest;
+  const inputQuality = JSON.parse(await readFile(inputQualityReportPath, "utf8")) as { status: string };
+
+  assert.match(metrics.failureReason ?? "", /Narration input quality blocked/);
+  assert.equal(manifest.run_status, "failed");
+  assert.equal(manifest.failure_stage, "input_validation");
+  assert.equal(manifest.billing_fact.usage_event_type, "non_billable_failure");
+  assert.equal(manifest.billing_fact.billable_seconds, 0);
+  assert.equal(manifest.input_adapter_ref?.input_quality_report_json, inputQualityReportPath);
+  assert.equal(inputQuality.status, "blocked");
+});
+
+test("runNarrationJob blocks over-budget exact Inworld break tags before provider calls", async () => {
+  const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-pipeline-break-budget-"));
+  const requestId = "req_break_budget_blocked";
+  const provider = new UnexpectedProviderCall();
+  const breakScript = Array.from(
+    { length: 21 },
+    (_, index) => `Sentence ${index + 1}. <break time="600ms" />`,
+  ).join(" ");
+
+  await assert.rejects(
+    () =>
+      runNarrationJob({
+        requestId,
+        projectId: "project_break_budget_blocked",
+        provider: "inworld",
+        language: "en",
+        voiceId: "Ashley",
+        outputFormat: "mp3",
+        script: breakScript,
+        outputDir: tmpDir,
+        pacingMode: "exact",
+      }, provider),
+    /Provider input break-tag budget exceeded/,
+  );
+
+  assert.equal(provider.called, false);
+
+  const artifactsDir = path.join(tmpDir, requestId, "artifacts");
+  const artifactManifestPath = path.join(artifactsDir, "artifact-manifest.json");
+  const pacingPlanPath = path.join(artifactsDir, "pacing-plan.json");
+
+  const manifest = JSON.parse(await readFile(artifactManifestPath, "utf8")) as ArtifactManifest;
+  const pacingPlan = JSON.parse(await readFile(pacingPlanPath, "utf8")) as {
+    requestedMode: string;
+    effectiveMode: string;
+    maxBreakTagsPerRequest: number;
+  };
+
+  assert.equal(manifest.run_status, "failed");
+  assert.equal(manifest.failure_stage, "input_validation");
+  assert.equal(manifest.billing_fact.usage_event_type, "non_billable_failure");
+  assert.equal(manifest.input_adapter_ref?.requested_pacing_mode, "exact");
+  assert.equal(manifest.input_adapter_ref?.effective_pacing_mode, "exact");
+  assert.equal(manifest.input_adapter_ref?.input_validation_mode, "strict");
+  assert.equal(manifest.input_adapter_ref?.max_break_tags_per_request, 21);
+  assert.equal(pacingPlan.requestedMode, "exact");
+  assert.equal(pacingPlan.effectiveMode, "exact");
+  assert.equal(pacingPlan.maxBreakTagsPerRequest, 21);
 });

@@ -6,7 +6,7 @@
 > Consumers: product, design, frontend, backend, ops, support, agents
 > Depends on: `/docs/prd/prd.md`
 > Supersedes: implicit "search the PRD and guess" workflow
-> Last reviewed: 2026-04-23
+> Last reviewed: 2026-04-27
 
 ## Purpose
 
@@ -27,6 +27,7 @@ This file is the navigation layer for the documentation system. Every high-risk 
 | MkSaaS boundary | [`specs/mksaas-boundary-contract.md`](./specs/mksaas-boundary-contract.md) | `14. 模板与上站策略`, `18.6 与 MkSaaS 的融合方式` | product, backend, frontend, architecture | platform architecture | safe with issue specs after framework is in place | Template cannot define business semantics |
 | Capability entitlements | [`specs/capability-entitlements.md`](./specs/capability-entitlements.md) | `6.2 音色入口`, `6.4 交付结果`, `7.2 SRT 标准`, `7.3 局部修复`, `19.5-19.8` | product, growth, frontend, support, ops | product | safe with lifecycle, billing, guest specs | Owns clone scope and user-facing capability matrix |
 | Project and run lifecycle | [`specs/project-run-lifecycle.md`](./specs/project-run-lifecycle.md) | `6.3 生成工作流`, `15. 数据库与租户策略`, `16. 项目与运行视图`, `19.9-19.10` | backend, frontend, support, ops | backend architecture | safe with capability and billing specs | Owns canonical statuses, failure stages, and artifact-manifest meaning |
+| Narration input and pacing | [`specs/narration-input-and-pacing.md`](./specs/narration-input-and-pacing.md) | `5.2 体验原则`, `22. 技术约束` | product, frontend, backend, ops, support | product + backend architecture | safe with quality and lifecycle specs after manifest fields are coordinated | Owns readable-script input rules, pacing modes, provider input adapter limits, and adapter evidence |
 | Billing and usage semantics | [`specs/billing-usage-semantics.md`](./specs/billing-usage-semantics.md) | `19.3-19.11`, `15. usage_ledger / billing_events` | billing, backend, support, product, ops | product + backend | safe with capability, lifecycle, guest specs | Owns metering, compensation, and display-balance rules |
 | Pricing, packaging, and unit economics | [`specs/pricing-packaging-and-unit-economics.md`](./specs/pricing-packaging-and-unit-economics.md) | `19.2-19.8` | product, growth, billing, ops, support, frontend | product + finance / ops | safe with capability, billing, distribution specs | Owns price anchors, included minutes, guardrails, workbook relationship, formulas, and plan-update triggers |
 | Guest trial identity | [`specs/guest-trial-identity.md`](./specs/guest-trial-identity.md) | `8. V1 范围`, `15. 租户模型`, `19.3 免费层策略`, `22.7 风控阈值` | auth, growth, backend, support, ops | auth / backend | safe with billing and lifecycle specs | Owns anonymous trial identity and claim flow |

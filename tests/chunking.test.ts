@@ -63,3 +63,14 @@ test("chunkScript preserves offsets and deterministic ordering", () => {
     }
   }
 });
+
+test("chunkScript does not split Inworld break tags across provider chunks", () => {
+  const script = `${"a".repeat(12)} <break time="600ms" /> ${"b".repeat(30)}`;
+  const chunks = chunkScript(script, { minChunkSize: 10, maxChunkSize: 25 });
+
+  assert.equal(chunks.map((chunk) => chunk.text).join(""), script);
+  for (const chunk of chunks) {
+    assert.equal(chunk.text.includes("<break") && !chunk.text.includes("/>"), false);
+    assert.equal(!chunk.text.includes("<break") && chunk.text.includes("/>"), false);
+  }
+});

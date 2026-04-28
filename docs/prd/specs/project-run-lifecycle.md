@@ -6,7 +6,7 @@
 > Consumers: backend, frontend, support, ops, agents
 > Depends on: `/docs/prd/source-of-truth-index.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/billing-usage-semantics.md`
 > Supersedes: informal lifecycle wording in `/docs/prd/prd.md`
-> Last reviewed: 2026-04-23
+> Last reviewed: 2026-04-27
 
 ## Purpose
 
@@ -22,6 +22,7 @@ This spec defines the canonical lifecycle for projects and project runs, includi
 | `usable_audio` | A delivered audio artifact the user is entitled to download |
 | `hidden_orchestration` | Backend-only chunk planning, retry, stitching, and reconciliation performed within one user-visible project run |
 | `artifact_manifest` | The canonical machine-readable record that ties together final audio, orchestration facts, alignment assets, billing facts, and delivery handles for one run |
+| `input_adapter_ref` | The artifact-manifest reference to the source script, spoken script, provider input, pacing plan, and input-quality report used for a run |
 | `internal_alignment_asset` | A non-user-facing alignment artifact produced from the final audio to support subtitle export, QA, or later repair work |
 | `audio_format_policy` | The per-run record of requested format, provider source encoding, production-master target, delivery derivative, and final format verdict |
 | `production_master_audio` | The highest-fidelity audio artifact retained for QA, post-processing, video assembly, and future derivative generation |
@@ -122,6 +123,7 @@ This spec defines the canonical lifecycle for projects and project runs, includi
 | `provider_summary` | Yes | Primary provider, fallback provider if any, and selected voice |
 | `orchestration_summary` | Yes | Chunk count, stitch count, retry count, and notable warning flags |
 | `output_language` | Yes | Requested generation language used for render, timing, and quality tracking |
+| `input_adapter_ref` | Yes | Input adapter evidence for source script, spoken script, provider input, chunk break-tag counts, requested/effective pacing mode, input-validation mode, pacing plan, and input-quality report |
 | `final_audio_asset_ref` | Yes | Deliverable audio object reference |
 | `final_audio_duration_seconds` | Yes | Final delivered audio duration |
 | `audio_format_policy` | Yes | Requested output format, whether the asset is provider-native or derived, provider source encoding, production-master target, delivery format, sample rate / bitrate when known, and `audio_format_verdict` |
@@ -143,6 +145,7 @@ This spec defines the canonical lifecycle for projects and project runs, includi
 7. First-gate evidence must keep English and Spanish output / timing results distinguishable at the run level even while the workspace UI remains English-first.
 8. A successful run may expose `MP3` as the only user-facing `delivery_audio` while retaining `WAV` / Linear PCM as `production_master_audio`. This is acceptable only when the manifest records the format policy and the evidence packet records the format verdict.
 9. Audio-format testing must judge commercial delivery, production-master use, and export readiness separately. A format can be `ready_for_internal_master`, `ready_for_delivery`, `ready_for_export`, `hold_for_export`, or `blocked`; the verdict must name the observed reason.
+10. Input validation failures happen before provider rendering and use `failure_stage=input_validation`; they are non-billable and must retain input-quality evidence when a run artifact packet is created.
 
 ## Update Checklist
 
@@ -151,3 +154,4 @@ This spec defines the canonical lifecycle for projects and project runs, includi
 3. Re-check `guest-trial-identity.md` if guest runs are allowed to behave differently from registered runs.
 4. Re-check `quality-ops-and-automation.md` if the artifact manifest or alignment states gain new quality meaning.
 5. Re-check `capability-entitlements.md`, Phase 2 live-smoke evidence templates, and provider scorecards after any audio-format policy change.
+6. Re-check `narration-input-and-pacing.md` after any input adapter, provider-input, or readable-script validation change.

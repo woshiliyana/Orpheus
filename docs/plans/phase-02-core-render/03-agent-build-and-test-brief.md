@@ -4,8 +4,8 @@
 > Role: execution brief
 > Normative for product rules: no
 > Canonical owner: Delivery owner + engineering lead
-> Depends on truth docs: `/docs/prd/source-of-truth-index.md`, `/docs/prd/prd.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/billing-usage-semantics.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`, `/docs/prd/specs/distribution-and-growth-surface.md`, `/docs/prd/specs/quality-ops-and-automation.md`, `/docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`, `/docs/plans/phase-02-core-render/02-development-entry-checklist.md`
-> Last reviewed: 2026-04-26
+> Depends on truth docs: `/docs/prd/source-of-truth-index.md`, `/docs/prd/prd.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/billing-usage-semantics.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`, `/docs/prd/specs/distribution-and-growth-surface.md`, `/docs/prd/specs/quality-ops-and-automation.md`, `/docs/prd/specs/narration-input-and-pacing.md`, `/docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`, `/docs/plans/phase-02-core-render/02-development-entry-checklist.md`
+> Last reviewed: 2026-04-27
 
 ## Purpose
 
@@ -21,10 +21,11 @@ Give the first build / test agent one bounded implementation slice that proves O
 6. `/docs/prd/specs/pricing-packaging-and-unit-economics.md`
 7. `/docs/prd/specs/distribution-and-growth-surface.md`
 8. `/docs/prd/specs/quality-ops-and-automation.md`
-9. `/docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`
-10. `/docs/plans/phase-02-core-render/02-development-entry-checklist.md`
-11. `/docs/ops/phase2-live-smoke.md`
-12. Supporting benchmark input only: `/docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md`
+9. `/docs/prd/specs/narration-input-and-pacing.md`
+10. `/docs/plans/phase-02-core-render/01-hosted-longform-feasibility.md`
+11. `/docs/plans/phase-02-core-render/02-development-entry-checklist.md`
+12. `/docs/ops/phase2-live-smoke.md`
+13. Supporting benchmark input only: `/docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md`
 
 ## Goal
 
@@ -34,20 +35,21 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 
 1. Minimal authenticated project creation and project-detail retrieval
 2. English-first script paste and supported file ingest
-3. Basic voice-selection path covering the approved first-gate English and Spanish corpus voices
-4. Server-owned provider adapter for `Inworld TTS 1.5 Max` as the primary implementation path
-5. Same-corpus benchmark path for `Cartesia` during the first benchmark cycle
-6. Hidden chunk planning with deterministic chunk IDs and retry tracking
-7. Asynchronous render execution with canonical run statuses
-8. Final audio storage plus server-owned delivery path
-9. Successful-run `artifact_manifest` persistence
-10. Internal alignment-asset job or placeholder record tied to final audio
-11. UI / API exposure of status, warnings, and download link
-12. Audio-format policy evidence covering default `MP3` delivery and `WAV` / Linear PCM production-master readiness
-13. Provider run-log capture and cost-snapshot update for the frozen `EN + ES` corpus
-14. One short benchmark note against the prevailing public self-serve long-form workflow, with `ElevenLabs` as the reference point
-15. One explicit `EN + ES` output / timing readiness note for the first gate
-16. One `tts_ux_readiness_scorecard` evaluation artifact that records hard gates, evidence coverage, missing evidence, manual review requirements, and final verdict before weighted scoring
+3. Readable-script validation and conservative input pacing adapter before provider chunking
+4. Basic voice-selection path covering the approved first-gate English and Spanish corpus voices
+5. Server-owned provider adapter for `Inworld TTS 1.5 Max` as the primary implementation path
+6. Same-corpus benchmark path for `Cartesia` during the first benchmark cycle
+7. Hidden chunk planning with deterministic chunk IDs and retry tracking
+8. Asynchronous render execution with canonical run statuses
+9. Final audio storage plus server-owned delivery path
+10. Successful-run `artifact_manifest` persistence
+11. Internal alignment-asset job or placeholder record tied to final audio
+12. UI / API exposure of status, warnings, and download link
+13. Audio-format policy evidence covering default `MP3` delivery and `WAV` / Linear PCM production-master readiness
+14. Provider run-log capture and cost-snapshot update for the frozen `EN + ES` corpus
+15. One short benchmark note against the prevailing public self-serve long-form workflow, with `ElevenLabs` as the reference point
+16. One explicit `EN + ES` output / timing readiness note for the first gate
+17. One `tts_ux_readiness_scorecard` evaluation artifact that records hard gates, evidence coverage, missing evidence, manual review requirements, and final verdict before weighted scoring
 
 ## Out of Scope
 
@@ -66,13 +68,15 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 2. No browser or public client directly calls TTS, STT, or storage providers.
 3. Long-form requests above provider request limits are handled only through backend-owned orchestration.
 4. Successful runs persist final audio plus an `artifact_manifest` with provider, orchestration, billing, and alignment references.
-5. Successful runs record an `audio_format_policy` or equivalent evidence entry that names requested format, observed container / codec, sample rate, bitrate when relevant, delivery verdict, and production-master verdict.
-6. `audio success + alignment failure` resolves to `completed_with_warnings` / `succeeded_with_warnings`, not a full failed rerun state.
-7. Billing records bill audio only, never the entire project again for alignment retry or segment repair semantics.
-8. The benchmark packet covers the frozen `en-control-short`, `en-control-medium`, `en-control-long`, `es-control-short`, `es-control-medium`, and `es-control-long` corpus and yields explicit `ready` / `warning` / `blocked` output and timing verdicts for English and Spanish, or the agent produces an explicit hold memo naming the blocked language and limiting envelope.
-9. The benchmark packet includes one second-provider cost / quality scenario, not just the primary provider.
-10. A pricing review snapshot is updated using observed `cost_per_completed_audio_minute`, retry overhead, and fallback behavior.
-11. Hard-gate and required-evidence failures cannot be overridden by an average or weighted UX score.
+5. Successful runs persist `input_adapter_ref` and adapter evidence showing source text, provider input, token preservation, pacing mode, input-validation mode, and per-provider-request break-tag counts.
+6. Inworld `natural_basic` provider chunks never exceed `20` SSML break tags per request; over-budget pauses are dropped before provider calls and recorded as warnings.
+7. Successful runs record an `audio_format_policy` or equivalent evidence entry that names requested format, observed container / codec, sample rate, bitrate when relevant, delivery verdict, and production-master verdict.
+8. `audio success + alignment failure` resolves to `completed_with_warnings` / `succeeded_with_warnings`, not a full failed rerun state.
+9. Billing records bill audio only, never the entire project again for alignment retry or segment repair semantics.
+10. The benchmark packet covers the frozen `en-control-short`, `en-control-medium`, `en-control-long`, `es-control-short`, `es-control-medium`, and `es-control-long` corpus and yields explicit `ready` / `warning` / `blocked` output and timing verdicts for English and Spanish, or the agent produces an explicit hold memo naming the blocked language and limiting envelope.
+11. The benchmark packet includes one second-provider cost / quality scenario, not just the primary provider.
+12. A pricing review snapshot is updated using observed `cost_per_completed_audio_minute`, retry overhead, and fallback behavior.
+13. Hard-gate and required-evidence failures cannot be overridden by an average or weighted UX score.
 
 ## Required Deliverables
 
@@ -103,6 +107,7 @@ Provider-backed evidence must be promoted into a merge-tracked artifact packet b
 - Artifact-manifest persistence tests
 - Audio-format policy tests for requested format, observed asset metadata, delivery verdict, and production-master verdict
 - Provider-boundary tests proving the client never calls providers directly
+- Input validation, token-preservation, pacing-adapter, and provider break-tag budget tests
 - Cost-calculation tests that fail when a provider scenario drops below the target margin floor without an explicit doc update
 - Scorecard-shape tests or schema checks once `final-evaluation.json` generation exists
 
@@ -121,15 +126,16 @@ Provider-backed evidence must be promoted into a merge-tracked artifact packet b
 
 1. Freeze the `EN + ES` corpus and selected voices.
 2. Implement the project / run data model plus lifecycle enums.
-3. Add the `Inworld` provider adapter behind an Orpheus-owned server boundary.
-4. Implement hidden chunk planning, retry tracking, and orchestration summary capture.
-5. Persist final audio and the `artifact_manifest`.
-6. Add the internal alignment-asset job / record path.
-7. Expose project status and download in UI or API.
-8. Run the frozen corpus on `Inworld`, then run the same corpus on `Cartesia`.
-9. Update the scorecard, workbook snapshot, `EN + ES` readiness note, and decision memo.
-10. Write the `tts_ux_readiness_scorecard` evaluation artifact before interpreting weighted quality or UX scores.
-11. Write the public-market comparison note before any broader pricing or trial decision.
+3. Add readable-script validation and the conservative input pacing adapter.
+4. Add the `Inworld` provider adapter behind an Orpheus-owned server boundary.
+5. Implement hidden chunk planning, retry tracking, and orchestration summary capture.
+6. Persist final audio and the `artifact_manifest`.
+7. Add the internal alignment-asset job / record path.
+8. Expose project status and download in UI or API.
+9. Run the frozen corpus on `Inworld`, then run the same corpus on `Cartesia`.
+10. Update the scorecard, workbook snapshot, `EN + ES` readiness note, and decision memo.
+11. Write the `tts_ux_readiness_scorecard` evaluation artifact before interpreting weighted quality or UX scores.
+12. Write the public-market comparison note before any broader pricing or trial decision.
 
 ## Backfill Required
 
@@ -138,6 +144,7 @@ Provider-backed evidence must be promoted into a merge-tracked artifact packet b
 3. If implementation changes effective cost materially, update `pricing-packaging-and-unit-economics.md` and the workbook snapshot in the same change set.
 4. If provider-cost evidence shows `Pro $20 / 90 min` does not clear the guardrail, do not leave the package untouched out of convenience. Update the package or mark public rollout blocked.
 5. If English and Spanish do not both achieve the required output / timing evidence, record that constraint explicitly instead of silently degrading the gate back to English-only.
+6. If readable-script or pacing behavior changes, update `narration-input-and-pacing.md` before changing CLI, UI, provider input, or evidence wording.
 
 ## Validation
 

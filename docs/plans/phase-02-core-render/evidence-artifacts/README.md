@@ -5,7 +5,7 @@
 > Normative for product rules: no
 > Canonical owner: Delivery owner + engineering lead
 > Depends on: `/docs/ops/phase2-live-smoke.md`, `/docs/ops/worktree-parallel-development.md`
-> Last reviewed: 2026-04-26
+> Last reviewed: 2026-04-27
 
 This directory is the default merge-tracked home for selected Phase 2 provider-backed evidence packets.
 
@@ -19,6 +19,7 @@ This directory is the default merge-tracked home for selected Phase 2 provider-b
    - large-artifact manifest entries with `sha256`, size, format, retention path, and verdict when audio is too large for normal Git
    - `artifact-manifest.json`
    - `metrics.json`
+   - input adapter evidence: `source-script.md`, `spoken-script.md`, `provider-input.<provider>.txt`, `provider-input.chunks.json`, `pacing-plan.json`, and `input-quality-report.json`
    - splice report when present
    - subtitle and timing artifacts when present
    - audio probe metadata
@@ -30,3 +31,4 @@ This directory is the default merge-tracked home for selected Phase 2 provider-b
 7. Commercial delivery audio belongs in product storage, not GitHub. Repo evidence should retain the manifest needed to verify the product-storage object.
 8. Future packets must record hard-gate verdict, per-dimension coverage status, missing evidence, manual review requirements, and final verdict before any weighted score is interpreted.
 9. Missing artifacts must be named as `blocked_by_missing_evidence` when they are required for product readiness. A healthy decode or loudness probe is not enough to claim UX readiness.
+10. Future packets using `natural_basic` must preserve the adapter evidence needed to prove source-token preservation and provider break-tag budget compliance.

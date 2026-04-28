@@ -48,6 +48,26 @@ function findSpaceBreak(text: string, start: number, end: number): number | unde
   return undefined;
 }
 
+function avoidBreakTagSplit(text: string, start: number, breakpoint: number, maxIndex: number): number {
+  const lowerText = text.toLowerCase();
+  const open = lowerText.lastIndexOf("<break", breakpoint);
+  if (open < start) {
+    return breakpoint;
+  }
+
+  const close = text.indexOf(">", open);
+  if (close === -1 || close < breakpoint) {
+    return breakpoint;
+  }
+
+  const tagEnd = close + 1;
+  if (tagEnd <= maxIndex) {
+    return tagEnd;
+  }
+
+  return open > start ? open : breakpoint;
+}
+
 function pickBreakpoint(text: string, start: number, minIndex: number, maxIndex: number): number {
   const finders = [
     findParagraphBreak,
@@ -59,11 +79,11 @@ function pickBreakpoint(text: string, start: number, minIndex: number, maxIndex:
   for (const finder of finders) {
     const breakpoint = finder(text, minIndex, maxIndex);
     if (breakpoint !== undefined && breakpoint > start) {
-      return breakpoint;
+      return avoidBreakTagSplit(text, start, breakpoint, maxIndex);
     }
   }
 
-  return maxIndex;
+  return avoidBreakTagSplit(text, start, maxIndex, maxIndex);
 }
 
 function buildChunkId(text: string, index: number, startChar: number, endChar: number): string {

@@ -4,8 +4,8 @@
 > Role: execution checklist
 > Normative for product rules: no
 > Canonical owner: Delivery owner
-> Depends on truth docs: `/docs/prd/prd.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/billing-usage-semantics.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`, `/docs/prd/specs/quality-ops-and-automation.md`, `/docs/prd/specs/mksaas-boundary-contract.md`
-> Last reviewed: 2026-04-26
+> Depends on truth docs: `/docs/prd/prd.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/billing-usage-semantics.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`, `/docs/prd/specs/quality-ops-and-automation.md`, `/docs/prd/specs/narration-input-and-pacing.md`, `/docs/prd/specs/mksaas-boundary-contract.md`
+> Last reviewed: 2026-04-27
 
 ## Purpose
 
@@ -24,6 +24,7 @@ This checklist prevents Orpheus from entering `Phase 2` with contradictory promi
 - [ ] The first public promise is frozen to `stable long-form narration for English educational explainer creators`.
 - [ ] The first technical gate explicitly covers `English + Spanish` output and timing readiness even though the workspace UI remains English-first.
 - [ ] The core hook is frozen to a one-submit workflow message, not a generic `AI voiceover` message. Current working hook: `Paste the whole script once. Get stable narration with subtitle-ready timing.`
+- [ ] The readable-script and pacing contract is frozen through `narration-input-and-pacing.md`: users provide punctuated narration text, Orpheus may add only conservative structural pauses, and the system does not rewrite or auto-punctuate the script.
 - [ ] The first paid path is frozen and its single-project limit matches the current stable-audio envelope assumption. Until new evidence says otherwise, that means `Pro` must honestly cover the `~20-30` minute validation target.
 - [ ] Public pricing, no-login trial, and user-facing `SRT` export are all treated as later layers, not required for the first technical gate.
 - [ ] The team agrees on the exact first release truth: `audio first`, with subtitles / timestamps prepared internally but not required as a launch promise.
@@ -48,10 +49,12 @@ This checklist prevents Orpheus from entering `Phase 2` with contradictory promi
 ## P0: Workflow Architecture
 
 - [ ] Backend-only orchestration is the only allowed answer to provider request-length limits. Manual user chunking is explicitly out of scope.
+- [ ] Backend-owned input adaptation runs before chunking, preserves source-script tokens, and records provider-input evidence without exposing provider markup as a user-facing editing requirement.
 - [ ] Chunk IDs, offset tracking, and retry behavior are deterministic enough for idempotent recovery.
 - [ ] The system treats one user project as one canonical run history even if the backend fans out into many provider sub-requests.
 - [ ] The `artifact_manifest` schema is frozen before broad implementation.
 - [ ] Successful runs persist an artifact manifest containing final audio, key run metadata, billing fact, and the minimum offset data needed for later subtitle / export work.
+- [ ] Successful runs persist `input_adapter_ref` with source script, spoken script, provider input, provider-input chunk report, pacing plan, and input-quality report.
 - [ ] Successful runs record the audio-format policy: requested format, observed container / codec, sample rate, bitrate when relevant, delivery verdict, and production-master verdict.
 - [ ] Provider-backed live-smoke artifacts are promoted out of ignored `runs/` output into a merge-tracked evidence packet before any worktree cleanup.
 - [ ] Frontend code never calls TTS, STT, or storage providers directly. All provider access, retry logic, and signed delivery flow through Orpheus-owned server boundaries.
@@ -100,3 +103,4 @@ This checklist prevents Orpheus from entering `Phase 2` with contradictory promi
 7. One competitor benchmark note against the current public self-serve long-form reference workflow
 8. One explicit provider-cost scenario table showing whether the working `Pro` package still clears the margin floor
 9. One `final-evaluation.json` or equivalent evaluation note using `tts_ux_readiness_scorecard`
+10. Input adapter evidence packet covering token preservation, pacing mode, input-validation mode, and provider break-tag budget

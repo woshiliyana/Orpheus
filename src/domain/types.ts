@@ -1,6 +1,19 @@
 export type OutputAudioFormat = "mp3" | "wav";
 export type ProviderName = "inworld" | "cartesia";
 export type AlignmentSource = "provider_native" | "stt_fallback";
+export type FailureStage =
+  | "input_validation"
+  | "entitlement_check"
+  | "provider_precheck"
+  | "orchestration"
+  | "rendering"
+  | "alignment"
+  | "packaging"
+  | "delivery"
+  | "canceled_by_user"
+  | "canceled_by_admin";
+export type PacingMode = "exact" | "natural_basic";
+export type InputValidationMode = "warn" | "strict";
 
 export interface ScriptChunk {
   index: number;
@@ -60,6 +73,67 @@ export interface TtsProviderAdapter {
   synthesizeChunk(input: ChunkSynthesisInput): Promise<ChunkSynthesisResult>;
 }
 
+export interface InputQualityIssue {
+  code:
+    | "missing_sentence_punctuation"
+    | "low_sentence_punctuation_density"
+    | "long_run_on_segment"
+    | "missing_paragraph_breaks";
+  severity: "warning" | "blocker";
+  message: string;
+}
+
+export interface InputQualityReport {
+  status: "pass" | "warning" | "blocked";
+  validationMode: InputValidationMode;
+  language: string;
+  wordCount: number;
+  paragraphCount: number;
+  terminalPunctuationCount: number;
+  maxRunOnTokenCount: number;
+  warnings: InputQualityIssue[];
+  blockers: InputQualityIssue[];
+  recommendation: string;
+}
+
+export interface PauseMarker {
+  id: string;
+  sourceCharOffset: number;
+  durationMs: number;
+  reason:
+    | "heading_break"
+    | "paragraph_break"
+    | "list_item_break"
+    | "provider_unavailable";
+  delivery: "provider_break" | "none";
+}
+
+export interface PacingPlan {
+  version: "natural_basic_v1";
+  requestedMode: PacingMode;
+  effectiveMode: PacingMode;
+  provider: ProviderName;
+  language: string;
+  sourceScriptHash: string;
+  spokenScriptHash: string;
+  providerInputHash: string;
+  tokenPreserved: boolean;
+  insertedBreakCount: number;
+  maxBreakTagsPerRequest: number;
+  markupOverheadChars: number;
+  pauses: PauseMarker[];
+  warnings: string[];
+}
+
+export interface ProviderInputChunkReport {
+  chunkIndex: number;
+  id: string;
+  startChar: number;
+  endChar: number;
+  providerInputChars: number;
+  breakTagCount: number;
+}
+
 export interface RunMetrics {
   provider: ProviderName;
   requestId: string;
@@ -83,6 +157,7 @@ export interface ArtifactManifest {
   run_id: string;
   run_status: "succeeded" | "failed";
   failure_reason?: string;
+  failure_stage?: FailureStage;
   source_script_hash: string;
   provider_summary: {
     primary_provider: ProviderName;
@@ -95,6 +170,21 @@ export interface ArtifactManifest {
     retry_count: number;
     cached_chunk_count?: number;
     warning_flags: string[];
+  };
+  input_adapter_ref: {
+    pacing_mode: PacingMode;
+    requested_pacing_mode: PacingMode;
+    effective_pacing_mode: PacingMode;
+    input_validation_mode: InputValidationMode;
+    token_preserved: boolean;
+    inserted_break_count: number;
+    max_break_tags_per_request: number;
+    source_script: string;
+    spoken_script: string;
+    provider_input: string;
+    provider_input_chunks_json: string;
+    pacing_plan_json: string;
+    input_quality_report_json: string;
   };
   output_language: string;
   final_audio_asset_ref?: string;
@@ -127,6 +217,8 @@ export interface NarrationJobInput {
   maxChunkSize?: number;
   concurrency?: number;
   reuseCompletedChunks?: boolean;
+  pacingMode?: PacingMode;
+  inputValidationMode?: InputValidationMode;
 }
 
 export interface NarrationRunResult {
@@ -137,10 +229,18 @@ export interface NarrationRunResult {
   spliceReportPath: string;
   artifactManifestPath: string;
   metricsPath: string;
+  sourceScriptPath: string;
+  spokenScriptPath: string;
+  providerInputPath: string;
+  providerInputChunksPath: string;
+  pacingPlanPath: string;
+  inputQualityReportPath: string;
   timings: NormalizedWordTiming[];
   durationSec: number;
   provider: ProviderName;
   metrics: RunMetrics;
+  pacingPlan: PacingPlan;
+  inputQualityReport: InputQualityReport;
 }
 
 export interface BenchmarkRow {
