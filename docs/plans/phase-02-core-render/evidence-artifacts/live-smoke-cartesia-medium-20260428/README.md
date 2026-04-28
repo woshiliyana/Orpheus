@@ -1,6 +1,6 @@
 # Cartesia Medium Smoke Evidence
 
-> Status: audio generated; manual listening accepted with warnings; timing spot-check still pending.
+> Status: audio generated; manual listening and timing spot-check accepted with warnings.
 > Provider role: second-provider benchmark / fallback / negotiation evidence, not an Inworld replacement decision.
 > API docs checked: Context7 Cartesia docs on 2026-04-28.
 
@@ -49,14 +49,26 @@ Both runs emitted the required new manifest fields: `audio_format_policy`, `prod
 - `hashes.sha256`: hashes for promoted evidence plus raw PCM retention artifacts.
 - `run-summary.json`: machine-readable cost, duration, timestamp, warning, and format-policy summary.
 - `final-evaluation.json`: scorecard verdict separating `audio_generation_smoke` from broader product readiness.
+- `cartesia-medium-listening-timing-closeout-20260428.md`: timing spot-check, listening closeout, provider scorecard, and decision memo.
 
 ## Manual Listening Review
 
 User review on 2026-04-28 accepted the medium outputs with warnings. EN had no material issue noted. ES sounded relatively fast, likely because of voice selection, but the decision is not to adjust pacing or voice hastily from one sample. Preserve this as a voice-speed note for future Cartesia comparison rather than changing the live-smoke strategy now.
 
+## Timing Spot Check
+
+Timing closeout on 2026-04-28 accepted `timestamp_coverage_partial` as a warning rather than a structural blocker for this scoped benchmark. EN and ES word timings, SRT, and VTT cues are monotonic, last cue / word timings stay within final MP3 duration, and splice-boundary checks did not show material subtitle/audio drift.
+
+| Language | Word timings | SRT / VTT cues | Last timed word | Audio duration | Uncovered tail | Timing verdict |
+|---|---:|---:|---:|---:|---:|---|
+| EN | `503` | `43 / 43` | `174.236s` | `174.504s` | `0.268s` | `warning_accepted` |
+| ES | `550` | `56 / 56` | `177.791s` | `177.936s` | `0.145s` | `warning_accepted` |
+
+The detailed timing and decision record lives in `cartesia-medium-listening-timing-closeout-20260428.md`.
+
 ## Readiness Notes
 
 - `audio_generation_smoke=passed_with_warnings`: both medium runs completed with no retries and generated final audio, metrics, manifests, timing, subtitle, and format evidence.
 - `product_readiness_evaluation=warning`: manual listening is accepted for this scoped benchmark, with ES voice-speed and partial timestamp coverage warnings preserved.
-- Timestamp coverage is high but partial for both runs: EN 99.80%, ES 99.64%. Keep this as a timing warning until spot checks confirm whether the gaps matter.
-- This packet supports the next decision on whether Cartesia remains only a second-provider benchmark or deserves a dedicated continuation/WebSocket lane; it does not justify an immediate Spanish voice or speed adjustment by itself.
+- Timestamp coverage is high but partial for both runs: EN 99.80%, ES 99.64%. Spot checks found only sub-second uncovered tails and no material drift, so this remains an accepted warning for the scoped benchmark.
+- Decision: keep Cartesia as a serious second-provider benchmark and negotiation lever. Do not open a continuation/WebSocket lane yet, and do not change Spanish pacing or voice from this single sample.
