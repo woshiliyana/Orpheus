@@ -1,6 +1,6 @@
 # Inworld Product Readiness Closeout
 
-> Status: awaiting user acceptance for Inworld readiness closeout
+> Status: accepted and merged
 > Role: evidence-gap closeout and next-action decision
 > Normative for product rules: no
 > Canonical owner: Delivery owner + engineering lead
