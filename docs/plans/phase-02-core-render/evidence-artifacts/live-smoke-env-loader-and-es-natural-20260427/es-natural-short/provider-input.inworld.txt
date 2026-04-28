@@ -1,0 +1,5 @@
+# Prueba breve de narracion <break time="800ms" />
+
+Esta es una prueba corta para confirmar que la narracion en espanol acepta texto con puntuacion y conserva el contenido original. El objetivo es revisar la ruta del proveedor, no evaluar una pieza larga. <break time="600ms" />
+
+Primero, el sistema debe leer el texto sin reescribirlo. Segundo, debe agregar pausas suaves entre parrafos. Tercero, debe guardar evidencia suficiente para revisar el resultado despues.

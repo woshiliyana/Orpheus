@@ -1,0 +1,37 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:04.980
+#  Prueba   breve   de   narracion  
+
+ Esta   es   una   prueba   corta
+
+2
+00:00:04.980 --> 00:00:08.470
+  para   confirmar   que   la   narracion   en   espanol   acepta   texto
+
+3
+00:00:08.470 --> 00:00:12.400
+  con   puntuacion   y   conserva   el   contenido   original .  El   objetivo
+
+4
+00:00:12.400 --> 00:00:15.710
+  es   revisar   la   ruta   del   proveedor ,  no   evaluar   una
+
+5
+00:00:15.710 --> 00:00:19.800
+  pieza   larga . 
+
+ Primero ,  el   sistema   debe   leer   el   texto
+
+6
+00:00:19.800 --> 00:00:24.710
+  sin   reescribirlo .  Segundo ,  debe   agregar   pausas   suaves   entre   parrafos
+
+7
+00:00:24.710 --> 00:00:29.200
+.  Tercero ,  debe   guardar   evidencia   suficiente   para   revisar   el   resultado
+
+8
+00:00:29.200 --> 00:00:29.880
+  despues .

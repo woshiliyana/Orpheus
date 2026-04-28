@@ -1,0 +1,16 @@
+{
+  "provider": "inworld",
+  "requestId": "live-smoke-es-natural-short-20260427",
+  "scriptChars": 420,
+  "chunkCount": 1,
+  "chunkRetryCount": 0,
+  "cachedChunkCount": 0,
+  "providerCharactersReused": 0,
+  "totalWallTimeMs": 8136,
+  "audioDurationSec": 29.928,
+  "timestampCoveragePct": 100,
+  "estimatedTtsCostUsd": 0.014,
+  "estimatedTotalCostUsd": 0.02,
+  "estimatedCostPerCompletedAudioMinuteUsd": 0.04,
+  "timestampWordCount": 129
+}

@@ -1,0 +1,31 @@
+{
+  "version": "natural_basic_v1",
+  "requestedMode": "natural_basic",
+  "effectiveMode": "natural_basic",
+  "provider": "inworld",
+  "language": "es",
+  "sourceScriptHash": "845988fe69892797d6ce56a7bae4e95ed99d6056cb3eaa3d89a2e032c02830cd",
+  "spokenScriptHash": "845988fe69892797d6ce56a7bae4e95ed99d6056cb3eaa3d89a2e032c02830cd",
+  "providerInputHash": "29ae110517efe28e2df983b8cea57e9d45d18ed3b9e50fcd9690b9bac0bfaa47",
+  "tokenPreserved": true,
+  "insertedBreakCount": 2,
+  "maxBreakTagsPerRequest": 2,
+  "markupOverheadChars": 46,
+  "pauses": [
+    {
+      "id": "pause_000",
+      "sourceCharOffset": 27,
+      "durationMs": 800,
+      "reason": "heading_break",
+      "delivery": "provider_break"
+    },
+    {
+      "id": "pause_001",
+      "sourceCharOffset": 232,
+      "durationMs": 600,
+      "reason": "paragraph_break",
+      "delivery": "provider_break"
+    }
+  ],
+  "warnings": []
+}

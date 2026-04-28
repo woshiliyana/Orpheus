@@ -1,0 +1,3218 @@
+[
+  {
+    "text": "When",
+    "startSec": 0,
+    "endSec": 0.18,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 0.18,
+    "endSec": 0.18,
+    "chunkIndex": 0
+  },
+  {
+    "text": "people",
+    "startSec": 0.18,
+    "endSec": 0.49,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 0.49,
+    "endSec": 0.49,
+    "chunkIndex": 0
+  },
+  {
+    "text": "say",
+    "startSec": 0.49,
+    "endSec": 0.87,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 0.87,
+    "endSec": 0.9,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 0.9,
+    "endSec": 0.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 0.97,
+    "endSec": 0.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": "channel",
+    "startSec": 0.97,
+    "endSec": 1.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 1.42,
+    "endSec": 1.45,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 1.45,
+    "endSec": 1.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": " “",
+    "startSec": 1.69,
+    "endSec": 1.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": "faceless",
+    "startSec": 1.69,
+    "endSec": 2.4,
+    "chunkIndex": 0
+  },
+  {
+    "text": ",” ",
+    "startSec": 2.4,
+    "endSec": 2.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": "they",
+    "startSec": 2.55,
+    "endSec": 2.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 2.71,
+    "endSec": 2.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": "often",
+    "startSec": 2.71,
+    "endSec": 3,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 3,
+    "endSec": 3,
+    "chunkIndex": 0
+  },
+  {
+    "text": "picture",
+    "startSec": 3,
+    "endSec": 3.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 3.38,
+    "endSec": 3.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 3.38,
+    "endSec": 3.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 3.43,
+    "endSec": 3.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": "shortcut",
+    "startSec": 3.43,
+    "endSec": 4.06,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 4.06,
+    "endSec": 4.18,
+    "chunkIndex": 0
+  },
+  {
+    "text": "In",
+    "startSec": 4.18,
+    "endSec": 4.33,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 4.33,
+    "endSec": 4.33,
+    "chunkIndex": 0
+  },
+  {
+    "text": "practice",
+    "startSec": 4.33,
+    "endSec": 4.96,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 4.96,
+    "endSec": 4.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": "it",
+    "startSec": 4.99,
+    "endSec": 5.12,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 5.12,
+    "endSec": 5.12,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 5.12,
+    "endSec": 5.23,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 5.23,
+    "endSec": 5.23,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 5.23,
+    "endSec": 5.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 5.28,
+    "endSec": 5.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": "discipline",
+    "startSec": 5.28,
+    "endSec": 5.8,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 5.8,
+    "endSec": 5.8,
+    "chunkIndex": 0
+  },
+  {
+    "text": "problem",
+    "startSec": 5.8,
+    "endSec": 6.29,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 6.29,
+    "endSec": 6.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": "You",
+    "startSec": 6.43,
+    "endSec": 6.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 6.57,
+    "endSec": 6.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": "cannot",
+    "startSec": 6.57,
+    "endSec": 6.95,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 6.95,
+    "endSec": 6.95,
+    "chunkIndex": 0
+  },
+  {
+    "text": "lean",
+    "startSec": 6.95,
+    "endSec": 7.23,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 7.23,
+    "endSec": 7.23,
+    "chunkIndex": 0
+  },
+  {
+    "text": "on",
+    "startSec": 7.23,
+    "endSec": 7.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 7.37,
+    "endSec": 7.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": "charisma",
+    "startSec": 7.37,
+    "endSec": 8.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 8.05,
+    "endSec": 8.12,
+    "chunkIndex": 0
+  },
+  {
+    "text": "improvised",
+    "startSec": 8.12,
+    "endSec": 8.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 8.71,
+    "endSec": 8.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": "camera",
+    "startSec": 8.71,
+    "endSec": 9.04,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 9.04,
+    "endSec": 9.04,
+    "chunkIndex": 0
+  },
+  {
+    "text": "presence",
+    "startSec": 9.04,
+    "endSec": 9.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 9.6,
+    "endSec": 9.8,
+    "chunkIndex": 0
+  },
+  {
+    "text": "or",
+    "startSec": 9.8,
+    "endSec": 9.93,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 9.93,
+    "endSec": 9.93,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 9.93,
+    "endSec": 10.09,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 10.09,
+    "endSec": 10.12,
+    "chunkIndex": 0
+  },
+  {
+    "text": "energy",
+    "startSec": 10.12,
+    "endSec": 10.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 10.6,
+    "endSec": 10.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": "of",
+    "startSec": 10.64,
+    "endSec": 10.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 10.74,
+    "endSec": 10.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 10.74,
+    "endSec": 10.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 10.79,
+    "endSec": 10.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": "spontaneous",
+    "startSec": 10.79,
+    "endSec": 11.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 11.57,
+    "endSec": 11.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": "scene",
+    "startSec": 11.57,
+    "endSec": 11.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 11.92,
+    "endSec": 12.18,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 12.18,
+    "endSec": 12.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 12.27,
+    "endSec": 12.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": "script",
+    "startSec": 12.27,
+    "endSec": 12.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 12.66,
+    "endSec": 12.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": "has",
+    "startSec": 12.66,
+    "endSec": 12.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 12.81,
+    "endSec": 12.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 12.81,
+    "endSec": 12.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 12.92,
+    "endSec": 12.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": "carry",
+    "startSec": 12.92,
+    "endSec": 13.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 13.21,
+    "endSec": 13.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": "clarity",
+    "startSec": 13.21,
+    "endSec": 13.82,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 13.82,
+    "endSec": 13.96,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 13.96,
+    "endSec": 14.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 14.07,
+    "endSec": 14.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "narration",
+    "startSec": 14.07,
+    "endSec": 14.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 14.81,
+    "endSec": 14.94,
+    "chunkIndex": 0
+  },
+  {
+    "text": "has",
+    "startSec": 14.94,
+    "endSec": 15.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 15.19,
+    "endSec": 15.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 15.19,
+    "endSec": 15.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 15.3,
+    "endSec": 15.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": "carry",
+    "startSec": 15.3,
+    "endSec": 15.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 15.6,
+    "endSec": 15.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": "confidence",
+    "startSec": 15.6,
+    "endSec": 16.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 16.38,
+    "endSec": 16.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 16.66,
+    "endSec": 16.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 16.75,
+    "endSec": 16.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": "pacing",
+    "startSec": 16.75,
+    "endSec": 17.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 17.28,
+    "endSec": 17.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": "has",
+    "startSec": 17.28,
+    "endSec": 17.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 17.52,
+    "endSec": 17.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 17.52,
+    "endSec": 17.63,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 17.63,
+    "endSec": 17.63,
+    "chunkIndex": 0
+  },
+  {
+    "text": "make",
+    "startSec": 17.63,
+    "endSec": 17.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 17.84,
+    "endSec": 17.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 17.84,
+    "endSec": 17.93,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 17.93,
+    "endSec": 17.93,
+    "chunkIndex": 0
+  },
+  {
+    "text": "viewer",
+    "startSec": 17.93,
+    "endSec": 18.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 18.25,
+    "endSec": 18.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": "feel",
+    "startSec": 18.25,
+    "endSec": 18.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 18.52,
+    "endSec": 18.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": "that",
+    "startSec": 18.52,
+    "endSec": 18.68,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 18.68,
+    "endSec": 18.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": "each",
+    "startSec": 18.71,
+    "endSec": 19.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 19.03,
+    "endSec": 19.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sentence",
+    "startSec": 19.03,
+    "endSec": 19.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 19.53,
+    "endSec": 19.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": "was",
+    "startSec": 19.53,
+    "endSec": 19.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 19.7,
+    "endSec": 19.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": "placed",
+    "startSec": 19.7,
+    "endSec": 20.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 20.07,
+    "endSec": 20.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "there",
+    "startSec": 20.07,
+    "endSec": 20.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 20.27,
+    "endSec": 20.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": "on",
+    "startSec": 20.27,
+    "endSec": 20.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 20.38,
+    "endSec": 20.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": "purpose",
+    "startSec": 20.38,
+    "endSec": 21,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 21,
+    "endSec": 21.26,
+    "chunkIndex": 0
+  },
+  {
+    "text": "That",
+    "startSec": 21.26,
+    "endSec": 21.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 21.44,
+    "endSec": 21.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 21.44,
+    "endSec": 21.58,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 21.58,
+    "endSec": 21.58,
+    "chunkIndex": 0
+  },
+  {
+    "text": "why",
+    "startSec": 21.58,
+    "endSec": 21.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 21.78,
+    "endSec": 21.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": "long-form",
+    "startSec": 21.78,
+    "endSec": 22.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 22.46,
+    "endSec": 22.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": "educational",
+    "startSec": 22.52,
+    "endSec": 23.17,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 23.17,
+    "endSec": 23.17,
+    "chunkIndex": 0
+  },
+  {
+    "text": "explainer",
+    "startSec": 23.17,
+    "endSec": 23.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 23.7,
+    "endSec": 23.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": "channels",
+    "startSec": 23.7,
+    "endSec": 24.23,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 24.23,
+    "endSec": 24.23,
+    "chunkIndex": 0
+  },
+  {
+    "text": "live",
+    "startSec": 24.23,
+    "endSec": 24.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 24.66,
+    "endSec": 24.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": "or",
+    "startSec": 24.69,
+    "endSec": 24.86,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 24.86,
+    "endSec": 24.86,
+    "chunkIndex": 0
+  },
+  {
+    "text": "die",
+    "startSec": 24.86,
+    "endSec": 25.26,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 25.26,
+    "endSec": 25.29,
+    "chunkIndex": 0
+  },
+  {
+    "text": "on",
+    "startSec": 25.29,
+    "endSec": 25.47,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 25.47,
+    "endSec": 25.47,
+    "chunkIndex": 0
+  },
+  {
+    "text": "workflow",
+    "startSec": 25.47,
+    "endSec": 25.86,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 25.86,
+    "endSec": 25.86,
+    "chunkIndex": 0
+  },
+  {
+    "text": "quality",
+    "startSec": 25.86,
+    "endSec": 26.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 26.42,
+    "endSec": 26.77,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 26.77,
+    "endSec": 26.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 26.84,
+    "endSec": 26.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creator",
+    "startSec": 26.84,
+    "endSec": 27.31,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 27.31,
+    "endSec": 27.34,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 27.34,
+    "endSec": 27.5,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 27.5,
+    "endSec": 27.5,
+    "chunkIndex": 0
+  },
+  {
+    "text": "not",
+    "startSec": 27.5,
+    "endSec": 27.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 27.71,
+    "endSec": 27.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": "just",
+    "startSec": 27.71,
+    "endSec": 27.95,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 27.95,
+    "endSec": 27.95,
+    "chunkIndex": 0
+  },
+  {
+    "text": "writing",
+    "startSec": 27.95,
+    "endSec": 28.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 28.22,
+    "endSec": 28.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": "words",
+    "startSec": 28.22,
+    "endSec": 28.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 28.75,
+    "endSec": 28.86,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 28.86,
+    "endSec": 28.93,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 28.93,
+    "endSec": 28.93,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creator",
+    "startSec": 28.93,
+    "endSec": 29.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 29.52,
+    "endSec": 29.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 29.55,
+    "endSec": 29.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 29.7,
+    "endSec": 29.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": "designing",
+    "startSec": 29.7,
+    "endSec": 30.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 30.37,
+    "endSec": 30.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 30.37,
+    "endSec": 30.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 30.43,
+    "endSec": 30.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": "reading",
+    "startSec": 30.43,
+    "endSec": 30.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 30.76,
+    "endSec": 30.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": "experience",
+    "startSec": 30.76,
+    "endSec": 31.54,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 31.54,
+    "endSec": 31.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": "that",
+    "startSec": 31.75,
+    "endSec": 31.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 31.91,
+    "endSec": 31.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": "needs",
+    "startSec": 31.91,
+    "endSec": 32.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 32.19,
+    "endSec": 32.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 32.19,
+    "endSec": 32.31,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 32.31,
+    "endSec": 32.31,
+    "chunkIndex": 0
+  },
+  {
+    "text": "survive",
+    "startSec": 32.31,
+    "endSec": 32.87,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 32.87,
+    "endSec": 32.87,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 32.87,
+    "endSec": 32.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 32.97,
+    "endSec": 32.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": "jump",
+    "startSec": 32.97,
+    "endSec": 33.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 33.32,
+    "endSec": 33.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": "from",
+    "startSec": 33.32,
+    "endSec": 33.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 33.52,
+    "endSec": 33.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 33.52,
+    "endSec": 33.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 33.57,
+    "endSec": 33.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": "document",
+    "startSec": 33.57,
+    "endSec": 34.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 34.3,
+    "endSec": 34.5,
+    "chunkIndex": 0
+  },
+  {
+    "text": "into",
+    "startSec": 34.5,
+    "endSec": 34.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 34.79,
+    "endSec": 34.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": "spoken",
+    "startSec": 34.79,
+    "endSec": 35.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 35.25,
+    "endSec": 35.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": "audio",
+    "startSec": 35.25,
+    "endSec": 35.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 35.76,
+    "endSec": 35.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": "<break time=\"600ms\" />\n\n",
+    "startSec": 35.81,
+    "endSec": 36.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": "That",
+    "startSec": 36.41,
+    "endSec": 36.68,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 36.68,
+    "endSec": 36.68,
+    "chunkIndex": 0
+  },
+  {
+    "text": "jump",
+    "startSec": 36.68,
+    "endSec": 37.06,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 37.06,
+    "endSec": 37.06,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sounds",
+    "startSec": 37.06,
+    "endSec": 37.58,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 37.58,
+    "endSec": 37.58,
+    "chunkIndex": 0
+  },
+  {
+    "text": "simple",
+    "startSec": 37.58,
+    "endSec": 38.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 38.13,
+    "endSec": 38.16,
+    "chunkIndex": 0
+  },
+  {
+    "text": "until",
+    "startSec": 38.16,
+    "endSec": 38.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 38.44,
+    "endSec": 38.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 38.44,
+    "endSec": 38.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 38.52,
+    "endSec": 38.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": "script",
+    "startSec": 38.52,
+    "endSec": 39.01,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 39.01,
+    "endSec": 39.01,
+    "chunkIndex": 0
+  },
+  {
+    "text": "gets",
+    "startSec": 39.01,
+    "endSec": 39.31,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 39.31,
+    "endSec": 39.31,
+    "chunkIndex": 0
+  },
+  {
+    "text": "long",
+    "startSec": 39.31,
+    "endSec": 39.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 39.76,
+    "endSec": 39.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": "A",
+    "startSec": 39.91,
+    "endSec": 40,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 40,
+    "endSec": 40,
+    "chunkIndex": 0
+  },
+  {
+    "text": "short",
+    "startSec": 40,
+    "endSec": 40.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 40.32,
+    "endSec": 40.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": "paragraph",
+    "startSec": 40.32,
+    "endSec": 40.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 40.97,
+    "endSec": 40.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": "can",
+    "startSec": 40.97,
+    "endSec": 41.16,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 41.16,
+    "endSec": 41.16,
+    "chunkIndex": 0
+  },
+  {
+    "text": "hide",
+    "startSec": 41.16,
+    "endSec": 41.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 41.62,
+    "endSec": 41.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": "rough",
+    "startSec": 41.62,
+    "endSec": 41.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 41.88,
+    "endSec": 41.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": "edges",
+    "startSec": 41.91,
+    "endSec": 42.47,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 42.47,
+    "endSec": 42.87,
+    "chunkIndex": 0
+  },
+  {
+    "text": "A",
+    "startSec": 42.87,
+    "endSec": 42.95,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 42.95,
+    "endSec": 42.95,
+    "chunkIndex": 0
+  },
+  {
+    "text": "twelve-minute",
+    "startSec": 42.95,
+    "endSec": 43.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 43.55,
+    "endSec": 43.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": "explanation",
+    "startSec": 43.55,
+    "endSec": 44.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 44.37,
+    "endSec": 44.4,
+    "chunkIndex": 0
+  },
+  {
+    "text": "cannot",
+    "startSec": 44.4,
+    "endSec": 45.01,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 45.01,
+    "endSec": 45.5,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Numbers",
+    "startSec": 45.5,
+    "endSec": 46.01,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 46.01,
+    "endSec": 46.01,
+    "chunkIndex": 0
+  },
+  {
+    "text": "need",
+    "startSec": 46.01,
+    "endSec": 46.23,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 46.23,
+    "endSec": 46.23,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 46.23,
+    "endSec": 46.31,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 46.31,
+    "endSec": 46.31,
+    "chunkIndex": 0
+  },
+  {
+    "text": "be",
+    "startSec": 46.31,
+    "endSec": 46.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 46.46,
+    "endSec": 46.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": "read",
+    "startSec": 46.46,
+    "endSec": 46.73,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 46.73,
+    "endSec": 46.73,
+    "chunkIndex": 0
+  },
+  {
+    "text": "naturally",
+    "startSec": 46.73,
+    "endSec": 47.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 47.44,
+    "endSec": 47.86,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Dates",
+    "startSec": 47.86,
+    "endSec": 48.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 48.27,
+    "endSec": 48.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": "need",
+    "startSec": 48.27,
+    "endSec": 48.47,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 48.47,
+    "endSec": 48.47,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 48.47,
+    "endSec": 48.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 48.55,
+    "endSec": 48.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sound",
+    "startSec": 48.55,
+    "endSec": 48.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 48.88,
+    "endSec": 48.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": "human",
+    "startSec": 48.91,
+    "endSec": 49.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 49.37,
+    "endSec": 49.87,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Lists",
+    "startSec": 49.87,
+    "endSec": 50.39,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 50.39,
+    "endSec": 50.39,
+    "chunkIndex": 0
+  },
+  {
+    "text": "need",
+    "startSec": 50.39,
+    "endSec": 50.63,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 50.63,
+    "endSec": 50.63,
+    "chunkIndex": 0
+  },
+  {
+    "text": "rhythm",
+    "startSec": 50.63,
+    "endSec": 51.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 51.07,
+    "endSec": 51.2,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Section",
+    "startSec": 51.2,
+    "endSec": 51.83,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 51.83,
+    "endSec": 51.83,
+    "chunkIndex": 0
+  },
+  {
+    "text": "changes",
+    "startSec": 51.83,
+    "endSec": 52.49,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 52.49,
+    "endSec": 52.73,
+    "chunkIndex": 0
+  },
+  {
+    "text": "need",
+    "startSec": 52.73,
+    "endSec": 53.09,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 53.09,
+    "endSec": 53.09,
+    "chunkIndex": 0
+  },
+  {
+    "text": "breathing",
+    "startSec": 53.09,
+    "endSec": 53.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 53.52,
+    "endSec": 53.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": "room",
+    "startSec": 53.52,
+    "endSec": 53.82,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 53.82,
+    "endSec": 53.82,
+    "chunkIndex": 0
+  },
+  {
+    "text": "without",
+    "startSec": 53.82,
+    "endSec": 54.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 54.22,
+    "endSec": 54.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sounding",
+    "startSec": 54.22,
+    "endSec": 54.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 54.69,
+    "endSec": 54.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": "like",
+    "startSec": 54.69,
+    "endSec": 54.9,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 54.9,
+    "endSec": 54.9,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 54.9,
+    "endSec": 54.98,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 54.98,
+    "endSec": 54.98,
+    "chunkIndex": 0
+  },
+  {
+    "text": "narrator",
+    "startSec": 54.98,
+    "endSec": 55.51,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 55.51,
+    "endSec": 55.51,
+    "chunkIndex": 0
+  },
+  {
+    "text": "lost",
+    "startSec": 55.51,
+    "endSec": 55.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 55.92,
+    "endSec": 55.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 55.97,
+    "endSec": 56.04,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 56.04,
+    "endSec": 56.04,
+    "chunkIndex": 0
+  },
+  {
+    "text": "thread",
+    "startSec": 56.04,
+    "endSec": 56.5,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 56.5,
+    "endSec": 56.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": "If",
+    "startSec": 56.7,
+    "endSec": 56.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 56.88,
+    "endSec": 56.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 56.88,
+    "endSec": 56.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 56.97,
+    "endSec": 56.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": "system",
+    "startSec": 56.97,
+    "endSec": 57.45,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 57.45,
+    "endSec": 57.45,
+    "chunkIndex": 0
+  },
+  {
+    "text": "forces",
+    "startSec": 57.45,
+    "endSec": 58,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 58,
+    "endSec": 58,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 58,
+    "endSec": 58.1,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 58.1,
+    "endSec": 58.1,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creator",
+    "startSec": 58.1,
+    "endSec": 58.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 58.66,
+    "endSec": 58.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 58.66,
+    "endSec": 58.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 58.78,
+    "endSec": 58.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": "chop",
+    "startSec": 58.78,
+    "endSec": 59.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 59.13,
+    "endSec": 59.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 59.13,
+    "endSec": 59.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 59.21,
+    "endSec": 59.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": "script",
+    "startSec": 59.21,
+    "endSec": 59.58,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 59.58,
+    "endSec": 59.58,
+    "chunkIndex": 0
+  },
+  {
+    "text": "by",
+    "startSec": 59.58,
+    "endSec": 59.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 59.75,
+    "endSec": 59.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": "hand",
+    "startSec": 59.75,
+    "endSec": 60.26,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 60.26,
+    "endSec": 60.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 60.62,
+    "endSec": 60.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 60.71,
+    "endSec": 60.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": "workflow",
+    "startSec": 60.71,
+    "endSec": 61.35,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 61.35,
+    "endSec": 61.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": "already",
+    "startSec": 61.38,
+    "endSec": 61.9,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 61.9,
+    "endSec": 61.9,
+    "chunkIndex": 0
+  },
+  {
+    "text": "broke",
+    "startSec": 61.9,
+    "endSec": 62.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 62.3,
+    "endSec": 62.33,
+    "chunkIndex": 0
+  },
+  {
+    "text": "before",
+    "startSec": 62.33,
+    "endSec": 62.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 62.62,
+    "endSec": 62.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 62.62,
+    "endSec": 62.73,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 62.73,
+    "endSec": 62.73,
+    "chunkIndex": 0
+  },
+  {
+    "text": "first",
+    "startSec": 62.73,
+    "endSec": 63.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 63.13,
+    "endSec": 63.16,
+    "chunkIndex": 0
+  },
+  {
+    "text": "audio",
+    "startSec": 63.16,
+    "endSec": 63.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 63.53,
+    "endSec": 63.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": "file",
+    "startSec": 63.53,
+    "endSec": 63.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 63.91,
+    "endSec": 63.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": "arrived",
+    "startSec": 63.91,
+    "endSec": 64.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 64.53,
+    "endSec": 64.67,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Every",
+    "startSec": 64.67,
+    "endSec": 65,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 65,
+    "endSec": 65,
+    "chunkIndex": 0
+  },
+  {
+    "text": "manual",
+    "startSec": 65,
+    "endSec": 65.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 65.46,
+    "endSec": 65.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": "split",
+    "startSec": 65.46,
+    "endSec": 65.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 65.91,
+    "endSec": 66.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creates",
+    "startSec": 66.13,
+    "endSec": 66.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 66.57,
+    "endSec": 66.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 66.6,
+    "endSec": 66.68,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 66.68,
+    "endSec": 66.68,
+    "chunkIndex": 0
+  },
+  {
+    "text": "new",
+    "startSec": 66.68,
+    "endSec": 66.96,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 66.96,
+    "endSec": 66.96,
+    "chunkIndex": 0
+  },
+  {
+    "text": "seam",
+    "startSec": 66.96,
+    "endSec": 67.48,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 67.48,
+    "endSec": 67.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 67.69,
+    "endSec": 67.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 67.78,
+    "endSec": 67.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": "new",
+    "startSec": 67.78,
+    "endSec": 68.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 68.03,
+    "endSec": 68.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": "place",
+    "startSec": 68.03,
+    "endSec": 68.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 68.42,
+    "endSec": 68.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": "for",
+    "startSec": 68.42,
+    "endSec": 68.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 68.55,
+    "endSec": 68.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": "prosody",
+    "startSec": 68.55,
+    "endSec": 69.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 69.05,
+    "endSec": 69.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 69.05,
+    "endSec": 69.18,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 69.18,
+    "endSec": 69.18,
+    "chunkIndex": 0
+  },
+  {
+    "text": "drift",
+    "startSec": 69.18,
+    "endSec": 69.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 69.7,
+    "endSec": 69.9,
+    "chunkIndex": 0
+  },
+  {
+    "text": "and",
+    "startSec": 69.9,
+    "endSec": 70.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 70.07,
+    "endSec": 70.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 70.07,
+    "endSec": 70.12,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 70.12,
+    "endSec": 70.12,
+    "chunkIndex": 0
+  },
+  {
+    "text": "new",
+    "startSec": 70.12,
+    "endSec": 70.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 70.42,
+    "endSec": 70.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": "reason",
+    "startSec": 70.42,
+    "endSec": 70.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 70.84,
+    "endSec": 70.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": "for",
+    "startSec": 70.84,
+    "endSec": 70.96,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 70.96,
+    "endSec": 70.96,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 70.96,
+    "endSec": 71.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 71.05,
+    "endSec": 71.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creator",
+    "startSec": 71.05,
+    "endSec": 71.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 71.6,
+    "endSec": 71.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 71.6,
+    "endSec": 71.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 71.74,
+    "endSec": 71.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": "stop",
+    "startSec": 71.74,
+    "endSec": 72.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 72.13,
+    "endSec": 72.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": "trusting",
+    "startSec": 72.13,
+    "endSec": 72.56,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 72.56,
+    "endSec": 72.56,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 72.56,
+    "endSec": 72.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 72.66,
+    "endSec": 72.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": "render",
+    "startSec": 72.66,
+    "endSec": 73.14,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 73.14,
+    "endSec": 73.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": "<break time=\"600ms\" />\n\n",
+    "startSec": 73.19,
+    "endSec": 73.83,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 73.83,
+    "endSec": 73.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 73.92,
+    "endSec": 73.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": "better",
+    "startSec": 73.92,
+    "endSec": 74.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 74.25,
+    "endSec": 74.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": "promise",
+    "startSec": 74.25,
+    "endSec": 74.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 74.75,
+    "endSec": 74.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 74.78,
+    "endSec": 74.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 74.91,
+    "endSec": 74.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": "smaller",
+    "startSec": 74.91,
+    "endSec": 75.45,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 75.45,
+    "endSec": 75.45,
+    "chunkIndex": 0
+  },
+  {
+    "text": "and",
+    "startSec": 75.45,
+    "endSec": 75.59,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 75.59,
+    "endSec": 75.59,
+    "chunkIndex": 0
+  },
+  {
+    "text": "stronger",
+    "startSec": 75.59,
+    "endSec": 76.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 76.21,
+    "endSec": 76.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Paste",
+    "startSec": 76.37,
+    "endSec": 76.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 76.71,
+    "endSec": 76.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 76.71,
+    "endSec": 76.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 76.79,
+    "endSec": 76.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": "whole",
+    "startSec": 76.79,
+    "endSec": 77.01,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 77.01,
+    "endSec": 77.01,
+    "chunkIndex": 0
+  },
+  {
+    "text": "script",
+    "startSec": 77.01,
+    "endSec": 77.36,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 77.36,
+    "endSec": 77.36,
+    "chunkIndex": 0
+  },
+  {
+    "text": "once",
+    "startSec": 77.36,
+    "endSec": 77.9,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 77.9,
+    "endSec": 78,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Let",
+    "startSec": 78,
+    "endSec": 78.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 78.22,
+    "endSec": 78.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 78.22,
+    "endSec": 78.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 78.32,
+    "endSec": 78.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": "backend",
+    "startSec": 78.32,
+    "endSec": 78.85,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 78.85,
+    "endSec": 78.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": "absorb",
+    "startSec": 78.88,
+    "endSec": 79.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 79.43,
+    "endSec": 79.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 79.43,
+    "endSec": 79.56,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 79.56,
+    "endSec": 79.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ugly",
+    "startSec": 79.6,
+    "endSec": 79.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 79.88,
+    "endSec": 79.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": "parts",
+    "startSec": 79.88,
+    "endSec": 80.39,
+    "chunkIndex": 0
+  },
+  {
+    "text": ": ",
+    "startSec": 80.39,
+    "endSec": 80.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": "chunk",
+    "startSec": 80.55,
+    "endSec": 80.86,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 80.86,
+    "endSec": 80.86,
+    "chunkIndex": 0
+  },
+  {
+    "text": "planning",
+    "startSec": 80.86,
+    "endSec": 81.34,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 81.34,
+    "endSec": 81.61,
+    "chunkIndex": 0
+  },
+  {
+    "text": "retries",
+    "startSec": 81.61,
+    "endSec": 82.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 82.44,
+    "endSec": 82.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": "stitching",
+    "startSec": 82.55,
+    "endSec": 83.24,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 83.24,
+    "endSec": 83.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": "and",
+    "startSec": 83.28,
+    "endSec": 83.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 83.42,
+    "endSec": 83.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": "timing",
+    "startSec": 83.42,
+    "endSec": 83.77,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 83.77,
+    "endSec": 83.77,
+    "chunkIndex": 0
+  },
+  {
+    "text": "recovery",
+    "startSec": 83.77,
+    "endSec": 84.4,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 84.4,
+    "endSec": 84.65,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 84.65,
+    "endSec": 84.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 84.75,
+    "endSec": 84.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creator",
+    "startSec": 84.75,
+    "endSec": 85.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 85.32,
+    "endSec": 85.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": "should",
+    "startSec": 85.32,
+    "endSec": 85.58,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 85.58,
+    "endSec": 85.58,
+    "chunkIndex": 0
+  },
+  {
+    "text": "still",
+    "startSec": 85.58,
+    "endSec": 86,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 86,
+    "endSec": 86,
+    "chunkIndex": 0
+  },
+  {
+    "text": "see",
+    "startSec": 86,
+    "endSec": 86.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 86.3,
+    "endSec": 86.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": "one",
+    "startSec": 86.3,
+    "endSec": 86.61,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 86.61,
+    "endSec": 86.61,
+    "chunkIndex": 0
+  },
+  {
+    "text": "project",
+    "startSec": 86.61,
+    "endSec": 87.24,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 87.24,
+    "endSec": 87.24,
+    "chunkIndex": 0
+  },
+  {
+    "text": "one",
+    "startSec": 87.24,
+    "endSec": 87.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 87.55,
+    "endSec": 87.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": "output",
+    "startSec": 87.55,
+    "endSec": 88,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 88,
+    "endSec": 88,
+    "chunkIndex": 0
+  },
+  {
+    "text": "audio",
+    "startSec": 88,
+    "endSec": 88.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 88.42,
+    "endSec": 88.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": "file",
+    "startSec": 88.42,
+    "endSec": 88.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 88.88,
+    "endSec": 89.16,
+    "chunkIndex": 0
+  },
+  {
+    "text": "and",
+    "startSec": 89.16,
+    "endSec": 89.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 89.38,
+    "endSec": 89.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": "one",
+    "startSec": 89.38,
+    "endSec": 89.63,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 89.63,
+    "endSec": 89.63,
+    "chunkIndex": 0
+  },
+  {
+    "text": "set",
+    "startSec": 89.63,
+    "endSec": 89.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 89.92,
+    "endSec": 89.95,
+    "chunkIndex": 0
+  },
+  {
+    "text": "of",
+    "startSec": 89.95,
+    "endSec": 90.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 90.07,
+    "endSec": 90.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "subtitle-ready",
+    "startSec": 90.07,
+    "endSec": 90.98,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 90.98,
+    "endSec": 90.98,
+    "chunkIndex": 0
+  },
+  {
+    "text": "timing",
+    "startSec": 90.98,
+    "endSec": 91.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 91.41,
+    "endSec": 91.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": "artifacts",
+    "startSec": 91.41,
+    "endSec": 92.16,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 92.16,
+    "endSec": 92.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": "That",
+    "startSec": 92.3,
+    "endSec": 92.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 92.64,
+    "endSec": 92.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": "does",
+    "startSec": 92.64,
+    "endSec": 92.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 92.84,
+    "endSec": 92.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": "not",
+    "startSec": 92.84,
+    "endSec": 93.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 93.21,
+    "endSec": 93.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": "mean",
+    "startSec": 93.21,
+    "endSec": 93.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 93.46,
+    "endSec": 93.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 93.46,
+    "endSec": 93.54,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 93.54,
+    "endSec": 93.54,
+    "chunkIndex": 0
+  },
+  {
+    "text": "system",
+    "startSec": 93.54,
+    "endSec": 94.01,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 94.01,
+    "endSec": 94.01,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 94.01,
+    "endSec": 94.14,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 94.14,
+    "endSec": 94.14,
+    "chunkIndex": 0
+  },
+  {
+    "text": "magically",
+    "startSec": 94.14,
+    "endSec": 94.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 94.7,
+    "endSec": 94.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": "simple",
+    "startSec": 94.7,
+    "endSec": 95.12,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 95.12,
+    "endSec": 95.12,
+    "chunkIndex": 0
+  },
+  {
+    "text": "underneath",
+    "startSec": 95.12,
+    "endSec": 95.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 95.71,
+    "endSec": 95.9,
+    "chunkIndex": 0
+  },
+  {
+    "text": "It",
+    "startSec": 95.9,
+    "endSec": 96.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 96.07,
+    "endSec": 96.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "means",
+    "startSec": 96.07,
+    "endSec": 96.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 96.43,
+    "endSec": 96.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 96.43,
+    "endSec": 96.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 96.53,
+    "endSec": 96.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": "complexity",
+    "startSec": 96.53,
+    "endSec": 97.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 97.41,
+    "endSec": 97.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 97.44,
+    "endSec": 97.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 97.6,
+    "endSec": 97.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": "placed",
+    "startSec": 97.6,
+    "endSec": 98.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 98.07,
+    "endSec": 98.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "where",
+    "startSec": 98.07,
+    "endSec": 98.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 98.28,
+    "endSec": 98.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": "it",
+    "startSec": 98.28,
+    "endSec": 98.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 98.38,
+    "endSec": 98.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": "belongs",
+    "startSec": 98.38,
+    "endSec": 99.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 99.03,
+    "endSec": 99.15,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Hidden",
+    "startSec": 99.15,
+    "endSec": 99.61,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 99.61,
+    "endSec": 99.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": "orchestration",
+    "startSec": 99.64,
+    "endSec": 100.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 100.44,
+    "endSec": 100.47,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 100.47,
+    "endSec": 100.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 100.64,
+    "endSec": 100.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": "acceptable",
+    "startSec": 100.64,
+    "endSec": 101.31,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 101.31,
+    "endSec": 101.59,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Hidden",
+    "startSec": 101.59,
+    "endSec": 101.94,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 101.94,
+    "endSec": 101.94,
+    "chunkIndex": 0
+  },
+  {
+    "text": "confusion",
+    "startSec": 101.94,
+    "endSec": 102.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 102.64,
+    "endSec": 102.67,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 102.67,
+    "endSec": 102.83,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 102.83,
+    "endSec": 102.83,
+    "chunkIndex": 0
+  },
+  {
+    "text": "not",
+    "startSec": 102.83,
+    "endSec": 103.26,
+    "chunkIndex": 0
+  },
+  {
+    "text": ".\n",
+    "startSec": 103.26,
+    "endSec": 103.34,
+    "chunkIndex": 0
+  }
+]

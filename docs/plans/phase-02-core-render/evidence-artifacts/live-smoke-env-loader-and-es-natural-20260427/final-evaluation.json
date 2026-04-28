@@ -1,0 +1,51 @@
+{
+  "attempt_id": "live-smoke-env-loader-and-es-natural-20260427",
+  "verdict": "passed_for_provider_execution_and_artifact_integrity",
+  "manual_listening_status": "not_performed",
+  "runs": [
+    {
+      "request_id": "live-smoke-env-loader-natural-short-20260427",
+      "provider": "inworld",
+      "voice": "Ashley",
+      "language": "en",
+      "pacing_mode": "natural_basic",
+      "input_validation_mode": "strict",
+      "script_chars": 1620,
+      "duration_sec": 103.392,
+      "token_preserved": true,
+      "inserted_break_count": 2,
+      "max_break_tags_per_request": 2,
+      "timestamp_coverage_pct": 100,
+      "warning_count": 0,
+      "purpose": "Verify shared env fallback when repo .env.local contains an empty INWORLD_API_KEY placeholder."
+    },
+    {
+      "request_id": "live-smoke-es-natural-short-20260427",
+      "provider": "inworld",
+      "voice": "Rafael",
+      "language": "es",
+      "pacing_mode": "natural_basic",
+      "input_validation_mode": "strict",
+      "script_chars": 420,
+      "duration_sec": 29.928,
+      "token_preserved": true,
+      "inserted_break_count": 2,
+      "max_break_tags_per_request": 2,
+      "timestamp_coverage_pct": 100,
+      "warning_count": 0,
+      "purpose": "Verify Spanish provider execution with conservative heading and paragraph pauses."
+    }
+  ],
+  "hard_gate_checks": {
+    "provider_runs_succeeded": true,
+    "artifact_manifests_succeeded": true,
+    "input_quality_passed": true,
+    "token_preservation_passed": true,
+    "break_tag_budget_within_limit": true,
+    "audio_probe_decoded": true
+  },
+  "notes": [
+    "These are small post-merge smoke tests, not full long-form UX readiness verdicts.",
+    "Manual listening and longer EN/ES comparison remain separate follow-up checks."
+  ]
+}
