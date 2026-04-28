@@ -1,0 +1,12 @@
+{
+  "outputPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/final.mp3",
+  "totalDurationSec": 103.248,
+  "segmentReports": [
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/chunks/000/audio.mp3",
+      "offsetStartSec": 0,
+      "offsetEndSec": 103.248,
+      "durationSec": 103.248
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "attempt_id": "live-smoke-natural-pacing-short-20260427-merge-gate",
+  "verdict": "passed_for_provider_execution_and_artifact_integrity",
+  "provider": "inworld",
+  "voice": "Ashley",
+  "language": "en",
+  "script": "fixtures/frozen-corpus/scripts/en-control-short.txt",
+  "pacing_mode": "natural_basic",
+  "input_validation_mode": "strict",
+  "checks": {
+    "provider_run_succeeded": true,
+    "artifact_manifest_succeeded": true,
+    "input_quality_passed": true,
+    "token_preserved": true,
+    "break_tag_budget_within_limit": true,
+    "timestamp_coverage_pct": 100,
+    "audio_probe_decoded": true
+  },
+  "observed": {
+    "chunk_count": 1,
+    "inserted_break_count": 2,
+    "max_break_tags_per_request": 2,
+    "audio_duration_sec": 103.248,
+    "audio_format": "mp3",
+    "sample_rate_hz": 48000,
+    "channels": 1
+  },
+  "manual_listening_status": "not_performed",
+  "notes": [
+    "Small merge-gate smoke only; not a full UX readiness verdict.",
+    "Manual listening and long-form comparison remain follow-up checks."
+  ]
+}

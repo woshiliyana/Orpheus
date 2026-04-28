@@ -1,0 +1,47 @@
+{
+  "project_id": "live-smoke-natural-pacing-short-20260427-merge-gate",
+  "run_id": "live-smoke-natural-pacing-short-20260427-merge-gate",
+  "run_status": "succeeded",
+  "source_script_hash": "2512d29c0da60117c4a7db8843f8525a40bfb3b00eb503cfa327f061fd02711c",
+  "provider_summary": {
+    "primary_provider": "inworld",
+    "selected_voice": "Ashley"
+  },
+  "orchestration_summary": {
+    "chunk_count": 1,
+    "stitch_count": 0,
+    "retry_count": 0,
+    "cached_chunk_count": 0,
+    "warning_flags": []
+  },
+  "input_adapter_ref": {
+    "pacing_mode": "natural_basic",
+    "requested_pacing_mode": "natural_basic",
+    "effective_pacing_mode": "natural_basic",
+    "input_validation_mode": "strict",
+    "token_preserved": true,
+    "inserted_break_count": 2,
+    "max_break_tags_per_request": 2,
+    "source_script": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/source-script.md",
+    "spoken_script": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/spoken-script.md",
+    "provider_input": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/provider-input.inworld.txt",
+    "provider_input_chunks_json": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/provider-input.chunks.json",
+    "pacing_plan_json": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/pacing-plan.json",
+    "input_quality_report_json": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/input-quality-report.json"
+  },
+  "output_language": "en",
+  "final_audio_asset_ref": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/final.mp3",
+  "final_audio_duration_seconds": 103.248,
+  "internal_alignment_asset_ref": {
+    "word_timings_json": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/word-timings.json",
+    "srt": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/subtitles.srt",
+    "vtt": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/subtitles.vtt",
+    "alignment_source": "provider_native"
+  },
+  "billing_fact": {
+    "billable_seconds": 104,
+    "usage_event_type": "initial_render_success",
+    "estimated_total_cost_usd": 0.071
+  },
+  "delivery_ref": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-natural-pacing-short-20260427-merge-gate/artifacts/final.mp3"
+}

@@ -1,0 +1,16 @@
+{
+  "provider": "inworld",
+  "requestId": "live-smoke-natural-pacing-short-20260427-merge-gate",
+  "scriptChars": 1620,
+  "chunkCount": 1,
+  "chunkRetryCount": 0,
+  "cachedChunkCount": 0,
+  "providerCharactersReused": 0,
+  "totalWallTimeMs": 20631,
+  "audioDurationSec": 103.248,
+  "timestampCoveragePct": 100,
+  "estimatedTtsCostUsd": 0.05,
+  "estimatedTotalCostUsd": 0.071,
+  "estimatedCostPerCompletedAudioMinuteUsd": 0.041,
+  "timestampWordCount": 536
+}
