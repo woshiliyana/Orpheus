@@ -1,0 +1,18 @@
+{
+  "outputPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/artifacts/final.mp3",
+  "totalDurationSec": 174.504,
+  "segmentReports": [
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/chunks/000/audio.mp3",
+      "offsetStartSec": 0,
+      "offsetEndSec": 74.808,
+      "durationSec": 74.808
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/chunks/001/audio.mp3",
+      "offsetStartSec": 74.808,
+      "offsetEndSec": 174.50400000000002,
+      "durationSec": 99.696
+    }
+  ]
+}
