@@ -7,6 +7,7 @@ Use filename format `NN-short-name.md`.
 ## Current Decision Packets
 
 - [`08-provider-decision-scorecard-2026-04-28.md`](./08-provider-decision-scorecard-2026-04-28.md) records the staged Phase 2 provider decision: continue `Inworld-first` with warnings, keep `Cartesia` as second-provider benchmark / negotiation leverage, hold Cartesia deep-dive spend, and keep public pricing / launch expansion blocked until guardrails clear.
+- [`09-inworld-product-readiness-closeout-2026-04-28.md`](./09-inworld-product-readiness-closeout-2026-04-28.md) records the Inworld evidence-gap closeout: audio generation smoke is accepted with warnings, product readiness remains blocked by missing manual review and modern ES evidence, and the next recommended lane is EN manual review before any paid rerun.
 
 Typical work-package types here include:
 
