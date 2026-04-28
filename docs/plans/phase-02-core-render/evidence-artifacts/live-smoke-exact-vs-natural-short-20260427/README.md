@@ -1,6 +1,6 @@
 # Live Smoke: Exact vs Natural Short Comparison
 
-> Status: passed for provider execution and machine evidence
+> Status: passed for provider execution; exact preferred in short-pair human listening
 > Role: post-merge comparison evidence
 > Date: 2026-04-27 PDT
 
@@ -66,8 +66,12 @@ artifact_integrity: passed
 content_preservation: passed
 break_tag_budget: passed
 publishability_machine_gate: passed
-pacing_naturalness: pending_manual_listening
-natural_basic_vs_exact: pending_manual_listening
+pacing_naturalness: exact_preferred_on_short_pairs
+natural_basic_vs_exact: exact_better_on_short_pairs
 ```
 
-This packet is ready for paired human listening, but it does not by itself prove that `natural_basic` sounds better than `exact`.
+The short EN and ES paired listening pass preferred `exact` over `natural_basic`. This does not prove `natural_basic` has no value, but it blocks treating `natural_basic` as the safer default without a structure-heavy stress-script win.
+
+## Next Test
+
+Run a structure-heavy stress script with headings, paragraphs, and list items. If `natural_basic` does not clearly beat `exact` there, the default pacing mode should return to `exact`, with `natural_basic` remaining optional or experimental.

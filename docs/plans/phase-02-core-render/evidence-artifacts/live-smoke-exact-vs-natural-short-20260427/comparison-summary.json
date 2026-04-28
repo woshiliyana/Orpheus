@@ -1,7 +1,7 @@
 {
   "attempt_id": "live-smoke-exact-vs-natural-short-20260427",
   "status": "passed_for_provider_execution_and_machine_evidence",
-  "manual_listening_status": "pending",
+  "manual_listening_status": "completed_short_pairs",
   "pairs": [
     {
       "language": "en",
@@ -40,9 +40,23 @@
     "content_preservation": "passed",
     "break_tag_budget": "passed",
     "publishability_machine_gate": "passed",
-    "pacing_naturalness": "pending_manual_listening",
-    "natural_basic_vs_exact": "pending_manual_listening"
+    "pacing_naturalness": "exact_preferred_on_short_pairs",
+    "natural_basic_vs_exact": "exact_better_on_short_pairs"
   },
+  "manual_verdict": {
+    "en_ashley": {
+      "pacing_naturalness": "exact_preferred",
+      "natural_basic_vs_exact": "exact_better",
+      "publishability": "warning"
+    },
+    "es_rafael": {
+      "pacing_naturalness": "exact_preferred",
+      "natural_basic_vs_exact": "exact_better",
+      "publishability": "warning"
+    },
+    "default_recommendation": "hold_natural_basic_as_default_until_stress_script_win"
+  },
+  "next_test": "Run a structure-heavy stress script with headings, paragraphs, and list items before deciding whether natural_basic should remain the default.",
   "natural_artifact_packet": "docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-env-loader-and-es-natural-20260427/",
   "exact_artifact_packet": "docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-exact-vs-natural-short-20260427/"
 }
