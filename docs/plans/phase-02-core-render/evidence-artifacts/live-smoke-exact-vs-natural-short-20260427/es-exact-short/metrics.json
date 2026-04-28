@@ -1,0 +1,16 @@
+{
+  "provider": "inworld",
+  "requestId": "live-smoke-es-exact-short-20260427",
+  "scriptChars": 420,
+  "chunkCount": 1,
+  "chunkRetryCount": 0,
+  "cachedChunkCount": 0,
+  "providerCharactersReused": 0,
+  "totalWallTimeMs": 7467,
+  "audioDurationSec": 29.832,
+  "timestampCoveragePct": 100,
+  "estimatedTtsCostUsd": 0.013,
+  "estimatedTotalCostUsd": 0.019,
+  "estimatedCostPerCompletedAudioMinuteUsd": 0.037,
+  "timestampWordCount": 129
+}

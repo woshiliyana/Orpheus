@@ -1,0 +1,16 @@
+{
+  "provider": "inworld",
+  "requestId": "live-smoke-en-exact-short-20260427",
+  "scriptChars": 1620,
+  "chunkCount": 1,
+  "chunkRetryCount": 0,
+  "cachedChunkCount": 0,
+  "providerCharactersReused": 0,
+  "totalWallTimeMs": 25287,
+  "audioDurationSec": 102,
+  "timestampCoveragePct": 100,
+  "estimatedTtsCostUsd": 0.049,
+  "estimatedTotalCostUsd": 0.069,
+  "estimatedCostPerCompletedAudioMinuteUsd": 0.041,
+  "timestampWordCount": 534
+}

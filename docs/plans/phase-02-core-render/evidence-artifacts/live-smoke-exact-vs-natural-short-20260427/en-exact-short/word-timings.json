@@ -1,0 +1,3206 @@
+[
+  {
+    "text": "When",
+    "startSec": 0,
+    "endSec": 0.2,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 0.2,
+    "endSec": 0.2,
+    "chunkIndex": 0
+  },
+  {
+    "text": "people",
+    "startSec": 0.2,
+    "endSec": 0.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 0.52,
+    "endSec": 0.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": "say",
+    "startSec": 0.52,
+    "endSec": 0.87,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 0.87,
+    "endSec": 0.87,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 0.87,
+    "endSec": 0.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 0.92,
+    "endSec": 0.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": "channel",
+    "startSec": 0.92,
+    "endSec": 1.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 1.38,
+    "endSec": 1.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 1.38,
+    "endSec": 1.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": " “",
+    "startSec": 1.57,
+    "endSec": 1.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": "faceless",
+    "startSec": 1.57,
+    "endSec": 2.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": ",” ",
+    "startSec": 2.32,
+    "endSec": 2.5,
+    "chunkIndex": 0
+  },
+  {
+    "text": "they",
+    "startSec": 2.5,
+    "endSec": 2.65,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 2.65,
+    "endSec": 2.65,
+    "chunkIndex": 0
+  },
+  {
+    "text": "often",
+    "startSec": 2.65,
+    "endSec": 2.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 2.92,
+    "endSec": 2.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": "picture",
+    "startSec": 2.92,
+    "endSec": 3.29,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 3.29,
+    "endSec": 3.29,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 3.29,
+    "endSec": 3.34,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 3.34,
+    "endSec": 3.34,
+    "chunkIndex": 0
+  },
+  {
+    "text": "shortcut",
+    "startSec": 3.34,
+    "endSec": 4.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 4.03,
+    "endSec": 4.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": "In",
+    "startSec": 4.21,
+    "endSec": 4.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 4.38,
+    "endSec": 4.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": "practice",
+    "startSec": 4.38,
+    "endSec": 5.1,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 5.1,
+    "endSec": 5.14,
+    "chunkIndex": 0
+  },
+  {
+    "text": "it",
+    "startSec": 5.14,
+    "endSec": 5.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 5.28,
+    "endSec": 5.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 5.28,
+    "endSec": 5.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 5.41,
+    "endSec": 5.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 5.41,
+    "endSec": 5.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 5.46,
+    "endSec": 5.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": "discipline",
+    "startSec": 5.46,
+    "endSec": 5.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 5.97,
+    "endSec": 5.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": "problem",
+    "startSec": 5.97,
+    "endSec": 6.47,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 6.47,
+    "endSec": 6.65,
+    "chunkIndex": 0
+  },
+  {
+    "text": "You",
+    "startSec": 6.65,
+    "endSec": 6.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 6.81,
+    "endSec": 6.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": "cannot",
+    "startSec": 6.81,
+    "endSec": 7.24,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 7.24,
+    "endSec": 7.24,
+    "chunkIndex": 0
+  },
+  {
+    "text": "lean",
+    "startSec": 7.24,
+    "endSec": 7.5,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 7.5,
+    "endSec": 7.5,
+    "chunkIndex": 0
+  },
+  {
+    "text": "on",
+    "startSec": 7.5,
+    "endSec": 7.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 7.66,
+    "endSec": 7.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": "charisma",
+    "startSec": 7.66,
+    "endSec": 8.35,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 8.35,
+    "endSec": 8.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": "improvised",
+    "startSec": 8.46,
+    "endSec": 9.06,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 9.06,
+    "endSec": 9.06,
+    "chunkIndex": 0
+  },
+  {
+    "text": "camera",
+    "startSec": 9.06,
+    "endSec": 9.4,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 9.4,
+    "endSec": 9.4,
+    "chunkIndex": 0
+  },
+  {
+    "text": "presence",
+    "startSec": 9.4,
+    "endSec": 9.98,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 9.98,
+    "endSec": 10.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": "or",
+    "startSec": 10.22,
+    "endSec": 10.39,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 10.39,
+    "endSec": 10.39,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 10.39,
+    "endSec": 10.54,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 10.54,
+    "endSec": 10.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": "energy",
+    "startSec": 10.57,
+    "endSec": 10.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 10.99,
+    "endSec": 10.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": "of",
+    "startSec": 10.99,
+    "endSec": 11.14,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 11.14,
+    "endSec": 11.14,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 11.14,
+    "endSec": 11.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 11.19,
+    "endSec": 11.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": "spontaneous",
+    "startSec": 11.19,
+    "endSec": 11.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 11.99,
+    "endSec": 11.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": "scene",
+    "startSec": 11.99,
+    "endSec": 12.35,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 12.35,
+    "endSec": 12.63,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 12.63,
+    "endSec": 12.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 12.71,
+    "endSec": 12.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": "script",
+    "startSec": 12.71,
+    "endSec": 13.15,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 13.15,
+    "endSec": 13.15,
+    "chunkIndex": 0
+  },
+  {
+    "text": "has",
+    "startSec": 13.15,
+    "endSec": 13.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 13.37,
+    "endSec": 13.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 13.37,
+    "endSec": 13.49,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 13.49,
+    "endSec": 13.49,
+    "chunkIndex": 0
+  },
+  {
+    "text": "carry",
+    "startSec": 13.49,
+    "endSec": 13.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 13.81,
+    "endSec": 13.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": "clarity",
+    "startSec": 13.81,
+    "endSec": 14.4,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 14.4,
+    "endSec": 14.48,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 14.48,
+    "endSec": 14.58,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 14.58,
+    "endSec": 14.58,
+    "chunkIndex": 0
+  },
+  {
+    "text": "narration",
+    "startSec": 14.58,
+    "endSec": 15.29,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 15.29,
+    "endSec": 15.29,
+    "chunkIndex": 0
+  },
+  {
+    "text": "has",
+    "startSec": 15.29,
+    "endSec": 15.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 15.62,
+    "endSec": 15.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 15.62,
+    "endSec": 15.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 15.76,
+    "endSec": 15.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": "carry",
+    "startSec": 15.76,
+    "endSec": 16.15,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 16.15,
+    "endSec": 16.15,
+    "chunkIndex": 0
+  },
+  {
+    "text": "confidence",
+    "startSec": 16.15,
+    "endSec": 16.95,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 16.95,
+    "endSec": 17.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 17.21,
+    "endSec": 17.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 17.3,
+    "endSec": 17.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": "pacing",
+    "startSec": 17.3,
+    "endSec": 17.85,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 17.85,
+    "endSec": 17.85,
+    "chunkIndex": 0
+  },
+  {
+    "text": "has",
+    "startSec": 17.85,
+    "endSec": 18.14,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 18.14,
+    "endSec": 18.14,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 18.14,
+    "endSec": 18.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 18.25,
+    "endSec": 18.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": "make",
+    "startSec": 18.25,
+    "endSec": 18.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 18.43,
+    "endSec": 18.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 18.43,
+    "endSec": 18.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 18.52,
+    "endSec": 18.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": "viewer",
+    "startSec": 18.52,
+    "endSec": 18.93,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 18.93,
+    "endSec": 18.93,
+    "chunkIndex": 0
+  },
+  {
+    "text": "feel",
+    "startSec": 18.93,
+    "endSec": 19.26,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 19.26,
+    "endSec": 19.26,
+    "chunkIndex": 0
+  },
+  {
+    "text": "that",
+    "startSec": 19.26,
+    "endSec": 19.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 19.42,
+    "endSec": 19.45,
+    "chunkIndex": 0
+  },
+  {
+    "text": "each",
+    "startSec": 19.45,
+    "endSec": 19.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 19.78,
+    "endSec": 19.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sentence",
+    "startSec": 19.78,
+    "endSec": 20.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 20.27,
+    "endSec": 20.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": "was",
+    "startSec": 20.27,
+    "endSec": 20.45,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 20.45,
+    "endSec": 20.45,
+    "chunkIndex": 0
+  },
+  {
+    "text": "placed",
+    "startSec": 20.45,
+    "endSec": 20.9,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 20.9,
+    "endSec": 20.9,
+    "chunkIndex": 0
+  },
+  {
+    "text": "there",
+    "startSec": 20.9,
+    "endSec": 21.14,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 21.14,
+    "endSec": 21.17,
+    "chunkIndex": 0
+  },
+  {
+    "text": "on",
+    "startSec": 21.17,
+    "endSec": 21.35,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 21.35,
+    "endSec": 21.35,
+    "chunkIndex": 0
+  },
+  {
+    "text": "purpose",
+    "startSec": 21.35,
+    "endSec": 22.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 22.03,
+    "endSec": 22.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": "That",
+    "startSec": 22.42,
+    "endSec": 22.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 22.6,
+    "endSec": 22.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 22.6,
+    "endSec": 22.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 22.74,
+    "endSec": 22.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": "why",
+    "startSec": 22.74,
+    "endSec": 22.98,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 22.98,
+    "endSec": 22.98,
+    "chunkIndex": 0
+  },
+  {
+    "text": "long-form",
+    "startSec": 22.98,
+    "endSec": 23.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 23.81,
+    "endSec": 23.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": "educational",
+    "startSec": 23.84,
+    "endSec": 24.63,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 24.63,
+    "endSec": 24.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": "explainer",
+    "startSec": 24.66,
+    "endSec": 25.2,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 25.2,
+    "endSec": 25.2,
+    "chunkIndex": 0
+  },
+  {
+    "text": "channels",
+    "startSec": 25.2,
+    "endSec": 25.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 25.78,
+    "endSec": 26,
+    "chunkIndex": 0
+  },
+  {
+    "text": "live",
+    "startSec": 26,
+    "endSec": 26.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 26.46,
+    "endSec": 26.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": "or",
+    "startSec": 26.53,
+    "endSec": 26.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 26.76,
+    "endSec": 26.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": "die",
+    "startSec": 26.76,
+    "endSec": 27.26,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 27.26,
+    "endSec": 27.29,
+    "chunkIndex": 0
+  },
+  {
+    "text": "on",
+    "startSec": 27.29,
+    "endSec": 27.5,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 27.5,
+    "endSec": 27.5,
+    "chunkIndex": 0
+  },
+  {
+    "text": "workflow",
+    "startSec": 27.5,
+    "endSec": 28.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 28.03,
+    "endSec": 28.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": "quality",
+    "startSec": 28.03,
+    "endSec": 28.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 28.66,
+    "endSec": 28.98,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 28.98,
+    "endSec": 29.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 29.07,
+    "endSec": 29.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creator",
+    "startSec": 29.07,
+    "endSec": 29.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 29.6,
+    "endSec": 29.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 29.6,
+    "endSec": 29.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 29.81,
+    "endSec": 29.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": "not",
+    "startSec": 29.81,
+    "endSec": 30.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 30.03,
+    "endSec": 30.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": "just",
+    "startSec": 30.03,
+    "endSec": 30.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 30.28,
+    "endSec": 30.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": "writing",
+    "startSec": 30.28,
+    "endSec": 30.61,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 30.61,
+    "endSec": 30.61,
+    "chunkIndex": 0
+  },
+  {
+    "text": "words",
+    "startSec": 30.61,
+    "endSec": 31.15,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 31.15,
+    "endSec": 31.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 31.28,
+    "endSec": 31.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 31.37,
+    "endSec": 31.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creator",
+    "startSec": 31.37,
+    "endSec": 32.04,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 32.04,
+    "endSec": 32.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 32.07,
+    "endSec": 32.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 32.21,
+    "endSec": 32.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": "designing",
+    "startSec": 32.21,
+    "endSec": 32.8,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 32.8,
+    "endSec": 32.83,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 32.83,
+    "endSec": 32.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 32.91,
+    "endSec": 32.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": "reading",
+    "startSec": 32.91,
+    "endSec": 33.29,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 33.29,
+    "endSec": 33.29,
+    "chunkIndex": 0
+  },
+  {
+    "text": "experience",
+    "startSec": 33.29,
+    "endSec": 34,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 34,
+    "endSec": 34,
+    "chunkIndex": 0
+  },
+  {
+    "text": "that",
+    "startSec": 34,
+    "endSec": 34.15,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 34.15,
+    "endSec": 34.15,
+    "chunkIndex": 0
+  },
+  {
+    "text": "needs",
+    "startSec": 34.15,
+    "endSec": 34.54,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 34.54,
+    "endSec": 34.54,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 34.54,
+    "endSec": 34.67,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 34.67,
+    "endSec": 34.67,
+    "chunkIndex": 0
+  },
+  {
+    "text": "survive",
+    "startSec": 34.67,
+    "endSec": 35.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 35.13,
+    "endSec": 35.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 35.13,
+    "endSec": 35.24,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 35.24,
+    "endSec": 35.24,
+    "chunkIndex": 0
+  },
+  {
+    "text": "jump",
+    "startSec": 35.24,
+    "endSec": 35.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 35.57,
+    "endSec": 35.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": "from",
+    "startSec": 35.57,
+    "endSec": 35.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 35.76,
+    "endSec": 35.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 35.76,
+    "endSec": 35.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 35.81,
+    "endSec": 35.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": "document",
+    "startSec": 35.81,
+    "endSec": 36.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 36.44,
+    "endSec": 36.47,
+    "chunkIndex": 0
+  },
+  {
+    "text": "into",
+    "startSec": 36.47,
+    "endSec": 36.77,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 36.77,
+    "endSec": 36.77,
+    "chunkIndex": 0
+  },
+  {
+    "text": "spoken",
+    "startSec": 36.77,
+    "endSec": 37.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 37.27,
+    "endSec": 37.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": "audio",
+    "startSec": 37.3,
+    "endSec": 37.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": ".\n\n",
+    "startSec": 37.84,
+    "endSec": 38.02,
+    "chunkIndex": 0
+  },
+  {
+    "text": "That",
+    "startSec": 38.02,
+    "endSec": 38.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 38.28,
+    "endSec": 38.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": "jump",
+    "startSec": 38.28,
+    "endSec": 38.61,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 38.61,
+    "endSec": 38.61,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sounds",
+    "startSec": 38.61,
+    "endSec": 39,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 39,
+    "endSec": 39,
+    "chunkIndex": 0
+  },
+  {
+    "text": "simple",
+    "startSec": 39,
+    "endSec": 39.49,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 39.49,
+    "endSec": 39.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": "until",
+    "startSec": 39.76,
+    "endSec": 40.11,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 40.11,
+    "endSec": 40.11,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 40.11,
+    "endSec": 40.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 40.19,
+    "endSec": 40.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": "script",
+    "startSec": 40.19,
+    "endSec": 40.59,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 40.59,
+    "endSec": 40.59,
+    "chunkIndex": 0
+  },
+  {
+    "text": "gets",
+    "startSec": 40.59,
+    "endSec": 40.86,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 40.86,
+    "endSec": 40.86,
+    "chunkIndex": 0
+  },
+  {
+    "text": "long",
+    "startSec": 40.86,
+    "endSec": 41.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 41.27,
+    "endSec": 41.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": "A",
+    "startSec": 41.66,
+    "endSec": 41.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 41.74,
+    "endSec": 41.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": "short",
+    "startSec": 41.74,
+    "endSec": 42.11,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 42.11,
+    "endSec": 42.11,
+    "chunkIndex": 0
+  },
+  {
+    "text": "paragraph",
+    "startSec": 42.11,
+    "endSec": 42.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 42.81,
+    "endSec": 42.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": "can",
+    "startSec": 42.81,
+    "endSec": 42.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 42.99,
+    "endSec": 42.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": "hide",
+    "startSec": 42.99,
+    "endSec": 43.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 43.38,
+    "endSec": 43.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": "rough",
+    "startSec": 43.38,
+    "endSec": 43.59,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 43.59,
+    "endSec": 43.65,
+    "chunkIndex": 0
+  },
+  {
+    "text": "edges",
+    "startSec": 43.65,
+    "endSec": 44.2,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 44.2,
+    "endSec": 44.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": "A",
+    "startSec": 44.46,
+    "endSec": 44.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 44.52,
+    "endSec": 44.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": "twelve-minute",
+    "startSec": 44.52,
+    "endSec": 45.33,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 45.33,
+    "endSec": 45.36,
+    "chunkIndex": 0
+  },
+  {
+    "text": "explanation",
+    "startSec": 45.36,
+    "endSec": 46.18,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 46.18,
+    "endSec": 46.18,
+    "chunkIndex": 0
+  },
+  {
+    "text": "cannot",
+    "startSec": 46.18,
+    "endSec": 46.77,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 46.77,
+    "endSec": 46.96,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Numbers",
+    "startSec": 46.96,
+    "endSec": 47.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 47.41,
+    "endSec": 47.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": "need",
+    "startSec": 47.41,
+    "endSec": 47.59,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 47.59,
+    "endSec": 47.59,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 47.59,
+    "endSec": 47.67,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 47.67,
+    "endSec": 47.67,
+    "chunkIndex": 0
+  },
+  {
+    "text": "be",
+    "startSec": 47.67,
+    "endSec": 47.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 47.81,
+    "endSec": 47.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": "read",
+    "startSec": 47.81,
+    "endSec": 48.09,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 48.09,
+    "endSec": 48.09,
+    "chunkIndex": 0
+  },
+  {
+    "text": "naturally",
+    "startSec": 48.09,
+    "endSec": 48.85,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 48.85,
+    "endSec": 49.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Dates",
+    "startSec": 49.07,
+    "endSec": 49.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 49.53,
+    "endSec": 49.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": "need",
+    "startSec": 49.53,
+    "endSec": 49.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 49.74,
+    "endSec": 49.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 49.74,
+    "endSec": 49.82,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 49.82,
+    "endSec": 49.82,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sound",
+    "startSec": 49.82,
+    "endSec": 50.24,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 50.24,
+    "endSec": 50.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": "human",
+    "startSec": 50.27,
+    "endSec": 50.77,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 50.77,
+    "endSec": 51.03,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Lists",
+    "startSec": 51.03,
+    "endSec": 51.67,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 51.67,
+    "endSec": 51.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": "need",
+    "startSec": 51.7,
+    "endSec": 52.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 52.05,
+    "endSec": 52.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": "rhythm",
+    "startSec": 52.05,
+    "endSec": 52.54,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 52.54,
+    "endSec": 52.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Section",
+    "startSec": 52.69,
+    "endSec": 53.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 53.25,
+    "endSec": 53.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": "changes",
+    "startSec": 53.25,
+    "endSec": 53.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 53.76,
+    "endSec": 53.76,
+    "chunkIndex": 0
+  },
+  {
+    "text": "need",
+    "startSec": 53.76,
+    "endSec": 54.02,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 54.02,
+    "endSec": 54.02,
+    "chunkIndex": 0
+  },
+  {
+    "text": "breathing",
+    "startSec": 54.02,
+    "endSec": 54.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 54.41,
+    "endSec": 54.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": "room",
+    "startSec": 54.41,
+    "endSec": 54.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 54.69,
+    "endSec": 54.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": "without",
+    "startSec": 54.69,
+    "endSec": 55.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 55.05,
+    "endSec": 55.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sounding",
+    "startSec": 55.05,
+    "endSec": 55.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 55.46,
+    "endSec": 55.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": "like",
+    "startSec": 55.46,
+    "endSec": 55.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 55.71,
+    "endSec": 55.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 55.71,
+    "endSec": 55.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 55.79,
+    "endSec": 55.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": "narrator",
+    "startSec": 55.79,
+    "endSec": 56.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 56.28,
+    "endSec": 56.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": "lost",
+    "startSec": 56.28,
+    "endSec": 56.67,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 56.67,
+    "endSec": 56.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 56.7,
+    "endSec": 56.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 56.79,
+    "endSec": 56.82,
+    "chunkIndex": 0
+  },
+  {
+    "text": "thread",
+    "startSec": 56.82,
+    "endSec": 57.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 57.28,
+    "endSec": 57.42,
+    "chunkIndex": 0
+  },
+  {
+    "text": "If",
+    "startSec": 57.42,
+    "endSec": 57.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 57.55,
+    "endSec": 57.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 57.55,
+    "endSec": 57.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 57.64,
+    "endSec": 57.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": "system",
+    "startSec": 57.64,
+    "endSec": 58.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 58.07,
+    "endSec": 58.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "forces",
+    "startSec": 58.07,
+    "endSec": 58.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 58.53,
+    "endSec": 58.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 58.53,
+    "endSec": 58.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 58.62,
+    "endSec": 58.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creator",
+    "startSec": 58.62,
+    "endSec": 59.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 59.19,
+    "endSec": 59.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 59.22,
+    "endSec": 59.36,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 59.36,
+    "endSec": 59.36,
+    "chunkIndex": 0
+  },
+  {
+    "text": "chop",
+    "startSec": 59.36,
+    "endSec": 59.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 59.71,
+    "endSec": 59.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 59.71,
+    "endSec": 59.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 59.79,
+    "endSec": 59.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": "script",
+    "startSec": 59.79,
+    "endSec": 60.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 60.13,
+    "endSec": 60.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": "by",
+    "startSec": 60.13,
+    "endSec": 60.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 60.28,
+    "endSec": 60.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": "hand",
+    "startSec": 60.28,
+    "endSec": 60.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 60.74,
+    "endSec": 60.96,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 60.96,
+    "endSec": 61.04,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 61.04,
+    "endSec": 61.04,
+    "chunkIndex": 0
+  },
+  {
+    "text": "workflow",
+    "startSec": 61.04,
+    "endSec": 61.61,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 61.61,
+    "endSec": 61.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": "already",
+    "startSec": 61.64,
+    "endSec": 62.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 62.07,
+    "endSec": 62.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "broke",
+    "startSec": 62.07,
+    "endSec": 62.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 62.44,
+    "endSec": 62.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": "before",
+    "startSec": 62.44,
+    "endSec": 62.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 62.75,
+    "endSec": 62.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 62.75,
+    "endSec": 62.85,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 62.85,
+    "endSec": 62.85,
+    "chunkIndex": 0
+  },
+  {
+    "text": "first",
+    "startSec": 62.85,
+    "endSec": 63.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 63.19,
+    "endSec": 63.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": "audio",
+    "startSec": 63.22,
+    "endSec": 63.54,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 63.54,
+    "endSec": 63.54,
+    "chunkIndex": 0
+  },
+  {
+    "text": "file",
+    "startSec": 63.54,
+    "endSec": 63.95,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 63.95,
+    "endSec": 63.95,
+    "chunkIndex": 0
+  },
+  {
+    "text": "arrived",
+    "startSec": 63.95,
+    "endSec": 64.45,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 64.45,
+    "endSec": 64.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Every",
+    "startSec": 64.6,
+    "endSec": 64.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 64.88,
+    "endSec": 64.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": "manual",
+    "startSec": 64.88,
+    "endSec": 65.34,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 65.34,
+    "endSec": 65.34,
+    "chunkIndex": 0
+  },
+  {
+    "text": "split",
+    "startSec": 65.34,
+    "endSec": 65.8,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 65.8,
+    "endSec": 65.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creates",
+    "startSec": 65.84,
+    "endSec": 66.26,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 66.26,
+    "endSec": 66.29,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 66.29,
+    "endSec": 66.36,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 66.36,
+    "endSec": 66.36,
+    "chunkIndex": 0
+  },
+  {
+    "text": "new",
+    "startSec": 66.36,
+    "endSec": 66.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 66.57,
+    "endSec": 66.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": "seam",
+    "startSec": 66.57,
+    "endSec": 67.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 67.07,
+    "endSec": 67.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 67.3,
+    "endSec": 67.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 67.37,
+    "endSec": 67.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": "new",
+    "startSec": 67.37,
+    "endSec": 67.56,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 67.56,
+    "endSec": 67.56,
+    "chunkIndex": 0
+  },
+  {
+    "text": "place",
+    "startSec": 67.56,
+    "endSec": 67.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 67.88,
+    "endSec": 67.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": "for",
+    "startSec": 67.88,
+    "endSec": 67.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 67.99,
+    "endSec": 67.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": "prosody",
+    "startSec": 67.99,
+    "endSec": 68.47,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 68.47,
+    "endSec": 68.47,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 68.47,
+    "endSec": 68.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 68.6,
+    "endSec": 68.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": "drift",
+    "startSec": 68.6,
+    "endSec": 69.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 69.07,
+    "endSec": 69.35,
+    "chunkIndex": 0
+  },
+  {
+    "text": "and",
+    "startSec": 69.35,
+    "endSec": 69.48,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 69.48,
+    "endSec": 69.48,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 69.48,
+    "endSec": 69.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 69.53,
+    "endSec": 69.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": "new",
+    "startSec": 69.53,
+    "endSec": 69.82,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 69.82,
+    "endSec": 69.82,
+    "chunkIndex": 0
+  },
+  {
+    "text": "reason",
+    "startSec": 69.82,
+    "endSec": 70.24,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 70.24,
+    "endSec": 70.24,
+    "chunkIndex": 0
+  },
+  {
+    "text": "for",
+    "startSec": 70.24,
+    "endSec": 70.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 70.37,
+    "endSec": 70.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 70.37,
+    "endSec": 70.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 70.44,
+    "endSec": 70.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creator",
+    "startSec": 70.44,
+    "endSec": 70.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 70.88,
+    "endSec": 70.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 70.88,
+    "endSec": 70.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 70.99,
+    "endSec": 70.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": "stop",
+    "startSec": 70.99,
+    "endSec": 71.33,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 71.33,
+    "endSec": 71.33,
+    "chunkIndex": 0
+  },
+  {
+    "text": "trusting",
+    "startSec": 71.33,
+    "endSec": 71.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 71.75,
+    "endSec": 71.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 71.75,
+    "endSec": 71.83,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 71.83,
+    "endSec": 71.83,
+    "chunkIndex": 0
+  },
+  {
+    "text": "render",
+    "startSec": 71.83,
+    "endSec": 72.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": ".\n\n",
+    "startSec": 72.32,
+    "endSec": 72.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 72.64,
+    "endSec": 72.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 72.75,
+    "endSec": 72.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": "better",
+    "startSec": 72.75,
+    "endSec": 73.02,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 73.02,
+    "endSec": 73.02,
+    "chunkIndex": 0
+  },
+  {
+    "text": "promise",
+    "startSec": 73.02,
+    "endSec": 73.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 73.55,
+    "endSec": 73.58,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 73.58,
+    "endSec": 73.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 73.74,
+    "endSec": 73.74,
+    "chunkIndex": 0
+  },
+  {
+    "text": "smaller",
+    "startSec": 73.74,
+    "endSec": 74.37,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 74.37,
+    "endSec": 74.47,
+    "chunkIndex": 0
+  },
+  {
+    "text": "and",
+    "startSec": 74.47,
+    "endSec": 74.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 74.62,
+    "endSec": 74.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": "stronger",
+    "startSec": 74.62,
+    "endSec": 75.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 75.25,
+    "endSec": 75.34,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Paste",
+    "startSec": 75.34,
+    "endSec": 75.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 75.81,
+    "endSec": 75.84,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 75.84,
+    "endSec": 75.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 75.97,
+    "endSec": 75.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": "whole",
+    "startSec": 75.97,
+    "endSec": 76.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 76.32,
+    "endSec": 76.32,
+    "chunkIndex": 0
+  },
+  {
+    "text": "script",
+    "startSec": 76.32,
+    "endSec": 76.73,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 76.73,
+    "endSec": 76.73,
+    "chunkIndex": 0
+  },
+  {
+    "text": "once",
+    "startSec": 76.73,
+    "endSec": 77.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 77.22,
+    "endSec": 77.51,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Let",
+    "startSec": 77.51,
+    "endSec": 77.72,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 77.72,
+    "endSec": 77.72,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 77.72,
+    "endSec": 77.8,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 77.8,
+    "endSec": 77.8,
+    "chunkIndex": 0
+  },
+  {
+    "text": "backend",
+    "startSec": 77.8,
+    "endSec": 78.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 78.3,
+    "endSec": 78.33,
+    "chunkIndex": 0
+  },
+  {
+    "text": "absorb",
+    "startSec": 78.33,
+    "endSec": 78.89,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 78.89,
+    "endSec": 78.89,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 78.89,
+    "endSec": 79.02,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 79.02,
+    "endSec": 79.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ugly",
+    "startSec": 79.05,
+    "endSec": 79.33,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 79.33,
+    "endSec": 79.33,
+    "chunkIndex": 0
+  },
+  {
+    "text": "parts",
+    "startSec": 79.33,
+    "endSec": 79.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": ": ",
+    "startSec": 79.81,
+    "endSec": 80.1,
+    "chunkIndex": 0
+  },
+  {
+    "text": "chunk",
+    "startSec": 80.1,
+    "endSec": 80.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 80.46,
+    "endSec": 80.46,
+    "chunkIndex": 0
+  },
+  {
+    "text": "planning",
+    "startSec": 80.46,
+    "endSec": 81.04,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 81.04,
+    "endSec": 81.1,
+    "chunkIndex": 0
+  },
+  {
+    "text": "retries",
+    "startSec": 81.1,
+    "endSec": 81.89,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 81.89,
+    "endSec": 81.89,
+    "chunkIndex": 0
+  },
+  {
+    "text": "stitching",
+    "startSec": 81.89,
+    "endSec": 82.55,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 82.55,
+    "endSec": 82.59,
+    "chunkIndex": 0
+  },
+  {
+    "text": "and",
+    "startSec": 82.59,
+    "endSec": 82.73,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 82.73,
+    "endSec": 82.73,
+    "chunkIndex": 0
+  },
+  {
+    "text": "timing",
+    "startSec": 82.73,
+    "endSec": 83.11,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 83.11,
+    "endSec": 83.11,
+    "chunkIndex": 0
+  },
+  {
+    "text": "recovery",
+    "startSec": 83.11,
+    "endSec": 83.77,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 83.77,
+    "endSec": 84.08,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 84.08,
+    "endSec": 84.2,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 84.2,
+    "endSec": 84.2,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creator",
+    "startSec": 84.2,
+    "endSec": 84.68,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 84.68,
+    "endSec": 84.68,
+    "chunkIndex": 0
+  },
+  {
+    "text": "should",
+    "startSec": 84.68,
+    "endSec": 84.94,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 84.94,
+    "endSec": 84.94,
+    "chunkIndex": 0
+  },
+  {
+    "text": "still",
+    "startSec": 84.94,
+    "endSec": 85.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 85.28,
+    "endSec": 85.28,
+    "chunkIndex": 0
+  },
+  {
+    "text": "see",
+    "startSec": 85.28,
+    "endSec": 85.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 85.53,
+    "endSec": 85.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": "one",
+    "startSec": 85.53,
+    "endSec": 85.87,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 85.87,
+    "endSec": 85.87,
+    "chunkIndex": 0
+  },
+  {
+    "text": "project",
+    "startSec": 85.87,
+    "endSec": 86.48,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 86.48,
+    "endSec": 86.66,
+    "chunkIndex": 0
+  },
+  {
+    "text": "one",
+    "startSec": 86.66,
+    "endSec": 86.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 86.97,
+    "endSec": 86.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": "output",
+    "startSec": 86.97,
+    "endSec": 87.5,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 87.5,
+    "endSec": 87.54,
+    "chunkIndex": 0
+  },
+  {
+    "text": "audio",
+    "startSec": 87.54,
+    "endSec": 87.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 87.88,
+    "endSec": 87.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": "file",
+    "startSec": 87.88,
+    "endSec": 88.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": ", ",
+    "startSec": 88.3,
+    "endSec": 88.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": "and",
+    "startSec": 88.79,
+    "endSec": 88.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 88.97,
+    "endSec": 88.97,
+    "chunkIndex": 0
+  },
+  {
+    "text": "one",
+    "startSec": 88.97,
+    "endSec": 89.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 89.21,
+    "endSec": 89.21,
+    "chunkIndex": 0
+  },
+  {
+    "text": "set",
+    "startSec": 89.21,
+    "endSec": 89.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 89.41,
+    "endSec": 89.41,
+    "chunkIndex": 0
+  },
+  {
+    "text": "of",
+    "startSec": 89.41,
+    "endSec": 89.49,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 89.49,
+    "endSec": 89.49,
+    "chunkIndex": 0
+  },
+  {
+    "text": "subtitle-ready",
+    "startSec": 89.49,
+    "endSec": 90.35,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 90.35,
+    "endSec": 90.35,
+    "chunkIndex": 0
+  },
+  {
+    "text": "timing",
+    "startSec": 90.35,
+    "endSec": 90.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 90.78,
+    "endSec": 90.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": "artifacts",
+    "startSec": 90.78,
+    "endSec": 91.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 91.44,
+    "endSec": 91.62,
+    "chunkIndex": 0
+  },
+  {
+    "text": "That",
+    "startSec": 91.62,
+    "endSec": 91.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 91.81,
+    "endSec": 91.81,
+    "chunkIndex": 0
+  },
+  {
+    "text": "does",
+    "startSec": 91.81,
+    "endSec": 91.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 91.99,
+    "endSec": 91.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": "not",
+    "startSec": 91.99,
+    "endSec": 92.36,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 92.36,
+    "endSec": 92.36,
+    "chunkIndex": 0
+  },
+  {
+    "text": "mean",
+    "startSec": 92.36,
+    "endSec": 92.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 92.64,
+    "endSec": 92.64,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 92.64,
+    "endSec": 92.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 92.71,
+    "endSec": 92.71,
+    "chunkIndex": 0
+  },
+  {
+    "text": "system",
+    "startSec": 92.71,
+    "endSec": 93.19,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 93.19,
+    "endSec": 93.23,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 93.23,
+    "endSec": 93.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 93.38,
+    "endSec": 93.38,
+    "chunkIndex": 0
+  },
+  {
+    "text": "magically",
+    "startSec": 93.38,
+    "endSec": 93.98,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 93.98,
+    "endSec": 93.98,
+    "chunkIndex": 0
+  },
+  {
+    "text": "simple",
+    "startSec": 93.98,
+    "endSec": 94.39,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 94.39,
+    "endSec": 94.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": "underneath",
+    "startSec": 94.43,
+    "endSec": 94.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 94.99,
+    "endSec": 95.07,
+    "chunkIndex": 0
+  },
+  {
+    "text": "It",
+    "startSec": 95.07,
+    "endSec": 95.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 95.25,
+    "endSec": 95.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": "means",
+    "startSec": 95.25,
+    "endSec": 95.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 95.6,
+    "endSec": 95.6,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 95.6,
+    "endSec": 95.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 95.69,
+    "endSec": 95.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": "complexity",
+    "startSec": 95.69,
+    "endSec": 96.4,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 96.4,
+    "endSec": 96.43,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 96.43,
+    "endSec": 96.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 96.57,
+    "endSec": 96.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": "placed",
+    "startSec": 96.57,
+    "endSec": 97.02,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 97.02,
+    "endSec": 97.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": "where",
+    "startSec": 97.05,
+    "endSec": 97.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 97.25,
+    "endSec": 97.25,
+    "chunkIndex": 0
+  },
+  {
+    "text": "it",
+    "startSec": 97.25,
+    "endSec": 97.34,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 97.34,
+    "endSec": 97.34,
+    "chunkIndex": 0
+  },
+  {
+    "text": "belongs",
+    "startSec": 97.34,
+    "endSec": 97.98,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 97.98,
+    "endSec": 98.08,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Hidden",
+    "startSec": 98.08,
+    "endSec": 98.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 98.44,
+    "endSec": 98.48,
+    "chunkIndex": 0
+  },
+  {
+    "text": "orchestration",
+    "startSec": 98.48,
+    "endSec": 99.18,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 99.18,
+    "endSec": 99.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 99.22,
+    "endSec": 99.34,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 99.34,
+    "endSec": 99.34,
+    "chunkIndex": 0
+  },
+  {
+    "text": "acceptable",
+    "startSec": 99.34,
+    "endSec": 99.99,
+    "chunkIndex": 0
+  },
+  {
+    "text": ". ",
+    "startSec": 99.99,
+    "endSec": 100.08,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Hidden",
+    "startSec": 100.08,
+    "endSec": 100.49,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 100.49,
+    "endSec": 100.49,
+    "chunkIndex": 0
+  },
+  {
+    "text": "confusion",
+    "startSec": 100.49,
+    "endSec": 101.29,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 101.29,
+    "endSec": 101.35,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 101.35,
+    "endSec": 101.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": " ",
+    "startSec": 101.53,
+    "endSec": 101.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": "not",
+    "startSec": 101.53,
+    "endSec": 101.94,
+    "chunkIndex": 0
+  },
+  {
+    "text": ".\n",
+    "startSec": 101.94,
+    "endSec": 101.94,
+    "chunkIndex": 0
+  }
+]

@@ -1,0 +1,35 @@
+1
+00:00:00,000 --> 00:00:03,930
+#  Prueba   breve   de   narracion 
+
+ Esta   es   una   prueba   corta
+
+2
+00:00:03,930 --> 00:00:07,060
+  para   confirmar   que   la   narracion   en   espanol   acepta   texto
+
+3
+00:00:07,060 --> 00:00:11,010
+  con   puntuacion   y   conserva   el   contenido   original .  El   objetivo
+
+4
+00:00:11,010 --> 00:00:15,030
+  es   revisar   la   ruta   del   proveedor ,  no   evaluar   una
+
+5
+00:00:15,030 --> 00:00:19,190
+  pieza   larga .
+
+ Primero ,  el   sistema   debe   leer   el   texto
+
+6
+00:00:19,190 --> 00:00:24,270
+  sin   reescribirlo .  Segundo ,  debe   agregar   pausas   suaves   entre   parrafos
+
+7
+00:00:24,270 --> 00:00:29,080
+.  Tercero ,  debe   guardar   evidencia   suficiente   para   revisar   el   resultado
+
+8
+00:00:29,080 --> 00:00:29,780
+  despues .
