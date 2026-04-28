@@ -1,6 +1,6 @@
 # Live Smoke: ES Structure Pacing Stress
 
-> Status: passed for provider execution and machine evidence
+> Status: passed for provider execution; natural_basic preferred in Spanish structure-stress human listening
 > Role: Spanish exact vs natural_basic structure-stress comparison
 > Date: 2026-04-27 PDT
 
@@ -61,11 +61,11 @@ artifact_integrity: passed
 content_preservation: passed
 break_tag_budget: passed
 publishability_machine_gate: passed
-pacing_naturalness: pending_manual_listening
-natural_basic_vs_exact: pending_manual_listening
+pacing_naturalness: natural_basic_preferred_on_spanish_structure_stress
+natural_basic_vs_exact: natural_basic_better
 ```
 
-This packet is ready for paired human listening. The result should decide whether the structure-pacing default is safe across the current `EN + ES` first gate.
+The paired human listening pass preferred `natural_basic` on this Spanish structure-heavy script. Together with the matching EN structure-stress verdict, this supports keeping `natural_basic` as the default for structured `EN + ES` narration while keeping `exact` available.
 
 ## Packet Contents
 

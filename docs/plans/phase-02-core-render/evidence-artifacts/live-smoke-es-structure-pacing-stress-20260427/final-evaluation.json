@@ -2,7 +2,7 @@
   "attempt_id": "live-smoke-es-structure-pacing-stress-20260427",
   "scorecard": "tts_ux_readiness_scorecard",
   "verdict": "passed_for_provider_execution_and_artifact_integrity",
-  "manual_listening_status": "pending",
+  "manual_listening_status": "completed_structure_pair",
   "runs": [
     {
       "request_id": "live-smoke-es-structure-exact-20260427",
@@ -46,10 +46,16 @@
     "audio_probe_decoded": true
   },
   "audio_generation_smoke": "passed",
-  "broader_product_readiness_verdict": "blocked_by_missing_manual_listening",
+  "broader_product_readiness_verdict": "structure_pacing_ready_for_en_es_default_candidate",
+  "manual_verdict": {
+    "pacing_naturalness": "natural_basic_preferred",
+    "natural_basic_vs_exact": "natural_basic_better",
+    "publishability": "ready",
+    "default_recommendation": "keep_natural_basic_default_for_structured_en_es_narration_with_exact_available"
+  },
   "notes": [
     "This is a small Spanish structure-stress smoke, not a full long-form UX readiness verdict.",
     "The machine evidence proves natural_basic inserted valid structural breaks without token changes.",
-    "Manual paired listening is still required before treating natural_basic as the clear EN + ES structured narration default."
+    "Manual paired listening preferred natural_basic on this Spanish structure-heavy script, matching the EN structure-stress direction."
   ]
 }
