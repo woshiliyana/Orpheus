@@ -1,0 +1,39 @@
+{
+  "attempt_id": "live-smoke-es-structure-pacing-stress-20260427",
+  "status": "passed_for_provider_execution_and_machine_evidence",
+  "manual_listening_status": "pending",
+  "pairs": [
+    {
+      "language": "es",
+      "voice": "Rafael",
+      "exact_request_id": "live-smoke-es-structure-exact-20260427",
+      "natural_request_id": "live-smoke-es-structure-natural-20260427",
+      "exact_duration_sec": 71.904,
+      "natural_duration_sec": 79.728,
+      "natural_minus_exact_duration_sec": 7.824,
+      "exact_inserted_break_count": 0,
+      "natural_inserted_break_count": 10,
+      "exact_max_break_tags_per_request": 0,
+      "natural_max_break_tags_per_request": 10,
+      "exact_timestamp_coverage_pct": 100,
+      "natural_timestamp_coverage_pct": 100,
+      "token_preserved": true,
+      "warnings": []
+    }
+  ],
+  "machine_verdict": {
+    "provider_execution": "passed",
+    "artifact_integrity": "passed",
+    "content_preservation": "passed",
+    "break_tag_budget": "passed",
+    "publishability_machine_gate": "passed",
+    "pacing_naturalness": "pending_manual_listening",
+    "natural_basic_vs_exact": "pending_manual_listening"
+  },
+  "listening_decision_needed": {
+    "question": "Does natural_basic sound better than exact on a Spanish structure-heavy script with headings, paragraph breaks, and list items?",
+    "default_policy_if_natural_does_not_win": "Do not claim natural_basic is clearly better across EN + ES; keep exact available and consider language-specific caution.",
+    "default_policy_if_natural_clearly_wins": "Keep natural_basic as the default for structured EN + ES narration, with exact available."
+  },
+  "artifact_packet": "docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-es-structure-pacing-stress-20260427/"
+}

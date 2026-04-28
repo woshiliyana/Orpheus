@@ -1,0 +1,92 @@
+1
+00:00:00,000 --> 00:00:05,000
+#  Plan   de   lanzamiento  
+
+ El   equipo   tiene   una   meta   esta
+
+2
+00:00:05,000 --> 00:00:08,810
+  semana :  convertir   una   ruta   de   narracion   que   ya   funciona
+
+3
+00:00:08,810 --> 00:00:11,900
+  en   algo   que   un   creador   pueda   confiar .  La   carga
+
+4
+00:00:11,900 --> 00:00:16,260
+  del   guion   debe   sentirse   tranquila ,  predecible   y   honesta   sobre
+
+5
+00:00:16,260 --> 00:00:21,010
+  lo   que   esta   ocurriendo . 
+
+##  Que   cambia   para   el   creador
+
+6
+00:00:21,010 --> 00:00:24,680
+ 
+
+ Pega   el   guion   completo   una   sola   vez .  Elige   una
+
+7
+00:00:24,680 --> 00:00:28,310
+  voz .  Presiona   generar ,  y   recibe   el   audio   final   con
+
+8
+00:00:28,310 --> 00:00:32,550
+  tiempos   listos   para   subtitulos ,  sin   dividir   el   texto   manualmente
+
+9
+00:00:32,550 --> 00:00:37,630
+. 
+
+-  Primero ,  el   sistema   comprueba   si   el   guion   es   legible
+
+10
+00:00:37,630 --> 00:00:43,030
+. 
+-  Luego ,  conserva   intactas   las   palabras   originales . 
+-  Despues
+
+11
+00:00:43,030 --> 00:00:48,160
+,  agrega   solo   pausas   estructurales   entre   secciones . 
+-  Finalmente ,  guarda
+
+12
+00:00:48,160 --> 00:00:50,270
+  evidencia   para   que   un   revisor   pueda   ver   lo   que
+
+13
+00:00:50,270 --> 00:00:56,030
+  paso . 
+
+##  Lo   que   todavia   no   vamos   a   prometer  
+
+
+
+14
+00:00:56,030 --> 00:01:00,640
+No   vamos   a   declarar   compatibilidad   multilingue   completa   hoy .  No  
+
+15
+00:01:00,640 --> 00:01:04,440
+vamos   a   exponer   controles   del   proveedor   en   el   navegador . 
+
+16
+00:01:04,440 --> 00:01:08,410
+No   vamos   a   vender   funciones   publicas   amplias   de   exportacion  
+
+17
+00:01:08,410 --> 00:01:11,830
+antes   de   que   la   primera   puerta   sea   estable . 
+
+ Esa  
+
+18
+00:01:11,830 --> 00:01:16,460
+es   la   disciplina :  menos   promesas ,  mejores   recibos ,  y   una  
+
+19
+00:01:16,460 --> 00:01:19,680
+narracion   que   suene   deliberada   en   vez   de   apresurada .

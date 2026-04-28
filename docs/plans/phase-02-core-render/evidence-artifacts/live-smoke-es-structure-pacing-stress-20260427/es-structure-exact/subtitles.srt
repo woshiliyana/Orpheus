@@ -1,0 +1,93 @@
+1
+00:00:00,000 --> 00:00:04,290
+#  Plan   de   lanzamiento 
+
+ El   equipo   tiene   una   meta   esta
+
+2
+00:00:04,290 --> 00:00:07,930
+  semana :  convertir   una   ruta   de   narracion   que   ya   funciona
+
+3
+00:00:07,930 --> 00:00:10,590
+  en   algo   que   un   creador   pueda   confiar .  La   carga
+
+4
+00:00:10,590 --> 00:00:14,910
+  del   guion   debe   sentirse   tranquila ,  predecible   y   honesta   sobre
+
+5
+00:00:14,910 --> 00:00:17,990
+  lo   que   esta   ocurriendo .
+
+##  Que   cambia   para   el   creador
+
+6
+00:00:17,990 --> 00:00:21,200
+
+
+ Pega   el   guion   completo   una   sola   vez .  Elige   una
+
+7
+00:00:21,200 --> 00:00:25,220
+  voz .  Presiona   generar ,  y   recibe   el   audio   final   con
+
+8
+00:00:25,220 --> 00:00:29,610
+  tiempos   listos   para   subtitulos ,  sin   dividir   el   texto   manualmente
+
+9
+00:00:29,610 --> 00:00:33,660
+.
+
+-  Primero ,  el   sistema   comprueba   si   el   guion   es   legible
+
+10
+00:00:33,660 --> 00:00:38,830
+.
+-  Luego ,  conserva   intactas   las   palabras   originales .
+-  Despues
+
+11
+00:00:38,830 --> 00:00:44,060
+,  agrega   solo   pausas   estructurales   entre   secciones .
+-  Finalmente ,  guarda
+
+12
+00:00:44,060 --> 00:00:46,480
+  evidencia   para   que   un   revisor   pueda   ver   lo   que
+
+13
+00:00:46,480 --> 00:00:50,730
+  paso .
+
+##  Lo   que   todavia   no   vamos   a   prometer 
+
+ No
+
+14
+00:00:50,730 --> 00:00:54,940
+  vamos   a   declarar   compatibilidad   multilingue   completa   hoy .  No   vamos
+
+15
+00:00:54,940 --> 00:00:58,220
+  a   exponer   controles   del   proveedor   en   el   navegador .  No
+
+16
+00:00:58,220 --> 00:01:01,950
+  vamos   a   vender   funciones   publicas   amplias   de   exportacion   antes
+
+17
+00:01:01,950 --> 00:01:04,810
+  de   que   la   primera   puerta   sea   estable .
+
+ Esa   es
+
+18
+00:01:04,810 --> 00:01:09,700
+  la   disciplina :  menos   promesas ,  mejores   recibos ,  y   una   narracion
+
+19
+00:01:09,700 --> 00:01:11,840
+  que   suene   deliberada   en   vez   de   apresurada .
+

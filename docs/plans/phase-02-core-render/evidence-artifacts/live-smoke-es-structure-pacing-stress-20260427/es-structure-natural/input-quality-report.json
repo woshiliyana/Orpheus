@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "validationMode": "strict",
+  "language": "es",
+  "wordCount": 173,
+  "paragraphCount": 8,
+  "terminalPunctuationCount": 13,
+  "maxRunOnTokenCount": 26,
+  "warnings": [],
+  "blockers": [],
+  "recommendation": "Input is acceptable for conservative natural pacing. The adapter may add light pauses without changing the user's words."
+}

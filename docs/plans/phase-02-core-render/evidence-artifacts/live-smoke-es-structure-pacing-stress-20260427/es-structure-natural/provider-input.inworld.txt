@@ -1,0 +1,18 @@
+# Plan de lanzamiento <break time="800ms" />
+
+El equipo tiene una meta esta semana: convertir una ruta de narracion que ya funciona en algo que un creador pueda confiar. La carga del guion debe sentirse tranquila, predecible y honesta sobre lo que esta ocurriendo. <break time="600ms" />
+
+## Que cambia para el creador <break time="800ms" />
+
+Pega el guion completo una sola vez. Elige una voz. Presiona generar, y recibe el audio final con tiempos listos para subtitulos, sin dividir el texto manualmente. <break time="600ms" />
+
+- Primero, el sistema comprueba si el guion es legible. <break time="350ms" />
+- Luego, conserva intactas las palabras originales. <break time="350ms" />
+- Despues, agrega solo pausas estructurales entre secciones. <break time="350ms" />
+- Finalmente, guarda evidencia para que un revisor pueda ver lo que paso. <break time="350ms" />
+
+## Lo que todavia no vamos a prometer <break time="800ms" />
+
+No vamos a declarar compatibilidad multilingue completa hoy. No vamos a exponer controles del proveedor en el navegador. No vamos a vender funciones publicas amplias de exportacion antes de que la primera puerta sea estable. <break time="600ms" />
+
+Esa es la disciplina: menos promesas, mejores recibos, y una narracion que suene deliberada en vez de apresurada.
