@@ -1,6 +1,6 @@
 # Phase 2 Provider Decision Scorecard
 
-> Status: awaiting user acceptance for staged provider decision
+> Status: accepted and merged
 > Role: provider decision packet
 > Normative for product rules: no
 > Canonical owner: Delivery owner + engineering lead
