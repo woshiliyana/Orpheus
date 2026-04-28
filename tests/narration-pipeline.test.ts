@@ -65,6 +65,52 @@ class FakeProvider implements TtsProviderAdapter {
   }
 }
 
+class FakeCartesiaProvider implements TtsProviderAdapter {
+  readonly name = "cartesia" as const;
+  readonly rateUsdPer1mChars = 31.2;
+
+  async synthesizeChunk(input: ChunkSynthesisInput): Promise<ChunkSynthesisResult> {
+    const chunkDir = input.outputDir;
+    const audioPath = path.join(
+      chunkDir,
+      `chunk-${String(input.chunk.index).padStart(3, "0")}.${input.outputFormat}`,
+    );
+    const rawResponsePath = path.join(chunkDir, `chunk-${String(input.chunk.index).padStart(3, "0")}.json`);
+    const rawPcmPath = path.join(input.outputDir, "audio.raw.pcm");
+    const words = stripProviderMarkup(input.chunk.text)
+      .trim()
+      .split(/\s+/)
+      .filter(Boolean)
+      .map((text, index) => ({
+        text,
+        startSec: index * 0.18,
+        endSec: index * 0.18 + 0.14,
+      }));
+
+    const outputArgs = input.outputFormat === "wav" ? [] : ["-q:a", "2"];
+    await execFileAsync("ffmpeg", [
+      "-y",
+      "-f",
+      "lavfi",
+      "-i",
+      `sine=frequency=${520 + input.chunk.index * 110}:duration=${Math.max(1, words.length * 0.18)}`,
+      ...outputArgs,
+      audioPath,
+    ]);
+    await writeFile(rawResponsePath, JSON.stringify({ chunkIndex: input.chunk.index, words }, null, 2), "utf8");
+    await writeFile(rawPcmPath, Buffer.alloc(48_000 * 2));
+
+    return {
+      audioPath,
+      durationSec: Math.max(1, words.length * 0.18),
+      words,
+      rawResponsePaths: [rawResponsePath],
+      attemptCount: 1,
+      providerCharactersProcessed: input.chunk.text.length,
+    };
+  }
+}
+
 class FailingProvider implements TtsProviderAdapter {
   readonly name = "inworld";
   readonly rateUsdPer1mChars = 30;
@@ -151,6 +197,15 @@ test("runNarrationJob writes the full artifact packet for a >2000-char English s
   assert.equal(manifest.input_adapter_ref?.input_validation_mode, "strict");
   assert.equal(manifest.input_adapter_ref?.token_preserved, true);
   assert.ok((manifest.input_adapter_ref?.inserted_break_count ?? 0) > 0);
+  assert.deepEqual(manifest.production_master_audio_ref, []);
+  assert.equal(manifest.delivery_audio_ref?.[0]?.asset_ref, result.audioPath);
+  assert.equal(manifest.delivery_audio_ref?.[0]?.format, "mp3");
+  assert.equal(manifest.delivery_audio_ref?.[0]?.audio_format_verdict, "ready_for_delivery");
+  assert.equal(manifest.audio_format_policy?.requested_provider_source_format, "mp3");
+  assert.equal(manifest.audio_format_policy?.provider_source_lossless, false);
+  assert.equal(manifest.audio_format_policy?.production_master_audio.status, "not_generated");
+  assert.equal(manifest.audio_format_policy?.default_delivery_audio.generated, true);
+  assert.equal(manifest.audio_format_policy?.optional_wav_export.audio_format_verdict, "hold_for_export");
 
   const providerInput = await readFile(result.providerInputPath, "utf8");
   assert.match(providerInput, /<break time="600ms" \/>/);
@@ -160,6 +215,99 @@ test("runNarrationJob writes the full artifact packet for a >2000-char English s
   for (const chunkReport of chunkReports) {
     assert.equal(chunkReport.breakTagCount <= 20, true);
   }
+});
+
+test("runNarrationJob records Cartesia raw PCM master and derived MP3 delivery refs", async () => {
+  const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-pipeline-cartesia-format-"));
+  const result = await runNarrationJob({
+    requestId: "req_cartesia_format",
+    projectId: "project_cartesia_format",
+    provider: "cartesia",
+    language: "en",
+    voiceId: "Theo",
+    outputFormat: "mp3",
+    script: "Raw PCM from Cartesia should remain the production master. The MP3 should be delivery audio.",
+    outputDir: tmpDir,
+    pacingMode: "exact",
+  }, new FakeCartesiaProvider());
+
+  const manifest = JSON.parse(await readFile(result.artifactManifestPath, "utf8")) as ArtifactManifest;
+
+  assert.equal(manifest.audio_format_policy?.requested_provider_source_format, "raw_pcm");
+  assert.equal(manifest.audio_format_policy?.provider_source_encoding, "pcm_s16le");
+  assert.equal(manifest.audio_format_policy?.provider_source_lossless, true);
+  assert.equal(manifest.audio_format_policy?.production_master_audio.status, "generated");
+  assert.equal(
+    manifest.audio_format_policy?.production_master_audio.audio_format_verdict,
+    "ready_for_internal_master",
+  );
+  assert.equal(manifest.audio_format_policy?.default_delivery_audio.audio_format_verdict, "ready_for_delivery");
+  assert.equal(manifest.production_master_audio_ref?.[0]?.role, "production_master_audio");
+  assert.equal(manifest.production_master_audio_ref?.[0]?.format, "raw_pcm");
+  assert.equal(manifest.production_master_audio_ref?.[0]?.source, "provider_native_lossless");
+  assert.equal(manifest.production_master_audio_ref?.[0]?.audio_format_verdict, "ready_for_internal_master");
+  assert.equal(manifest.delivery_audio_ref?.[0]?.role, "delivery_audio");
+  assert.equal(manifest.delivery_audio_ref?.[0]?.asset_ref, result.audioPath);
+  assert.equal(manifest.delivery_audio_ref?.[0]?.format, "mp3");
+  assert.equal(manifest.delivery_audio_ref?.[0]?.source, "derived_from_master");
+  assert.equal(manifest.delivery_audio_ref?.[0]?.derived_from_asset_ref, manifest.production_master_audio_ref?.[0]?.asset_ref);
+  assert.deepEqual(manifest.delivery_audio_ref?.[0]?.derived_from_asset_refs, [
+    manifest.production_master_audio_ref?.[0]?.asset_ref,
+  ]);
+  assert.equal(manifest.delivery_audio_ref?.[0]?.audio_format_verdict, "ready_for_delivery");
+});
+
+test("runNarrationJob records all Cartesia raw PCM masters for multi-chunk delivery", async () => {
+  const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-pipeline-cartesia-multichunk-format-"));
+  const result = await runNarrationJob({
+    requestId: "req_cartesia_multichunk_format",
+    projectId: "project_cartesia_multichunk_format",
+    provider: "cartesia",
+    language: "en",
+    voiceId: "Theo",
+    outputFormat: "mp3",
+    script: makeLongScript(),
+    outputDir: tmpDir,
+    pacingMode: "exact",
+  }, new FakeCartesiaProvider());
+
+  const manifest = JSON.parse(await readFile(result.artifactManifestPath, "utf8")) as ArtifactManifest;
+  const masterRefs = manifest.production_master_audio_ref?.map((assetRef) => assetRef.asset_ref) ?? [];
+
+  assert.ok(masterRefs.length >= 2);
+  assert.equal(manifest.delivery_audio_ref?.[0]?.source, "derived_from_master");
+  assert.equal(manifest.delivery_audio_ref?.[0]?.derived_from_asset_ref, undefined);
+  assert.deepEqual(manifest.delivery_audio_ref?.[0]?.derived_from_asset_refs, masterRefs);
+});
+
+test("runNarrationJob keeps Cartesia WAV delivery derived from raw PCM masters", async () => {
+  const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-pipeline-cartesia-wav-format-"));
+  const result = await runNarrationJob({
+    requestId: "req_cartesia_wav_format",
+    projectId: "project_cartesia_wav_format",
+    provider: "cartesia",
+    language: "en",
+    voiceId: "Theo",
+    outputFormat: "wav",
+    script: "Cartesia WAV output is locally derived from the retained raw PCM master.",
+    outputDir: tmpDir,
+    pacingMode: "exact",
+  }, new FakeCartesiaProvider());
+
+  const manifest = JSON.parse(await readFile(result.artifactManifestPath, "utf8")) as ArtifactManifest;
+  const masterRefs = manifest.production_master_audio_ref?.map((assetRef) => assetRef.asset_ref) ?? [];
+
+  assert.deepEqual(masterRefs, [
+    path.join(tmpDir, "req_cartesia_wav_format", "chunks", "000", "audio.raw.pcm"),
+  ]);
+  assert.equal(manifest.delivery_audio_ref?.[0]?.asset_ref, result.audioPath);
+  assert.equal(manifest.delivery_audio_ref?.[0]?.format, "wav");
+  assert.equal(manifest.delivery_audio_ref?.[0]?.source, "derived_from_master");
+  assert.equal(manifest.delivery_audio_ref?.[0]?.provider_native, false);
+  assert.equal(manifest.delivery_audio_ref?.[0]?.lossless, true);
+  assert.equal(manifest.delivery_audio_ref?.[0]?.derived_from_asset_ref, masterRefs[0]);
+  assert.deepEqual(manifest.delivery_audio_ref?.[0]?.derived_from_asset_refs, masterRefs);
+  assert.equal(manifest.delivery_audio_ref?.[0]?.audio_format_verdict, "hold_for_export");
 });
 
 test("runNarrationJob allows Spanish Phase 2 readiness smoke runs", async () => {
