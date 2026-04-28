@@ -1,0 +1,16 @@
+{
+  "version": "natural_basic_v1",
+  "requestedMode": "exact",
+  "effectiveMode": "exact",
+  "provider": "inworld",
+  "language": "en",
+  "sourceScriptHash": "50341efcc836045ef65fa204292223797f17db536da48e872013116653335ffa",
+  "spokenScriptHash": "50341efcc836045ef65fa204292223797f17db536da48e872013116653335ffa",
+  "providerInputHash": "50341efcc836045ef65fa204292223797f17db536da48e872013116653335ffa",
+  "tokenPreserved": true,
+  "insertedBreakCount": 0,
+  "maxBreakTagsPerRequest": 0,
+  "markupOverheadChars": 0,
+  "pauses": [],
+  "warnings": []
+}

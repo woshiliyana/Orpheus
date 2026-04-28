@@ -1,0 +1,87 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.810
+#  Release   Plan 
+
+ The   team   has   one   goal   this   week
+
+2
+00:00:03.810 --> 00:00:07.080
+:  turn   a   working   narration   path   into   something   a   creator
+
+3
+00:00:07.080 --> 00:00:11.010
+  can   trust .  The   upload   step   should   be   quiet ,  predictable
+
+4
+00:00:11.010 --> 00:00:15.030
+,  and   honest   about   what   is   happening .
+
+##  What   changes   for
+
+5
+00:00:15.030 --> 00:00:18.400
+  the   creator 
+
+ They   paste   the   whole   script   once .  They
+
+6
+00:00:18.400 --> 00:00:21.660
+  choose   a   voice .  They   press   generate ,  then   they   get
+
+7
+00:00:21.660 --> 00:00:26.660
+  final   audio   and   subtitle-ready   timing   without   manual   chunking .
+
+-  First
+
+8
+00:00:26.660 --> 00:00:29.600
+,  the   system   checks   whether   the   script   is   readable .
+-  Next
+
+9
+00:00:29.600 --> 00:00:33.420
+,  it   keeps   the   original   words   intact .
+-  Then ,  it   adds
+
+10
+00:00:33.420 --> 00:00:38.060
+  only   structural   pauses   between   sections .
+-  Finally ,  it   records   evidence
+
+11
+00:00:38.060 --> 00:00:41.780
+  so   a   reviewer   can   see   what   happened .
+
+##  What   we
+
+12
+00:00:41.780 --> 00:00:44.880
+  still   will   not   promise 
+
+ We   will   not   claim   full
+
+13
+00:00:44.880 --> 00:00:48.870
+  multilingual   readiness   today .  We   will   not   expose   provider   controls
+
+14
+00:00:48.870 --> 00:00:51.440
+  in   the   browser .  We   will   not   sell   broad   public
+
+15
+00:00:51.440 --> 00:00:54.550
+  export   features   before   the   first   gate   is   stable .
+
+ That
+
+16
+00:00:54.550 --> 00:00:58.650
+  is   the   discipline :  fewer   promises ,  better   receipts ,  and   narration
+
+17
+00:00:58.650 --> 00:01:00.760
+  that   sounds   deliberate   instead   of   rushed .
+

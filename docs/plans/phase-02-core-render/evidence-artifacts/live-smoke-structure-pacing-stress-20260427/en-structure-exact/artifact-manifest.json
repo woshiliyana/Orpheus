@@ -1,0 +1,47 @@
+{
+  "project_id": "live-smoke-structure-exact-20260427",
+  "run_id": "live-smoke-structure-exact-20260427",
+  "run_status": "succeeded",
+  "source_script_hash": "50341efcc836045ef65fa204292223797f17db536da48e872013116653335ffa",
+  "provider_summary": {
+    "primary_provider": "inworld",
+    "selected_voice": "Ashley"
+  },
+  "orchestration_summary": {
+    "chunk_count": 1,
+    "stitch_count": 0,
+    "retry_count": 0,
+    "cached_chunk_count": 0,
+    "warning_flags": []
+  },
+  "input_adapter_ref": {
+    "pacing_mode": "exact",
+    "requested_pacing_mode": "exact",
+    "effective_pacing_mode": "exact",
+    "input_validation_mode": "strict",
+    "token_preserved": true,
+    "inserted_break_count": 0,
+    "max_break_tags_per_request": 0,
+    "source_script": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-exact-20260427/artifacts/source-script.md",
+    "spoken_script": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-exact-20260427/artifacts/spoken-script.md",
+    "provider_input": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-exact-20260427/artifacts/provider-input.inworld.txt",
+    "provider_input_chunks_json": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-exact-20260427/artifacts/provider-input.chunks.json",
+    "pacing_plan_json": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-exact-20260427/artifacts/pacing-plan.json",
+    "input_quality_report_json": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-exact-20260427/artifacts/input-quality-report.json"
+  },
+  "output_language": "en",
+  "final_audio_asset_ref": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-exact-20260427/artifacts/final.mp3",
+  "final_audio_duration_seconds": 60.816,
+  "internal_alignment_asset_ref": {
+    "word_timings_json": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-exact-20260427/artifacts/word-timings.json",
+    "srt": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-exact-20260427/artifacts/subtitles.srt",
+    "vtt": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-exact-20260427/artifacts/subtitles.vtt",
+    "alignment_source": "provider_native"
+  },
+  "billing_fact": {
+    "billable_seconds": 61,
+    "usage_event_type": "initial_render_success",
+    "estimated_total_cost_usd": 0.041
+  },
+  "delivery_ref": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-exact-20260427/artifacts/final.mp3"
+}

@@ -1,0 +1,39 @@
+{
+  "attempt_id": "live-smoke-structure-pacing-stress-20260427",
+  "status": "passed_for_provider_execution_and_machine_evidence",
+  "manual_listening_status": "pending",
+  "pairs": [
+    {
+      "language": "en",
+      "voice": "Ashley",
+      "exact_request_id": "live-smoke-structure-exact-20260427",
+      "natural_request_id": "live-smoke-structure-natural-20260427",
+      "exact_duration_sec": 60.816,
+      "natural_duration_sec": 66.336,
+      "natural_minus_exact_duration_sec": 5.52,
+      "exact_inserted_break_count": 0,
+      "natural_inserted_break_count": 10,
+      "exact_max_break_tags_per_request": 0,
+      "natural_max_break_tags_per_request": 10,
+      "exact_timestamp_coverage_pct": 100,
+      "natural_timestamp_coverage_pct": 100,
+      "token_preserved": true,
+      "warnings": []
+    }
+  ],
+  "machine_verdict": {
+    "provider_execution": "passed",
+    "artifact_integrity": "passed",
+    "content_preservation": "passed",
+    "break_tag_budget": "passed",
+    "publishability_machine_gate": "passed",
+    "pacing_naturalness": "pending_manual_listening",
+    "natural_basic_vs_exact": "pending_manual_listening"
+  },
+  "listening_decision_needed": {
+    "question": "Does natural_basic sound better than exact on a structure-heavy script with headings, paragraph breaks, and list items?",
+    "default_policy_if_natural_does_not_win": "Return default pacing mode to exact; keep natural_basic optional or experimental.",
+    "default_policy_if_natural_clearly_wins": "Keep natural_basic as default for structured narration, but keep exact available."
+  },
+  "artifact_packet": "docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-structure-pacing-stress-20260427/"
+}

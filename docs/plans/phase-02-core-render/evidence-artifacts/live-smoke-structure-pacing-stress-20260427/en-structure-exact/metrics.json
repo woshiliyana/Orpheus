@@ -1,0 +1,16 @@
+{
+  "provider": "inworld",
+  "requestId": "live-smoke-structure-exact-20260427",
+  "scriptChars": 948,
+  "chunkCount": 1,
+  "chunkRetryCount": 0,
+  "cachedChunkCount": 0,
+  "providerCharactersReused": 0,
+  "totalWallTimeMs": 11274,
+  "audioDurationSec": 60.816,
+  "timestampCoveragePct": 100,
+  "estimatedTtsCostUsd": 0.028,
+  "estimatedTotalCostUsd": 0.041,
+  "estimatedCostPerCompletedAudioMinuteUsd": 0.04,
+  "timestampWordCount": 301
+}

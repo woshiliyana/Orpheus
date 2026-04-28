@@ -1,0 +1,18 @@
+# Release Plan <break time="800ms" />
+
+The team has one goal this week: turn a working narration path into something a creator can trust. The upload step should be quiet, predictable, and honest about what is happening. <break time="600ms" />
+
+## What changes for the creator <break time="800ms" />
+
+They paste the whole script once. They choose a voice. They press generate, then they get final audio and subtitle-ready timing without manual chunking. <break time="600ms" />
+
+- First, the system checks whether the script is readable. <break time="350ms" />
+- Next, it keeps the original words intact. <break time="350ms" />
+- Then, it adds only structural pauses between sections. <break time="350ms" />
+- Finally, it records evidence so a reviewer can see what happened. <break time="350ms" />
+
+## What we still will not promise <break time="800ms" />
+
+We will not claim full multilingual readiness today. We will not expose provider controls in the browser. We will not sell broad public export features before the first gate is stable. <break time="600ms" />
+
+That is the discipline: fewer promises, better receipts, and narration that sounds deliberate instead of rushed.

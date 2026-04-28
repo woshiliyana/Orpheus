@@ -1,0 +1,89 @@
+1
+00:00:00,000 --> 00:00:04,670
+#  Release   Plan  <break time="800ms" />
+
+ The   team   has   one   goal   this   week
+
+2
+00:00:04,670 --> 00:00:07,940
+:  turn   a   working   narration   path   into   something   a   creator
+
+3
+00:00:07,940 --> 00:00:11,580
+  can   trust .  The   upload   step   should   be   quiet ,  predictable
+
+4
+00:00:11,580 --> 00:00:16,010
+,  and   honest   about   what   is   happening .  <break time="600ms" /> 
+
+##  What   changes
+
+5
+00:00:16,010 --> 00:00:19,880
+  for   the   creator  <break time="800ms" />
+
+ They   paste   the   whole   script   once
+
+6
+00:00:19,880 --> 00:00:23,390
+.  They   choose   a   voice .  They   press   generate ,  then   they
+
+7
+00:00:23,390 --> 00:00:27,960
+  get   final   audio   and   subtitle-ready   timing   without   manual   chunking
+
+8
+00:00:27,960 --> 00:00:31,320
+.  <break time="600ms" /> 
+
+-  First ,  the   system   checks   whether   the   script   is
+
+9
+00:00:31,320 --> 00:00:35,080
+  readable .  <break time="350ms" /> 
+-  Next ,  it   keeps   the   original   words   intact
+
+10
+00:00:35,080 --> 00:00:39,130
+.  <break time="350ms" /> 
+-  Then ,  it   adds   only   structural   pauses   between   sections
+
+11
+00:00:39,130 --> 00:00:42,530
+.  <break time="350ms" /> 
+-  Finally ,  it   records   evidence   so   a   reviewer   can
+
+12
+00:00:42,530 --> 00:00:46,470
+  see   what   happened .  <break time="350ms" /> 
+
+##  What   we   still   will   not
+
+13
+00:00:46,470 --> 00:00:50,850
+  promise  <break time="800ms" />
+
+ We   will   not   claim   full   multilingual   readiness   today
+
+14
+00:00:50,850 --> 00:00:54,040
+.  We   will   not   expose   provider   controls   in   the   browser
+
+15
+00:00:54,040 --> 00:00:57,340
+.  We   will   not   sell   broad   public   export   features   before
+
+16
+00:00:57,340 --> 00:00:59,800
+  the   first   gate   is   stable .  <break time="600ms" />
+
+ That   is   the  
+
+17
+00:00:59,800 --> 00:01:04,550
+discipline :  fewer   promises ,  better   receipts ,  and   narration   that   sounds  
+
+18
+00:01:04,550 --> 00:01:06,280
+deliberate   instead   of   rushed .
+

@@ -1,0 +1,16 @@
+{
+  "provider": "inworld",
+  "requestId": "live-smoke-structure-natural-20260427",
+  "scriptChars": 948,
+  "chunkCount": 1,
+  "chunkRetryCount": 0,
+  "cachedChunkCount": 0,
+  "providerCharactersReused": 0,
+  "totalWallTimeMs": 13750,
+  "audioDurationSec": 66.336,
+  "timestampCoveragePct": 100,
+  "estimatedTtsCostUsd": 0.035,
+  "estimatedTotalCostUsd": 0.049,
+  "estimatedCostPerCompletedAudioMinuteUsd": 0.044,
+  "timestampWordCount": 314
+}

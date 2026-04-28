@@ -1,0 +1,87 @@
+{
+  "version": "natural_basic_v1",
+  "requestedMode": "natural_basic",
+  "effectiveMode": "natural_basic",
+  "provider": "inworld",
+  "language": "en",
+  "sourceScriptHash": "50341efcc836045ef65fa204292223797f17db536da48e872013116653335ffa",
+  "spokenScriptHash": "50341efcc836045ef65fa204292223797f17db536da48e872013116653335ffa",
+  "providerInputHash": "fb3dc298e4f18e8e3109e50ebe9901623e3cdc0ebd2f5e54d7a98c35d1124785",
+  "tokenPreserved": true,
+  "insertedBreakCount": 10,
+  "maxBreakTagsPerRequest": 10,
+  "markupOverheadChars": 230,
+  "pauses": [
+    {
+      "id": "pause_000",
+      "sourceCharOffset": 14,
+      "durationMs": 800,
+      "reason": "heading_break",
+      "delivery": "provider_break"
+    },
+    {
+      "id": "pause_001",
+      "sourceCharOffset": 196,
+      "durationMs": 600,
+      "reason": "paragraph_break",
+      "delivery": "provider_break"
+    },
+    {
+      "id": "pause_002",
+      "sourceCharOffset": 229,
+      "durationMs": 800,
+      "reason": "heading_break",
+      "delivery": "provider_break"
+    },
+    {
+      "id": "pause_003",
+      "sourceCharOffset": 383,
+      "durationMs": 600,
+      "reason": "paragraph_break",
+      "delivery": "provider_break"
+    },
+    {
+      "id": "pause_004",
+      "sourceCharOffset": 443,
+      "durationMs": 350,
+      "reason": "list_item_break",
+      "delivery": "provider_break"
+    },
+    {
+      "id": "pause_005",
+      "sourceCharOffset": 487,
+      "durationMs": 350,
+      "reason": "list_item_break",
+      "delivery": "provider_break"
+    },
+    {
+      "id": "pause_006",
+      "sourceCharOffset": 544,
+      "durationMs": 350,
+      "reason": "list_item_break",
+      "delivery": "provider_break"
+    },
+    {
+      "id": "pause_007",
+      "sourceCharOffset": 612,
+      "durationMs": 350,
+      "reason": "list_item_break",
+      "delivery": "provider_break"
+    },
+    {
+      "id": "pause_008",
+      "sourceCharOffset": 647,
+      "durationMs": 800,
+      "reason": "heading_break",
+      "delivery": "provider_break"
+    },
+    {
+      "id": "pause_009",
+      "sourceCharOffset": 833,
+      "durationMs": 600,
+      "reason": "paragraph_break",
+      "delivery": "provider_break"
+    }
+  ],
+  "warnings": []
+}

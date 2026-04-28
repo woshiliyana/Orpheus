@@ -1,0 +1,12 @@
+{
+  "outputPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-natural-20260427/artifacts/final.mp3",
+  "totalDurationSec": 66.336,
+  "segmentReports": [
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-structure-natural-20260427/chunks/000/audio.mp3",
+      "offsetStartSec": 0,
+      "offsetEndSec": 66.336,
+      "durationSec": 66.336
+    }
+  ]
+}
