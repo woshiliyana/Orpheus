@@ -81,7 +81,52 @@
     "word_timings": "present_for_both_runs",
     "subtitle_artifacts": "present_for_both_runs",
     "format_probe": "present_for_both_runs",
-    "manual_audio_review": "accepted_with_es_voice_speed_note"
+    "manual_audio_review": "accepted_with_es_voice_speed_note",
+    "timing_spot_check": "accepted_with_timestamp_coverage_warning",
+    "closeout_memo": "cartesia-medium-listening-timing-closeout-20260428.md"
+  },
+  "timing_spot_check": {
+    "performed_at": "2026-04-28",
+    "source_artifact": "cartesia-medium-listening-timing-closeout-20260428.md",
+    "verdict": "warning_accepted",
+    "summary": "EN and ES word timings, SRT, and VTT cues are monotonic, last cue / word timings stay within final MP3 duration, and splice-boundary checks did not show material subtitle/audio drift.",
+    "runs": [
+      {
+        "language": "en",
+        "audio_duration_sec": 174.504,
+        "timestamp_coverage_pct": 99.8,
+        "word_timing_count": 503,
+        "srt_cue_count": 43,
+        "vtt_cue_count": 43,
+        "last_timed_word_end_sec": 174.236,
+        "uncovered_tail_sec": 0.268,
+        "word_monotonic_violations": 0,
+        "cue_monotonic_violations": 0,
+        "cue_over_audio_count": 0,
+        "chunk_boundary_verdict": "ok"
+      },
+      {
+        "language": "es",
+        "audio_duration_sec": 177.936,
+        "timestamp_coverage_pct": 99.64,
+        "word_timing_count": 550,
+        "srt_cue_count": 56,
+        "vtt_cue_count": 56,
+        "last_timed_word_end_sec": 177.791,
+        "uncovered_tail_sec": 0.145,
+        "word_monotonic_violations": 0,
+        "cue_monotonic_violations": 0,
+        "cue_over_audio_count": 0,
+        "chunk_boundary_verdict": "ok"
+      }
+    ]
+  },
+  "decision": {
+    "selected_option": "continue_cartesia_as_second_provider_benchmark",
+    "selected_user_option": "继续把 Cartesia 当 second-provider benchmark",
+    "open_cartesia_continuation_or_websocket_lane_now": false,
+    "adjust_spanish_pacing_or_voice_now": false,
+    "canonical_doc_backfill_required": false
   },
   "warnings": [
     "Both runs generated complete audio and timing artifacts but timestamp coverage is partial: EN 99.80 percent, ES 99.64 percent.",
@@ -90,5 +135,5 @@
     "Provider-native raw PCM masters are retained locally and tracked through large-artifact-manifest.json instead of being promoted as binary files.",
     "Optional WAV user download was not generated and remains hold_for_export."
   ],
-  "recommendation": "Treat Cartesia medium audio generation as accepted with warnings for the scoped benchmark. Do not change Spanish pacing or voice based on this single sample; preserve the voice-speed note, complete timing spot checks, and only then decide whether Cartesia deserves a continuation/WebSocket lane."
+  "recommendation": "Treat Cartesia medium audio generation and timing as accepted with warnings for the scoped benchmark. Keep Cartesia as a serious second-provider benchmark and negotiation lever, but do not open a continuation/WebSocket lane or change Spanish pacing / voice from this single sample."
 }

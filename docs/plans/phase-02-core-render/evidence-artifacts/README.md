@@ -12,6 +12,7 @@ This directory is the default merge-tracked home for selected Phase 2 provider-b
 ## Current Closeouts
 
 - [`narration-pacing-closeout-20260427.md`](./narration-pacing-closeout-20260427.md) records the Inworld `exact` vs `natural_basic` listening verdict across short and structure-stress EN / ES evidence.
+- [`live-smoke-cartesia-medium-20260428/cartesia-medium-listening-timing-closeout-20260428.md`](./live-smoke-cartesia-medium-20260428/cartesia-medium-listening-timing-closeout-20260428.md) records the Cartesia medium timing spot-check, listening closeout, provider scorecard, and second-provider decision.
 
 ## Rules
 

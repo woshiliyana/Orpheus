@@ -1,4 +1,5 @@
-c4c84835085dd08c71e5497b527df365d0c1374e1427f07a7f66988b75e0ee14  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/README.md
+c79aa75fe9617a86492600af2ebab34c2eeaed9299bfa433f26065b1afa0cb63  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/README.md
+14f2895a23f01e1de87fd990d719dbabaee897dc5db47111356e162b78e89838  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/cartesia-medium-listening-timing-closeout-20260428.md
 c99557fd0e23cfcda96c03daed3de020d509e7b459d5cdc17b4c351e82ef82fb  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/en-medium/artifact-manifest.json
 549d811e27959864c4c6cf1a3107822864492a600f08bdb7764b0fb5ef6553ea  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/en-medium/final.mp3
 40fe14e0b9002e4f91f430c675e8ac7d1bd1292143182ab4891fa90ae188f156  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/en-medium/final.mp3.ffprobe.json
@@ -27,7 +28,7 @@ fdb96b611d03f7995a18a70f1016ec94d88196badd71641407bc326c3d7fca8e  docs/plans/pha
 b3d087a5a1bd0ab99dc7e61ec2b12445f61a0ffecdf2fce690840a1f7b9d22c7  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/es-medium/subtitles.srt
 5fdcf7595a6ece657e9995aebb64911e16232ddff93ecdaba619adce33774658  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/es-medium/subtitles.vtt
 debe4f4caba5b6057d7faaeb40297c68e27f2dd84d17623471c14283b649e346  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/es-medium/word-timings.json
-c21c9ecee3b65d472cbfcf854e3a22bb6a4d97ca1a74b6bce72fe9db770fbfbb  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/final-evaluation.json
+0b0362fe072bca0e03852d29b32f56e8655db3ff879c636d2742623f42ec3fde  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/final-evaluation.json
 1ada307f8c9b3ff0f10054474bccaba232f5e96b04d45a3d7abdb1897407bd7e  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/large-artifact-manifest.json
 a2aafa8e12cfbaa94c5b158c288ee6f78c9b7b3a5ca31c18a692883865d84f18  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/live-smoke-command-output.json
 3b7e66402d44d7bb9909b7741633d092be3986c7fd143a5d9e6edb8e482a322a  docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-cartesia-medium-20260428/run-summary.json
