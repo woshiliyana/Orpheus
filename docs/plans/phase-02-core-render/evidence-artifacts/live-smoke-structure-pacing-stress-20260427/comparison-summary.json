@@ -1,7 +1,7 @@
 {
   "attempt_id": "live-smoke-structure-pacing-stress-20260427",
   "status": "passed_for_provider_execution_and_machine_evidence",
-  "manual_listening_status": "pending",
+  "manual_listening_status": "completed_structure_pair",
   "pairs": [
     {
       "language": "en",
@@ -27,13 +27,16 @@
     "content_preservation": "passed",
     "break_tag_budget": "passed",
     "publishability_machine_gate": "passed",
-    "pacing_naturalness": "pending_manual_listening",
-    "natural_basic_vs_exact": "pending_manual_listening"
+    "pacing_naturalness": "natural_basic_preferred_on_structure_stress",
+    "natural_basic_vs_exact": "natural_basic_much_better"
   },
-  "listening_decision_needed": {
-    "question": "Does natural_basic sound better than exact on a structure-heavy script with headings, paragraph breaks, and list items?",
-    "default_policy_if_natural_does_not_win": "Return default pacing mode to exact; keep natural_basic optional or experimental.",
-    "default_policy_if_natural_clearly_wins": "Keep natural_basic as default for structured narration, but keep exact available."
+  "manual_verdict": {
+    "en_ashley_structure_stress": {
+      "pacing_naturalness": "natural_basic_preferred",
+      "natural_basic_vs_exact": "natural_basic_much_better",
+      "publishability": "ready"
+    },
+    "default_recommendation": "keep_natural_basic_default_for_structured_narration_with_exact_available"
   },
   "artifact_packet": "docs/plans/phase-02-core-render/evidence-artifacts/live-smoke-structure-pacing-stress-20260427/"
 }

@@ -1,6 +1,6 @@
 # Live Smoke: Structure Pacing Stress
 
-> Status: passed for provider execution and machine evidence
+> Status: passed for provider execution; natural_basic preferred in structure-stress human listening
 > Role: exact vs natural_basic structure-stress comparison
 > Date: 2026-04-27 PDT
 
@@ -57,11 +57,11 @@ artifact_integrity: passed
 content_preservation: passed
 break_tag_budget: passed
 publishability_machine_gate: passed
-pacing_naturalness: pending_manual_listening
-natural_basic_vs_exact: pending_manual_listening
+pacing_naturalness: natural_basic_preferred_on_structure_stress
+natural_basic_vs_exact: natural_basic_much_better
 ```
 
-This packet is ready for paired human listening. It should decide whether `natural_basic` is actually better on structure-heavy narration, not merely whether it can insert valid SSML breaks.
+The paired human listening pass preferred `natural_basic` by a clear margin on this structure-heavy script. This supports keeping `natural_basic` as the default for structured narration while keeping `exact` available for users or scripts where added structure pauses feel too deliberate.
 
 ## Packet Contents
 
