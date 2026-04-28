@@ -20,6 +20,7 @@ If this file and the PRD ever disagree, the PRD wins.
 3. `ORPHEUS_SHARED_ENV_PATH` may still override the path explicitly when needed, but the default is project-scoped, not machine-global.
 4. Current CLI entrypoints load files in this order: `.env` -> project-shared env -> `.env.local`.
 5. Real shell environment variables still override file-based defaults.
+6. Empty values in dotenv files are treated as placeholders and ignored. For example, `.env.local` containing `INWORLD_API_KEY=` must not mask a non-empty value in `.git/orpheus.server.env`.
 
 ## Secret boundary
 
@@ -64,6 +65,7 @@ When the web app shell exists, keep this exact shape:
 
 1. Put shared provider secrets in `.git/orpheus.server.env` once for this repo so all worktrees can reuse them.
 2. Use `.env.local` only for checkout-specific overrides, not as the primary place to duplicate every secret in every worktree.
-3. Keep the shared env file and `.env.local` only on trusted machines/servers.
-4. Use shell-exported values only when intentionally overriding file defaults.
-5. Before live smoke, confirm the required provider key is set in the shell, the project-shared env file, or `.env.local`.
+3. Leave unused `.env.local` keys blank or commented out; blank file values are ignored and do not erase shared defaults.
+4. Keep the shared env file and `.env.local` only on trusted machines/servers.
+5. Use shell-exported values only when intentionally overriding file defaults.
+6. Before live smoke, confirm the required provider key is set in the shell, the project-shared env file, or `.env.local`.

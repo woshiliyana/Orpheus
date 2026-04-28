@@ -113,3 +113,33 @@ test("loadProjectEnv reads a shared server env path and lets worktree .env.local
     }
   }
 });
+
+test("loadProjectEnv ignores empty file values so placeholders do not mask shared env", async () => {
+  const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-empty-env-placeholder-"));
+  const sharedEnvPath = path.join(tmpDir, "server.env");
+  const previousEnv = Object.fromEntries(envKeysToReset.map((key) => [key, process.env[key]]));
+
+  delete process.env.INWORLD_API_KEY;
+  delete process.env.CARTESIA_API_KEY;
+  delete process.env.INWORLD_MAX_ATTEMPTS;
+  delete process.env.ORPHEUS_SHARED_ENV_PATH;
+
+  await writeFile(sharedEnvPath, "INWORLD_API_KEY=shared-secret\nCARTESIA_API_KEY=shared-cartesia\n", "utf8");
+  await writeFile(path.join(tmpDir, ".env.local"), "INWORLD_API_KEY=\nCARTESIA_API_KEY=local-cartesia\n", "utf8");
+
+  try {
+    const loadedFiles = loadProjectEnv({ rootDir: tmpDir, forceReload: true, sharedEnvPath });
+
+    assert.equal(loadedFiles.length, 2);
+    assert.equal(process.env.INWORLD_API_KEY, "shared-secret");
+    assert.equal(process.env.CARTESIA_API_KEY, "local-cartesia");
+  } finally {
+    for (const [key, value] of Object.entries(previousEnv)) {
+      if (value === undefined) {
+        delete process.env[key];
+      } else {
+        process.env[key] = value;
+      }
+    }
+  }
+});

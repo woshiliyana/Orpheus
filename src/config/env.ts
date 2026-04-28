@@ -56,6 +56,19 @@ export function parseDotenv(source: string): Record<string, string> {
   return entries;
 }
 
+function mergeNonEmptyDotenvEntries(
+  target: Record<string, string>,
+  entries: Record<string, string>,
+): void {
+  for (const [key, value] of Object.entries(entries)) {
+    if (value.length === 0) {
+      continue;
+    }
+
+    target[key] = value;
+  }
+}
+
 export function resolveSharedEnvPath(options: Pick<LoadProjectEnvOptions, "rootDir" | "sharedEnvPath"> = {}): string | undefined {
   if (options.sharedEnvPath !== undefined && options.sharedEnvPath.length > 0) {
     return path.resolve(options.sharedEnvPath);
@@ -101,7 +114,7 @@ export function loadProjectEnv(options: LoadProjectEnvOptions = {}): string[] {
     }
 
     const entries = parseDotenv(readFileSync(filePath, "utf8"));
-    Object.assign(resolvedEntries, entries);
+    mergeNonEmptyDotenvEntries(resolvedEntries, entries);
 
     loadedFiles.push(filePath);
   }
