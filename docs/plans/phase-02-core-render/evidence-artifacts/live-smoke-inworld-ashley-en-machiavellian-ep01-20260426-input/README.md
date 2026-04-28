@@ -22,6 +22,7 @@ Preserve the founder-supplied English Machiavellian Psychology EP01 voiceover sc
 | `large-artifact-manifest.json` | Local hash manifest | Retention paths, hashes, sizes, and format verdicts for `final.wav` and the derived MP3 |
 | `audio-probe-metadata.json` | `ffprobe` / `volumedetect` | Technical probe metadata for the WAV and derived MP3 assets |
 | `final-evaluation.json` | Scorecard review | Current `tts_ux_readiness_scorecard` verdict |
+| `manual-review-20260428.md` | Current manual-review lane | Founder listening worksheet for perceptual quality, seams, pronunciation, text fidelity, timing, and format delivery |
 
 ## Source Probe
 
@@ -58,6 +59,10 @@ Preserve the founder-supplied English Machiavellian Psychology EP01 voiceover sc
 | Readiness verdict | `audio_generation_smoke=warning`; `product_readiness_evaluation=blocked_by_missing_evidence` |
 
 This result does not justify a provider-native MP3 retry. The remaining work is manual listening / timing review plus the broader `EN + ES` and Cartesia evidence, not another MP3/WAV provider-format pass.
+
+## Manual Review
+
+[`manual-review-20260428.md`](./manual-review-20260428.md) prepares the founder listening review for the retained MP3 delivery candidate and WAV master spot checks. The note verifies the local asset hashes and review rubric, but it does not record a passed listening verdict yet.
 
 ## Preparation Checklist
 
