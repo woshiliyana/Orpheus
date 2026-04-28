@@ -9,6 +9,10 @@
 
 This directory is the default merge-tracked home for selected Phase 2 provider-backed evidence packets.
 
+## Current Closeouts
+
+- [`narration-pacing-closeout-20260427.md`](./narration-pacing-closeout-20260427.md) records the Inworld `exact` vs `natural_basic` listening verdict across short and structure-stress EN / ES evidence.
+
 ## Rules
 
 1. Live-smoke outputs must not remain only in ignored `runs/` folders or temporary worktrees.
