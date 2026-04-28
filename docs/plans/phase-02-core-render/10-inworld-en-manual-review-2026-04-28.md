@@ -116,6 +116,10 @@ Founder acceptance should answer these directly before the packet can reduce the
 | `needs_asr_diff` | Open a no-provider-call ASR/text-fidelity lane before another paid TTS run. |
 | `voice_not_final_candidate` | Do not treat Ashley as the locked EN default voice. Run future EN voice selection toward a mature, steady male voice before any launch-facing English claim. |
 
+## Voice Direction Follow-Up
+
+[`11-inworld-en-voice-direction-2026-04-28.md`](./11-inworld-en-voice-direction-2026-04-28.md) converts the Ashley voice-fit warning into the next English target: a mature, steady male educational-explainer voice. It does not name unverified Inworld candidates or authorize a new long-form provider run.
+
 ## Scope Boundary
 
 This packet is a staged evidence workflow, not a product promise. It does not change:
