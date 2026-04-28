@@ -1,0 +1,392 @@
+[
+  {
+    "text": "numeral",
+    "startSec": 0.077,
+    "endSec": 0.495,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Prueba",
+    "startSec": 0.495,
+    "endSec": 0.728,
+    "chunkIndex": 0
+  },
+  {
+    "text": "breve",
+    "startSec": 0.728,
+    "endSec": 1.006,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 1.006,
+    "endSec": 1.099,
+    "chunkIndex": 0
+  },
+  {
+    "text": "narracion.",
+    "startSec": 1.099,
+    "endSec": 1.641,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Esta",
+    "startSec": 1.935,
+    "endSec": 2.136,
+    "chunkIndex": 0
+  },
+  {
+    "text": "es",
+    "startSec": 2.136,
+    "endSec": 2.229,
+    "chunkIndex": 0
+  },
+  {
+    "text": "una",
+    "startSec": 2.229,
+    "endSec": 2.384,
+    "chunkIndex": 0
+  },
+  {
+    "text": "prueba",
+    "startSec": 2.384,
+    "endSec": 2.616,
+    "chunkIndex": 0
+  },
+  {
+    "text": "corta",
+    "startSec": 2.616,
+    "endSec": 2.988,
+    "chunkIndex": 0
+  },
+  {
+    "text": "para",
+    "startSec": 2.988,
+    "endSec": 3.189,
+    "chunkIndex": 0
+  },
+  {
+    "text": "confirmar",
+    "startSec": 3.189,
+    "endSec": 3.669,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 3.669,
+    "endSec": 3.762,
+    "chunkIndex": 0
+  },
+  {
+    "text": "la",
+    "startSec": 3.762,
+    "endSec": 3.855,
+    "chunkIndex": 0
+  },
+  {
+    "text": "narracion",
+    "startSec": 3.855,
+    "endSec": 4.272,
+    "chunkIndex": 0
+  },
+  {
+    "text": "en",
+    "startSec": 4.272,
+    "endSec": 4.365,
+    "chunkIndex": 0
+  },
+  {
+    "text": "espanol",
+    "startSec": 4.365,
+    "endSec": 4.752,
+    "chunkIndex": 0
+  },
+  {
+    "text": "acepta",
+    "startSec": 4.752,
+    "endSec": 5.108,
+    "chunkIndex": 0
+  },
+  {
+    "text": "texto",
+    "startSec": 5.108,
+    "endSec": 5.449,
+    "chunkIndex": 0
+  },
+  {
+    "text": "con",
+    "startSec": 5.449,
+    "endSec": 5.588,
+    "chunkIndex": 0
+  },
+  {
+    "text": "puntuacion",
+    "startSec": 5.588,
+    "endSec": 6.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": "y",
+    "startSec": 6.254,
+    "endSec": 6.378,
+    "chunkIndex": 0
+  },
+  {
+    "text": "conserva",
+    "startSec": 6.378,
+    "endSec": 6.796,
+    "chunkIndex": 0
+  },
+  {
+    "text": "el",
+    "startSec": 6.796,
+    "endSec": 6.858,
+    "chunkIndex": 0
+  },
+  {
+    "text": "contenido",
+    "startSec": 6.858,
+    "endSec": 7.307,
+    "chunkIndex": 0
+  },
+  {
+    "text": "original.",
+    "startSec": 7.307,
+    "endSec": 7.755,
+    "chunkIndex": 0
+  },
+  {
+    "text": "El",
+    "startSec": 8.081,
+    "endSec": 8.204,
+    "chunkIndex": 0
+  },
+  {
+    "text": "objetivo",
+    "startSec": 8.204,
+    "endSec": 8.746,
+    "chunkIndex": 0
+  },
+  {
+    "text": "es",
+    "startSec": 8.746,
+    "endSec": 8.901,
+    "chunkIndex": 0
+  },
+  {
+    "text": "revisar",
+    "startSec": 8.901,
+    "endSec": 9.226,
+    "chunkIndex": 0
+  },
+  {
+    "text": "la",
+    "startSec": 9.226,
+    "endSec": 9.35,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ruta",
+    "startSec": 9.35,
+    "endSec": 9.582,
+    "chunkIndex": 0
+  },
+  {
+    "text": "del",
+    "startSec": 9.582,
+    "endSec": 9.706,
+    "chunkIndex": 0
+  },
+  {
+    "text": "proveedor,",
+    "startSec": 9.706,
+    "endSec": 10.124,
+    "chunkIndex": 0
+  },
+  {
+    "text": "no",
+    "startSec": 10.573,
+    "endSec": 10.759,
+    "chunkIndex": 0
+  },
+  {
+    "text": "evaluar",
+    "startSec": 10.759,
+    "endSec": 11.115,
+    "chunkIndex": 0
+  },
+  {
+    "text": "una",
+    "startSec": 11.177,
+    "endSec": 11.347,
+    "chunkIndex": 0
+  },
+  {
+    "text": "pieza",
+    "startSec": 11.347,
+    "endSec": 11.625,
+    "chunkIndex": 0
+  },
+  {
+    "text": "larga.",
+    "startSec": 11.625,
+    "endSec": 11.951,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Primero,",
+    "startSec": 12.26,
+    "endSec": 12.709,
+    "chunkIndex": 0
+  },
+  {
+    "text": "el",
+    "startSec": 12.786,
+    "endSec": 12.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sistema",
+    "startSec": 12.91,
+    "endSec": 13.266,
+    "chunkIndex": 0
+  },
+  {
+    "text": "debe",
+    "startSec": 13.266,
+    "endSec": 13.483,
+    "chunkIndex": 0
+  },
+  {
+    "text": "leer",
+    "startSec": 13.483,
+    "endSec": 13.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": "el",
+    "startSec": 13.7,
+    "endSec": 13.777,
+    "chunkIndex": 0
+  },
+  {
+    "text": "texto",
+    "startSec": 13.777,
+    "endSec": 14.118,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sin",
+    "startSec": 14.118,
+    "endSec": 14.288,
+    "chunkIndex": 0
+  },
+  {
+    "text": "reescribirlo.",
+    "startSec": 14.288,
+    "endSec": 14.892,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Segundo,",
+    "startSec": 14.985,
+    "endSec": 15.619,
+    "chunkIndex": 0
+  },
+  {
+    "text": "debe",
+    "startSec": 15.728,
+    "endSec": 15.975,
+    "chunkIndex": 0
+  },
+  {
+    "text": "agregar",
+    "startSec": 15.975,
+    "endSec": 16.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": "pausas",
+    "startSec": 16.3,
+    "endSec": 16.61,
+    "chunkIndex": 0
+  },
+  {
+    "text": "suaves",
+    "startSec": 16.61,
+    "endSec": 16.904,
+    "chunkIndex": 0
+  },
+  {
+    "text": "entre",
+    "startSec": 16.904,
+    "endSec": 17.121,
+    "chunkIndex": 0
+  },
+  {
+    "text": "parrafos.",
+    "startSec": 17.121,
+    "endSec": 17.616,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Tercero,",
+    "startSec": 17.647,
+    "endSec": 18.096,
+    "chunkIndex": 0
+  },
+  {
+    "text": "debe",
+    "startSec": 18.359,
+    "endSec": 18.56,
+    "chunkIndex": 0
+  },
+  {
+    "text": "guardar",
+    "startSec": 18.56,
+    "endSec": 18.886,
+    "chunkIndex": 0
+  },
+  {
+    "text": "evidencia",
+    "startSec": 18.886,
+    "endSec": 19.288,
+    "chunkIndex": 0
+  },
+  {
+    "text": "suficiente",
+    "startSec": 19.288,
+    "endSec": 19.814,
+    "chunkIndex": 0
+  },
+  {
+    "text": "para",
+    "startSec": 19.814,
+    "endSec": 19.985,
+    "chunkIndex": 0
+  },
+  {
+    "text": "revisar",
+    "startSec": 19.985,
+    "endSec": 20.341,
+    "chunkIndex": 0
+  },
+  {
+    "text": "el",
+    "startSec": 20.341,
+    "endSec": 20.434,
+    "chunkIndex": 0
+  },
+  {
+    "text": "resultado",
+    "startSec": 20.434,
+    "endSec": 20.882,
+    "chunkIndex": 0
+  },
+  {
+    "text": "despues.",
+    "startSec": 20.882,
+    "endSec": 21.378,
+    "chunkIndex": 0
+  }
+]

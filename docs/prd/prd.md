@@ -627,9 +627,10 @@ V1 至少要具备：
 当前产品姿态是：
 
 1. 默认用户交付格式为可下载 `MP3`
-2. 平台内部优先验证并保留 `WAV` / Linear PCM 生产母版
+2. 平台内部优先请求并保留 provider-native lossless 生产母版，例如 `WAV` / Linear PCM / raw PCM
 3. 商业默认 `MP3` 目标为 `>=192 kbps`
-4. 用户侧 `WAV` 导出必须等待 Phase 2 `audio_format_verdict` 明确通过后再开放为产品承诺
+4. 未来可提供用户侧 `MP3` / `WAV` 可选下载，但 `WAV` 导出必须等待 Phase 2 `audio_format_verdict=ready_for_export` 明确通过后再开放为产品承诺
+5. `MP3` 和用户侧 `WAV` 都应从 retained lossless master 本地派生；`MP3` 反转出的 `WAV` 不能证明生产母版质量
 
 ### 7.2 SRT 标准
 

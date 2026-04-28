@@ -27,15 +27,20 @@ The smoke packet feeds the canonical `tts_ux_readiness_scorecard` in `/docs/prd/
 ./scripts/live-smoke/phase2-live-smoke.sh \
   --provider inworld \
   --voice Ashley \
+  --language en \
   --script fixtures/frozen-corpus/scripts/en-control-medium.txt \
   --format mp3 \
   --pacing-mode natural_basic \
   --input-validation strict
 ```
 
+For non-English smoke runs, pass the language explicitly, for example `--language es`. The wrapper forwards this to the provider adapter and to the promoted manifest / timing artifacts; do not infer language from the selected voice alone.
+
 For exact-read comparison runs, use the same script, voice, provider, and request naming pattern with `--pacing-mode exact`. Keep `strict` input validation unless the smoke is explicitly diagnosing input-quality behavior.
 
-Do not run a paired provider-native `--format wav` smoke by default. If the product question is only download packaging, derive a clearly labeled WAV from the existing MP3 artifact at zero provider cost. Run provider-native `--format wav` only when the lane explicitly needs to decide whether WAV / Linear PCM is ready to serve as an internal production master or user-facing export.
+For provider-backed format evidence, use one paid provider pass that requests the highest-fidelity provider-native lossless output available for that provider. For Inworld that is provider-native `wav` / Linear PCM when the lane needs production-master evidence. For Cartesia streaming, the provider-native source is raw PCM; wrap or transcode it locally for delivery artifacts. Do not run a second provider-native pass only to get `MP3` or `WAV` delivery files when a lossless master already exists.
+
+If the product question is only download packaging, derive delivery files locally from the retained lossless master. The default user-facing delivery derivative is `MP3 >=192 kbps`. Optional user-facing `WAV` may be evaluated as a derived-from-master download, but it remains held until an explicit `audio_format_verdict=ready_for_export`. A `WAV` derived from `MP3` may validate packaging only; it must not be used as production-master evidence.
 
 If a long-form run fails after some chunks have already produced valid provider audio, rerun the same `--request-id`, source script, provider, voice, and format with:
 
@@ -60,6 +65,8 @@ This flag is explicit on purpose. It lets the backend reuse completed chunk arti
 - one short seam-quality note
 - one short timing / warning note
 - requested output format, observed container / codec, sample rate, bitrate when applicable, and file size
+- production-master source format, provider-native versus derived status, hash / size / retention path, and whether it is lossless or lossy
+- delivery derivative format(s), including default `MP3` and optional `WAV` only when the lane is testing export readiness
 - one `audio_format_verdict` using `ready_for_internal_master`, `ready_for_delivery`, `ready_for_export`, `hold_for_export`, or `blocked`
 - for MP3 delivery, explicit judgment against the commercial default target of `>=192 kbps`
 - if resumed, `cachedChunkCount`, retry evidence, and a note that chunk reuse stayed backend-owned

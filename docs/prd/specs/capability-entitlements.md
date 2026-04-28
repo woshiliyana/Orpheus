@@ -25,8 +25,8 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 | `starter library` | The broad, lower-cost AI voice catalog intended to give users meaningful free choice inside the active V1 niche cluster and approved first-gate render-language boundary |
 | `flagship library` | The smaller curated voice set with stronger consistency, sharper persona definition, and paid-plan positioning |
 | `hidden_orchestration` | Backend-only chunking, retry, stitching, and reconciliation that absorbs provider limits without becoming a user task |
-| `production_master_audio` | The highest-fidelity audio asset retained by the platform for post-processing, derivative generation, QA, and later export decisions |
-| `delivery_audio` | A user-downloadable audio derivative optimized for playback, sharing, storage, and broad compatibility |
+| `production_master_audio` | The highest-fidelity provider-native lossless audio asset retained by the platform for post-processing, derivative generation, QA, and later export decisions. Examples include provider-native `WAV`, Linear PCM, or raw PCM wrapped losslessly for storage |
+| `delivery_audio` | A user-downloadable audio derivative optimized for playback, sharing, storage, and broad compatibility. Delivery may expose `MP3` by default and later `WAV` as an optional download after export evidence passes |
 | `audio_format_verdict` | The Phase 2 evidence verdict that decides whether a tested format is ready for product use, should stay internal-only, or must be held |
 
 ## Decision Tables
@@ -37,8 +37,8 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 |---|---|---|
 | Audio generation and download | Core | Open to every successful project |
 | `MP3` delivery audio | Core | Default user-facing download format for the first stable-audio gate; product default target is `>=192 kbps` when encoded as MP3 |
-| `WAV` / Linear PCM production master | Core workflow capability | Internal by default until Phase 2 evidence confirms export readiness |
-| `WAV` user export | Controlled V1 capability | Disabled by default; may open only after an explicit `audio_format_verdict=ready_for_export` |
+| Provider-native lossless production master | Core workflow capability | Internal by default; request and retain the highest-fidelity provider-native lossless output when the provider supports it |
+| Optional `WAV` user download / export | Controlled V1 capability | Disabled by default; may open only after an explicit `audio_format_verdict=ready_for_export` |
 | Backend-only long-form orchestration | Core workflow capability | Internal only; must never become a user-side manual requirement |
 | Internal subtitle/alignment asset production | Core | Internal workflow, not always user-exportable |
 | `SRT` export | Core workflow capability | Gated by plan entitlement |
@@ -54,7 +54,7 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 |---|---|---|---|---|
 | Create project | Yes, one trial project | Yes | Yes | Yes |
 | Download final `MP3` audio | Yes | Yes | Yes | Yes |
-| Download `WAV` production master | No | No | Disabled until Phase 2 export verdict | Disabled until Phase 2 export verdict |
+| Download optional `WAV` audio | No | No | Disabled until Phase 2 export verdict | Disabled until Phase 2 export verdict |
 | Segment preview | Yes | Yes | Yes | Yes |
 | Export `SRT` | No | No | Yes | Yes |
 | Trigger segment repair | No | No | Yes | Yes |
@@ -71,8 +71,8 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 | Capability | Default launch state | Activation rule |
 |---|---|---|
 | `MP3` delivery audio | open | Every successful project must provide a broadly compatible downloadable audio file; Phase 2 must record bitrate before approving it as the commercial default |
-| `WAV` / Linear PCM production master | internal | The platform should keep a higher-fidelity master when provider output and storage economics support it |
-| `WAV` user export | held | Requires a successful Phase 2 format verdict covering decode, stitch, storage, download, and audible quality |
+| Provider-native lossless production master | internal | The platform should request and keep the highest-fidelity provider-native lossless master when provider output and storage economics support it |
+| Optional `WAV` user download / export | held | Requires a successful Phase 2 format verdict covering decode, stitch, storage, download, and audible quality |
 | Starter library access | open | Starter library must remain broad enough for meaningful free voice choice within the active V1 niche cluster and approved EN/ES output boundary |
 | Flagship library access | open for entitled plans | Available only to paid plans |
 | `SRT` export | open for entitled plans | Available only after a successful run produces exportable subtitle output |
@@ -107,8 +107,9 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 4. Private clone creation is intentionally scoped as a controlled V1 capability to avoid making unsupported self-serve promises.
 5. `hidden_orchestration` is allowed and expected in V1, but it must remain backend-only so users still experience one project, not a manual chunking workflow.
 6. The first paid path must align with the stable-audio envelope validated in `Phase 2`; until evidence says otherwise, the development-entry assumption is `Pro` supports up to `30` minutes per project within the approved EN/ES render boundary.
-7. The working audio-format product posture is `WAV` / Linear PCM as the internal production-master target and `MP3` as the default user-facing delivery format. This posture becomes a public export promise only after Phase 2 evidence returns an explicit `audio_format_verdict`.
-8. For long-form narration, `MP3` is commercially acceptable as the default delivery derivative when it passes audible QA and uses `>=192 kbps` or a documented higher-quality setting. Lower-bitrate MP3 output may be used for smoke comparability but must not be treated as the final commercial default without a new verdict. `WAV` should be preferred for internal post-processing, video assembly, future transcoding, and quality review.
+7. The working audio-format product posture is provider-native lossless audio as the internal production-master target and `MP3` as the default user-facing delivery format. A user-facing `WAV` option is allowed only after Phase 2 evidence returns an explicit `audio_format_verdict=ready_for_export`.
+8. For every provider, the preferred generation path is one paid provider run that requests the highest-fidelity provider-native lossless output available for that provider, then derives user-facing delivery files locally. For Cartesia streaming this may be raw PCM; for providers that expose file containers directly this may be provider-native `WAV` / Linear PCM. A provider-native `MP3` or an `MP3`-derived `WAV` must not be used as proof of production-master quality.
+9. For long-form narration, `MP3` is commercially acceptable as the default delivery derivative when it passes audible QA and uses `>=192 kbps` or a documented higher-quality setting. Optional user-facing `WAV` download should be derived from the retained lossless master, not from `MP3`, and remains held until export readiness is proven. Lower-bitrate MP3 output may be used for smoke comparability but must not be treated as the final commercial default without a new verdict.
 
 ## Update Checklist
 

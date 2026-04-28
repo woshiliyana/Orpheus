@@ -1,0 +1,62 @@
+{
+  "attempt_id": "live-smoke-cartesia-exact-short-20260427",
+  "retention_rule": "Provider-native raw PCM masters and raw SSE traces remain under ignored runs/live-smoke output. This merge-tracked manifest preserves the master hashes, sizes, durations, and local retention paths.",
+  "assets": [
+    {
+      "run_id": "live-smoke-cartesia-theo-en-short-exact-20260427",
+      "language": "en",
+      "role": "production_master_audio",
+      "source": "provider_native_raw_pcm",
+      "container": "raw",
+      "encoding": "pcm_s16le",
+      "sample_rate_hertz": 48000,
+      "channels": 1,
+      "duration_seconds": 85.078,
+      "size_bytes": 8167474,
+      "sha256": "d9c4a7af7505a94a3da26cae96ab48574c2864fb2a32f6d1bea5b1df7ba8f923",
+      "retention_path": "runs/live-smoke/live-smoke-cartesia-theo-en-short-exact-20260427/chunks/000/audio.raw.pcm",
+      "audio_format_verdict": "ready_for_internal_master_preflight",
+      "notes": "This is the Cartesia SSE provider-native raw PCM source. The promoted MP3 is derived from this master."
+    },
+    {
+      "run_id": "live-smoke-cartesia-pedro-es-short-exact-20260427-eslang",
+      "language": "es",
+      "role": "production_master_audio",
+      "source": "provider_native_raw_pcm",
+      "container": "raw",
+      "encoding": "pcm_s16le",
+      "sample_rate_hertz": 48000,
+      "channels": 1,
+      "duration_seconds": 21.409,
+      "size_bytes": 2055242,
+      "sha256": "11178efc5202817996384edb5b634171ee91e3d30c16206f36fdbaa143482dcc",
+      "retention_path": "runs/live-smoke/live-smoke-cartesia-pedro-es-short-exact-20260427-eslang/chunks/000/audio.raw.pcm",
+      "audio_format_verdict": "ready_for_internal_master_preflight",
+      "notes": "This is the Cartesia SSE provider-native raw PCM source. The promoted MP3 is derived from this master."
+    }
+  ],
+  "delivery_derivatives": [
+    {
+      "run_id": "live-smoke-cartesia-theo-en-short-exact-20260427",
+      "role": "delivery_audio",
+      "format": "mp3",
+      "source": "derived_from_master",
+      "path": "en-short/final.mp3",
+      "sha256": "2c21e1efbfd678d2eab79116f75afd4e925a1c2bec6199d25dc900a7027ed68d",
+      "audio_format_verdict": "ready_for_delivery"
+    },
+    {
+      "run_id": "live-smoke-cartesia-pedro-es-short-exact-20260427-eslang",
+      "role": "delivery_audio",
+      "format": "mp3",
+      "source": "derived_from_master",
+      "path": "es-short/final.mp3",
+      "sha256": "ffdff8264f666bac9e15f88380ede400b026d7b5d703ec781e6ad3112abfe249",
+      "audio_format_verdict": "ready_for_delivery"
+    }
+  ],
+  "optional_wav_export": {
+    "status": "hold_for_export",
+    "rule": "If tested later, derive WAV from the retained raw PCM / lossless master or request provider-native WAV from a bytes endpoint. Do not derive WAV from MP3 for production-master quality evidence."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "provider": "cartesia",
+  "requestId": "live-smoke-cartesia-pedro-es-short-exact-20260427-eslang",
+  "scriptChars": 420,
+  "chunkCount": 1,
+  "chunkRetryCount": 0,
+  "cachedChunkCount": 0,
+  "providerCharactersReused": 0,
+  "totalWallTimeMs": 6492,
+  "audioDurationSec": 21.456,
+  "timestampCoveragePct": 100,
+  "estimatedTtsCostUsd": 0.013,
+  "estimatedTotalCostUsd": 0.017,
+  "estimatedCostPerCompletedAudioMinuteUsd": 0.049,
+  "timestampWordCount": 65
+}

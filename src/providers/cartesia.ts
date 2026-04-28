@@ -1,5 +1,7 @@
 import path from "node:path";
+import { execFile } from "node:child_process";
 import { writeFile } from "node:fs/promises";
+import { promisify } from "node:util";
 
 import type {
   ChunkSynthesisInput,
@@ -15,6 +17,7 @@ import { ensureDir } from "../utils/files.js";
 interface CartesiaEvent {
   type?: string;
   data?: string;
+  audio?: string;
   done?: boolean;
   status_code?: number;
   word_timestamps?: {
@@ -26,6 +29,11 @@ interface CartesiaEvent {
   message?: string;
 }
 
+const execFileAsync = promisify(execFile);
+const RAW_ENCODING = "pcm_s16le";
+const RAW_SAMPLE_RATE = 48000;
+const RAW_CHANNELS = 1;
+
 interface CartesiaAdapterOptions {
   apiKey: string;
   apiVersion?: string;
@@ -34,19 +42,11 @@ interface CartesiaAdapterOptions {
   maxAttempts?: number;
 }
 
-function buildOutputFormat(outputFormat: ChunkSynthesisInput["outputFormat"]): Record<string, unknown> {
-  if (outputFormat === "wav") {
-    return {
-      container: "wav",
-      sample_rate: 48000,
-      encoding: "pcm_s16le",
-    };
-  }
-
+function buildStreamingOutputFormat(): Record<string, unknown> {
   return {
-    container: "mp3",
-    sample_rate: 48000,
-    bit_rate: 192000,
+    container: "raw",
+    sample_rate: RAW_SAMPLE_RATE,
+    encoding: RAW_ENCODING,
   };
 }
 
@@ -105,6 +105,46 @@ function toWordTimings(events: CartesiaEvent[]): WordTiming[] {
   return timings;
 }
 
+function getAudioChunkBase64(event: CartesiaEvent): string | undefined {
+  if (event.type !== "chunk") {
+    return undefined;
+  }
+
+  if (typeof event.audio === "string") {
+    return event.audio;
+  }
+
+  if (typeof event.data === "string") {
+    return event.data;
+  }
+
+  return undefined;
+}
+
+async function transcodeRawAudio(input: {
+  rawAudioPath: string;
+  outputPath: string;
+  outputFormat: ChunkSynthesisInput["outputFormat"];
+}): Promise<void> {
+  const outputArgs = input.outputFormat === "wav"
+    ? ["-c:a", "pcm_s16le"]
+    : ["-c:a", "libmp3lame", "-b:a", "192k"];
+
+  await execFileAsync("ffmpeg", [
+    "-y",
+    "-f",
+    "s16le",
+    "-ar",
+    String(RAW_SAMPLE_RATE),
+    "-ac",
+    String(RAW_CHANNELS),
+    "-i",
+    input.rawAudioPath,
+    ...outputArgs,
+    input.outputPath,
+  ]);
+}
+
 export class CartesiaProviderAdapter implements TtsProviderAdapter {
   readonly name = "cartesia" as const;
   readonly rateUsdPer1mChars: number;
@@ -133,6 +173,7 @@ export class CartesiaProviderAdapter implements TtsProviderAdapter {
       attemptCount += 1;
 
       const audioPath = path.join(input.outputDir, `audio.${input.outputFormat}`);
+      const rawAudioPath = path.join(input.outputDir, "audio.raw.pcm");
       const rawResponsePath = path.join(input.outputDir, `attempt-${attemptCount}.sse.txt`);
       const parsedResponsePath = path.join(input.outputDir, `attempt-${attemptCount}.jsonl`);
 
@@ -150,7 +191,7 @@ export class CartesiaProviderAdapter implements TtsProviderAdapter {
             mode: "id",
             id: input.voiceId,
           },
-          output_format: buildOutputFormat(input.outputFormat),
+          output_format: buildStreamingOutputFormat(),
           language: input.language,
           add_timestamps: true,
           use_normalized_timestamps: true,
@@ -198,10 +239,25 @@ export class CartesiaProviderAdapter implements TtsProviderAdapter {
 
       const audioBuffer = Buffer.concat(
         events
-          .filter((event) => event.type === "chunk" && typeof event.data === "string")
-          .map((event) => Buffer.from(event.data!, "base64")),
+          .map(getAudioChunkBase64)
+          .filter((audio): audio is string => audio !== undefined)
+          .map((audio) => Buffer.from(audio, "base64")),
       );
-      await writeFile(audioPath, audioBuffer);
+      if (audioBuffer.length === 0) {
+        const providerError = new Error("Cartesia response did not include audio chunks") as ProviderAttemptError;
+        providerError.statusCode = response.status;
+        providerError.rawResponsePaths = [...rawResponsePaths];
+        providerError.attemptCount = attemptCount;
+        providerError.providerCharactersProcessed = totalProviderCharactersProcessed;
+        throw providerError;
+      }
+
+      await writeFile(rawAudioPath, audioBuffer);
+      await transcodeRawAudio({
+        rawAudioPath,
+        outputPath: audioPath,
+        outputFormat: input.outputFormat,
+      });
       const durationSec = await getAudioDurationSec(audioPath);
 
       return {

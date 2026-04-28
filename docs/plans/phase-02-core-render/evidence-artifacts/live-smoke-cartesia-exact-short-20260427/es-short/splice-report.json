@@ -1,0 +1,12 @@
+{
+  "outputPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-short-exact-20260427-eslang/artifacts/final.mp3",
+  "totalDurationSec": 21.456,
+  "segmentReports": [
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-short-exact-20260427-eslang/chunks/000/audio.mp3",
+      "offsetStartSec": 0,
+      "offsetEndSec": 21.456,
+      "durationSec": 21.456
+    }
+  ]
+}

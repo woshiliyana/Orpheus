@@ -45,7 +45,7 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 10. Successful-run `artifact_manifest` persistence
 11. Internal alignment-asset job or placeholder record tied to final audio
 12. UI / API exposure of status, warnings, and download link
-13. Audio-format policy evidence covering default `MP3` delivery and `WAV` / Linear PCM production-master readiness
+13. Audio-format policy evidence covering provider-native lossless production-master readiness, default `MP3` delivery, and optional `WAV` user-download readiness
 14. Provider run-log capture and cost-snapshot update for the frozen `EN + ES` corpus
 15. One short benchmark note against the prevailing public self-serve long-form workflow, with `ElevenLabs` as the reference point
 16. One explicit `EN + ES` output / timing readiness note for the first gate
@@ -70,7 +70,7 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 4. Successful runs persist final audio plus an `artifact_manifest` with provider, orchestration, billing, and alignment references.
 5. Successful runs persist `input_adapter_ref` and adapter evidence showing source text, provider input, token preservation, pacing mode, input-validation mode, and per-provider-request break-tag counts.
 6. Inworld `natural_basic` provider chunks never exceed `20` SSML break tags per request; over-budget pauses are dropped before provider calls and recorded as warnings.
-7. Successful runs record an `audio_format_policy` or equivalent evidence entry that names requested format, observed container / codec, sample rate, bitrate when relevant, delivery verdict, and production-master verdict.
+7. Successful runs record an `audio_format_policy` or equivalent evidence entry that names requested provider-native source format, production-master asset, observed container / codec, sample rate, bitrate when relevant, derived delivery format(s), delivery verdict, and production-master verdict.
 8. `audio success + alignment failure` resolves to `completed_with_warnings` / `succeeded_with_warnings`, not a full failed rerun state.
 9. Billing records bill audio only, never the entire project again for alignment retry or segment repair semantics.
 10. The benchmark packet covers the frozen `en-control-short`, `en-control-medium`, `en-control-long`, `es-control-short`, `es-control-medium`, and `es-control-long` corpus and yields explicit `ready` / `warning` / `blocked` output and timing verdicts for English and Spanish, or the agent produces an explicit hold memo naming the blocked language and limiting envelope.
@@ -84,7 +84,7 @@ Build the smallest Phase 2 slice that can move one user-visible project from sub
 2. One successful-run artifact packet
 3. Provider run log for the frozen `EN + ES` corpus
 4. Updated pricing / unit-economics snapshot
-5. One audio-format verdict table that says whether `MP3` is ready for default delivery, whether `WAV` / Linear PCM is ready for internal master use, and whether user-facing `WAV` export remains held
+5. One audio-format verdict table that says whether the provider-native lossless source is ready for internal master use, whether `MP3` is ready for default delivery, and whether optional user-facing `WAV` download / export remains held
 6. One provider-scenario table showing how the result looks under at least:
    - current primary scenario
    - one higher-cost fallback scenario
@@ -105,7 +105,7 @@ Provider-backed evidence must be promoted into a merge-tracked artifact packet b
 - Lifecycle transition tests for `queued -> validating -> rendering -> aligning -> packaging -> success/warning/failure`
 - Billing tests for full render success, segment repair success, and `audio success + alignment failure`
 - Artifact-manifest persistence tests
-- Audio-format policy tests for requested format, observed asset metadata, delivery verdict, and production-master verdict
+- Audio-format policy tests for requested provider-native source format, observed asset metadata, production-master verdict, derived delivery verdict, and optional export verdict
 - Provider-boundary tests proving the client never calls providers directly
 - Input validation, token-preservation, pacing-adapter, and provider break-tag budget tests
 - Cost-calculation tests that fail when a provider scenario drops below the target margin floor without an explicit doc update
@@ -115,7 +115,7 @@ Provider-backed evidence must be promoted into a merge-tracked artifact packet b
 
 - Audible seam review on long-form stitched outputs
 - TTS UX readiness review using the canonical scorecard, with missing evidence recorded as `blocked_by_missing_evidence` when required artifacts are absent
-- Audio-format review comparing default `MP3` delivery against zero-cost WAV derivative packaging when possible; use provider-native `WAV` / Linear PCM only when the lane explicitly needs production-master quality evidence
+- Audio-format review starts from the provider-native lossless master when the provider supports one, then compares derived `MP3` delivery and optional `WAV` download packaging without spending a second provider pass only for delivery formats
 - Spot-check English and Spanish final-audio timing against internal alignment assets
 - Spot-check English and Spanish subtitle-text fidelity against source and normalized text
 - Review cost snapshot against the plan assumptions in the pricing spec

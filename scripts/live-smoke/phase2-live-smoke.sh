@@ -3,6 +3,7 @@ set -euo pipefail
 
 PROVIDER="inworld"
 VOICE="Ashley"
+LANGUAGE="en"
 SCRIPT_PATH="fixtures/frozen-corpus/scripts/en-control-medium.txt"
 REQUEST_ID="live-smoke-$(date +%Y%m%d-%H%M%S)"
 OUTPUT_DIR="runs/live-smoke"
@@ -17,6 +18,8 @@ while [ "$#" -gt 0 ]; do
       PROVIDER="$2"; shift 2 ;;
     --voice)
       VOICE="$2"; shift 2 ;;
+    --language)
+      LANGUAGE="$2"; shift 2 ;;
     --script)
       SCRIPT_PATH="$2"; shift 2 ;;
     --request-id)
@@ -63,6 +66,7 @@ fi
 npm run narrate -- \
   --provider "$PROVIDER" \
   --voice "$VOICE" \
+  --language "$LANGUAGE" \
   --script-file "$SCRIPT_PATH" \
   --request-id "$REQUEST_ID" \
   --output-dir "$OUTPUT_DIR" \

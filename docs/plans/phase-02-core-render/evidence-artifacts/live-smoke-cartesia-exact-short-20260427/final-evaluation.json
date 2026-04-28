@@ -1,0 +1,76 @@
+{
+  "scorecard": "tts_ux_readiness_scorecard",
+  "attempt_id": "live-smoke-cartesia-exact-short-20260427",
+  "provider": "cartesia",
+  "pacing_mode": "exact",
+  "input_validation_mode": "strict",
+  "hard_gate_verdict": "hold_for_manual_review_before_medium_or_long",
+  "audio_generation_smoke": "passed_with_warnings",
+  "product_readiness_evaluation": "blocked_by_manual_audio_review",
+  "weighted_score_interpreted": false,
+  "audio_format_policy": {
+    "production_master_audio": {
+      "source": "provider_native_raw_pcm",
+      "verdict": "ready_for_internal_master_preflight",
+      "manifest": "large-artifact-manifest.json"
+    },
+    "default_delivery_audio": {
+      "format": "mp3",
+      "source": "derived_from_master",
+      "target_bitrate_bps": 192000,
+      "verdict": "ready_for_delivery"
+    },
+    "optional_wav_download": {
+      "source": "derive_from_lossless_master_or_provider_native_wav",
+      "verdict": "hold_for_export"
+    }
+  },
+  "runs": [
+    {
+      "request_id": "live-smoke-cartesia-theo-en-short-exact-20260427",
+      "language": "en",
+      "voice_id": "79f8b5fb-2cc8-479a-80df-29f7a7cf1a3e",
+      "script_chars": 1620,
+      "chunk_count": 1,
+      "chunk_retry_count": 0,
+      "audio_duration_sec": 85.104,
+      "timestamp_coverage_pct": 99.63,
+      "estimated_tts_cost_usd": 0.051,
+      "estimated_total_cost_usd": 0.068,
+      "manual_listening_review": "pending"
+    },
+    {
+      "request_id": "live-smoke-cartesia-pedro-es-short-exact-20260427-eslang",
+      "language": "es",
+      "voice_id": "15d0c2e2-8d29-44c3-be23-d585d5f154a1",
+      "script_chars": 420,
+      "chunk_count": 1,
+      "chunk_retry_count": 0,
+      "audio_duration_sec": 21.456,
+      "timestamp_coverage_pct": 100,
+      "estimated_tts_cost_usd": 0.013,
+      "estimated_total_cost_usd": 0.017,
+      "manual_listening_review": "pending"
+    }
+  ],
+  "evidence_coverage": {
+    "final_audio": "present",
+    "production_master_audio_manifest": "present",
+    "artifact_manifest": "present",
+    "metrics": "present",
+    "provider_input": "present",
+    "input_adapter_ref": "present",
+    "word_timings": "present",
+    "subtitle_artifacts": "present",
+    "format_probe": "present",
+    "manual_audio_review": "pending"
+  },
+  "warnings": [
+    "EN timestamp coverage is partial at 99.63 percent.",
+    "Raw SSE provider responses are retained locally under runs/live-smoke and are not promoted because of size.",
+    "Provider-native raw PCM masters are retained locally and tracked through large-artifact-manifest.json instead of being promoted as binary files.",
+    "Optional WAV user download was not generated in this preflight and remains hold_for_export.",
+    "A superseded ES local-only attempt defaulted to language=en and is not counted as ES evidence."
+  ],
+  "recommendation": "Use these short outputs for human listening review first. If accepted, proceed to a controlled medium Cartesia benchmark before any full long-form run."
+}

@@ -238,10 +238,46 @@ test("Cartesia adapter writes raw SSE before parsing malformed responses", async
     const rawResponse = await readFile(path.join(tmpDir, "attempt-1.sse.txt"), "utf8");
     assert.equal(rawResponse, malformedSse);
     assert.deepEqual(requestBody?.output_format, {
-      container: "mp3",
+      container: "raw",
       sample_rate: 48000,
-      bit_rate: 192000,
+      encoding: "pcm_s16le",
     });
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("Cartesia adapter transcodes raw SSE audio and keeps timestamps", async () => {
+  const tmpDir = await mkdtemp(path.join(os.tmpdir(), "orpheus-cartesia-adapter-success-"));
+  const input = makeChunkInput(tmpDir, "Raw SSE audio should become an MP3 chunk.");
+  const originalFetch = globalThis.fetch;
+  const oneSecondSilence = Buffer.alloc(48_000 * 2);
+  const sse = [
+    "event: chunk",
+    `data: ${JSON.stringify({ type: "chunk", audio: oneSecondSilence.toString("base64") })}`,
+    "",
+    "event: timestamps",
+    `data: ${JSON.stringify({
+      type: "timestamps",
+      word_timestamps: {
+        words: ["Raw", "SSE"],
+        start: [0, 0.4],
+        end: [0.25, 0.7],
+      },
+    })}`,
+    "",
+  ].join("\n");
+
+  globalThis.fetch = async () => makeTextResponse(200, sse);
+
+  try {
+    const adapter = new CartesiaProviderAdapter({ apiKey: "test-key", maxAttempts: 1 });
+    const result = await adapter.synthesizeChunk(input);
+
+    assert.equal(path.basename(result.audioPath), "audio.mp3");
+    assert.ok(result.durationSec > 0.9);
+    assert.deepEqual(result.words.map((word) => word.text), ["Raw", "SSE"]);
+    assert.match(await readFile(path.join(tmpDir, "attempt-1.jsonl"), "utf8"), /timestamps/);
   } finally {
     globalThis.fetch = originalFetch;
   }

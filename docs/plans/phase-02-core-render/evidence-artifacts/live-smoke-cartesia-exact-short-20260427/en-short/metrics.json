@@ -1,0 +1,16 @@
+{
+  "provider": "cartesia",
+  "requestId": "live-smoke-cartesia-theo-en-short-exact-20260427",
+  "scriptChars": 1620,
+  "chunkCount": 1,
+  "chunkRetryCount": 0,
+  "cachedChunkCount": 0,
+  "providerCharactersReused": 0,
+  "totalWallTimeMs": 80953,
+  "audioDurationSec": 85.104,
+  "timestampCoveragePct": 99.63,
+  "estimatedTtsCostUsd": 0.051,
+  "estimatedTotalCostUsd": 0.068,
+  "estimatedCostPerCompletedAudioMinuteUsd": 0.048,
+  "timestampWordCount": 266
+}

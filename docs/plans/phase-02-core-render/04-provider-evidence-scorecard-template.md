@@ -22,8 +22,10 @@ Standardize the run-log fields, review notes, and memo outline used when compari
 | `attempt_id` | Yes | Stable per-run identifier |
 | `duration_band` | Yes | short / ~20 / ~30 |
 | `input_chars` | Yes | Frozen corpus reference value |
-| `requested_audio_format` | Yes | `mp3` or `wav` for the current implementation; additional provider-native formats require a separate product decision |
-| `audio_format_source` | Yes | `provider_native`, `transcoded_from_mp3`, or `derived_from_master` |
+| `requested_provider_source_format` | Yes | Highest-fidelity provider-native source requested for the run, such as `wav`, `linear_pcm`, `raw_pcm`, or a documented provider exception |
+| `production_master_audio_ref` | Yes when audio exists | Provider-native lossless master path or manifest entry; if unavailable, record the reason instead of inferring master quality from delivery audio |
+| `delivery_audio_formats` | Yes when audio exists | User-facing derivative format(s), such as default `mp3` and optional `wav` when export readiness is being tested |
+| `audio_format_source` | Yes | `provider_native_lossless`, `derived_from_master`, `provider_native_lossy`, or `transcoded_from_mp3_packaging_only` |
 | `observed_audio_container` | Yes when audio exists | Container detected from the final asset, such as `mp3` or `wav` |
 | `observed_audio_codec` | Yes when audio exists | Codec / encoding detected from the final asset, such as MP3 or Linear PCM |
 | `sample_rate_hertz` | Yes when audio exists | Final asset sample rate, or `unknown` if the probe cannot determine it |
@@ -46,7 +48,7 @@ Standardize the run-log fields, review notes, and memo outline used when compari
 | `alignment_asset_status` | Yes | success / warning / failure |
 | `subtitle_text_fidelity_notes` | Yes | Normalization drift, wording mismatch, readability risk |
 | `audio_format_verdict` | Yes | `ready_for_internal_master`, `ready_for_delivery`, `ready_for_export`, `hold_for_export`, or `blocked`, with reason in notes |
-| `audio_format_notes` | Yes | Commercial delivery judgment, internal-master judgment, whether the format is provider-native or derived, and any storage / download concern |
+| `audio_format_notes` | Yes | Production-master judgment, commercial delivery judgment, optional `WAV` export judgment, whether each file is provider-native or derived, and any storage / download concern |
 | `tts_ux_scorecard_version` | Yes | Review date or version of the canonical `tts_ux_readiness_scorecard` |
 | `hard_gate_verdict` | Yes | `ready`, `warning`, `blocked`, `manual_required`, `unknown`, or `blocked_by_missing_evidence` before weighted scoring |
 | `weighted_score` | No | Allowed only when hard gates and required evidence coverage pass |
@@ -75,7 +77,7 @@ Use one companion scenario table per benchmark packet so pricing review stays co
 | Topic | Minimum question |
 |---|---|
 | Stable audio | Did the output complete without catastrophic drift or unusable audio? |
-| Audio format | Is the tested format appropriate for user delivery, internal master use, both, or neither? |
+| Audio format | Is the provider-native lossless source appropriate for internal master use, and are the derived delivery files appropriate for `MP3` default delivery and optional `WAV` download? |
 | Orchestration cost | Did hidden chunking remain implementation-worthy after chunk / stitch / retry overhead? |
 | Timing credibility | Are provider timestamps useful, and are internal alignment assets credible against final audio in both English and Spanish? |
 | Language readiness | Do English and Spanish both have enough evidence to support the planned first-gate claim? |
@@ -88,7 +90,7 @@ Use one companion scenario table per benchmark packet so pricing review stays co
 1. `Summary`: which provider currently leads and why
 2. `Envelope`: what single-project duration looks honestly supportable right now
 3. `Language readiness`: English and Spanish output / timing verdicts
-4. `Audio format`: recommended master format, default delivery format, and whether WAV export stays held
+4. `Audio format`: recommended provider-native master format, default `MP3` delivery format, and whether optional `WAV` download / export stays held
 5. `Quality`: seam behavior, drift, timing credibility, subtitle-text-fidelity risk
 6. `Economics`: observed cost per completed minute and any fallback / retry concern
 7. `TTS UX readiness`: final verdict from the canonical scorecard, missing evidence, and any manual review still required
@@ -110,7 +112,7 @@ Use one companion scenario table per benchmark packet so pricing review stays co
 1. Every representative run produces one scorecard row.
 2. Every provider gets a comparable row set across the same frozen `EN + ES` corpus.
 3. The scenario table stays reconcilable with `/docs/plans/phase-02-core-render/05-pricing-unit-economics-model-v0.41.xlsx`.
-4. Audio-format verdicts are present for both default delivery and production-master candidates before the memo recommends a product format.
+4. Audio-format verdicts are present for the provider-native production-master candidate, default `MP3` delivery, and optional `WAV` export before the memo recommends a product format.
 5. The evidence artifact path resolves to a packet that survives worktree cleanup and is included in the merge.
 6. The row records hard-gate status and missing evidence before any weighted score is used.
 7. The memo can be written directly from the scorecard without reopening raw provider logs.

@@ -1,0 +1,25 @@
+WEBVTT
+
+1
+00:00:00.077 --> 00:00:01.641
+numeral Prueba breve de narracion.
+
+2
+00:00:01.935 --> 00:00:06.796
+Esta es una prueba corta para confirmar que la narracion en espanol acepta texto con puntuacion y conserva
+
+3
+00:00:06.796 --> 00:00:11.951
+el contenido original. El objetivo es revisar la ruta del proveedor, no evaluar una pieza larga.
+
+4
+00:00:12.260 --> 00:00:14.892
+Primero, el sistema debe leer el texto sin reescribirlo.
+
+5
+00:00:14.985 --> 00:00:17.616
+Segundo, debe agregar pausas suaves entre parrafos.
+
+6
+00:00:17.647 --> 00:00:21.378
+Tercero, debe guardar evidencia suficiente para revisar el resultado despues.
