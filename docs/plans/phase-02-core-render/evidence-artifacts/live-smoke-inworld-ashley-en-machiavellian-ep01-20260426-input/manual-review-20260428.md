@@ -1,6 +1,6 @@
 # Inworld Ashley EN Pressure Manual Review
 
-> Status: founder listening pending
+> Status: partial founder spot-check recorded; full listen pending
 > Role: manual-review worksheet for retained English pressure audio
 > Normative for product rules: no
 > Canonical owner: Delivery owner + engineering lead
@@ -37,9 +37,9 @@ It verifies the review target and records the human-listening rubric. It does no
 
 | Dimension | What to listen for | Blocking examples | Status |
 |---|---|---|---|
-| `perceptual_quality` | Naturalness, clarity, severe artifacts, fatigue over the full 36-minute listen | repeated robotic artifacts, distracting distortion, severe monotony, listener fatigue that makes the output unusable | `pending` |
-| `voice_persona_fit` | Match between Ashley and the English psychology / educational-explainer persona | voice feels wrong for the niche, too casual, too synthetic, or not credible enough for long-form narration | `pending` |
-| `stitch_quality` | Audible joins around chunk boundaries | clipped words, sudden tone changes, repeated phrases, unnatural silence, abrupt jumps | `pending` |
+| `perceptual_quality` | Naturalness, clarity, severe artifacts, fatigue over the full 36-minute listen | repeated robotic artifacts, distracting distortion, severe monotony, listener fatigue that makes the output unusable | `partial_spot_check_passed_with_opening_phrasing_warning` |
+| `voice_persona_fit` | Match between Ashley and the English psychology / educational-explainer persona | voice feels wrong for the niche, too casual, too synthetic, or not credible enough for long-form narration | `warning_not_final_candidate` |
+| `stitch_quality` | Audible joins around chunk boundaries | clipped words, sudden tone changes, repeated phrases, unnatural silence, abrupt jumps | `first_three_boundaries_no_material_issue` |
 | `text_fidelity` | Source words preserved closely enough for this stage | skipped sections, repeated paragraphs, major substitutions, hallucinated lines | `pending` |
 | `pronunciation_control` | Names, numerals, terminology, emphasis | repeated wrong pronunciation, wrong emphasis that changes meaning, distracting accent issue | `pending` |
 | `subtitle_timing_readiness` | Captions close enough to keep internal timing work alive | caption drift, unreadable spacing, obvious mismatch between spoken audio and cue windows | `pending` |
@@ -66,22 +66,43 @@ It verifies the review target and records the human-listening rubric. It does no
    - `20:00`
    - `34:00`
 
+## Founder Spot-Check 2026-04-28
+
+Founder review sampled the first three stitch checkpoints:
+
+| Timestamp | Founder result |
+|---|---|
+| `01:51.58` | No material seam issue heard. |
+| `03:31.14` | No material seam issue heard. |
+| `05:20.28` | No material seam issue heard. |
+
+Additional founder notes:
+
+1. No obvious machine feel in the sampled review.
+2. Some words / phrases felt awkward, especially in the opening lines.
+3. Ashley's voice color is not the right final-fit direction for this English persona.
+4. Preferred future English voice direction: male, mature, steady.
+
+Evidence interpretation:
+
+This spot-check reduces sampled seam and obvious machine-artifact risk. It does not complete full listen-through, full text-fidelity review, pronunciation review, subtitle timing QA, or final English voice selection.
+
 ## Founder Acceptance Fields
 
 Fill or replace this section only after actual listening.
 
 | Field | Value |
 |---|---|
-| `full_listen_completed` | `pending` |
-| `mp3_delivery_candidate` | `pending` |
-| `voice_persona_fit` | `pending` |
-| `perceptual_quality` | `pending` |
-| `stitch_quality` | `pending` |
+| `full_listen_completed` | `no_partial_spot_check_only` |
+| `mp3_delivery_candidate` | `partial_spot_check_no_obvious_machine_feel_with_opening_phrasing_warning` |
+| `voice_persona_fit` | `warning_ashley_not_final_candidate_prefer_mature_steady_male_voice` |
+| `perceptual_quality` | `partial_spot_check_passed_with_opening_phrasing_warning` |
+| `stitch_quality` | `first_three_boundaries_no_material_issue` |
 | `pronunciation_control` | `pending` |
 | `text_fidelity` | `pending` |
 | `subtitle_timing_readiness` | `pending` |
-| `blocking_timestamps` | `pending` |
-| `accepted_for_en_evidence` | `pending` |
+| `blocking_timestamps` | `none_in_sampled_stitch_points` |
+| `accepted_for_en_evidence` | `partial_spot_check_only_not_full_ready` |
 
 ## Current Decision
 
@@ -89,6 +110,8 @@ Fill or replace this section only after actual listening.
 
 `manual_review_completed=false`
 
-`en_pressure_product_readiness=blocked_until_founder_listening_acceptance`
+`founder_spot_check_recorded=true`
+
+`en_pressure_product_readiness=blocked_until_full_listen_or_revised_voice_decision`
 
 No new provider call is justified by this note alone. If founder listening finds blocking issues, classify the issue first; do not rerun the provider by default.

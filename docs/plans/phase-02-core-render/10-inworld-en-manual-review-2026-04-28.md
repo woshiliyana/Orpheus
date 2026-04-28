@@ -1,6 +1,6 @@
 # Inworld EN Manual Review Packet
 
-> Status: awaiting founder listening acceptance
+> Status: partial founder spot-check recorded; full listen pending
 > Role: manual-review worksheet and evidence-retention packet
 > Normative for product rules: no
 > Canonical owner: Delivery owner + engineering lead
@@ -19,21 +19,24 @@ It does not run Inworld, generate ASR/STT, produce new audio, change runtime cod
 | Decision field | Verdict |
 |---|---|
 | `en_pressure_audio_assets` | `retained_and_hash_verified` |
-| `manual_listening_review` | `prepared_pending_founder_acceptance` |
-| `perceptual_quality` | `manual_required` |
-| `stitch_quality` | `manual_required` |
+| `manual_listening_review` | `partial_spot_check_recorded_full_listen_pending` |
+| `perceptual_quality` | `spot_check_passed_with_opening_phrasing_warning` |
+| `voice_persona_fit` | `warning_ashley_not_final_candidate_prefer_mature_steady_male_voice` |
+| `stitch_quality` | `first_three_spot_checks_no_material_issue` |
 | `text_fidelity` | `manual_required_or_asr_diff_required` |
 | `subtitle_timing_readiness` | `manual_required` |
 | `next_paid_provider_run` | `hold` |
-| `inworld_en_product_readiness` | `blocked_until_manual_review_result` |
+| `inworld_en_product_readiness` | `blocked_until_full_listen_or_revised_voice_decision` |
 | `public_promise_change` | `none` |
 
 Decision summary:
 
 1. The retained English pressure audio assets are present on the local main worktree and match the hashes recorded in `large-artifact-manifest.json`.
 2. The correct next evidence reduction is human review of the existing MP3 delivery candidate plus targeted WAV / seam spot checks, not a new Inworld generation pass.
-3. The review is ready for founder acceptance, but no subjective listening verdict is recorded by this packet.
-4. Inworld remains `continue_with_warnings`; this packet does not clear product readiness.
+3. Founder spot-check on 2026-04-28 sampled the first three stitch boundaries and found no material seam issue.
+4. Founder spot-check found no obvious machine feel overall, with an opening-phrasing warning.
+5. Ashley is not accepted as the final English persona candidate; future EN voice selection should prefer a mature, steady male voice.
+6. Inworld remains `continue_with_warnings`; this packet does not clear product readiness.
 
 ## Evidence Scope
 
@@ -54,13 +57,28 @@ Decision summary:
 
 | Review area | Primary evidence | Required founder judgment | Current status |
 |---|---|---|---|
-| `perceptual_quality` | Full MP3 listen-through | Is the narration natural enough for a long educational explainer, without distracting artifacts or fatigue? | `manual_required` |
-| `voice_persona_fit` | Full MP3 listen-through | Does Ashley fit the psychology / educational-explainer tone well enough to remain the EN default candidate? | `manual_required` |
-| `stitch_quality` | MP3 plus stitch spot checks around chunk joins | Are the hidden chunk joins audible, abrupt, clipped, doubled, or otherwise disruptive? | `manual_required` |
+| `perceptual_quality` | Full MP3 listen-through | Is the narration natural enough for a long educational explainer, without distracting artifacts or fatigue? | `partial_spot_check_passed_with_opening_phrasing_warning` |
+| `voice_persona_fit` | Full MP3 listen-through | Does Ashley fit the psychology / educational-explainer tone well enough to remain the EN default candidate? | `warning_not_final_candidate` |
+| `stitch_quality` | MP3 plus stitch spot checks around chunk joins | Are the hidden chunk joins audible, abrupt, clipped, doubled, or otherwise disruptive? | `first_three_boundaries_no_material_issue` |
 | `text_fidelity` | MP3 against `source-script.md`; optional ASR diff later | Are omissions, substitutions, repeated phrases, or wrong readings present at a level that would block product use? | `manual_required_or_asr_diff_required` |
 | `pronunciation_control` | Full MP3 listen-through | Are names, numerals, psychological terms, and emphasis acceptable for English output? | `manual_required` |
 | `subtitle_timing_readiness` | MP3 with `subtitles.srt` / `subtitles.vtt` spot checks | Are captions near enough to audio for internal alignment evidence, while public SRT export remains held? | `manual_required` |
 | `format_delivery` | MP3 delivery candidate; WAV only for master spot checks | Is the derived MP3 acceptable as delivery audio for this evidence scope? | `manual_required` |
+
+## Founder Spot-Check Backfill
+
+On 2026-04-28, founder review sampled stitch boundaries at `01:51.58`, `03:31.14`, and `05:20.28`.
+
+Recorded result:
+
+1. No issue was heard at those three sampled stitch boundaries.
+2. No obvious machine feel was heard in the sampled review.
+3. Some wording / phrasing felt awkward, especially in the opening lines.
+4. Ashley's voice color is not a strong fit for the intended English persona. The preferred future direction is a mature, steady male voice.
+
+Interpretation:
+
+This reduces the seam and obvious-artifact risk for the sampled section, but it does not complete the full listen-through, source-fidelity review, pronunciation review, subtitle timing review, or final voice-selection decision.
 
 ## Suggested Spot Checks
 
@@ -96,6 +114,7 @@ Founder acceptance should answer these directly before the packet can reduce the
 | `minor_warnings` with timestamps | Record warning timestamps in the manual-review note before any paid rerun. |
 | `blocking_issue` | Do not rerun immediately; first classify whether the issue is voice fit, stitch behavior, text fidelity, timing, or provider output quality. |
 | `needs_asr_diff` | Open a no-provider-call ASR/text-fidelity lane before another paid TTS run. |
+| `voice_not_final_candidate` | Do not treat Ashley as the locked EN default voice. Run future EN voice selection toward a mature, steady male voice before any launch-facing English claim. |
 
 ## Scope Boundary
 
