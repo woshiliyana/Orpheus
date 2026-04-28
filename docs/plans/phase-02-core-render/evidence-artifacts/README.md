@@ -14,6 +14,7 @@ This directory is the default merge-tracked home for selected Phase 2 provider-b
 - [`narration-pacing-closeout-20260427.md`](./narration-pacing-closeout-20260427.md) records the Inworld `exact` vs `natural_basic` listening verdict across short and structure-stress EN / ES evidence.
 - [`live-smoke-cartesia-medium-20260428/cartesia-medium-listening-timing-closeout-20260428.md`](./live-smoke-cartesia-medium-20260428/cartesia-medium-listening-timing-closeout-20260428.md) records the Cartesia medium timing spot-check, listening closeout, provider scorecard, and second-provider decision.
 - [`../08-provider-decision-scorecard-2026-04-28.md`](../08-provider-decision-scorecard-2026-04-28.md) synthesizes the retained Inworld and Cartesia packets into the staged Phase 2 provider decision.
+- [`../09-inworld-product-readiness-closeout-2026-04-28.md`](../09-inworld-product-readiness-closeout-2026-04-28.md) synthesizes retained Inworld packets into a product-readiness evidence-gap closeout and names EN manual review as the next no-new-provider-call lane.
 
 ## Rules
 
