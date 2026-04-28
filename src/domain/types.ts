@@ -1,6 +1,20 @@
 export type OutputAudioFormat = "mp3" | "wav";
 export type ProviderName = "inworld" | "cartesia";
 export type AlignmentSource = "provider_native" | "stt_fallback";
+export type AudioAssetFormat = OutputAudioFormat | "raw_pcm";
+export type AudioContainer = "mp3" | "wav" | "raw";
+export type AudioCodec = "mp3" | "pcm_s16le" | "linear16";
+export type AudioFormatSource =
+  | "provider_native_lossless"
+  | "provider_native_lossy"
+  | "derived_from_master"
+  | "transcoded_from_mp3_packaging_only";
+export type AudioFormatVerdict =
+  | "ready_for_internal_master"
+  | "ready_for_delivery"
+  | "ready_for_export"
+  | "hold_for_export"
+  | "blocked";
 export type FailureStage =
   | "input_validation"
   | "entitlement_check"
@@ -56,6 +70,7 @@ export interface ChunkSynthesisResult {
   rawResponsePaths: string[];
   attemptCount: number;
   providerCharactersProcessed: number;
+  productionMasterAudioRef?: ProviderAudioAssetRef;
   cacheHit?: boolean;
   cacheSource?: "chunk_result_metadata" | "legacy_provider_response";
 }
@@ -152,6 +167,48 @@ export interface RunMetrics {
   failureReason?: string;
 }
 
+export interface ProviderAudioAssetRef {
+  asset_ref: string;
+  format: AudioAssetFormat;
+  source: AudioFormatSource;
+  provider_native: boolean;
+  lossless: boolean;
+  container?: AudioContainer;
+  codec?: AudioCodec;
+  sample_rate_hertz?: number;
+  bitrate_bps?: number;
+  channel_count?: number;
+  derived_from_asset_ref?: string;
+  derived_from_asset_refs?: string[];
+}
+
+export interface AudioAssetRef extends ProviderAudioAssetRef {
+  role: "production_master_audio" | "delivery_audio";
+  audio_format_verdict: AudioFormatVerdict;
+}
+
+export interface AudioFormatPolicy {
+  requested_provider_source_format: AudioAssetFormat;
+  provider_source_encoding: string;
+  provider_source_lossless: boolean;
+  production_master_audio: {
+    status: "generated" | "not_generated";
+    audio_format_verdict: AudioFormatVerdict;
+    reason?: string;
+  };
+  default_delivery_audio: {
+    format: OutputAudioFormat;
+    generated: boolean;
+    audio_format_verdict: AudioFormatVerdict;
+  };
+  delivery_audio_formats: OutputAudioFormat[];
+  optional_wav_export: {
+    audio_format_verdict: AudioFormatVerdict;
+    reason: string;
+  };
+  notes: string[];
+}
+
 export interface ArtifactManifest {
   project_id: string;
   run_id: string;
@@ -189,6 +246,9 @@ export interface ArtifactManifest {
   output_language: string;
   final_audio_asset_ref?: string;
   final_audio_duration_seconds?: number;
+  audio_format_policy?: AudioFormatPolicy;
+  production_master_audio_ref?: AudioAssetRef[];
+  delivery_audio_ref?: AudioAssetRef[];
   internal_alignment_asset_ref?: {
     word_timings_json: string;
     srt: string;

@@ -4,6 +4,9 @@ import { writeFile } from "node:fs/promises";
 
 import type {
   ArtifactManifest,
+  AudioAssetFormat,
+  AudioAssetRef,
+  AudioFormatPolicy,
   ChunkSynthesisResult,
   FailureStage,
   InputQualityReport,
@@ -99,6 +102,170 @@ function buildInputAdapterRef(input: {
   };
 }
 
+function getRequestedProviderSourceFormat(input: {
+  providerName: NarrationJobInput["provider"];
+  outputFormat: NarrationJobInput["outputFormat"];
+}): AudioAssetFormat {
+  if (input.providerName === "cartesia") {
+    return "raw_pcm";
+  }
+
+  return input.outputFormat;
+}
+
+function buildProductionMasterAudioRefs(input: {
+  providerName: NarrationJobInput["provider"];
+  outputFormat: NarrationJobInput["outputFormat"];
+  finalAudioPath: string;
+  chunkResults: Array<{ result: ChunkSynthesisResult }>;
+}): AudioAssetRef[] {
+  const seenRefs = new Set<string>();
+  const refs: AudioAssetRef[] = [];
+
+  for (const chunkResult of input.chunkResults) {
+    const productionMasterAudioRef = chunkResult.result.productionMasterAudioRef ??
+      (input.providerName === "cartesia"
+        ? {
+            asset_ref: path.join(path.dirname(chunkResult.result.audioPath), "audio.raw.pcm"),
+            format: "raw_pcm" as const,
+            source: "provider_native_lossless" as const,
+            provider_native: true,
+            lossless: true,
+            container: "raw" as const,
+            codec: "pcm_s16le" as const,
+            sample_rate_hertz: 48000,
+            channel_count: 1,
+          }
+        : undefined);
+    if (productionMasterAudioRef === undefined || seenRefs.has(productionMasterAudioRef.asset_ref)) {
+      continue;
+    }
+
+    seenRefs.add(productionMasterAudioRef.asset_ref);
+    refs.push({
+      ...productionMasterAudioRef,
+      role: "production_master_audio",
+      audio_format_verdict: "ready_for_internal_master",
+    });
+  }
+
+  if (input.providerName === "inworld" && input.outputFormat === "wav" && !seenRefs.has(input.finalAudioPath)) {
+    refs.push({
+      role: "production_master_audio",
+      asset_ref: input.finalAudioPath,
+      format: "wav",
+      source: "provider_native_lossless",
+      provider_native: true,
+      lossless: true,
+      container: "wav",
+      codec: "pcm_s16le",
+      sample_rate_hertz: 48000,
+      bitrate_bps: 768000,
+      channel_count: 1,
+      audio_format_verdict: "ready_for_internal_master",
+    });
+  }
+
+  return refs;
+}
+
+function buildDeliveryAudioRefs(input: {
+  finalAudioPath: string;
+  outputFormat: NarrationJobInput["outputFormat"];
+  productionMasterAudioRefs: AudioAssetRef[];
+}): AudioAssetRef[] {
+  const matchingMaster = input.productionMasterAudioRefs.find(
+    (assetRef) => assetRef.asset_ref === input.finalAudioPath,
+  );
+  const sourceMasters = input.productionMasterAudioRefs.filter(
+    (assetRef) => assetRef.asset_ref !== input.finalAudioPath,
+  );
+  const isDerivedFromMaster = matchingMaster === undefined && sourceMasters.length > 0;
+  const isLosslessDelivery = input.outputFormat === "wav" && (matchingMaster !== undefined || isDerivedFromMaster);
+  const derivedFromAssetRefs = isDerivedFromMaster
+    ? sourceMasters.map((assetRef) => assetRef.asset_ref)
+    : undefined;
+
+  return [{
+    role: "delivery_audio",
+    asset_ref: input.finalAudioPath,
+    format: input.outputFormat,
+    source: isDerivedFromMaster
+      ? "derived_from_master"
+      : isLosslessDelivery
+        ? "provider_native_lossless"
+        : "provider_native_lossy",
+    provider_native: matchingMaster !== undefined,
+    lossless: isLosslessDelivery,
+    container: input.outputFormat,
+    codec: input.outputFormat === "wav" ? "pcm_s16le" : "mp3",
+    derived_from_asset_ref: derivedFromAssetRefs?.length === 1 ? derivedFromAssetRefs[0] : undefined,
+    derived_from_asset_refs: derivedFromAssetRefs,
+    audio_format_verdict: input.outputFormat === "mp3" ? "ready_for_delivery" : "hold_for_export",
+  }];
+}
+
+function buildAudioFormatPolicy(input: {
+  providerName: NarrationJobInput["provider"];
+  outputFormat: NarrationJobInput["outputFormat"];
+  productionMasterAudioRefs: AudioAssetRef[];
+  deliveryAudioRefs: AudioAssetRef[];
+}): AudioFormatPolicy {
+  const hasProductionMaster = input.productionMasterAudioRefs.length > 0;
+  const hasDefaultDeliveryMp3 = input.deliveryAudioRefs.some(
+    (assetRef) => assetRef.format === "mp3" && assetRef.audio_format_verdict === "ready_for_delivery",
+  );
+  const deliveryAudioFormats = input.deliveryAudioRefs
+    .map((assetRef) => assetRef.format)
+    .filter((format): format is NarrationJobInput["outputFormat"] => format === "mp3" || format === "wav");
+
+  const notes: string[] = [];
+  if (hasProductionMaster) {
+    notes.push("Production-master audio is retained separately from user-facing delivery audio.");
+  } else {
+    notes.push("No provider-native lossless production master was generated for this run.");
+  }
+  if (hasDefaultDeliveryMp3) {
+    notes.push("Default MP3 delivery audio is present for this run.");
+  } else {
+    notes.push("Default MP3 delivery audio was not generated by this run.");
+  }
+  notes.push("Optional WAV export remains held until an explicit export-readiness verdict is recorded.");
+
+  return {
+    requested_provider_source_format: getRequestedProviderSourceFormat({
+      providerName: input.providerName,
+      outputFormat: input.outputFormat,
+    }),
+    provider_source_encoding: input.providerName === "cartesia"
+      ? "pcm_s16le"
+      : input.outputFormat === "wav"
+        ? "LINEAR16"
+        : "MP3",
+    provider_source_lossless: hasProductionMaster,
+    production_master_audio: {
+      status: hasProductionMaster ? "generated" : "not_generated",
+      audio_format_verdict: hasProductionMaster ? "ready_for_internal_master" : "blocked",
+      reason: hasProductionMaster
+        ? undefined
+        : "The requested provider output did not produce a retained lossless source; do not treat delivery audio as master evidence.",
+    },
+    default_delivery_audio: {
+      format: "mp3",
+      generated: hasDefaultDeliveryMp3,
+      audio_format_verdict: hasDefaultDeliveryMp3 ? "ready_for_delivery" : "hold_for_export",
+    },
+    delivery_audio_formats: [...new Set(deliveryAudioFormats)],
+    optional_wav_export: {
+      audio_format_verdict: "hold_for_export",
+      reason: input.outputFormat === "wav"
+        ? "WAV exists for this run, but public WAV export still requires an explicit export-readiness pass."
+        : "WAV export was not generated; derive it only from a retained lossless master in a later export-readiness pass.",
+    },
+    notes,
+  };
+}
+
 function collectInputAdapterWarnings(input: {
   pacingPlan: PacingPlan;
   inputQualityReport: InputQualityReport;
@@ -153,15 +320,23 @@ function buildArtifactManifest(input: {
   cachedChunkCount: number;
   warnings: string[];
   finalAudioPath: string;
+  outputFormat: NarrationJobInput["outputFormat"];
   durationSec: number;
   wordTimingsPath: string;
   srtPath: string;
   vttPath: string;
   estimatedTotalCostUsd: number;
+  productionMasterAudioRefs: AudioAssetRef[];
   inputAdapterPaths: InputAdapterArtifactPaths;
   pacingPlan: PacingPlan;
   inputQualityReport: InputQualityReport;
 }): ArtifactManifest {
+  const deliveryAudioRefs = buildDeliveryAudioRefs({
+    finalAudioPath: input.finalAudioPath,
+    outputFormat: input.outputFormat,
+    productionMasterAudioRefs: input.productionMasterAudioRefs,
+  });
+
   return {
     project_id: input.projectId,
     run_id: input.requestId,
@@ -186,6 +361,14 @@ function buildArtifactManifest(input: {
     output_language: input.language,
     final_audio_asset_ref: input.finalAudioPath,
     final_audio_duration_seconds: Number(input.durationSec.toFixed(3)),
+    audio_format_policy: buildAudioFormatPolicy({
+      providerName: input.providerName,
+      outputFormat: input.outputFormat,
+      productionMasterAudioRefs: input.productionMasterAudioRefs,
+      deliveryAudioRefs,
+    }),
+    production_master_audio_ref: input.productionMasterAudioRefs,
+    delivery_audio_ref: deliveryAudioRefs,
     internal_alignment_asset_ref: {
       word_timings_json: input.wordTimingsPath,
       srt: input.srtPath,
@@ -450,6 +633,12 @@ export async function runNarrationJob(
       sttFallbackPerAudioMinuteUsd: 0,
     });
     await writeJson(metricsPath, metrics);
+    const productionMasterAudioRefs = buildProductionMasterAudioRefs({
+      providerName: provider.name,
+      outputFormat: input.outputFormat,
+      finalAudioPath: stitched.outputPath,
+      chunkResults,
+    });
 
     const artifactManifest = buildArtifactManifest({
       projectId,
@@ -463,11 +652,13 @@ export async function runNarrationJob(
       cachedChunkCount: metrics.cachedChunkCount ?? 0,
       warnings,
       finalAudioPath: stitched.outputPath,
+      outputFormat: input.outputFormat,
       durationSec: stitched.totalDurationSec,
       wordTimingsPath,
       srtPath,
       vttPath,
       estimatedTotalCostUsd: metrics.estimatedTotalCostUsd,
+      productionMasterAudioRefs,
       inputAdapterPaths,
       pacingPlan: pacingArtifacts.pacingPlan,
       inputQualityReport: pacingArtifacts.inputQualityReport,
