@@ -1,0 +1,39 @@
+{
+  "attempt_id": "live-smoke-cartesia-medium-20260428",
+  "commands": [
+    {
+      "request_id": "live-smoke-cartesia-theo-en-medium-exact-20260428",
+      "command": "CARTESIA_MAX_ATTEMPTS=1 ./scripts/live-smoke/phase2-live-smoke.sh --provider cartesia --voice 79f8b5fb-2cc8-479a-80df-29f7a7cf1a3e --language en --script fixtures/frozen-corpus/scripts/en-control-medium.txt --request-id live-smoke-cartesia-theo-en-medium-exact-20260428 --output-dir '/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke' --format mp3 --pacing-mode exact --input-validation strict",
+      "stdout_json": {
+        "requestId": "live-smoke-cartesia-theo-en-medium-exact-20260428",
+        "provider": "cartesia",
+        "pacingMode": "exact",
+        "inputQualityStatus": "pass",
+        "audioPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/artifacts/final.mp3",
+        "srtPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/artifacts/subtitles.srt",
+        "vttPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/artifacts/subtitles.vtt",
+        "wordTimingsPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/artifacts/word-timings.json",
+        "spliceReportPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/artifacts/splice-report.json",
+        "artifactManifestPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/artifacts/artifact-manifest.json",
+        "metricsPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/artifacts/metrics.json"
+      }
+    },
+    {
+      "request_id": "live-smoke-cartesia-pedro-es-medium-exact-20260428",
+      "command": "CARTESIA_MAX_ATTEMPTS=1 ./scripts/live-smoke/phase2-live-smoke.sh --provider cartesia --voice 15d0c2e2-8d29-44c3-be23-d585d5f154a1 --language es --script fixtures/frozen-corpus/scripts/es-control-medium.txt --request-id live-smoke-cartesia-pedro-es-medium-exact-20260428 --output-dir '/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke' --format mp3 --pacing-mode exact --input-validation strict",
+      "stdout_json": {
+        "requestId": "live-smoke-cartesia-pedro-es-medium-exact-20260428",
+        "provider": "cartesia",
+        "pacingMode": "exact",
+        "inputQualityStatus": "pass",
+        "audioPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/artifacts/final.mp3",
+        "srtPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/artifacts/subtitles.srt",
+        "vttPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/artifacts/subtitles.vtt",
+        "wordTimingsPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/artifacts/word-timings.json",
+        "spliceReportPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/artifacts/splice-report.json",
+        "artifactManifestPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/artifacts/artifact-manifest.json",
+        "metricsPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/artifacts/metrics.json"
+      }
+    }
+  ]
+}

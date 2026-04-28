@@ -1,0 +1,146 @@
+{
+  "attempt_id": "live-smoke-cartesia-medium-20260428",
+  "provider": "cartesia",
+  "pacing_mode": "exact",
+  "input_validation_mode": "strict",
+  "api_docs_checked": "Context7 Cartesia docs on 2026-04-28",
+  "runs": [
+    {
+      "request_id": "live-smoke-cartesia-theo-en-medium-exact-20260428",
+      "provider": "cartesia",
+      "language": "en",
+      "script_id": "en-control-medium",
+      "voice": "Theo - Modern Narrator",
+      "voice_id": "79f8b5fb-2cc8-479a-80df-29f7a7cf1a3e",
+      "script_chars": 3139,
+      "script_words": 504,
+      "chunk_count": 2,
+      "stitch_count": 1,
+      "retry_count": 0,
+      "cached_chunk_count": 0,
+      "total_wall_time_seconds": 29.015,
+      "audio_duration_seconds": 174.504,
+      "timestamp_coverage_pct": 99.8,
+      "estimated_tts_cost_usd": 0.098,
+      "estimated_total_cost_usd": 0.133,
+      "warning_codes": [
+        "timestamp_coverage_partial"
+      ],
+      "audio_format_policy": {
+        "requested_provider_source_format": "raw_pcm",
+        "provider_source_encoding": "pcm_s16le",
+        "provider_source_lossless": true,
+        "production_master_audio": {
+          "status": "generated",
+          "audio_format_verdict": "ready_for_internal_master"
+        },
+        "default_delivery_audio": {
+          "format": "mp3",
+          "generated": true,
+          "audio_format_verdict": "ready_for_delivery"
+        },
+        "delivery_audio_formats": [
+          "mp3"
+        ],
+        "optional_wav_export": {
+          "audio_format_verdict": "hold_for_export",
+          "reason": "WAV export was not generated; derive it only from a retained lossless master in a later export-readiness pass."
+        },
+        "notes": [
+          "Production-master audio is retained separately from user-facing delivery audio.",
+          "Default MP3 delivery audio is present for this run.",
+          "Optional WAV export remains held until an explicit export-readiness verdict is recorded."
+        ]
+      },
+      "production_master_audio_ref_count": 2,
+      "delivery_audio_ref": [
+        {
+          "role": "delivery_audio",
+          "asset_ref": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/artifacts/final.mp3",
+          "format": "mp3",
+          "source": "derived_from_master",
+          "provider_native": false,
+          "lossless": false,
+          "container": "mp3",
+          "codec": "mp3",
+          "derived_from_asset_refs": [
+            "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/chunks/000/audio.raw.pcm",
+            "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-theo-en-medium-exact-20260428/chunks/001/audio.raw.pcm"
+          ],
+          "audio_format_verdict": "ready_for_delivery"
+        }
+      ],
+      "manual_listening_review": "accepted",
+      "manual_review_note": "User review on 2026-04-28: no material issue heard in the medium sample."
+    },
+    {
+      "request_id": "live-smoke-cartesia-pedro-es-medium-exact-20260428",
+      "provider": "cartesia",
+      "language": "es",
+      "script_id": "es-control-medium",
+      "voice": "Pedro - Formal Speaker",
+      "voice_id": "15d0c2e2-8d29-44c3-be23-d585d5f154a1",
+      "script_chars": 3386,
+      "script_words": 552,
+      "chunk_count": 3,
+      "stitch_count": 2,
+      "retry_count": 0,
+      "cached_chunk_count": 0,
+      "total_wall_time_seconds": 28.035,
+      "audio_duration_seconds": 177.936,
+      "timestamp_coverage_pct": 99.64,
+      "estimated_tts_cost_usd": 0.106,
+      "estimated_total_cost_usd": 0.141,
+      "warning_codes": [
+        "timestamp_coverage_partial"
+      ],
+      "audio_format_policy": {
+        "requested_provider_source_format": "raw_pcm",
+        "provider_source_encoding": "pcm_s16le",
+        "provider_source_lossless": true,
+        "production_master_audio": {
+          "status": "generated",
+          "audio_format_verdict": "ready_for_internal_master"
+        },
+        "default_delivery_audio": {
+          "format": "mp3",
+          "generated": true,
+          "audio_format_verdict": "ready_for_delivery"
+        },
+        "delivery_audio_formats": [
+          "mp3"
+        ],
+        "optional_wav_export": {
+          "audio_format_verdict": "hold_for_export",
+          "reason": "WAV export was not generated; derive it only from a retained lossless master in a later export-readiness pass."
+        },
+        "notes": [
+          "Production-master audio is retained separately from user-facing delivery audio.",
+          "Default MP3 delivery audio is present for this run.",
+          "Optional WAV export remains held until an explicit export-readiness verdict is recorded."
+        ]
+      },
+      "production_master_audio_ref_count": 3,
+      "delivery_audio_ref": [
+        {
+          "role": "delivery_audio",
+          "asset_ref": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/artifacts/final.mp3",
+          "format": "mp3",
+          "source": "derived_from_master",
+          "provider_native": false,
+          "lossless": false,
+          "container": "mp3",
+          "codec": "mp3",
+          "derived_from_asset_refs": [
+            "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/chunks/000/audio.raw.pcm",
+            "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/chunks/001/audio.raw.pcm",
+            "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/chunks/002/audio.raw.pcm"
+          ],
+          "audio_format_verdict": "ready_for_delivery"
+        }
+      ],
+      "manual_listening_review": "accepted_with_voice_speed_note",
+      "manual_review_note": "User review on 2026-04-28: no material issue; Spanish sounds relatively fast, likely due to voice selection, but do not adjust pacing or voice hastily."
+    }
+  ]
+}

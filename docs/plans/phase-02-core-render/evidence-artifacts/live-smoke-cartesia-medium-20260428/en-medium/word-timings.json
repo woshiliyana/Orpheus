@@ -1,0 +1,3020 @@
+[
+  {
+    "text": "Educational",
+    "startSec": 0.015,
+    "endSec": 0.681,
+    "chunkIndex": 0
+  },
+  {
+    "text": "explainers",
+    "startSec": 0.681,
+    "endSec": 1.161,
+    "chunkIndex": 0
+  },
+  {
+    "text": "win",
+    "startSec": 1.161,
+    "endSec": 1.331,
+    "chunkIndex": 0
+  },
+  {
+    "text": "trust",
+    "startSec": 1.331,
+    "endSec": 1.734,
+    "chunkIndex": 0
+  },
+  {
+    "text": "by",
+    "startSec": 1.734,
+    "endSec": 1.873,
+    "chunkIndex": 0
+  },
+  {
+    "text": "reducing",
+    "startSec": 1.873,
+    "endSec": 2.353,
+    "chunkIndex": 0
+  },
+  {
+    "text": "uncertainty.",
+    "startSec": 2.353,
+    "endSec": 3.111,
+    "chunkIndex": 0
+  },
+  {
+    "text": "A",
+    "startSec": 3.468,
+    "endSec": 3.529,
+    "chunkIndex": 0
+  },
+  {
+    "text": "good",
+    "startSec": 3.529,
+    "endSec": 3.731,
+    "chunkIndex": 0
+  },
+  {
+    "text": "explainer",
+    "startSec": 3.731,
+    "endSec": 4.211,
+    "chunkIndex": 0
+  },
+  {
+    "text": "does",
+    "startSec": 4.211,
+    "endSec": 4.396,
+    "chunkIndex": 0
+  },
+  {
+    "text": "not",
+    "startSec": 4.396,
+    "endSec": 4.644,
+    "chunkIndex": 0
+  },
+  {
+    "text": "merely",
+    "startSec": 4.644,
+    "endSec": 4.907,
+    "chunkIndex": 0
+  },
+  {
+    "text": "dump",
+    "startSec": 4.907,
+    "endSec": 5.155,
+    "chunkIndex": 0
+  },
+  {
+    "text": "information",
+    "startSec": 5.155,
+    "endSec": 5.712,
+    "chunkIndex": 0
+  },
+  {
+    "text": "into",
+    "startSec": 5.712,
+    "endSec": 5.991,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 5.991,
+    "endSec": 6.053,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sequence",
+    "startSec": 6.053,
+    "endSec": 6.502,
+    "chunkIndex": 0
+  },
+  {
+    "text": "of",
+    "startSec": 6.502,
+    "endSec": 6.594,
+    "chunkIndex": 0
+  },
+  {
+    "text": "statements.",
+    "startSec": 6.594,
+    "endSec": 7.152,
+    "chunkIndex": 0
+  },
+  {
+    "text": "It",
+    "startSec": 7.461,
+    "endSec": 7.601,
+    "chunkIndex": 0
+  },
+  {
+    "text": "helps",
+    "startSec": 7.601,
+    "endSec": 7.848,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 7.848,
+    "endSec": 7.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": "listener",
+    "startSec": 7.91,
+    "endSec": 8.235,
+    "chunkIndex": 0
+  },
+  {
+    "text": "feel",
+    "startSec": 8.235,
+    "endSec": 8.545,
+    "chunkIndex": 0
+  },
+  {
+    "text": "oriented.",
+    "startSec": 8.545,
+    "endSec": 9.133,
+    "chunkIndex": 0
+  },
+  {
+    "text": "First,",
+    "startSec": 9.706,
+    "endSec": 10.217,
+    "chunkIndex": 0
+  },
+  {
+    "text": "it",
+    "startSec": 10.217,
+    "endSec": 10.403,
+    "chunkIndex": 0
+  },
+  {
+    "text": "names",
+    "startSec": 10.403,
+    "endSec": 10.666,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 10.666,
+    "endSec": 10.79,
+    "chunkIndex": 0
+  },
+  {
+    "text": "problem.",
+    "startSec": 10.79,
+    "endSec": 11.269,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Then",
+    "startSec": 11.625,
+    "endSec": 11.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": "it",
+    "startSec": 11.78,
+    "endSec": 11.873,
+    "chunkIndex": 0
+  },
+  {
+    "text": "introduces",
+    "startSec": 11.873,
+    "endSec": 12.322,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 12.322,
+    "endSec": 12.399,
+    "chunkIndex": 0
+  },
+  {
+    "text": "model",
+    "startSec": 12.399,
+    "endSec": 12.771,
+    "chunkIndex": 0
+  },
+  {
+    "text": "that",
+    "startSec": 12.771,
+    "endSec": 12.91,
+    "chunkIndex": 0
+  },
+  {
+    "text": "makes",
+    "startSec": 12.91,
+    "endSec": 13.127,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 13.127,
+    "endSec": 13.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": "problem",
+    "startSec": 13.22,
+    "endSec": 13.576,
+    "chunkIndex": 0
+  },
+  {
+    "text": "legible.",
+    "startSec": 13.576,
+    "endSec": 14.025,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Then",
+    "startSec": 14.334,
+    "endSec": 14.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": "it",
+    "startSec": 14.52,
+    "endSec": 14.613,
+    "chunkIndex": 0
+  },
+  {
+    "text": "moves",
+    "startSec": 14.613,
+    "endSec": 14.876,
+    "chunkIndex": 0
+  },
+  {
+    "text": "through",
+    "startSec": 14.876,
+    "endSec": 15.031,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 15.031,
+    "endSec": 15.093,
+    "chunkIndex": 0
+  },
+  {
+    "text": "chain",
+    "startSec": 15.093,
+    "endSec": 15.325,
+    "chunkIndex": 0
+  },
+  {
+    "text": "of",
+    "startSec": 15.325,
+    "endSec": 15.387,
+    "chunkIndex": 0
+  },
+  {
+    "text": "evidence,",
+    "startSec": 15.387,
+    "endSec": 15.867,
+    "chunkIndex": 0
+  },
+  {
+    "text": "using",
+    "startSec": 16.223,
+    "endSec": 16.548,
+    "chunkIndex": 0
+  },
+  {
+    "text": "examples",
+    "startSec": 16.548,
+    "endSec": 17.09,
+    "chunkIndex": 0
+  },
+  {
+    "text": "that",
+    "startSec": 17.09,
+    "endSec": 17.183,
+    "chunkIndex": 0
+  },
+  {
+    "text": "are",
+    "startSec": 17.183,
+    "endSec": 17.245,
+    "chunkIndex": 0
+  },
+  {
+    "text": "concrete",
+    "startSec": 17.245,
+    "endSec": 17.663,
+    "chunkIndex": 0
+  },
+  {
+    "text": "enough",
+    "startSec": 17.663,
+    "endSec": 17.848,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 17.848,
+    "endSec": 17.957,
+    "chunkIndex": 0
+  },
+  {
+    "text": "remember",
+    "startSec": 17.957,
+    "endSec": 18.328,
+    "chunkIndex": 0
+  },
+  {
+    "text": "but",
+    "startSec": 18.328,
+    "endSec": 18.468,
+    "chunkIndex": 0
+  },
+  {
+    "text": "light",
+    "startSec": 18.468,
+    "endSec": 18.684,
+    "chunkIndex": 0
+  },
+  {
+    "text": "enough",
+    "startSec": 18.684,
+    "endSec": 18.978,
+    "chunkIndex": 0
+  },
+  {
+    "text": "not",
+    "startSec": 18.978,
+    "endSec": 19.195,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 19.195,
+    "endSec": 19.288,
+    "chunkIndex": 0
+  },
+  {
+    "text": "smother",
+    "startSec": 19.288,
+    "endSec": 19.644,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 19.644,
+    "endSec": 19.737,
+    "chunkIndex": 0
+  },
+  {
+    "text": "main",
+    "startSec": 19.737,
+    "endSec": 19.938,
+    "chunkIndex": 0
+  },
+  {
+    "text": "point.",
+    "startSec": 19.938,
+    "endSec": 20.31,
+    "chunkIndex": 0
+  },
+  {
+    "text": "By",
+    "startSec": 21.053,
+    "endSec": 21.177,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 21.177,
+    "endSec": 21.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": "time",
+    "startSec": 21.3,
+    "endSec": 21.502,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 21.502,
+    "endSec": 21.595,
+    "chunkIndex": 0
+  },
+  {
+    "text": "closing",
+    "startSec": 21.595,
+    "endSec": 21.92,
+    "chunkIndex": 0
+  },
+  {
+    "text": "line",
+    "startSec": 21.92,
+    "endSec": 22.136,
+    "chunkIndex": 0
+  },
+  {
+    "text": "arrives,",
+    "startSec": 22.136,
+    "endSec": 22.492,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 22.492,
+    "endSec": 22.585,
+    "chunkIndex": 0
+  },
+  {
+    "text": "listener",
+    "startSec": 22.585,
+    "endSec": 22.941,
+    "chunkIndex": 0
+  },
+  {
+    "text": "should",
+    "startSec": 22.941,
+    "endSec": 23.127,
+    "chunkIndex": 0
+  },
+  {
+    "text": "feel",
+    "startSec": 23.127,
+    "endSec": 23.328,
+    "chunkIndex": 0
+  },
+  {
+    "text": "more",
+    "startSec": 23.328,
+    "endSec": 23.607,
+    "chunkIndex": 0
+  },
+  {
+    "text": "capable",
+    "startSec": 23.607,
+    "endSec": 23.994,
+    "chunkIndex": 0
+  },
+  {
+    "text": "than",
+    "startSec": 23.994,
+    "endSec": 24.118,
+    "chunkIndex": 0
+  },
+  {
+    "text": "they",
+    "startSec": 24.118,
+    "endSec": 24.211,
+    "chunkIndex": 0
+  },
+  {
+    "text": "did",
+    "startSec": 24.211,
+    "endSec": 24.381,
+    "chunkIndex": 0
+  },
+  {
+    "text": "at",
+    "startSec": 24.381,
+    "endSec": 24.474,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 24.474,
+    "endSec": 24.536,
+    "chunkIndex": 0
+  },
+  {
+    "text": "beginning.",
+    "startSec": 24.536,
+    "endSec": 24.954,
+    "chunkIndex": 0
+  },
+  {
+    "text": "That",
+    "startSec": 25.434,
+    "endSec": 25.65,
+    "chunkIndex": 0
+  },
+  {
+    "text": "transformation",
+    "startSec": 25.65,
+    "endSec": 26.239,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 26.239,
+    "endSec": 26.331,
+    "chunkIndex": 0
+  },
+  {
+    "text": "why",
+    "startSec": 26.331,
+    "endSec": 26.486,
+    "chunkIndex": 0
+  },
+  {
+    "text": "narration",
+    "startSec": 26.486,
+    "endSec": 26.935,
+    "chunkIndex": 0
+  },
+  {
+    "text": "quality",
+    "startSec": 26.935,
+    "endSec": 27.26,
+    "chunkIndex": 0
+  },
+  {
+    "text": "matters",
+    "startSec": 27.26,
+    "endSec": 27.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": "so",
+    "startSec": 27.57,
+    "endSec": 27.709,
+    "chunkIndex": 0
+  },
+  {
+    "text": "much.",
+    "startSec": 27.709,
+    "endSec": 28.127,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 28.499,
+    "endSec": 28.638,
+    "chunkIndex": 0
+  },
+  {
+    "text": "audio",
+    "startSec": 28.638,
+    "endSec": 28.948,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 28.948,
+    "endSec": 29.04,
+    "chunkIndex": 0
+  },
+  {
+    "text": "not",
+    "startSec": 29.04,
+    "endSec": 29.211,
+    "chunkIndex": 0
+  },
+  {
+    "text": "decoration.",
+    "startSec": 29.211,
+    "endSec": 29.845,
+    "chunkIndex": 0
+  },
+  {
+    "text": "It",
+    "startSec": 30.588,
+    "endSec": 30.743,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 30.743,
+    "endSec": 30.883,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 30.883,
+    "endSec": 31.006,
+    "chunkIndex": 0
+  },
+  {
+    "text": "vehicle",
+    "startSec": 31.006,
+    "endSec": 31.424,
+    "chunkIndex": 0
+  },
+  {
+    "text": "that",
+    "startSec": 31.424,
+    "endSec": 31.579,
+    "chunkIndex": 0
+  },
+  {
+    "text": "carries",
+    "startSec": 31.579,
+    "endSec": 31.904,
+    "chunkIndex": 0
+  },
+  {
+    "text": "understanding",
+    "startSec": 31.904,
+    "endSec": 32.539,
+    "chunkIndex": 0
+  },
+  {
+    "text": "from",
+    "startSec": 32.539,
+    "endSec": 32.725,
+    "chunkIndex": 0
+  },
+  {
+    "text": "one",
+    "startSec": 32.725,
+    "endSec": 32.895,
+    "chunkIndex": 0
+  },
+  {
+    "text": "mental",
+    "startSec": 32.895,
+    "endSec": 33.205,
+    "chunkIndex": 0
+  },
+  {
+    "text": "state",
+    "startSec": 33.205,
+    "endSec": 33.468,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 33.468,
+    "endSec": 33.592,
+    "chunkIndex": 0
+  },
+  {
+    "text": "another.",
+    "startSec": 33.592,
+    "endSec": 34.009,
+    "chunkIndex": 0
+  },
+  {
+    "text": "For",
+    "startSec": 34.551,
+    "endSec": 34.753,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creators,",
+    "startSec": 34.753,
+    "endSec": 35.356,
+    "chunkIndex": 0
+  },
+  {
+    "text": "this",
+    "startSec": 35.635,
+    "endSec": 35.805,
+    "chunkIndex": 0
+  },
+  {
+    "text": "produces",
+    "startSec": 35.805,
+    "endSec": 36.223,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 36.223,
+    "endSec": 36.316,
+    "chunkIndex": 0
+  },
+  {
+    "text": "stubborn",
+    "startSec": 36.316,
+    "endSec": 36.858,
+    "chunkIndex": 0
+  },
+  {
+    "text": "workflow",
+    "startSec": 36.858,
+    "endSec": 37.307,
+    "chunkIndex": 0
+  },
+  {
+    "text": "challenge.",
+    "startSec": 37.307,
+    "endSec": 37.879,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 38.545,
+    "endSec": 38.653,
+    "chunkIndex": 0
+  },
+  {
+    "text": "script",
+    "startSec": 38.653,
+    "endSec": 39.025,
+    "chunkIndex": 0
+  },
+  {
+    "text": "is",
+    "startSec": 39.025,
+    "endSec": 39.102,
+    "chunkIndex": 0
+  },
+  {
+    "text": "often",
+    "startSec": 39.102,
+    "endSec": 39.412,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 39.412,
+    "endSec": 39.474,
+    "chunkIndex": 0
+  },
+  {
+    "text": "cleanest",
+    "startSec": 39.474,
+    "endSec": 39.861,
+    "chunkIndex": 0
+  },
+  {
+    "text": "artifact",
+    "startSec": 39.861,
+    "endSec": 40.341,
+    "chunkIndex": 0
+  },
+  {
+    "text": "in",
+    "startSec": 40.341,
+    "endSec": 40.403,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 40.403,
+    "endSec": 40.465,
+    "chunkIndex": 0
+  },
+  {
+    "text": "whole",
+    "startSec": 40.465,
+    "endSec": 40.573,
+    "chunkIndex": 0
+  },
+  {
+    "text": "production",
+    "startSec": 40.573,
+    "endSec": 40.975,
+    "chunkIndex": 0
+  },
+  {
+    "text": "chain.",
+    "startSec": 40.975,
+    "endSec": 41.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": "It",
+    "startSec": 41.657,
+    "endSec": 41.811,
+    "chunkIndex": 0
+  },
+  {
+    "text": "can",
+    "startSec": 41.811,
+    "endSec": 41.935,
+    "chunkIndex": 0
+  },
+  {
+    "text": "be",
+    "startSec": 41.935,
+    "endSec": 42.013,
+    "chunkIndex": 0
+  },
+  {
+    "text": "drafted,",
+    "startSec": 42.013,
+    "endSec": 42.616,
+    "chunkIndex": 0
+  },
+  {
+    "text": "revised,",
+    "startSec": 42.647,
+    "endSec": 43.344,
+    "chunkIndex": 0
+  },
+  {
+    "text": "reviewed,",
+    "startSec": 43.344,
+    "endSec": 43.886,
+    "chunkIndex": 0
+  },
+  {
+    "text": "and",
+    "startSec": 43.963,
+    "endSec": 44.149,
+    "chunkIndex": 0
+  },
+  {
+    "text": "approved",
+    "startSec": 44.149,
+    "endSec": 44.691,
+    "chunkIndex": 0
+  },
+  {
+    "text": "in",
+    "startSec": 44.691,
+    "endSec": 44.815,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 44.815,
+    "endSec": 44.876,
+    "chunkIndex": 0
+  },
+  {
+    "text": "text",
+    "startSec": 44.876,
+    "endSec": 45.171,
+    "chunkIndex": 0
+  },
+  {
+    "text": "editor.",
+    "startSec": 45.171,
+    "endSec": 45.589,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 46.842,
+    "endSec": 46.966,
+    "chunkIndex": 0
+  },
+  {
+    "text": "moment",
+    "startSec": 46.966,
+    "endSec": 47.291,
+    "chunkIndex": 0
+  },
+  {
+    "text": "it",
+    "startSec": 47.291,
+    "endSec": 47.384,
+    "chunkIndex": 0
+  },
+  {
+    "text": "enters",
+    "startSec": 47.384,
+    "endSec": 47.694,
+    "chunkIndex": 0
+  },
+  {
+    "text": "speech",
+    "startSec": 47.694,
+    "endSec": 47.988,
+    "chunkIndex": 0
+  },
+  {
+    "text": "generation,",
+    "startSec": 47.988,
+    "endSec": 48.623,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 48.886,
+    "endSec": 49.01,
+    "chunkIndex": 0
+  },
+  {
+    "text": "process",
+    "startSec": 49.01,
+    "endSec": 49.489,
+    "chunkIndex": 0
+  },
+  {
+    "text": "can",
+    "startSec": 49.489,
+    "endSec": 49.644,
+    "chunkIndex": 0
+  },
+  {
+    "text": "become",
+    "startSec": 49.644,
+    "endSec": 49.876,
+    "chunkIndex": 0
+  },
+  {
+    "text": "fragile.",
+    "startSec": 49.876,
+    "endSec": 50.356,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Some",
+    "startSec": 51.347,
+    "endSec": 51.579,
+    "chunkIndex": 0
+  },
+  {
+    "text": "tools",
+    "startSec": 51.579,
+    "endSec": 51.858,
+    "chunkIndex": 0
+  },
+  {
+    "text": "do",
+    "startSec": 51.858,
+    "endSec": 51.997,
+    "chunkIndex": 0
+  },
+  {
+    "text": "well",
+    "startSec": 51.997,
+    "endSec": 52.276,
+    "chunkIndex": 0
+  },
+  {
+    "text": "on",
+    "startSec": 52.276,
+    "endSec": 52.384,
+    "chunkIndex": 0
+  },
+  {
+    "text": "short",
+    "startSec": 52.384,
+    "endSec": 52.632,
+    "chunkIndex": 0
+  },
+  {
+    "text": "passages",
+    "startSec": 52.632,
+    "endSec": 53.205,
+    "chunkIndex": 0
+  },
+  {
+    "text": "and",
+    "startSec": 53.205,
+    "endSec": 53.375,
+    "chunkIndex": 0
+  },
+  {
+    "text": "start",
+    "startSec": 53.375,
+    "endSec": 53.654,
+    "chunkIndex": 0
+  },
+  {
+    "text": "wobbling",
+    "startSec": 53.654,
+    "endSec": 54.072,
+    "chunkIndex": 0
+  },
+  {
+    "text": "when",
+    "startSec": 54.072,
+    "endSec": 54.195,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 54.195,
+    "endSec": 54.288,
+    "chunkIndex": 0
+  },
+  {
+    "text": "input",
+    "startSec": 54.288,
+    "endSec": 54.644,
+    "chunkIndex": 0
+  },
+  {
+    "text": "grows.",
+    "startSec": 54.644,
+    "endSec": 55.031,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Others",
+    "startSec": 56.146,
+    "endSec": 56.44,
+    "chunkIndex": 0
+  },
+  {
+    "text": "generate",
+    "startSec": 56.44,
+    "endSec": 56.827,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 56.827,
+    "endSec": 56.858,
+    "chunkIndex": 0
+  },
+  {
+    "text": "clean",
+    "startSec": 56.858,
+    "endSec": 57.245,
+    "chunkIndex": 0
+  },
+  {
+    "text": "first",
+    "startSec": 57.245,
+    "endSec": 57.524,
+    "chunkIndex": 0
+  },
+  {
+    "text": "half",
+    "startSec": 57.524,
+    "endSec": 57.818,
+    "chunkIndex": 0
+  },
+  {
+    "text": "and",
+    "startSec": 57.818,
+    "endSec": 57.942,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 57.942,
+    "endSec": 58.003,
+    "chunkIndex": 0
+  },
+  {
+    "text": "noticeably",
+    "startSec": 58.003,
+    "endSec": 58.576,
+    "chunkIndex": 0
+  },
+  {
+    "text": "different",
+    "startSec": 58.576,
+    "endSec": 58.901,
+    "chunkIndex": 0
+  },
+  {
+    "text": "second",
+    "startSec": 58.901,
+    "endSec": 59.164,
+    "chunkIndex": 0
+  },
+  {
+    "text": "half.",
+    "startSec": 59.164,
+    "endSec": 59.536,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Some",
+    "startSec": 60.279,
+    "endSec": 60.558,
+    "chunkIndex": 0
+  },
+  {
+    "text": "create",
+    "startSec": 60.558,
+    "endSec": 60.852,
+    "chunkIndex": 0
+  },
+  {
+    "text": "timestamps",
+    "startSec": 60.852,
+    "endSec": 61.455,
+    "chunkIndex": 0
+  },
+  {
+    "text": "that",
+    "startSec": 61.455,
+    "endSec": 61.564,
+    "chunkIndex": 0
+  },
+  {
+    "text": "look",
+    "startSec": 61.564,
+    "endSec": 61.75,
+    "chunkIndex": 0
+  },
+  {
+    "text": "plausible",
+    "startSec": 61.75,
+    "endSec": 62.353,
+    "chunkIndex": 0
+  },
+  {
+    "text": "until",
+    "startSec": 62.353,
+    "endSec": 62.555,
+    "chunkIndex": 0
+  },
+  {
+    "text": "you",
+    "startSec": 62.555,
+    "endSec": 62.678,
+    "chunkIndex": 0
+  },
+  {
+    "text": "try",
+    "startSec": 62.678,
+    "endSec": 62.864,
+    "chunkIndex": 0
+  },
+  {
+    "text": "to",
+    "startSec": 62.864,
+    "endSec": 62.926,
+    "chunkIndex": 0
+  },
+  {
+    "text": "line",
+    "startSec": 62.926,
+    "endSec": 63.158,
+    "chunkIndex": 0
+  },
+  {
+    "text": "them",
+    "startSec": 63.158,
+    "endSec": 63.251,
+    "chunkIndex": 0
+  },
+  {
+    "text": "up",
+    "startSec": 63.251,
+    "endSec": 63.375,
+    "chunkIndex": 0
+  },
+  {
+    "text": "against",
+    "startSec": 63.375,
+    "endSec": 63.638,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 63.638,
+    "endSec": 63.7,
+    "chunkIndex": 0
+  },
+  {
+    "text": "final",
+    "startSec": 63.7,
+    "endSec": 64.056,
+    "chunkIndex": 0
+  },
+  {
+    "text": "stitched",
+    "startSec": 64.056,
+    "endSec": 64.397,
+    "chunkIndex": 0
+  },
+  {
+    "text": "file.",
+    "startSec": 64.397,
+    "endSec": 64.784,
+    "chunkIndex": 0
+  },
+  {
+    "text": "The",
+    "startSec": 65.867,
+    "endSec": 65.945,
+    "chunkIndex": 0
+  },
+  {
+    "text": "creator",
+    "startSec": 65.945,
+    "endSec": 66.316,
+    "chunkIndex": 0
+  },
+  {
+    "text": "may",
+    "startSec": 66.316,
+    "endSec": 66.425,
+    "chunkIndex": 0
+  },
+  {
+    "text": "still",
+    "startSec": 66.425,
+    "endSec": 66.734,
+    "chunkIndex": 0
+  },
+  {
+    "text": "get",
+    "startSec": 66.734,
+    "endSec": 66.966,
+    "chunkIndex": 0
+  },
+  {
+    "text": "\"audio,\"",
+    "startSec": 67.028,
+    "endSec": 67.508,
+    "chunkIndex": 0
+  },
+  {
+    "text": "but",
+    "startSec": 67.508,
+    "endSec": 67.663,
+    "chunkIndex": 0
+  },
+  {
+    "text": "not",
+    "startSec": 67.663,
+    "endSec": 67.833,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 67.833,
+    "endSec": 67.926,
+    "chunkIndex": 0
+  },
+  {
+    "text": "kind",
+    "startSec": 67.926,
+    "endSec": 68.112,
+    "chunkIndex": 0
+  },
+  {
+    "text": "of",
+    "startSec": 68.112,
+    "endSec": 68.205,
+    "chunkIndex": 0
+  },
+  {
+    "text": "output",
+    "startSec": 68.236,
+    "endSec": 68.716,
+    "chunkIndex": 0
+  },
+  {
+    "text": "that",
+    "startSec": 68.716,
+    "endSec": 68.824,
+    "chunkIndex": 0
+  },
+  {
+    "text": "can",
+    "startSec": 68.824,
+    "endSec": 68.948,
+    "chunkIndex": 0
+  },
+  {
+    "text": "move",
+    "startSec": 68.948,
+    "endSec": 69.165,
+    "chunkIndex": 0
+  },
+  {
+    "text": "directly",
+    "startSec": 69.165,
+    "endSec": 69.644,
+    "chunkIndex": 0
+  },
+  {
+    "text": "into",
+    "startSec": 69.644,
+    "endSec": 69.784,
+    "chunkIndex": 0
+  },
+  {
+    "text": "publication.",
+    "startSec": 69.784,
+    "endSec": 70.434,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Instead",
+    "startSec": 71.053,
+    "endSec": 71.409,
+    "chunkIndex": 0
+  },
+  {
+    "text": "of",
+    "startSec": 71.409,
+    "endSec": 71.471,
+    "chunkIndex": 0
+  },
+  {
+    "text": "saving",
+    "startSec": 71.471,
+    "endSec": 71.812,
+    "chunkIndex": 0
+  },
+  {
+    "text": "time,",
+    "startSec": 71.812,
+    "endSec": 72.199,
+    "chunkIndex": 0
+  },
+  {
+    "text": "the",
+    "startSec": 72.462,
+    "endSec": 72.555,
+    "chunkIndex": 0
+  },
+  {
+    "text": "system",
+    "startSec": 72.555,
+    "endSec": 72.88,
+    "chunkIndex": 0
+  },
+  {
+    "text": "exports",
+    "startSec": 72.88,
+    "endSec": 73.391,
+    "chunkIndex": 0
+  },
+  {
+    "text": "extra",
+    "startSec": 73.421,
+    "endSec": 73.762,
+    "chunkIndex": 0
+  },
+  {
+    "text": "operator",
+    "startSec": 73.793,
+    "endSec": 74.242,
+    "chunkIndex": 0
+  },
+  {
+    "text": "burden.",
+    "startSec": 74.242,
+    "endSec": 74.644,
+    "chunkIndex": 0
+  },
+  {
+    "text": "That",
+    "startSec": 74.947,
+    "endSec": 75.241,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 75.241,
+    "endSec": 75.334,
+    "chunkIndex": 1
+  },
+  {
+    "text": "why",
+    "startSec": 75.334,
+    "endSec": 75.52,
+    "chunkIndex": 1
+  },
+  {
+    "text": "the",
+    "startSec": 75.52,
+    "endSec": 75.597,
+    "chunkIndex": 1
+  },
+  {
+    "text": "first",
+    "startSec": 75.597,
+    "endSec": 75.876,
+    "chunkIndex": 1
+  },
+  {
+    "text": "technical",
+    "startSec": 75.876,
+    "endSec": 76.294,
+    "chunkIndex": 1
+  },
+  {
+    "text": "slice",
+    "startSec": 76.294,
+    "endSec": 76.588,
+    "chunkIndex": 1
+  },
+  {
+    "text": "should",
+    "startSec": 76.588,
+    "endSec": 76.774,
+    "chunkIndex": 1
+  },
+  {
+    "text": "stay",
+    "startSec": 76.774,
+    "endSec": 76.991,
+    "chunkIndex": 1
+  },
+  {
+    "text": "narrow.",
+    "startSec": 76.991,
+    "endSec": 77.44,
+    "chunkIndex": 1
+  },
+  {
+    "text": "It",
+    "startSec": 78.09,
+    "endSec": 78.214,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 78.214,
+    "endSec": 78.306,
+    "chunkIndex": 1
+  },
+  {
+    "text": "not",
+    "startSec": 78.306,
+    "endSec": 78.492,
+    "chunkIndex": 1
+  },
+  {
+    "text": "trying",
+    "startSec": 78.492,
+    "endSec": 78.724,
+    "chunkIndex": 1
+  },
+  {
+    "text": "to",
+    "startSec": 78.724,
+    "endSec": 78.817,
+    "chunkIndex": 1
+  },
+  {
+    "text": "solve",
+    "startSec": 78.817,
+    "endSec": 79.08,
+    "chunkIndex": 1
+  },
+  {
+    "text": "every",
+    "startSec": 79.08,
+    "endSec": 79.359,
+    "chunkIndex": 1
+  },
+  {
+    "text": "language,",
+    "startSec": 79.359,
+    "endSec": 79.978,
+    "chunkIndex": 1
+  },
+  {
+    "text": "every",
+    "startSec": 80.009,
+    "endSec": 80.257,
+    "chunkIndex": 1
+  },
+  {
+    "text": "editing",
+    "startSec": 80.257,
+    "endSec": 80.582,
+    "chunkIndex": 1
+  },
+  {
+    "text": "workflow,",
+    "startSec": 80.582,
+    "endSec": 81.217,
+    "chunkIndex": 1
+  },
+  {
+    "text": "or",
+    "startSec": 81.372,
+    "endSec": 81.573,
+    "chunkIndex": 1
+  },
+  {
+    "text": "every",
+    "startSec": 81.573,
+    "endSec": 81.851,
+    "chunkIndex": 1
+  },
+  {
+    "text": "downstream",
+    "startSec": 81.851,
+    "endSec": 82.331,
+    "chunkIndex": 1
+  },
+  {
+    "text": "publishing",
+    "startSec": 82.331,
+    "endSec": 82.687,
+    "chunkIndex": 1
+  },
+  {
+    "text": "surface.",
+    "startSec": 82.687,
+    "endSec": 83.198,
+    "chunkIndex": 1
+  },
+  {
+    "text": "It",
+    "startSec": 83.802,
+    "endSec": 83.972,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 83.972,
+    "endSec": 84.096,
+    "chunkIndex": 1
+  },
+  {
+    "text": "trying",
+    "startSec": 84.096,
+    "endSec": 84.297,
+    "chunkIndex": 1
+  },
+  {
+    "text": "to",
+    "startSec": 84.297,
+    "endSec": 84.39,
+    "chunkIndex": 1
+  },
+  {
+    "text": "prove",
+    "startSec": 84.39,
+    "endSec": 84.607,
+    "chunkIndex": 1
+  },
+  {
+    "text": "one",
+    "startSec": 84.607,
+    "endSec": 84.777,
+    "chunkIndex": 1
+  },
+  {
+    "text": "honest",
+    "startSec": 84.808,
+    "endSec": 85.149,
+    "chunkIndex": 1
+  },
+  {
+    "text": "claim:",
+    "startSec": 85.149,
+    "endSec": 86.015,
+    "chunkIndex": 1
+  },
+  {
+    "text": "a",
+    "startSec": 86.015,
+    "endSec": 86.48,
+    "chunkIndex": 1
+  },
+  {
+    "text": "creator",
+    "startSec": 86.48,
+    "endSec": 86.619,
+    "chunkIndex": 1
+  },
+  {
+    "text": "can",
+    "startSec": 86.619,
+    "endSec": 86.898,
+    "chunkIndex": 1
+  },
+  {
+    "text": "paste",
+    "startSec": 86.898,
+    "endSec": 87.006,
+    "chunkIndex": 1
+  },
+  {
+    "text": "an",
+    "startSec": 87.068,
+    "endSec": 87.409,
+    "chunkIndex": 1
+  },
+  {
+    "text": "English",
+    "startSec": 87.409,
+    "endSec": 87.92,
+    "chunkIndex": 1
+  },
+  {
+    "text": "explainer",
+    "startSec": 87.92,
+    "endSec": 88.307,
+    "chunkIndex": 1
+  },
+  {
+    "text": "script",
+    "startSec": 88.446,
+    "endSec": 88.663,
+    "chunkIndex": 1
+  },
+  {
+    "text": "that",
+    "startSec": 88.663,
+    "endSec": 88.786,
+    "chunkIndex": 1
+  },
+  {
+    "text": "would",
+    "startSec": 88.786,
+    "endSec": 89.173,
+    "chunkIndex": 1
+  },
+  {
+    "text": "normally",
+    "startSec": 89.173,
+    "endSec": 89.359,
+    "chunkIndex": 1
+  },
+  {
+    "text": "be",
+    "startSec": 89.359,
+    "endSec": 89.777,
+    "chunkIndex": 1
+  },
+  {
+    "text": "annoying",
+    "startSec": 89.777,
+    "endSec": 89.885,
+    "chunkIndex": 1
+  },
+  {
+    "text": "to",
+    "startSec": 89.885,
+    "endSec": 90.396,
+    "chunkIndex": 1
+  },
+  {
+    "text": "split,",
+    "startSec": 90.768,
+    "endSec": 90.938,
+    "chunkIndex": 1
+  },
+  {
+    "text": "run",
+    "startSec": 90.938,
+    "endSec": 91.031,
+    "chunkIndex": 1
+  },
+  {
+    "text": "it",
+    "startSec": 91.031,
+    "endSec": 91.217,
+    "chunkIndex": 1
+  },
+  {
+    "text": "through",
+    "startSec": 91.217,
+    "endSec": 91.279,
+    "chunkIndex": 1
+  },
+  {
+    "text": "a",
+    "startSec": 91.279,
+    "endSec": 91.96,
+    "chunkIndex": 1
+  },
+  {
+    "text": "backend-owned",
+    "startSec": 91.96,
+    "endSec": 92.502,
+    "chunkIndex": 1
+  },
+  {
+    "text": "pipeline,",
+    "startSec": 92.749,
+    "endSec": 92.951,
+    "chunkIndex": 1
+  },
+  {
+    "text": "and",
+    "startSec": 92.951,
+    "endSec": 93.461,
+    "chunkIndex": 1
+  },
+  {
+    "text": "reliably",
+    "startSec": 93.461,
+    "endSec": 93.786,
+    "chunkIndex": 1
+  },
+  {
+    "text": "receive",
+    "startSec": 93.786,
+    "endSec": 93.848,
+    "chunkIndex": 1
+  },
+  {
+    "text": "a",
+    "startSec": 93.848,
+    "endSec": 94.235,
+    "chunkIndex": 1
+  },
+  {
+    "text": "single",
+    "startSec": 94.235,
+    "endSec": 94.715,
+    "chunkIndex": 1
+  },
+  {
+    "text": "narration",
+    "startSec": 94.715,
+    "endSec": 95.056,
+    "chunkIndex": 1
+  },
+  {
+    "text": "file",
+    "startSec": 95.056,
+    "endSec": 95.35,
+    "chunkIndex": 1
+  },
+  {
+    "text": "plus",
+    "startSec": 95.412,
+    "endSec": 96.217,
+    "chunkIndex": 1
+  },
+  {
+    "text": "subtitle-ready",
+    "startSec": 96.217,
+    "endSec": 96.557,
+    "chunkIndex": 1
+  },
+  {
+    "text": "timing",
+    "startSec": 96.557,
+    "endSec": 97.177,
+    "chunkIndex": 1
+  },
+  {
+    "text": "artifacts.",
+    "startSec": 97.873,
+    "endSec": 98.059,
+    "chunkIndex": 1
+  },
+  {
+    "text": "If",
+    "startSec": 98.059,
+    "endSec": 98.229,
+    "chunkIndex": 1
+  },
+  {
+    "text": "that",
+    "startSec": 98.229,
+    "endSec": 98.415,
+    "chunkIndex": 1
+  },
+  {
+    "text": "loop",
+    "startSec": 98.415,
+    "endSec": 98.508,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 98.508,
+    "endSec": 99.019,
+    "chunkIndex": 1
+  },
+  {
+    "text": "stable,",
+    "startSec": 99.406,
+    "endSec": 99.731,
+    "chunkIndex": 1
+  },
+  {
+    "text": "everything",
+    "startSec": 99.731,
+    "endSec": 99.886,
+    "chunkIndex": 1
+  },
+  {
+    "text": "else",
+    "startSec": 99.886,
+    "endSec": 100.149,
+    "chunkIndex": 1
+  },
+  {
+    "text": "becomes",
+    "startSec": 100.18,
+    "endSec": 100.536,
+    "chunkIndex": 1
+  },
+  {
+    "text": "easier",
+    "startSec": 100.536,
+    "endSec": 100.691,
+    "chunkIndex": 1
+  },
+  {
+    "text": "to",
+    "startSec": 100.691,
+    "endSec": 101.263,
+    "chunkIndex": 1
+  },
+  {
+    "text": "evaluate.",
+    "startSec": 101.743,
+    "endSec": 101.929,
+    "chunkIndex": 1
+  },
+  {
+    "text": "If",
+    "startSec": 101.929,
+    "endSec": 102.099,
+    "chunkIndex": 1
+  },
+  {
+    "text": "that",
+    "startSec": 102.099,
+    "endSec": 102.316,
+    "chunkIndex": 1
+  },
+  {
+    "text": "loop",
+    "startSec": 102.347,
+    "endSec": 102.517,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 102.548,
+    "endSec": 103.307,
+    "chunkIndex": 1
+  },
+  {
+    "text": "unstable,",
+    "startSec": 103.57,
+    "endSec": 103.879,
+    "chunkIndex": 1
+  },
+  {
+    "text": "all",
+    "startSec": 103.879,
+    "endSec": 103.957,
+    "chunkIndex": 1
+  },
+  {
+    "text": "the",
+    "startSec": 103.957,
+    "endSec": 104.204,
+    "chunkIndex": 1
+  },
+  {
+    "text": "growth",
+    "startSec": 104.204,
+    "endSec": 104.499,
+    "chunkIndex": 1
+  },
+  {
+    "text": "language",
+    "startSec": 104.499,
+    "endSec": 104.591,
+    "chunkIndex": 1
+  },
+  {
+    "text": "in",
+    "startSec": 104.591,
+    "endSec": 104.653,
+    "chunkIndex": 1
+  },
+  {
+    "text": "the",
+    "startSec": 104.653,
+    "endSec": 104.917,
+    "chunkIndex": 1
+  },
+  {
+    "text": "world",
+    "startSec": 104.917,
+    "endSec": 105.257,
+    "chunkIndex": 1
+  },
+  {
+    "text": "becomes",
+    "startSec": 105.257,
+    "endSec": 105.598,
+    "chunkIndex": 1
+  },
+  {
+    "text": "noise.",
+    "startSec": 106.17,
+    "endSec": 106.217,
+    "chunkIndex": 1
+  },
+  {
+    "text": "A",
+    "startSec": 106.217,
+    "endSec": 106.635,
+    "chunkIndex": 1
+  },
+  {
+    "text": "stable",
+    "startSec": 106.635,
+    "endSec": 106.913,
+    "chunkIndex": 1
+  },
+  {
+    "text": "loop",
+    "startSec": 106.913,
+    "endSec": 107.393,
+    "chunkIndex": 1
+  },
+  {
+    "text": "requires",
+    "startSec": 107.393,
+    "endSec": 107.966,
+    "chunkIndex": 1
+  },
+  {
+    "text": "deliberate",
+    "startSec": 107.966,
+    "endSec": 108.508,
+    "chunkIndex": 1
+  },
+  {
+    "text": "engineering",
+    "startSec": 108.508,
+    "endSec": 109.05,
+    "chunkIndex": 1
+  },
+  {
+    "text": "choices.",
+    "startSec": 109.762,
+    "endSec": 109.917,
+    "chunkIndex": 1
+  },
+  {
+    "text": "The",
+    "startSec": 109.917,
+    "endSec": 110.335,
+    "chunkIndex": 1
+  },
+  {
+    "text": "chunking",
+    "startSec": 110.335,
+    "endSec": 110.66,
+    "chunkIndex": 1
+  },
+  {
+    "text": "plan",
+    "startSec": 110.66,
+    "endSec": 110.876,
+    "chunkIndex": 1
+  },
+  {
+    "text": "must",
+    "startSec": 110.876,
+    "endSec": 111.294,
+    "chunkIndex": 1
+  },
+  {
+    "text": "respect",
+    "startSec": 111.294,
+    "endSec": 111.557,
+    "chunkIndex": 1
+  },
+  {
+    "text": "reading",
+    "startSec": 111.557,
+    "endSec": 112.099,
+    "chunkIndex": 1
+  },
+  {
+    "text": "boundaries",
+    "startSec": 112.099,
+    "endSec": 112.409,
+    "chunkIndex": 1
+  },
+  {
+    "text": "instead",
+    "startSec": 112.409,
+    "endSec": 112.486,
+    "chunkIndex": 1
+  },
+  {
+    "text": "of",
+    "startSec": 112.486,
+    "endSec": 112.796,
+    "chunkIndex": 1
+  },
+  {
+    "text": "cutting",
+    "startSec": 112.796,
+    "endSec": 113.307,
+    "chunkIndex": 1
+  },
+  {
+    "text": "blindly",
+    "startSec": 113.307,
+    "endSec": 113.415,
+    "chunkIndex": 1
+  },
+  {
+    "text": "at",
+    "startSec": 113.446,
+    "endSec": 113.957,
+    "chunkIndex": 1
+  },
+  {
+    "text": "arbitrary",
+    "startSec": 113.957,
+    "endSec": 114.39,
+    "chunkIndex": 1
+  },
+  {
+    "text": "character",
+    "startSec": 114.39,
+    "endSec": 114.839,
+    "chunkIndex": 1
+  },
+  {
+    "text": "counts.",
+    "startSec": 115.458,
+    "endSec": 115.876,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Provider",
+    "startSec": 115.876,
+    "endSec": 116.186,
+    "chunkIndex": 1
+  },
+  {
+    "text": "calls",
+    "startSec": 116.186,
+    "endSec": 116.387,
+    "chunkIndex": 1
+  },
+  {
+    "text": "must",
+    "startSec": 116.387,
+    "endSec": 116.48,
+    "chunkIndex": 1
+  },
+  {
+    "text": "be",
+    "startSec": 116.48,
+    "endSec": 116.96,
+    "chunkIndex": 1
+  },
+  {
+    "text": "isolated",
+    "startSec": 116.96,
+    "endSec": 117.27,
+    "chunkIndex": 1
+  },
+  {
+    "text": "behind",
+    "startSec": 117.27,
+    "endSec": 117.749,
+    "chunkIndex": 1
+  },
+  {
+    "text": "adapters",
+    "startSec": 118.013,
+    "endSec": 118.198,
+    "chunkIndex": 1
+  },
+  {
+    "text": "so",
+    "startSec": 118.198,
+    "endSec": 118.276,
+    "chunkIndex": 1
+  },
+  {
+    "text": "the",
+    "startSec": 118.276,
+    "endSec": 118.647,
+    "chunkIndex": 1
+  },
+  {
+    "text": "business",
+    "startSec": 118.647,
+    "endSec": 118.91,
+    "chunkIndex": 1
+  },
+  {
+    "text": "layer",
+    "startSec": 118.91,
+    "endSec": 119.065,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 119.065,
+    "endSec": 119.266,
+    "chunkIndex": 1
+  },
+  {
+    "text": "not",
+    "startSec": 119.266,
+    "endSec": 119.746,
+    "chunkIndex": 1
+  },
+  {
+    "text": "permanently",
+    "startSec": 119.746,
+    "endSec": 120.056,
+    "chunkIndex": 1
+  },
+  {
+    "text": "welded",
+    "startSec": 120.056,
+    "endSec": 120.149,
+    "chunkIndex": 1
+  },
+  {
+    "text": "to",
+    "startSec": 120.149,
+    "endSec": 120.35,
+    "chunkIndex": 1
+  },
+  {
+    "text": "one",
+    "startSec": 120.35,
+    "endSec": 120.706,
+    "chunkIndex": 1
+  },
+  {
+    "text": "vendor's",
+    "startSec": 120.706,
+    "endSec": 121.217,
+    "chunkIndex": 1
+  },
+  {
+    "text": "SDK",
+    "startSec": 121.217,
+    "endSec": 121.372,
+    "chunkIndex": 1
+  },
+  {
+    "text": "or",
+    "startSec": 121.372,
+    "endSec": 121.79,
+    "chunkIndex": 1
+  },
+  {
+    "text": "response",
+    "startSec": 121.79,
+    "endSec": 122.13,
+    "chunkIndex": 1
+  },
+  {
+    "text": "shape.",
+    "startSec": 122.595,
+    "endSec": 123.013,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Retries",
+    "startSec": 123.013,
+    "endSec": 123.291,
+    "chunkIndex": 1
+  },
+  {
+    "text": "must",
+    "startSec": 123.291,
+    "endSec": 123.4,
+    "chunkIndex": 1
+  },
+  {
+    "text": "be",
+    "startSec": 123.4,
+    "endSec": 123.941,
+    "chunkIndex": 1
+  },
+  {
+    "text": "limited,",
+    "startSec": 124.096,
+    "endSec": 124.824,
+    "chunkIndex": 1
+  },
+  {
+    "text": "explicit,",
+    "startSec": 125.056,
+    "endSec": 125.242,
+    "chunkIndex": 1
+  },
+  {
+    "text": "and",
+    "startSec": 125.242,
+    "endSec": 125.567,
+    "chunkIndex": 1
+  },
+  {
+    "text": "logged",
+    "startSec": 125.567,
+    "endSec": 125.753,
+    "chunkIndex": 1
+  },
+  {
+    "text": "so",
+    "startSec": 125.753,
+    "endSec": 126.171,
+    "chunkIndex": 1
+  },
+  {
+    "text": "repeated",
+    "startSec": 126.171,
+    "endSec": 126.558,
+    "chunkIndex": 1
+  },
+  {
+    "text": "failures",
+    "startSec": 126.558,
+    "endSec": 126.852,
+    "chunkIndex": 1
+  },
+  {
+    "text": "become",
+    "startSec": 126.852,
+    "endSec": 127.393,
+    "chunkIndex": 1
+  },
+  {
+    "text": "measurable",
+    "startSec": 127.393,
+    "endSec": 127.672,
+    "chunkIndex": 1
+  },
+  {
+    "text": "rather",
+    "startSec": 127.672,
+    "endSec": 127.811,
+    "chunkIndex": 1
+  },
+  {
+    "text": "than",
+    "startSec": 127.811,
+    "endSec": 128.477,
+    "chunkIndex": 1
+  },
+  {
+    "text": "mysterious.",
+    "startSec": 129.499,
+    "endSec": 129.886,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Stitching",
+    "startSec": 129.886,
+    "endSec": 130.041,
+    "chunkIndex": 1
+  },
+  {
+    "text": "has",
+    "startSec": 130.041,
+    "endSec": 130.133,
+    "chunkIndex": 1
+  },
+  {
+    "text": "to",
+    "startSec": 130.133,
+    "endSec": 130.428,
+    "chunkIndex": 1
+  },
+  {
+    "text": "produce",
+    "startSec": 130.428,
+    "endSec": 130.644,
+    "chunkIndex": 1
+  },
+  {
+    "text": "both",
+    "startSec": 130.644,
+    "endSec": 130.691,
+    "chunkIndex": 1
+  },
+  {
+    "text": "a",
+    "startSec": 130.691,
+    "endSec": 131.124,
+    "chunkIndex": 1
+  },
+  {
+    "text": "finished",
+    "startSec": 131.124,
+    "endSec": 131.542,
+    "chunkIndex": 1
+  },
+  {
+    "text": "file",
+    "startSec": 131.542,
+    "endSec": 131.65,
+    "chunkIndex": 1
+  },
+  {
+    "text": "and",
+    "startSec": 131.65,
+    "endSec": 131.712,
+    "chunkIndex": 1
+  },
+  {
+    "text": "a",
+    "startSec": 131.712,
+    "endSec": 132.084,
+    "chunkIndex": 1
+  },
+  {
+    "text": "splice",
+    "startSec": 132.084,
+    "endSec": 132.409,
+    "chunkIndex": 1
+  },
+  {
+    "text": "report",
+    "startSec": 132.409,
+    "endSec": 132.703,
+    "chunkIndex": 1
+  },
+  {
+    "text": "because",
+    "startSec": 132.734,
+    "endSec": 133.183,
+    "chunkIndex": 1
+  },
+  {
+    "text": "seams",
+    "startSec": 133.183,
+    "endSec": 133.307,
+    "chunkIndex": 1
+  },
+  {
+    "text": "are",
+    "startSec": 133.307,
+    "endSec": 133.524,
+    "chunkIndex": 1
+  },
+  {
+    "text": "where",
+    "startSec": 133.524,
+    "endSec": 134.081,
+    "chunkIndex": 1
+  },
+  {
+    "text": "long-form",
+    "startSec": 134.081,
+    "endSec": 134.483,
+    "chunkIndex": 1
+  },
+  {
+    "text": "systems",
+    "startSec": 134.483,
+    "endSec": 134.932,
+    "chunkIndex": 1
+  },
+  {
+    "text": "quietly",
+    "startSec": 134.932,
+    "endSec": 135.335,
+    "chunkIndex": 1
+  },
+  {
+    "text": "fail.",
+    "startSec": 135.892,
+    "endSec": 136.341,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Metrics",
+    "startSec": 136.341,
+    "endSec": 136.527,
+    "chunkIndex": 1
+  },
+  {
+    "text": "have",
+    "startSec": 136.527,
+    "endSec": 136.635,
+    "chunkIndex": 1
+  },
+  {
+    "text": "to",
+    "startSec": 136.635,
+    "endSec": 137.022,
+    "chunkIndex": 1
+  },
+  {
+    "text": "record",
+    "startSec": 137.022,
+    "endSec": 137.502,
+    "chunkIndex": 1
+  },
+  {
+    "text": "cost,",
+    "startSec": 137.533,
+    "endSec": 138.137,
+    "chunkIndex": 1
+  },
+  {
+    "text": "retries,",
+    "startSec": 138.137,
+    "endSec": 138.74,
+    "chunkIndex": 1
+  },
+  {
+    "text": "duration,",
+    "startSec": 138.771,
+    "endSec": 139.096,
+    "chunkIndex": 1
+  },
+  {
+    "text": "and",
+    "startSec": 139.096,
+    "endSec": 139.607,
+    "chunkIndex": 1
+  },
+  {
+    "text": "timestamp",
+    "startSec": 139.607,
+    "endSec": 140.087,
+    "chunkIndex": 1
+  },
+  {
+    "text": "coverage,",
+    "startSec": 140.412,
+    "endSec": 140.722,
+    "chunkIndex": 1
+  },
+  {
+    "text": "because",
+    "startSec": 140.722,
+    "endSec": 140.753,
+    "chunkIndex": 1
+  },
+  {
+    "text": "a",
+    "startSec": 140.753,
+    "endSec": 141.264,
+    "chunkIndex": 1
+  },
+  {
+    "text": "workflow",
+    "startSec": 141.264,
+    "endSec": 141.434,
+    "chunkIndex": 1
+  },
+  {
+    "text": "that",
+    "startSec": 141.465,
+    "endSec": 141.883,
+    "chunkIndex": 1
+  },
+  {
+    "text": "\"works\"",
+    "startSec": 141.945,
+    "endSec": 142.285,
+    "chunkIndex": 1
+  },
+  {
+    "text": "only",
+    "startSec": 142.285,
+    "endSec": 142.486,
+    "chunkIndex": 1
+  },
+  {
+    "text": "by",
+    "startSec": 142.486,
+    "endSec": 142.873,
+    "chunkIndex": 1
+  },
+  {
+    "text": "burning",
+    "startSec": 142.873,
+    "endSec": 143.291,
+    "chunkIndex": 1
+  },
+  {
+    "text": "margin",
+    "startSec": 143.291,
+    "endSec": 143.477,
+    "chunkIndex": 1
+  },
+  {
+    "text": "or",
+    "startSec": 143.477,
+    "endSec": 143.864,
+    "chunkIndex": 1
+  },
+  {
+    "text": "dropping",
+    "startSec": 143.864,
+    "endSec": 144.205,
+    "chunkIndex": 1
+  },
+  {
+    "text": "timing",
+    "startSec": 144.205,
+    "endSec": 144.685,
+    "chunkIndex": 1
+  },
+  {
+    "text": "fidelity",
+    "startSec": 144.685,
+    "endSec": 144.793,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 144.793,
+    "endSec": 145.072,
+    "chunkIndex": 1
+  },
+  {
+    "text": "not",
+    "startSec": 145.072,
+    "endSec": 145.397,
+    "chunkIndex": 1
+  },
+  {
+    "text": "actually",
+    "startSec": 145.397,
+    "endSec": 145.753,
+    "chunkIndex": 1
+  },
+  {
+    "text": "ready.",
+    "startSec": 146.171,
+    "endSec": 146.264,
+    "chunkIndex": 1
+  },
+  {
+    "text": "The",
+    "startSec": 146.264,
+    "endSec": 146.604,
+    "chunkIndex": 1
+  },
+  {
+    "text": "payoff",
+    "startSec": 146.604,
+    "endSec": 146.712,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 146.712,
+    "endSec": 146.991,
+    "chunkIndex": 1
+  },
+  {
+    "text": "not",
+    "startSec": 146.991,
+    "endSec": 147.022,
+    "chunkIndex": 1
+  },
+  {
+    "text": "a",
+    "startSec": 147.022,
+    "endSec": 147.347,
+    "chunkIndex": 1
+  },
+  {
+    "text": "flashy",
+    "startSec": 147.347,
+    "endSec": 147.734,
+    "chunkIndex": 1
+  },
+  {
+    "text": "demo.",
+    "startSec": 148.276,
+    "endSec": 148.369,
+    "chunkIndex": 1
+  },
+  {
+    "text": "The",
+    "startSec": 148.369,
+    "endSec": 148.694,
+    "chunkIndex": 1
+  },
+  {
+    "text": "payoff",
+    "startSec": 148.725,
+    "endSec": 148.911,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 148.911,
+    "endSec": 149.545,
+    "chunkIndex": 1
+  },
+  {
+    "text": "credibility.",
+    "startSec": 150.025,
+    "endSec": 150.072,
+    "chunkIndex": 1
+  },
+  {
+    "text": "A",
+    "startSec": 150.072,
+    "endSec": 150.521,
+    "chunkIndex": 1
+  },
+  {
+    "text": "creator",
+    "startSec": 150.521,
+    "endSec": 150.644,
+    "chunkIndex": 1
+  },
+  {
+    "text": "who",
+    "startSec": 150.644,
+    "endSec": 150.799,
+    "chunkIndex": 1
+  },
+  {
+    "text": "can",
+    "startSec": 150.799,
+    "endSec": 151.124,
+    "chunkIndex": 1
+  },
+  {
+    "text": "trust",
+    "startSec": 151.124,
+    "endSec": 151.79,
+    "chunkIndex": 1
+  },
+  {
+    "text": "one-submit",
+    "startSec": 151.79,
+    "endSec": 152.301,
+    "chunkIndex": 1
+  },
+  {
+    "text": "narration",
+    "startSec": 152.301,
+    "endSec": 152.425,
+    "chunkIndex": 1
+  },
+  {
+    "text": "will",
+    "startSec": 152.425,
+    "endSec": 152.719,
+    "chunkIndex": 1
+  },
+  {
+    "text": "accept",
+    "startSec": 152.719,
+    "endSec": 152.781,
+    "chunkIndex": 1
+  },
+  {
+    "text": "a",
+    "startSec": 152.781,
+    "endSec": 153.168,
+    "chunkIndex": 1
+  },
+  {
+    "text": "product",
+    "startSec": 153.168,
+    "endSec": 153.291,
+    "chunkIndex": 1
+  },
+  {
+    "text": "that",
+    "startSec": 153.291,
+    "endSec": 153.415,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 153.415,
+    "endSec": 153.802,
+    "chunkIndex": 1
+  },
+  {
+    "text": "still",
+    "startSec": 153.802,
+    "endSec": 154.313,
+    "chunkIndex": 1
+  },
+  {
+    "text": "visibly",
+    "startSec": 154.313,
+    "endSec": 154.731,
+    "chunkIndex": 1
+  },
+  {
+    "text": "early",
+    "startSec": 154.731,
+    "endSec": 154.87,
+    "chunkIndex": 1
+  },
+  {
+    "text": "in",
+    "startSec": 154.87,
+    "endSec": 155.087,
+    "chunkIndex": 1
+  },
+  {
+    "text": "other",
+    "startSec": 155.087,
+    "endSec": 155.567,
+    "chunkIndex": 1
+  },
+  {
+    "text": "places.",
+    "startSec": 156.743,
+    "endSec": 156.836,
+    "chunkIndex": 1
+  },
+  {
+    "text": "A",
+    "startSec": 156.836,
+    "endSec": 157.363,
+    "chunkIndex": 1
+  },
+  {
+    "text": "creator",
+    "startSec": 157.363,
+    "endSec": 157.487,
+    "chunkIndex": 1
+  },
+  {
+    "text": "who",
+    "startSec": 157.487,
+    "endSec": 157.703,
+    "chunkIndex": 1
+  },
+  {
+    "text": "has",
+    "startSec": 157.703,
+    "endSec": 157.812,
+    "chunkIndex": 1
+  },
+  {
+    "text": "to",
+    "startSec": 157.812,
+    "endSec": 158.322,
+    "chunkIndex": 1
+  },
+  {
+    "text": "manually",
+    "startSec": 158.322,
+    "endSec": 158.771,
+    "chunkIndex": 1
+  },
+  {
+    "text": "rescue",
+    "startSec": 158.771,
+    "endSec": 159.143,
+    "chunkIndex": 1
+  },
+  {
+    "text": "every",
+    "startSec": 159.143,
+    "endSec": 159.406,
+    "chunkIndex": 1
+  },
+  {
+    "text": "long",
+    "startSec": 159.406,
+    "endSec": 159.793,
+    "chunkIndex": 1
+  },
+  {
+    "text": "script",
+    "startSec": 159.793,
+    "endSec": 159.917,
+    "chunkIndex": 1
+  },
+  {
+    "text": "will",
+    "startSec": 159.917,
+    "endSec": 160.134,
+    "chunkIndex": 1
+  },
+  {
+    "text": "not",
+    "startSec": 160.134,
+    "endSec": 160.242,
+    "chunkIndex": 1
+  },
+  {
+    "text": "be",
+    "startSec": 160.242,
+    "endSec": 160.722,
+    "chunkIndex": 1
+  },
+  {
+    "text": "persuaded",
+    "startSec": 160.722,
+    "endSec": 160.846,
+    "chunkIndex": 1
+  },
+  {
+    "text": "by",
+    "startSec": 160.846,
+    "endSec": 160.939,
+    "chunkIndex": 1
+  },
+  {
+    "text": "a",
+    "startSec": 160.939,
+    "endSec": 161.295,
+    "chunkIndex": 1
+  },
+  {
+    "text": "prettier",
+    "startSec": 161.295,
+    "endSec": 161.898,
+    "chunkIndex": 1
+  },
+  {
+    "text": "homepage,",
+    "startSec": 162.115,
+    "endSec": 162.44,
+    "chunkIndex": 1
+  },
+  {
+    "text": "more",
+    "startSec": 162.44,
+    "endSec": 162.796,
+    "chunkIndex": 1
+  },
+  {
+    "text": "voice",
+    "startSec": 162.796,
+    "endSec": 163.524,
+    "chunkIndex": 1
+  },
+  {
+    "text": "thumbnails,",
+    "startSec": 163.849,
+    "endSec": 164.174,
+    "chunkIndex": 1
+  },
+  {
+    "text": "or",
+    "startSec": 164.174,
+    "endSec": 164.623,
+    "chunkIndex": 1
+  },
+  {
+    "text": "abstract",
+    "startSec": 164.623,
+    "endSec": 165.025,
+    "chunkIndex": 1
+  },
+  {
+    "text": "claims",
+    "startSec": 165.025,
+    "endSec": 165.288,
+    "chunkIndex": 1
+  },
+  {
+    "text": "about",
+    "startSec": 165.288,
+    "endSec": 165.614,
+    "chunkIndex": 1
+  },
+  {
+    "text": "AI",
+    "startSec": 165.614,
+    "endSec": 166.031,
+    "chunkIndex": 1
+  },
+  {
+    "text": "speed.",
+    "startSec": 166.991,
+    "endSec": 167.688,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Reliability",
+    "startSec": 167.688,
+    "endSec": 167.843,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 167.843,
+    "endSec": 167.905,
+    "chunkIndex": 1
+  },
+  {
+    "text": "the",
+    "startSec": 167.905,
+    "endSec": 168.23,
+    "chunkIndex": 1
+  },
+  {
+    "text": "product",
+    "startSec": 168.23,
+    "endSec": 168.586,
+    "chunkIndex": 1
+  },
+  {
+    "text": "surface",
+    "startSec": 168.586,
+    "endSec": 169.004,
+    "chunkIndex": 1
+  },
+  {
+    "text": "before",
+    "startSec": 169.004,
+    "endSec": 169.066,
+    "chunkIndex": 1
+  },
+  {
+    "text": "it",
+    "startSec": 169.066,
+    "endSec": 169.422,
+    "chunkIndex": 1
+  },
+  {
+    "text": "becomes",
+    "startSec": 169.422,
+    "endSec": 169.514,
+    "chunkIndex": 1
+  },
+  {
+    "text": "the",
+    "startSec": 169.514,
+    "endSec": 169.901,
+    "chunkIndex": 1
+  },
+  {
+    "text": "marketing",
+    "startSec": 169.901,
+    "endSec": 170.335,
+    "chunkIndex": 1
+  },
+  {
+    "text": "surface.",
+    "startSec": 171.109,
+    "endSec": 171.295,
+    "chunkIndex": 1
+  },
+  {
+    "text": "The",
+    "startSec": 171.295,
+    "endSec": 171.821,
+    "chunkIndex": 1
+  },
+  {
+    "text": "engineering",
+    "startSec": 171.821,
+    "endSec": 172.069,
+    "chunkIndex": 1
+  },
+  {
+    "text": "job",
+    "startSec": 172.069,
+    "endSec": 172.131,
+    "chunkIndex": 1
+  },
+  {
+    "text": "in",
+    "startSec": 172.131,
+    "endSec": 172.285,
+    "chunkIndex": 1
+  },
+  {
+    "text": "this",
+    "startSec": 172.285,
+    "endSec": 172.641,
+    "chunkIndex": 1
+  },
+  {
+    "text": "phase",
+    "startSec": 172.672,
+    "endSec": 173.028,
+    "chunkIndex": 1
+  },
+  {
+    "text": "is",
+    "startSec": 173.028,
+    "endSec": 173.121,
+    "chunkIndex": 1
+  },
+  {
+    "text": "to",
+    "startSec": 173.121,
+    "endSec": 173.292,
+    "chunkIndex": 1
+  },
+  {
+    "text": "make",
+    "startSec": 173.292,
+    "endSec": 173.446,
+    "chunkIndex": 1
+  },
+  {
+    "text": "that",
+    "startSec": 173.446,
+    "endSec": 173.988,
+    "chunkIndex": 1
+  },
+  {
+    "text": "relationship",
+    "startSec": 173.988,
+    "endSec": 174.236,
+    "chunkIndex": 1
+  }
+]

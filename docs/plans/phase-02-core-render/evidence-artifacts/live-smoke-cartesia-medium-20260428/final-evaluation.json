@@ -1,0 +1,94 @@
+{
+  "scorecard": "tts_ux_readiness_scorecard",
+  "attempt_id": "live-smoke-cartesia-medium-20260428",
+  "provider": "cartesia",
+  "pacing_mode": "exact",
+  "input_validation_mode": "strict",
+  "hard_gate_verdict": "warning",
+  "audio_generation_smoke": "passed_with_warnings",
+  "product_readiness_evaluation": "warning",
+  "weighted_score_interpreted": false,
+  "runs": [
+    {
+      "request_id": "live-smoke-cartesia-theo-en-medium-exact-20260428",
+      "language": "en",
+      "script_id": "en-control-medium",
+      "voice_id": "79f8b5fb-2cc8-479a-80df-29f7a7cf1a3e",
+      "script_chars": 3139,
+      "script_words": 504,
+      "chunk_count": 2,
+      "retry_count": 0,
+      "audio_duration_sec": 174.504,
+      "total_wall_time_sec": 29.015,
+      "timestamp_coverage_pct": 99.8,
+      "estimated_tts_cost_usd": 0.098,
+      "estimated_total_cost_usd": 0.133,
+      "warning_codes": [
+        "timestamp_coverage_partial"
+      ],
+      "manual_listening_review": "accepted",
+      "manual_review_note": "User review on 2026-04-28: no material issue heard in the medium sample."
+    },
+    {
+      "request_id": "live-smoke-cartesia-pedro-es-medium-exact-20260428",
+      "language": "es",
+      "script_id": "es-control-medium",
+      "voice_id": "15d0c2e2-8d29-44c3-be23-d585d5f154a1",
+      "script_chars": 3386,
+      "script_words": 552,
+      "chunk_count": 3,
+      "retry_count": 0,
+      "audio_duration_sec": 177.936,
+      "total_wall_time_sec": 28.035,
+      "timestamp_coverage_pct": 99.64,
+      "estimated_tts_cost_usd": 0.106,
+      "estimated_total_cost_usd": 0.141,
+      "warning_codes": [
+        "timestamp_coverage_partial"
+      ],
+      "manual_listening_review": "accepted_with_voice_speed_note",
+      "manual_review_note": "User review on 2026-04-28: no material issue; Spanish sounds relatively fast, likely due to voice selection, but do not adjust pacing or voice hastily."
+    }
+  ],
+  "audio_format_policy": {
+    "production_master_audio": {
+      "source": "provider_native_raw_pcm",
+      "verdict": "ready_for_internal_master",
+      "manifest": "large-artifact-manifest.json"
+    },
+    "default_delivery_audio": {
+      "format": "mp3",
+      "source": "derived_from_master",
+      "target_bitrate_bps": 192000,
+      "verdict": "ready_for_delivery"
+    },
+    "optional_wav_download": {
+      "source": "derive_from_lossless_master_or_provider_native_wav",
+      "verdict": "hold_for_export"
+    }
+  },
+  "evidence_coverage": {
+    "final_audio": "present_promoted_mp3",
+    "production_master_audio_manifest": "present_raw_pcm_manifest_only",
+    "artifact_manifest": "present_for_both_runs",
+    "audio_format_policy": "present_for_both_runs",
+    "production_master_audio_ref": "present_for_both_runs",
+    "delivery_audio_ref": "present_for_both_runs",
+    "derived_from_asset_refs": "present_for_both_multi_chunk_delivery_refs",
+    "metrics": "present_for_both_runs",
+    "provider_input": "present_for_both_runs",
+    "input_adapter_ref": "present_for_both_runs",
+    "word_timings": "present_for_both_runs",
+    "subtitle_artifacts": "present_for_both_runs",
+    "format_probe": "present_for_both_runs",
+    "manual_audio_review": "accepted_with_es_voice_speed_note"
+  },
+  "warnings": [
+    "Both runs generated complete audio and timing artifacts but timestamp coverage is partial: EN 99.80 percent, ES 99.64 percent.",
+    "Manual listening review found no material issue, but Spanish sounds relatively fast; keep this as a voice-speed note rather than changing pacing or voice prematurely.",
+    "Raw SSE provider responses are retained locally under runs/live-smoke and are not promoted because of size.",
+    "Provider-native raw PCM masters are retained locally and tracked through large-artifact-manifest.json instead of being promoted as binary files.",
+    "Optional WAV user download was not generated and remains hold_for_export."
+  ],
+  "recommendation": "Treat Cartesia medium audio generation as accepted with warnings for the scoped benchmark. Do not change Spanish pacing or voice based on this single sample; preserve the voice-speed note, complete timing spot checks, and only then decide whether Cartesia deserves a continuation/WebSocket lane."
+}

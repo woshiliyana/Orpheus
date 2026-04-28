@@ -1,0 +1,24 @@
+{
+  "outputPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/artifacts/final.mp3",
+  "totalDurationSec": 177.936,
+  "segmentReports": [
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/chunks/000/audio.mp3",
+      "offsetStartSec": 0,
+      "offsetEndSec": 78.336,
+      "durationSec": 78.336
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/chunks/001/audio.mp3",
+      "offsetStartSec": 78.336,
+      "offsetEndSec": 149.664,
+      "durationSec": 71.328
+    },
+    {
+      "segmentPath": "/Volumes/woshiliyana/mycodeprojects/text-to-audio mvp/runs/live-smoke/live-smoke-cartesia-pedro-es-medium-exact-20260428/chunks/002/audio.mp3",
+      "offsetStartSec": 149.664,
+      "offsetEndSec": 177.93599999999998,
+      "durationSec": 28.272
+    }
+  ]
+}

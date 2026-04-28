@@ -1,0 +1,171 @@
+1
+00:00:00,015 --> 00:00:03,111
+Educational explainers win trust by reducing uncertainty.
+
+2
+00:00:03,468 --> 00:00:07,152
+A good explainer does not merely dump information into a sequence of statements.
+
+3
+00:00:07,461 --> 00:00:09,133
+It helps the listener feel oriented.
+
+4
+00:00:09,706 --> 00:00:11,269
+First, it names the problem.
+
+5
+00:00:11,625 --> 00:00:14,025
+Then it introduces the model that makes the problem legible.
+
+6
+00:00:14,334 --> 00:00:18,684
+Then it moves through a chain of evidence, using examples that are concrete enough to remember but light
+
+7
+00:00:18,684 --> 00:00:20,310
+enough not to smother the main point.
+
+8
+00:00:21,053 --> 00:00:24,536
+By the time the closing line arrives, the listener should feel more capable than they did at the
+
+9
+00:00:24,536 --> 00:00:28,127
+beginning. That transformation is why narration quality matters so much.
+
+10
+00:00:28,499 --> 00:00:29,845
+The audio is not decoration.
+
+11
+00:00:30,588 --> 00:00:34,009
+It is the vehicle that carries understanding from one mental state to another.
+
+12
+00:00:34,551 --> 00:00:37,879
+For creators, this produces a stubborn workflow challenge.
+
+13
+00:00:38,545 --> 00:00:41,270
+The script is often the cleanest artifact in the whole production chain.
+
+14
+00:00:41,657 --> 00:00:45,589
+It can be drafted, revised, reviewed, and approved in a text editor.
+
+15
+00:00:46,842 --> 00:00:50,356
+The moment it enters speech generation, the process can become fragile.
+
+16
+00:00:51,347 --> 00:00:55,031
+Some tools do well on short passages and start wobbling when the input grows.
+
+17
+00:00:56,146 --> 00:00:59,536
+Others generate a clean first half and a noticeably different second half.
+
+18
+00:01:00,279 --> 00:01:04,784
+Some create timestamps that look plausible until you try to line them up against the final stitched file.
+
+19
+00:01:05,867 --> 00:01:10,434
+The creator may still get "audio," but not the kind of output that can move directly into publication.
+
+20
+00:01:11,053 --> 00:01:14,644
+Instead of saving time, the system exports extra operator burden.
+
+21
+00:01:14,947 --> 00:01:17,440
+That is why the first technical slice should stay narrow.
+
+22
+00:01:18,090 --> 00:01:23,198
+It is not trying to solve every language, every editing workflow, or every downstream publishing surface.
+
+23
+00:01:23,802 --> 00:01:29,173
+It is trying to prove one honest claim: a creator can paste an English explainer script that would
+
+24
+00:01:29,173 --> 00:01:34,235
+normally be annoying to split, run it through a backend-owned pipeline, and reliably receive a
+
+25
+00:01:34,235 --> 00:01:38,059
+single narration file plus subtitle-ready timing artifacts.
+
+26
+00:01:38,059 --> 00:01:41,929
+If that loop is stable, everything else becomes easier to evaluate.
+
+27
+00:01:41,929 --> 00:01:46,217
+If that loop is unstable, all the growth language in the world becomes noise.
+
+28
+00:01:46,217 --> 00:01:49,917
+A stable loop requires deliberate engineering choices.
+
+29
+00:01:49,917 --> 00:01:55,876
+The chunking plan must respect reading boundaries instead of cutting blindly at arbitrary character counts.
+
+30
+00:01:55,876 --> 00:02:01,217
+Provider calls must be isolated behind adapters so the business layer is not permanently welded to one vendor's
+
+31
+00:02:01,217 --> 00:02:03,013
+SDK or response shape.
+
+32
+00:02:03,013 --> 00:02:08,477
+Retries must be limited, explicit, and logged so repeated failures become measurable rather than
+
+33
+00:02:09,499 --> 00:02:14,483
+mysterious. Stitching has to produce both a finished file and a splice report because seams are where long-form
+
+34
+00:02:14,483 --> 00:02:19,607
+systems quietly fail. Metrics have to record cost, retries, duration, and
+
+35
+00:02:19,607 --> 00:02:24,685
+timestamp coverage, because a workflow that "works" only by burning margin or dropping timing
+
+36
+00:02:24,685 --> 00:02:26,264
+fidelity is not actually ready.
+
+37
+00:02:26,264 --> 00:02:28,369
+The payoff is not a flashy demo.
+
+38
+00:02:28,369 --> 00:02:30,072
+The payoff is credibility.
+
+39
+00:02:30,072 --> 00:02:35,087
+A creator who can trust one-submit narration will accept a product that is still visibly early in
+
+40
+00:02:35,087 --> 00:02:40,134
+other places. A creator who has to manually rescue every long script will
+
+41
+00:02:40,134 --> 00:02:45,288
+not be persuaded by a prettier homepage, more voice thumbnails, or abstract claims
+
+42
+00:02:45,288 --> 00:02:50,335
+about AI speed. Reliability is the product surface before it becomes the marketing
+
+43
+00:02:51,109 --> 00:02:54,236
+surface. The engineering job in this phase is to make that relationship

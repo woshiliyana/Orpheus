@@ -1,0 +1,18 @@
+[
+  {
+    "chunkIndex": 0,
+    "id": "chunk_0_3d424262a14c",
+    "startChar": 0,
+    "endChar": 1390,
+    "providerInputChars": 1390,
+    "breakTagCount": 0
+  },
+  {
+    "chunkIndex": 1,
+    "id": "chunk_1_b39024b4c2ee",
+    "startChar": 1390,
+    "endChar": 3139,
+    "providerInputChars": 1749,
+    "breakTagCount": 0
+  }
+]

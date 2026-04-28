@@ -16,5 +16,11 @@
     "language": "en",
     "voiceId": "Ashley",
     "scriptPath": "scripts/en-control-long.txt"
+  },
+  {
+    "id": "es-control-medium",
+    "language": "es",
+    "voiceId": "Rafael",
+    "scriptPath": "scripts/es-control-medium.txt"
   }
 ]

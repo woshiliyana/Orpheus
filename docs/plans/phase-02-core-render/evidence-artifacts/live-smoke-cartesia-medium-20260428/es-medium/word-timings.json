@@ -1,0 +1,3302 @@
+[
+  {
+    "text": "Este",
+    "startSec": 0.464,
+    "endSec": 0.697,
+    "chunkIndex": 0
+  },
+  {
+    "text": "mundo",
+    "startSec": 0.697,
+    "endSec": 0.96,
+    "chunkIndex": 0
+  },
+  {
+    "text": "nunca",
+    "startSec": 0.96,
+    "endSec": 1.238,
+    "chunkIndex": 0
+  },
+  {
+    "text": "fue",
+    "startSec": 1.238,
+    "endSec": 1.378,
+    "chunkIndex": 0
+  },
+  {
+    "text": "justo.",
+    "startSec": 1.378,
+    "endSec": 1.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": "No",
+    "startSec": 2.167,
+    "endSec": 2.322,
+    "chunkIndex": 0
+  },
+  {
+    "text": "importa",
+    "startSec": 2.322,
+    "endSec": 2.709,
+    "chunkIndex": 0
+  },
+  {
+    "text": "cuánto",
+    "startSec": 2.709,
+    "endSec": 3.034,
+    "chunkIndex": 0
+  },
+  {
+    "text": "des",
+    "startSec": 3.034,
+    "endSec": 3.158,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 3.158,
+    "endSec": 3.22,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ti,",
+    "startSec": 3.22,
+    "endSec": 3.483,
+    "chunkIndex": 0
+  },
+  {
+    "text": "siempre",
+    "startSec": 3.545,
+    "endSec": 3.901,
+    "chunkIndex": 0
+  },
+  {
+    "text": "hay",
+    "startSec": 3.901,
+    "endSec": 4.025,
+    "chunkIndex": 0
+  },
+  {
+    "text": "alguien",
+    "startSec": 4.025,
+    "endSec": 4.272,
+    "chunkIndex": 0
+  },
+  {
+    "text": "dispuesto",
+    "startSec": 4.272,
+    "endSec": 4.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 4.69,
+    "endSec": 4.721,
+    "chunkIndex": 0
+  },
+  {
+    "text": "traicionarte.",
+    "startSec": 4.721,
+    "endSec": 5.31,
+    "chunkIndex": 0
+  },
+  {
+    "text": "No",
+    "startSec": 5.495,
+    "endSec": 5.619,
+    "chunkIndex": 0
+  },
+  {
+    "text": "importa",
+    "startSec": 5.619,
+    "endSec": 6.037,
+    "chunkIndex": 0
+  },
+  {
+    "text": "cuánto",
+    "startSec": 6.037,
+    "endSec": 6.362,
+    "chunkIndex": 0
+  },
+  {
+    "text": "te",
+    "startSec": 6.362,
+    "endSec": 6.424,
+    "chunkIndex": 0
+  },
+  {
+    "text": "esfuerces,",
+    "startSec": 6.424,
+    "endSec": 6.966,
+    "chunkIndex": 0
+  },
+  {
+    "text": "alguien",
+    "startSec": 6.997,
+    "endSec": 7.322,
+    "chunkIndex": 0
+  },
+  {
+    "text": "con",
+    "startSec": 7.322,
+    "endSec": 7.446,
+    "chunkIndex": 0
+  },
+  {
+    "text": "la",
+    "startSec": 7.446,
+    "endSec": 7.539,
+    "chunkIndex": 0
+  },
+  {
+    "text": "mitad",
+    "startSec": 7.539,
+    "endSec": 7.771,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 7.771,
+    "endSec": 7.833,
+    "chunkIndex": 0
+  },
+  {
+    "text": "tu",
+    "startSec": 7.833,
+    "endSec": 7.926,
+    "chunkIndex": 0
+  },
+  {
+    "text": "talento",
+    "startSec": 7.926,
+    "endSec": 8.344,
+    "chunkIndex": 0
+  },
+  {
+    "text": "terminará",
+    "startSec": 8.344,
+    "endSec": 8.793,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ocupando",
+    "startSec": 8.793,
+    "endSec": 9.211,
+    "chunkIndex": 0
+  },
+  {
+    "text": "el",
+    "startSec": 9.211,
+    "endSec": 9.273,
+    "chunkIndex": 0
+  },
+  {
+    "text": "lugar",
+    "startSec": 9.273,
+    "endSec": 9.52,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 9.52,
+    "endSec": 9.613,
+    "chunkIndex": 0
+  },
+  {
+    "text": "te",
+    "startSec": 9.613,
+    "endSec": 9.69,
+    "chunkIndex": 0
+  },
+  {
+    "text": "correspondía.",
+    "startSec": 9.69,
+    "endSec": 10.356,
+    "chunkIndex": 0
+  },
+  {
+    "text": "No",
+    "startSec": 10.681,
+    "endSec": 10.743,
+    "chunkIndex": 0
+  },
+  {
+    "text": "importa",
+    "startSec": 10.743,
+    "endSec": 11.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": "cuánto",
+    "startSec": 11.13,
+    "endSec": 11.409,
+    "chunkIndex": 0
+  },
+  {
+    "text": "bien",
+    "startSec": 11.409,
+    "endSec": 11.564,
+    "chunkIndex": 0
+  },
+  {
+    "text": "hagas,",
+    "startSec": 11.564,
+    "endSec": 11.858,
+    "chunkIndex": 0
+  },
+  {
+    "text": "siempre",
+    "startSec": 11.858,
+    "endSec": 12.121,
+    "chunkIndex": 0
+  },
+  {
+    "text": "habrá",
+    "startSec": 12.121,
+    "endSec": 12.276,
+    "chunkIndex": 0
+  },
+  {
+    "text": "quien",
+    "startSec": 12.276,
+    "endSec": 12.461,
+    "chunkIndex": 0
+  },
+  {
+    "text": "confunda",
+    "startSec": 12.461,
+    "endSec": 12.848,
+    "chunkIndex": 0
+  },
+  {
+    "text": "tu",
+    "startSec": 12.848,
+    "endSec": 12.972,
+    "chunkIndex": 0
+  },
+  {
+    "text": "bondad",
+    "startSec": 12.972,
+    "endSec": 13.266,
+    "chunkIndex": 0
+  },
+  {
+    "text": "con",
+    "startSec": 13.266,
+    "endSec": 13.39,
+    "chunkIndex": 0
+  },
+  {
+    "text": "debilidad",
+    "startSec": 13.39,
+    "endSec": 13.901,
+    "chunkIndex": 0
+  },
+  {
+    "text": "y",
+    "startSec": 13.978,
+    "endSec": 14.071,
+    "chunkIndex": 0
+  },
+  {
+    "text": "te",
+    "startSec": 14.071,
+    "endSec": 14.195,
+    "chunkIndex": 0
+  },
+  {
+    "text": "use",
+    "startSec": 14.195,
+    "endSec": 14.381,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 14.381,
+    "endSec": 14.443,
+    "chunkIndex": 0
+  },
+  {
+    "text": "escalón",
+    "startSec": 14.443,
+    "endSec": 14.799,
+    "chunkIndex": 0
+  },
+  {
+    "text": "para",
+    "startSec": 14.799,
+    "endSec": 14.969,
+    "chunkIndex": 0
+  },
+  {
+    "text": "subir.",
+    "startSec": 14.969,
+    "endSec": 15.248,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Esa",
+    "startSec": 15.759,
+    "endSec": 16.022,
+    "chunkIndex": 0
+  },
+  {
+    "text": "es",
+    "startSec": 16.022,
+    "endSec": 16.084,
+    "chunkIndex": 0
+  },
+  {
+    "text": "la",
+    "startSec": 16.084,
+    "endSec": 16.208,
+    "chunkIndex": 0
+  },
+  {
+    "text": "realidad.",
+    "startSec": 16.208,
+    "endSec": 16.548,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Pero",
+    "startSec": 16.656,
+    "endSec": 16.842,
+    "chunkIndex": 0
+  },
+  {
+    "text": "los",
+    "startSec": 16.842,
+    "endSec": 17.012,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 17.012,
+    "endSec": 17.09,
+    "chunkIndex": 0
+  },
+  {
+    "text": "vieron",
+    "startSec": 17.09,
+    "endSec": 17.415,
+    "chunkIndex": 0
+  },
+  {
+    "text": "todo",
+    "startSec": 17.415,
+    "endSec": 17.663,
+    "chunkIndex": 0
+  },
+  {
+    "text": "esto",
+    "startSec": 17.663,
+    "endSec": 17.895,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 17.895,
+    "endSec": 17.926,
+    "chunkIndex": 0
+  },
+  {
+    "text": "tiempo,",
+    "startSec": 17.926,
+    "endSec": 18.328,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sobrevivieron.",
+    "startSec": 18.483,
+    "endSec": 19.273,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Y",
+    "startSec": 19.551,
+    "endSec": 19.613,
+    "chunkIndex": 0
+  },
+  {
+    "text": "los",
+    "startSec": 19.613,
+    "endSec": 19.783,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 19.783,
+    "endSec": 19.845,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sobrevivieron,",
+    "startSec": 19.845,
+    "endSec": 20.604,
+    "chunkIndex": 0
+  },
+  {
+    "text": "terminaron",
+    "startSec": 20.774,
+    "endSec": 21.269,
+    "chunkIndex": 0
+  },
+  {
+    "text": "mandando.",
+    "startSec": 21.269,
+    "endSec": 21.718,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Ese",
+    "startSec": 22.043,
+    "endSec": 22.229,
+    "chunkIndex": 0
+  },
+  {
+    "text": "tipo",
+    "startSec": 22.229,
+    "endSec": 22.477,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 22.477,
+    "endSec": 22.57,
+    "chunkIndex": 0
+  },
+  {
+    "text": "fuerza",
+    "startSec": 22.57,
+    "endSec": 22.864,
+    "chunkIndex": 0
+  },
+  {
+    "text": "no",
+    "startSec": 22.864,
+    "endSec": 22.988,
+    "chunkIndex": 0
+  },
+  {
+    "text": "se",
+    "startSec": 22.988,
+    "endSec": 23.112,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ve,",
+    "startSec": 23.112,
+    "endSec": 23.282,
+    "chunkIndex": 0
+  },
+  {
+    "text": "pero",
+    "startSec": 23.499,
+    "endSec": 23.669,
+    "chunkIndex": 0
+  },
+  {
+    "text": "todos",
+    "startSec": 23.669,
+    "endSec": 23.901,
+    "chunkIndex": 0
+  },
+  {
+    "text": "la",
+    "startSec": 23.901,
+    "endSec": 24.025,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sienten.",
+    "startSec": 24.025,
+    "endSec": 24.412,
+    "chunkIndex": 0
+  },
+  {
+    "text": "A",
+    "startSec": 24.706,
+    "endSec": 24.752,
+    "chunkIndex": 0
+  },
+  {
+    "text": "eso",
+    "startSec": 24.752,
+    "endSec": 24.938,
+    "chunkIndex": 0
+  },
+  {
+    "text": "le",
+    "startSec": 24.938,
+    "endSec": 25.031,
+    "chunkIndex": 0
+  },
+  {
+    "text": "llamamos",
+    "startSec": 25.031,
+    "endSec": 25.387,
+    "chunkIndex": 0
+  },
+  {
+    "text": "inteligencia",
+    "startSec": 25.387,
+    "endSec": 25.929,
+    "chunkIndex": 0
+  },
+  {
+    "text": "oscura.",
+    "startSec": 25.929,
+    "endSec": 26.3,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Nace",
+    "startSec": 26.579,
+    "endSec": 26.858,
+    "chunkIndex": 0
+  },
+  {
+    "text": "del",
+    "startSec": 26.858,
+    "endSec": 26.997,
+    "chunkIndex": 0
+  },
+  {
+    "text": "dolor,",
+    "startSec": 26.997,
+    "endSec": 27.276,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 27.415,
+    "endSec": 27.554,
+    "chunkIndex": 0
+  },
+  {
+    "text": "la",
+    "startSec": 27.554,
+    "endSec": 27.647,
+    "chunkIndex": 0
+  },
+  {
+    "text": "traición,",
+    "startSec": 27.647,
+    "endSec": 28.143,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 28.375,
+    "endSec": 28.483,
+    "chunkIndex": 0
+  },
+  {
+    "text": "la",
+    "startSec": 28.483,
+    "endSec": 28.592,
+    "chunkIndex": 0
+  },
+  {
+    "text": "derrota.",
+    "startSec": 28.592,
+    "endSec": 28.963,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Donde",
+    "startSec": 29.396,
+    "endSec": 29.613,
+    "chunkIndex": 0
+  },
+  {
+    "text": "otros",
+    "startSec": 29.613,
+    "endSec": 29.83,
+    "chunkIndex": 0
+  },
+  {
+    "text": "se",
+    "startSec": 29.83,
+    "endSec": 29.907,
+    "chunkIndex": 0
+  },
+  {
+    "text": "quebraron,",
+    "startSec": 29.907,
+    "endSec": 30.341,
+    "chunkIndex": 0
+  },
+  {
+    "text": "tú",
+    "startSec": 30.681,
+    "endSec": 30.774,
+    "chunkIndex": 0
+  },
+  {
+    "text": "te",
+    "startSec": 30.774,
+    "endSec": 30.883,
+    "chunkIndex": 0
+  },
+  {
+    "text": "levantaste.",
+    "startSec": 30.883,
+    "endSec": 31.455,
+    "chunkIndex": 0
+  },
+  {
+    "text": "La",
+    "startSec": 31.749,
+    "endSec": 31.827,
+    "chunkIndex": 0
+  },
+  {
+    "text": "inteligencia",
+    "startSec": 31.827,
+    "endSec": 32.369,
+    "chunkIndex": 0
+  },
+  {
+    "text": "oscura",
+    "startSec": 32.369,
+    "endSec": 32.756,
+    "chunkIndex": 0
+  },
+  {
+    "text": "es",
+    "startSec": 32.818,
+    "endSec": 32.988,
+    "chunkIndex": 0
+  },
+  {
+    "text": "una",
+    "startSec": 32.988,
+    "endSec": 33.143,
+    "chunkIndex": 0
+  },
+  {
+    "text": "capacidad:",
+    "startSec": 33.143,
+    "endSec": 33.684,
+    "chunkIndex": 0
+  },
+  {
+    "text": "aprender",
+    "startSec": 33.793,
+    "endSec": 34.18,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 34.18,
+    "endSec": 34.211,
+    "chunkIndex": 0
+  },
+  {
+    "text": "escuchar,",
+    "startSec": 34.211,
+    "endSec": 34.691,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 35.14,
+    "endSec": 35.232,
+    "chunkIndex": 0
+  },
+  {
+    "text": "observar,",
+    "startSec": 35.232,
+    "endSec": 35.697,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 35.805,
+    "endSec": 35.867,
+    "chunkIndex": 0
+  },
+  {
+    "text": "esperar",
+    "startSec": 35.867,
+    "endSec": 36.177,
+    "chunkIndex": 0
+  },
+  {
+    "text": "en",
+    "startSec": 36.177,
+    "endSec": 36.27,
+    "chunkIndex": 0
+  },
+  {
+    "text": "silencio,",
+    "startSec": 36.27,
+    "endSec": 36.734,
+    "chunkIndex": 0
+  },
+  {
+    "text": "y",
+    "startSec": 37.322,
+    "endSec": 37.384,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 37.384,
+    "endSec": 37.446,
+    "chunkIndex": 0
+  },
+  {
+    "text": "golpear",
+    "startSec": 37.446,
+    "endSec": 37.725,
+    "chunkIndex": 0
+  },
+  {
+    "text": "en",
+    "startSec": 37.725,
+    "endSec": 37.833,
+    "chunkIndex": 0
+  },
+  {
+    "text": "el",
+    "startSec": 37.833,
+    "endSec": 37.895,
+    "chunkIndex": 0
+  },
+  {
+    "text": "momento",
+    "startSec": 37.895,
+    "endSec": 38.266,
+    "chunkIndex": 0
+  },
+  {
+    "text": "exacto.",
+    "startSec": 38.266,
+    "endSec": 38.638,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Mientras",
+    "startSec": 39.273,
+    "endSec": 39.582,
+    "chunkIndex": 0
+  },
+  {
+    "text": "los",
+    "startSec": 39.582,
+    "endSec": 39.722,
+    "chunkIndex": 0
+  },
+  {
+    "text": "demás",
+    "startSec": 39.722,
+    "endSec": 39.985,
+    "chunkIndex": 0
+  },
+  {
+    "text": "discuten,",
+    "startSec": 39.985,
+    "endSec": 40.527,
+    "chunkIndex": 0
+  },
+  {
+    "text": "tú",
+    "startSec": 40.774,
+    "endSec": 40.852,
+    "chunkIndex": 0
+  },
+  {
+    "text": "recoges",
+    "startSec": 40.852,
+    "endSec": 41.254,
+    "chunkIndex": 0
+  },
+  {
+    "text": "información.",
+    "startSec": 41.254,
+    "endSec": 41.78,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Mientras",
+    "startSec": 42.493,
+    "endSec": 42.833,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ellos",
+    "startSec": 42.833,
+    "endSec": 43.034,
+    "chunkIndex": 0
+  },
+  {
+    "text": "se",
+    "startSec": 43.034,
+    "endSec": 43.127,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ahogan",
+    "startSec": 43.127,
+    "endSec": 43.406,
+    "chunkIndex": 0
+  },
+  {
+    "text": "en",
+    "startSec": 43.406,
+    "endSec": 43.468,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sus",
+    "startSec": 43.468,
+    "endSec": 43.638,
+    "chunkIndex": 0
+  },
+  {
+    "text": "emociones,",
+    "startSec": 43.638,
+    "endSec": 44.211,
+    "chunkIndex": 0
+  },
+  {
+    "text": "tú",
+    "startSec": 44.458,
+    "endSec": 44.551,
+    "chunkIndex": 0
+  },
+  {
+    "text": "calculas.",
+    "startSec": 44.551,
+    "endSec": 45.078,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Mientras",
+    "startSec": 45.527,
+    "endSec": 45.852,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ellos",
+    "startSec": 45.852,
+    "endSec": 46.068,
+    "chunkIndex": 0
+  },
+  {
+    "text": "apagan",
+    "startSec": 46.068,
+    "endSec": 46.409,
+    "chunkIndex": 0
+  },
+  {
+    "text": "incendios",
+    "startSec": 46.409,
+    "endSec": 46.827,
+    "chunkIndex": 0
+  },
+  {
+    "text": "del",
+    "startSec": 46.827,
+    "endSec": 46.951,
+    "chunkIndex": 0
+  },
+  {
+    "text": "día,",
+    "startSec": 46.951,
+    "endSec": 47.167,
+    "chunkIndex": 0
+  },
+  {
+    "text": "tú",
+    "startSec": 47.57,
+    "endSec": 47.709,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ya",
+    "startSec": 47.709,
+    "endSec": 47.802,
+    "chunkIndex": 0
+  },
+  {
+    "text": "estás",
+    "startSec": 47.802,
+    "endSec": 48.065,
+    "chunkIndex": 0
+  },
+  {
+    "text": "diseñando",
+    "startSec": 48.065,
+    "endSec": 48.452,
+    "chunkIndex": 0
+  },
+  {
+    "text": "el",
+    "startSec": 48.452,
+    "endSec": 48.499,
+    "chunkIndex": 0
+  },
+  {
+    "text": "futuro.",
+    "startSec": 48.499,
+    "endSec": 48.901,
+    "chunkIndex": 0
+  },
+  {
+    "text": "La",
+    "startSec": 49.118,
+    "endSec": 49.211,
+    "chunkIndex": 0
+  },
+  {
+    "text": "mayoría",
+    "startSec": 49.211,
+    "endSec": 49.551,
+    "chunkIndex": 0
+  },
+  {
+    "text": "juega",
+    "startSec": 49.551,
+    "endSec": 49.799,
+    "chunkIndex": 0
+  },
+  {
+    "text": "damas.",
+    "startSec": 49.799,
+    "endSec": 50.202,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Tú",
+    "startSec": 50.774,
+    "endSec": 50.852,
+    "chunkIndex": 0
+  },
+  {
+    "text": "estás",
+    "startSec": 50.852,
+    "endSec": 51.13,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 51.13,
+    "endSec": 51.177,
+    "chunkIndex": 0
+  },
+  {
+    "text": "punto",
+    "startSec": 51.177,
+    "endSec": 51.502,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 51.502,
+    "endSec": 51.564,
+    "chunkIndex": 0
+  },
+  {
+    "text": "aprender",
+    "startSec": 51.564,
+    "endSec": 51.873,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ajedrez.",
+    "startSec": 51.873,
+    "endSec": 52.369,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Pero",
+    "startSec": 53.112,
+    "endSec": 53.267,
+    "chunkIndex": 0
+  },
+  {
+    "text": "antes",
+    "startSec": 53.267,
+    "endSec": 53.452,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 53.452,
+    "endSec": 53.53,
+    "chunkIndex": 0
+  },
+  {
+    "text": "empezar,",
+    "startSec": 53.53,
+    "endSec": 53.963,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 54.102,
+    "endSec": 54.211,
+    "chunkIndex": 0
+  },
+  {
+    "text": "quede",
+    "startSec": 54.211,
+    "endSec": 54.675,
+    "chunkIndex": 0
+  },
+  {
+    "text": "claro:",
+    "startSec": 55.31,
+    "endSec": 55.527,
+    "chunkIndex": 0
+  },
+  {
+    "text": "este",
+    "startSec": 55.527,
+    "endSec": 56.177,
+    "chunkIndex": 0
+  },
+  {
+    "text": "conocimiento",
+    "startSec": 56.208,
+    "endSec": 56.424,
+    "chunkIndex": 0
+  },
+  {
+    "text": "es",
+    "startSec": 56.424,
+    "endSec": 56.579,
+    "chunkIndex": 0
+  },
+  {
+    "text": "para",
+    "startSec": 56.579,
+    "endSec": 57.183,
+    "chunkIndex": 0
+  },
+  {
+    "text": "protegerte,",
+    "startSec": 57.477,
+    "endSec": 57.585,
+    "chunkIndex": 0
+  },
+  {
+    "text": "no",
+    "startSec": 57.585,
+    "endSec": 57.756,
+    "chunkIndex": 0
+  },
+  {
+    "text": "para",
+    "startSec": 57.756,
+    "endSec": 58.05,
+    "chunkIndex": 0
+  },
+  {
+    "text": "hacerle",
+    "startSec": 58.05,
+    "endSec": 58.313,
+    "chunkIndex": 0
+  },
+  {
+    "text": "daño",
+    "startSec": 58.313,
+    "endSec": 58.359,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 58.359,
+    "endSec": 58.669,
+    "chunkIndex": 0
+  },
+  {
+    "text": "nadie.",
+    "startSec": 59.149,
+    "endSec": 59.211,
+    "chunkIndex": 0
+  },
+  {
+    "text": "El",
+    "startSec": 59.211,
+    "endSec": 59.613,
+    "chunkIndex": 0
+  },
+  {
+    "text": "objetivo",
+    "startSec": 59.613,
+    "endSec": 59.706,
+    "chunkIndex": 0
+  },
+  {
+    "text": "es",
+    "startSec": 59.706,
+    "endSec": 60.062,
+    "chunkIndex": 0
+  },
+  {
+    "text": "entender",
+    "startSec": 60.062,
+    "endSec": 60.171,
+    "chunkIndex": 0
+  },
+  {
+    "text": "el",
+    "startSec": 60.171,
+    "endSec": 60.48,
+    "chunkIndex": 0
+  },
+  {
+    "text": "juego,",
+    "startSec": 60.651,
+    "endSec": 60.774,
+    "chunkIndex": 0
+  },
+  {
+    "text": "no",
+    "startSec": 60.774,
+    "endSec": 61.332,
+    "chunkIndex": 0
+  },
+  {
+    "text": "convertirte",
+    "startSec": 61.332,
+    "endSec": 61.394,
+    "chunkIndex": 0
+  },
+  {
+    "text": "en",
+    "startSec": 61.394,
+    "endSec": 61.502,
+    "chunkIndex": 0
+  },
+  {
+    "text": "el",
+    "startSec": 61.502,
+    "endSec": 61.842,
+    "chunkIndex": 0
+  },
+  {
+    "text": "villano.",
+    "startSec": 62.322,
+    "endSec": 62.431,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Hoy",
+    "startSec": 62.431,
+    "endSec": 62.601,
+    "chunkIndex": 0
+  },
+  {
+    "text": "vas",
+    "startSec": 62.601,
+    "endSec": 62.632,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 62.632,
+    "endSec": 62.957,
+    "chunkIndex": 0
+  },
+  {
+    "text": "aprender",
+    "startSec": 62.957,
+    "endSec": 63.189,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ocho",
+    "startSec": 63.189,
+    "endSec": 63.499,
+    "chunkIndex": 0
+  },
+  {
+    "text": "rasgos",
+    "startSec": 63.499,
+    "endSec": 64.195,
+    "chunkIndex": 0
+  },
+  {
+    "text": "psicológicos",
+    "startSec": 64.381,
+    "endSec": 64.474,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 64.474,
+    "endSec": 64.877,
+    "chunkIndex": 0
+  },
+  {
+    "text": "separan",
+    "startSec": 64.877,
+    "endSec": 64.908,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 64.908,
+    "endSec": 65.078,
+    "chunkIndex": 0
+  },
+  {
+    "text": "los",
+    "startSec": 65.078,
+    "endSec": 65.155,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 65.155,
+    "endSec": 65.635,
+    "chunkIndex": 0
+  },
+  {
+    "text": "sobreviven",
+    "startSec": 65.635,
+    "endSec": 65.712,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 65.712,
+    "endSec": 65.867,
+    "chunkIndex": 0
+  },
+  {
+    "text": "los",
+    "startSec": 65.867,
+    "endSec": 65.96,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 65.96,
+    "endSec": 66.239,
+    "chunkIndex": 0
+  },
+  {
+    "text": "caen,",
+    "startSec": 66.843,
+    "endSec": 66.935,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 66.935,
+    "endSec": 67.059,
+    "chunkIndex": 0
+  },
+  {
+    "text": "los",
+    "startSec": 67.059,
+    "endSec": 67.168,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 67.168,
+    "endSec": 67.508,
+    "chunkIndex": 0
+  },
+  {
+    "text": "dominan",
+    "startSec": 67.508,
+    "endSec": 67.586,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 67.586,
+    "endSec": 67.725,
+    "chunkIndex": 0
+  },
+  {
+    "text": "los",
+    "startSec": 67.725,
+    "endSec": 67.802,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 67.802,
+    "endSec": 68.236,
+    "chunkIndex": 0
+  },
+  {
+    "text": "obedecen,",
+    "startSec": 68.483,
+    "endSec": 68.561,
+    "chunkIndex": 0
+  },
+  {
+    "text": "a",
+    "startSec": 68.561,
+    "endSec": 68.716,
+    "chunkIndex": 0
+  },
+  {
+    "text": "los",
+    "startSec": 68.716,
+    "endSec": 68.824,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 68.824,
+    "endSec": 69.056,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ganan",
+    "startSec": 69.056,
+    "endSec": 69.118,
+    "chunkIndex": 0
+  },
+  {
+    "text": "de",
+    "startSec": 69.118,
+    "endSec": 69.257,
+    "chunkIndex": 0
+  },
+  {
+    "text": "los",
+    "startSec": 69.257,
+    "endSec": 69.35,
+    "chunkIndex": 0
+  },
+  {
+    "text": "que",
+    "startSec": 69.35,
+    "endSec": 69.737,
+    "chunkIndex": 0
+  },
+  {
+    "text": "pierden.",
+    "startSec": 70.14,
+    "endSec": 70.48,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Ahora,",
+    "startSec": 70.976,
+    "endSec": 71.363,
+    "chunkIndex": 0
+  },
+  {
+    "text": "escribe",
+    "startSec": 71.363,
+    "endSec": 71.657,
+    "chunkIndex": 0
+  },
+  {
+    "text": "esto",
+    "startSec": 71.657,
+    "endSec": 71.765,
+    "chunkIndex": 0
+  },
+  {
+    "text": "en",
+    "startSec": 71.765,
+    "endSec": 71.889,
+    "chunkIndex": 0
+  },
+  {
+    "text": "los",
+    "startSec": 71.889,
+    "endSec": 72.508,
+    "chunkIndex": 0
+  },
+  {
+    "text": "comentarios:",
+    "startSec": 72.833,
+    "endSec": 73.127,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Elijo",
+    "startSec": 73.127,
+    "endSec": 73.282,
+    "chunkIndex": 0
+  },
+  {
+    "text": "ser",
+    "startSec": 73.282,
+    "endSec": 74.025,
+    "chunkIndex": 0
+  },
+  {
+    "text": "estratégicamente",
+    "startSec": 74.025,
+    "endSec": 74.675,
+    "chunkIndex": 0
+  },
+  {
+    "text": "inteligente,",
+    "startSec": 74.892,
+    "endSec": 75.078,
+    "chunkIndex": 0
+  },
+  {
+    "text": "no",
+    "startSec": 75.078,
+    "endSec": 75.743,
+    "chunkIndex": 0
+  },
+  {
+    "text": "emocionalmente",
+    "startSec": 75.743,
+    "endSec": 76.192,
+    "chunkIndex": 0
+  },
+  {
+    "text": "reactivo.",
+    "startSec": 76.657,
+    "endSec": 77.028,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Listo?",
+    "startSec": 77.539,
+    "endSec": 78.096,
+    "chunkIndex": 0
+  },
+  {
+    "text": "Número",
+    "startSec": 78.708,
+    "endSec": 79.079,
+    "chunkIndex": 1
+  },
+  {
+    "text": "uno:",
+    "startSec": 79.079,
+    "endSec": 79.342,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Ambigüedad",
+    "startSec": 79.466,
+    "endSec": 79.946,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Calculada.",
+    "startSec": 79.946,
+    "endSec": 80.488,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Tú",
+    "startSec": 80.782,
+    "endSec": 80.937,
+    "chunkIndex": 1
+  },
+  {
+    "text": "nunca",
+    "startSec": 80.937,
+    "endSec": 81.169,
+    "chunkIndex": 1
+  },
+  {
+    "text": "dices",
+    "startSec": 81.169,
+    "endSec": 81.509,
+    "chunkIndex": 1
+  },
+  {
+    "text": "en",
+    "startSec": 81.509,
+    "endSec": 81.618,
+    "chunkIndex": 1
+  },
+  {
+    "text": "voz",
+    "startSec": 81.618,
+    "endSec": 81.804,
+    "chunkIndex": 1
+  },
+  {
+    "text": "alta",
+    "startSec": 81.804,
+    "endSec": 82.067,
+    "chunkIndex": 1
+  },
+  {
+    "text": "todo",
+    "startSec": 82.067,
+    "endSec": 82.314,
+    "chunkIndex": 1
+  },
+  {
+    "text": "lo",
+    "startSec": 82.314,
+    "endSec": 82.438,
+    "chunkIndex": 1
+  },
+  {
+    "text": "que",
+    "startSec": 82.438,
+    "endSec": 82.547,
+    "chunkIndex": 1
+  },
+  {
+    "text": "piensas.",
+    "startSec": 82.547,
+    "endSec": 83.088,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Solo",
+    "startSec": 83.212,
+    "endSec": 83.537,
+    "chunkIndex": 1
+  },
+  {
+    "text": "muestras",
+    "startSec": 83.537,
+    "endSec": 83.924,
+    "chunkIndex": 1
+  },
+  {
+    "text": "lo",
+    "startSec": 83.924,
+    "endSec": 84.017,
+    "chunkIndex": 1
+  },
+  {
+    "text": "necesario.",
+    "startSec": 84.017,
+    "endSec": 84.652,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Cuando",
+    "startSec": 84.946,
+    "endSec": 85.225,
+    "chunkIndex": 1
+  },
+  {
+    "text": "alguien",
+    "startSec": 85.225,
+    "endSec": 85.457,
+    "chunkIndex": 1
+  },
+  {
+    "text": "solo",
+    "startSec": 85.457,
+    "endSec": 85.704,
+    "chunkIndex": 1
+  },
+  {
+    "text": "conoce",
+    "startSec": 85.704,
+    "endSec": 86.03,
+    "chunkIndex": 1
+  },
+  {
+    "text": "la",
+    "startSec": 86.03,
+    "endSec": 86.122,
+    "chunkIndex": 1
+  },
+  {
+    "text": "mitad",
+    "startSec": 86.122,
+    "endSec": 86.355,
+    "chunkIndex": 1
+  },
+  {
+    "text": "de",
+    "startSec": 86.355,
+    "endSec": 86.417,
+    "chunkIndex": 1
+  },
+  {
+    "text": "la",
+    "startSec": 86.417,
+    "endSec": 86.509,
+    "chunkIndex": 1
+  },
+  {
+    "text": "historia,",
+    "startSec": 86.509,
+    "endSec": 86.958,
+    "chunkIndex": 1
+  },
+  {
+    "text": "su",
+    "startSec": 87.02,
+    "endSec": 87.206,
+    "chunkIndex": 1
+  },
+  {
+    "text": "propia",
+    "startSec": 87.206,
+    "endSec": 87.469,
+    "chunkIndex": 1
+  },
+  {
+    "text": "imaginación",
+    "startSec": 87.469,
+    "endSec": 88.073,
+    "chunkIndex": 1
+  },
+  {
+    "text": "se",
+    "startSec": 88.073,
+    "endSec": 88.197,
+    "chunkIndex": 1
+  },
+  {
+    "text": "encarga",
+    "startSec": 88.197,
+    "endSec": 88.553,
+    "chunkIndex": 1
+  },
+  {
+    "text": "de",
+    "startSec": 88.553,
+    "endSec": 88.615,
+    "chunkIndex": 1
+  },
+  {
+    "text": "llenar",
+    "startSec": 88.615,
+    "endSec": 88.878,
+    "chunkIndex": 1
+  },
+  {
+    "text": "el",
+    "startSec": 88.878,
+    "endSec": 88.971,
+    "chunkIndex": 1
+  },
+  {
+    "text": "resto.",
+    "startSec": 88.971,
+    "endSec": 89.389,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Y",
+    "startSec": 89.869,
+    "endSec": 90.023,
+    "chunkIndex": 1
+  },
+  {
+    "text": "esa",
+    "startSec": 90.023,
+    "endSec": 90.178,
+    "chunkIndex": 1
+  },
+  {
+    "text": "imaginación,",
+    "startSec": 90.178,
+    "endSec": 90.766,
+    "chunkIndex": 1
+  },
+  {
+    "text": "precisamente,",
+    "startSec": 90.766,
+    "endSec": 91.525,
+    "chunkIndex": 1
+  },
+  {
+    "text": "es",
+    "startSec": 91.618,
+    "endSec": 91.788,
+    "chunkIndex": 1
+  },
+  {
+    "text": "tu",
+    "startSec": 91.788,
+    "endSec": 91.881,
+    "chunkIndex": 1
+  },
+  {
+    "text": "herramienta",
+    "startSec": 91.881,
+    "endSec": 92.299,
+    "chunkIndex": 1
+  },
+  {
+    "text": "de",
+    "startSec": 92.299,
+    "endSec": 92.392,
+    "chunkIndex": 1
+  },
+  {
+    "text": "control.",
+    "startSec": 92.392,
+    "endSec": 92.81,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Maquiavelo",
+    "startSec": 93.383,
+    "endSec": 93.862,
+    "chunkIndex": 1
+  },
+  {
+    "text": "lo",
+    "startSec": 93.862,
+    "endSec": 93.986,
+    "chunkIndex": 1
+  },
+  {
+    "text": "dejó",
+    "startSec": 93.986,
+    "endSec": 94.157,
+    "chunkIndex": 1
+  },
+  {
+    "text": "claro",
+    "startSec": 94.157,
+    "endSec": 94.404,
+    "chunkIndex": 1
+  },
+  {
+    "text": "en",
+    "startSec": 94.404,
+    "endSec": 94.497,
+    "chunkIndex": 1
+  },
+  {
+    "text": "El",
+    "startSec": 94.497,
+    "endSec": 94.574,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Príncipe:",
+    "startSec": 94.574,
+    "endSec": 95.054,
+    "chunkIndex": 1
+  },
+  {
+    "text": "\"Todos",
+    "startSec": 95.565,
+    "endSec": 95.875,
+    "chunkIndex": 1
+  },
+  {
+    "text": "ven",
+    "startSec": 95.875,
+    "endSec": 95.999,
+    "chunkIndex": 1
+  },
+  {
+    "text": "lo",
+    "startSec": 95.999,
+    "endSec": 96.076,
+    "chunkIndex": 1
+  },
+  {
+    "text": "que",
+    "startSec": 96.076,
+    "endSec": 96.2,
+    "chunkIndex": 1
+  },
+  {
+    "text": "tú",
+    "startSec": 96.2,
+    "endSec": 96.293,
+    "chunkIndex": 1
+  },
+  {
+    "text": "aparentas,",
+    "startSec": 96.293,
+    "endSec": 96.835,
+    "chunkIndex": 1
+  },
+  {
+    "text": "pocos",
+    "startSec": 97.036,
+    "endSec": 97.376,
+    "chunkIndex": 1
+  },
+  {
+    "text": "perciben",
+    "startSec": 97.376,
+    "endSec": 97.794,
+    "chunkIndex": 1
+  },
+  {
+    "text": "lo",
+    "startSec": 97.794,
+    "endSec": 97.887,
+    "chunkIndex": 1
+  },
+  {
+    "text": "que",
+    "startSec": 97.887,
+    "endSec": 97.996,
+    "chunkIndex": 1
+  },
+  {
+    "text": "realmente",
+    "startSec": 97.996,
+    "endSec": 98.444,
+    "chunkIndex": 1
+  },
+  {
+    "text": "eres.\"",
+    "startSec": 98.444,
+    "endSec": 98.739,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Piensa",
+    "startSec": 98.924,
+    "endSec": 99.249,
+    "chunkIndex": 1
+  },
+  {
+    "text": "en",
+    "startSec": 99.249,
+    "endSec": 99.311,
+    "chunkIndex": 1
+  },
+  {
+    "text": "las",
+    "startSec": 99.311,
+    "endSec": 99.435,
+    "chunkIndex": 1
+  },
+  {
+    "text": "personas",
+    "startSec": 99.435,
+    "endSec": 99.838,
+    "chunkIndex": 1
+  },
+  {
+    "text": "más",
+    "startSec": 99.838,
+    "endSec": 100.039,
+    "chunkIndex": 1
+  },
+  {
+    "text": "magnéticas",
+    "startSec": 100.039,
+    "endSec": 100.581,
+    "chunkIndex": 1
+  },
+  {
+    "text": "que",
+    "startSec": 100.581,
+    "endSec": 100.674,
+    "chunkIndex": 1
+  },
+  {
+    "text": "conoces.",
+    "startSec": 100.674,
+    "endSec": 101.215,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Nunca",
+    "startSec": 101.51,
+    "endSec": 101.804,
+    "chunkIndex": 1
+  },
+  {
+    "text": "te",
+    "startSec": 101.804,
+    "endSec": 101.927,
+    "chunkIndex": 1
+  },
+  {
+    "text": "lo",
+    "startSec": 101.927,
+    "endSec": 102.02,
+    "chunkIndex": 1
+  },
+  {
+    "text": "cuentan",
+    "startSec": 102.02,
+    "endSec": 102.376,
+    "chunkIndex": 1
+  },
+  {
+    "text": "todo.",
+    "startSec": 102.376,
+    "endSec": 102.655,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Dejan",
+    "startSec": 102.918,
+    "endSec": 103.212,
+    "chunkIndex": 1
+  },
+  {
+    "text": "espacios",
+    "startSec": 103.212,
+    "endSec": 103.615,
+    "chunkIndex": 1
+  },
+  {
+    "text": "vacíos",
+    "startSec": 103.615,
+    "endSec": 103.971,
+    "chunkIndex": 1
+  },
+  {
+    "text": "en",
+    "startSec": 103.971,
+    "endSec": 104.064,
+    "chunkIndex": 1
+  },
+  {
+    "text": "sus",
+    "startSec": 104.064,
+    "endSec": 104.234,
+    "chunkIndex": 1
+  },
+  {
+    "text": "historias,",
+    "startSec": 104.234,
+    "endSec": 104.745,
+    "chunkIndex": 1
+  },
+  {
+    "text": "responden",
+    "startSec": 104.869,
+    "endSec": 105.287,
+    "chunkIndex": 1
+  },
+  {
+    "text": "tus",
+    "startSec": 105.287,
+    "endSec": 105.441,
+    "chunkIndex": 1
+  },
+  {
+    "text": "preguntas",
+    "startSec": 105.441,
+    "endSec": 105.859,
+    "chunkIndex": 1
+  },
+  {
+    "text": "con",
+    "startSec": 105.859,
+    "endSec": 105.983,
+    "chunkIndex": 1
+  },
+  {
+    "text": "otras",
+    "startSec": 105.983,
+    "endSec": 106.246,
+    "chunkIndex": 1
+  },
+  {
+    "text": "preguntas,",
+    "startSec": 106.246,
+    "endSec": 106.695,
+    "chunkIndex": 1
+  },
+  {
+    "text": "y",
+    "startSec": 107.036,
+    "endSec": 107.082,
+    "chunkIndex": 1
+  },
+  {
+    "text": "cuando",
+    "startSec": 107.082,
+    "endSec": 107.268,
+    "chunkIndex": 1
+  },
+  {
+    "text": "esperas",
+    "startSec": 107.268,
+    "endSec": 107.593,
+    "chunkIndex": 1
+  },
+  {
+    "text": "una",
+    "startSec": 107.593,
+    "endSec": 107.686,
+    "chunkIndex": 1
+  },
+  {
+    "text": "explicación,",
+    "startSec": 107.686,
+    "endSec": 108.259,
+    "chunkIndex": 1
+  },
+  {
+    "text": "simplemente",
+    "startSec": 108.352,
+    "endSec": 108.955,
+    "chunkIndex": 1
+  },
+  {
+    "text": "sonríen.",
+    "startSec": 108.955,
+    "endSec": 109.342,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Esto",
+    "startSec": 109.729,
+    "endSec": 109.977,
+    "chunkIndex": 1
+  },
+  {
+    "text": "no",
+    "startSec": 109.977,
+    "endSec": 110.023,
+    "chunkIndex": 1
+  },
+  {
+    "text": "es",
+    "startSec": 110.023,
+    "endSec": 110.116,
+    "chunkIndex": 1
+  },
+  {
+    "text": "engaño.",
+    "startSec": 110.116,
+    "endSec": 110.488,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Esto",
+    "startSec": 110.782,
+    "endSec": 111.014,
+    "chunkIndex": 1
+  },
+  {
+    "text": "es",
+    "startSec": 111.014,
+    "endSec": 111.076,
+    "chunkIndex": 1
+  },
+  {
+    "text": "comunicación",
+    "startSec": 111.076,
+    "endSec": 111.587,
+    "chunkIndex": 1
+  },
+  {
+    "text": "estratégica.",
+    "startSec": 111.587,
+    "endSec": 112.253,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Fíjate:",
+    "startSec": 112.547,
+    "endSec": 112.903,
+    "chunkIndex": 1
+  },
+  {
+    "text": "en",
+    "startSec": 113.058,
+    "endSec": 113.197,
+    "chunkIndex": 1
+  },
+  {
+    "text": "la",
+    "startSec": 113.197,
+    "endSec": 113.274,
+    "chunkIndex": 1
+  },
+  {
+    "text": "mayoría",
+    "startSec": 113.274,
+    "endSec": 113.646,
+    "chunkIndex": 1
+  },
+  {
+    "text": "de",
+    "startSec": 113.646,
+    "endSec": 113.708,
+    "chunkIndex": 1
+  },
+  {
+    "text": "las",
+    "startSec": 113.708,
+    "endSec": 113.863,
+    "chunkIndex": 1
+  },
+  {
+    "text": "conversaciones,",
+    "startSec": 113.863,
+    "endSec": 114.652,
+    "chunkIndex": 1
+  },
+  {
+    "text": "alguien",
+    "startSec": 114.884,
+    "endSec": 115.194,
+    "chunkIndex": 1
+  },
+  {
+    "text": "te",
+    "startSec": 115.194,
+    "endSec": 115.256,
+    "chunkIndex": 1
+  },
+  {
+    "text": "hace",
+    "startSec": 115.256,
+    "endSec": 115.395,
+    "chunkIndex": 1
+  },
+  {
+    "text": "una",
+    "startSec": 115.395,
+    "endSec": 115.503,
+    "chunkIndex": 1
+  },
+  {
+    "text": "pregunta",
+    "startSec": 115.503,
+    "endSec": 115.983,
+    "chunkIndex": 1
+  },
+  {
+    "text": "y",
+    "startSec": 116.076,
+    "endSec": 116.185,
+    "chunkIndex": 1
+  },
+  {
+    "text": "tú",
+    "startSec": 116.185,
+    "endSec": 116.277,
+    "chunkIndex": 1
+  },
+  {
+    "text": "sientes",
+    "startSec": 116.277,
+    "endSec": 116.572,
+    "chunkIndex": 1
+  },
+  {
+    "text": "la",
+    "startSec": 116.572,
+    "endSec": 116.633,
+    "chunkIndex": 1
+  },
+  {
+    "text": "obligación",
+    "startSec": 116.633,
+    "endSec": 117.113,
+    "chunkIndex": 1
+  },
+  {
+    "text": "de",
+    "startSec": 117.113,
+    "endSec": 117.175,
+    "chunkIndex": 1
+  },
+  {
+    "text": "dar",
+    "startSec": 117.175,
+    "endSec": 117.268,
+    "chunkIndex": 1
+  },
+  {
+    "text": "una",
+    "startSec": 117.268,
+    "endSec": 117.423,
+    "chunkIndex": 1
+  },
+  {
+    "text": "respuesta",
+    "startSec": 117.423,
+    "endSec": 117.81,
+    "chunkIndex": 1
+  },
+  {
+    "text": "completa.",
+    "startSec": 117.81,
+    "endSec": 118.274,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Explicas",
+    "startSec": 118.692,
+    "endSec": 119.172,
+    "chunkIndex": 1
+  },
+  {
+    "text": "tus",
+    "startSec": 119.172,
+    "endSec": 119.311,
+    "chunkIndex": 1
+  },
+  {
+    "text": "motivos,",
+    "startSec": 119.311,
+    "endSec": 119.884,
+    "chunkIndex": 1
+  },
+  {
+    "text": "tus",
+    "startSec": 120.024,
+    "endSec": 120.24,
+    "chunkIndex": 1
+  },
+  {
+    "text": "dudas,",
+    "startSec": 120.24,
+    "endSec": 120.736,
+    "chunkIndex": 1
+  },
+  {
+    "text": "tus",
+    "startSec": 120.829,
+    "endSec": 121.061,
+    "chunkIndex": 1
+  },
+  {
+    "text": "planes.",
+    "startSec": 121.061,
+    "endSec": 121.494,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Crees",
+    "startSec": 121.99,
+    "endSec": 122.206,
+    "chunkIndex": 1
+  },
+  {
+    "text": "que",
+    "startSec": 122.206,
+    "endSec": 122.253,
+    "chunkIndex": 1
+  },
+  {
+    "text": "estás",
+    "startSec": 122.253,
+    "endSec": 122.469,
+    "chunkIndex": 1
+  },
+  {
+    "text": "construyendo",
+    "startSec": 122.469,
+    "endSec": 122.903,
+    "chunkIndex": 1
+  },
+  {
+    "text": "confianza,",
+    "startSec": 122.903,
+    "endSec": 123.46,
+    "chunkIndex": 1
+  },
+  {
+    "text": "pero",
+    "startSec": 123.723,
+    "endSec": 123.863,
+    "chunkIndex": 1
+  },
+  {
+    "text": "en",
+    "startSec": 123.863,
+    "endSec": 123.94,
+    "chunkIndex": 1
+  },
+  {
+    "text": "realidad",
+    "startSec": 123.94,
+    "endSec": 124.265,
+    "chunkIndex": 1
+  },
+  {
+    "text": "estás",
+    "startSec": 124.265,
+    "endSec": 124.528,
+    "chunkIndex": 1
+  },
+  {
+    "text": "entregando",
+    "startSec": 124.528,
+    "endSec": 124.931,
+    "chunkIndex": 1
+  },
+  {
+    "text": "tu",
+    "startSec": 124.931,
+    "endSec": 125.024,
+    "chunkIndex": 1
+  },
+  {
+    "text": "poder,",
+    "startSec": 125.024,
+    "endSec": 125.349,
+    "chunkIndex": 1
+  },
+  {
+    "text": "pedazo",
+    "startSec": 125.627,
+    "endSec": 125.937,
+    "chunkIndex": 1
+  },
+  {
+    "text": "a",
+    "startSec": 125.937,
+    "endSec": 125.968,
+    "chunkIndex": 1
+  },
+  {
+    "text": "pedazo.",
+    "startSec": 125.968,
+    "endSec": 126.37,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Las",
+    "startSec": 126.773,
+    "endSec": 126.928,
+    "chunkIndex": 1
+  },
+  {
+    "text": "personas",
+    "startSec": 126.928,
+    "endSec": 127.284,
+    "chunkIndex": 1
+  },
+  {
+    "text": "inteligentes",
+    "startSec": 127.284,
+    "endSec": 127.934,
+    "chunkIndex": 1
+  },
+  {
+    "text": "entienden",
+    "startSec": 127.934,
+    "endSec": 128.336,
+    "chunkIndex": 1
+  },
+  {
+    "text": "algo",
+    "startSec": 128.336,
+    "endSec": 128.553,
+    "chunkIndex": 1
+  },
+  {
+    "text": "fundamental:",
+    "startSec": 128.553,
+    "endSec": 129.172,
+    "chunkIndex": 1
+  },
+  {
+    "text": "el",
+    "startSec": 129.435,
+    "endSec": 129.559,
+    "chunkIndex": 1
+  },
+  {
+    "text": "misterio",
+    "startSec": 129.559,
+    "endSec": 129.946,
+    "chunkIndex": 1
+  },
+  {
+    "text": "genera",
+    "startSec": 129.946,
+    "endSec": 130.24,
+    "chunkIndex": 1
+  },
+  {
+    "text": "influencia.",
+    "startSec": 130.24,
+    "endSec": 130.689,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Cuando",
+    "startSec": 131.123,
+    "endSec": 131.308,
+    "chunkIndex": 1
+  },
+  {
+    "text": "no",
+    "startSec": 131.308,
+    "endSec": 131.37,
+    "chunkIndex": 1
+  },
+  {
+    "text": "lo",
+    "startSec": 131.37,
+    "endSec": 131.494,
+    "chunkIndex": 1
+  },
+  {
+    "text": "pones",
+    "startSec": 131.494,
+    "endSec": 131.757,
+    "chunkIndex": 1
+  },
+  {
+    "text": "todo",
+    "startSec": 131.757,
+    "endSec": 131.912,
+    "chunkIndex": 1
+  },
+  {
+    "text": "sobre",
+    "startSec": 131.912,
+    "endSec": 132.144,
+    "chunkIndex": 1
+  },
+  {
+    "text": "la",
+    "startSec": 132.144,
+    "endSec": 132.268,
+    "chunkIndex": 1
+  },
+  {
+    "text": "mesa,",
+    "startSec": 132.268,
+    "endSec": 132.562,
+    "chunkIndex": 1
+  },
+  {
+    "text": "el",
+    "startSec": 132.655,
+    "endSec": 132.779,
+    "chunkIndex": 1
+  },
+  {
+    "text": "otro",
+    "startSec": 132.779,
+    "endSec": 132.965,
+    "chunkIndex": 1
+  },
+  {
+    "text": "se",
+    "startSec": 132.965,
+    "endSec": 133.104,
+    "chunkIndex": 1
+  },
+  {
+    "text": "llena",
+    "startSec": 133.104,
+    "endSec": 133.352,
+    "chunkIndex": 1
+  },
+  {
+    "text": "de",
+    "startSec": 133.352,
+    "endSec": 133.414,
+    "chunkIndex": 1
+  },
+  {
+    "text": "curiosidad.",
+    "startSec": 133.414,
+    "endSec": 133.956,
+    "chunkIndex": 1
+  },
+  {
+    "text": "La",
+    "startSec": 134.404,
+    "endSec": 134.482,
+    "chunkIndex": 1
+  },
+  {
+    "text": "curiosidad",
+    "startSec": 134.482,
+    "endSec": 134.946,
+    "chunkIndex": 1
+  },
+  {
+    "text": "genera",
+    "startSec": 134.946,
+    "endSec": 135.209,
+    "chunkIndex": 1
+  },
+  {
+    "text": "interés,",
+    "startSec": 135.209,
+    "endSec": 135.72,
+    "chunkIndex": 1
+  },
+  {
+    "text": "el",
+    "startSec": 135.844,
+    "endSec": 135.983,
+    "chunkIndex": 1
+  },
+  {
+    "text": "interés",
+    "startSec": 135.983,
+    "endSec": 136.324,
+    "chunkIndex": 1
+  },
+  {
+    "text": "genera",
+    "startSec": 136.324,
+    "endSec": 136.618,
+    "chunkIndex": 1
+  },
+  {
+    "text": "respeto,",
+    "startSec": 136.618,
+    "endSec": 137.129,
+    "chunkIndex": 1
+  },
+  {
+    "text": "y",
+    "startSec": 137.454,
+    "endSec": 137.547,
+    "chunkIndex": 1
+  },
+  {
+    "text": "el",
+    "startSec": 137.547,
+    "endSec": 137.609,
+    "chunkIndex": 1
+  },
+  {
+    "text": "respeto",
+    "startSec": 137.609,
+    "endSec": 137.965,
+    "chunkIndex": 1
+  },
+  {
+    "text": "genera",
+    "startSec": 137.965,
+    "endSec": 138.243,
+    "chunkIndex": 1
+  },
+  {
+    "text": "control.",
+    "startSec": 138.243,
+    "endSec": 138.661,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Te",
+    "startSec": 139.343,
+    "endSec": 139.435,
+    "chunkIndex": 1
+  },
+  {
+    "text": "pongo",
+    "startSec": 139.435,
+    "endSec": 139.621,
+    "chunkIndex": 1
+  },
+  {
+    "text": "un",
+    "startSec": 139.621,
+    "endSec": 139.683,
+    "chunkIndex": 1
+  },
+  {
+    "text": "ejemplo",
+    "startSec": 139.683,
+    "endSec": 140.008,
+    "chunkIndex": 1
+  },
+  {
+    "text": "sencillo.",
+    "startSec": 140.008,
+    "endSec": 140.457,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Alguien",
+    "startSec": 140.844,
+    "endSec": 141.123,
+    "chunkIndex": 1
+  },
+  {
+    "text": "te",
+    "startSec": 141.123,
+    "endSec": 141.216,
+    "chunkIndex": 1
+  },
+  {
+    "text": "pregunta",
+    "startSec": 141.216,
+    "endSec": 141.603,
+    "chunkIndex": 1
+  },
+  {
+    "text": "qué",
+    "startSec": 141.603,
+    "endSec": 141.711,
+    "chunkIndex": 1
+  },
+  {
+    "text": "vas",
+    "startSec": 141.711,
+    "endSec": 141.866,
+    "chunkIndex": 1
+  },
+  {
+    "text": "a",
+    "startSec": 141.866,
+    "endSec": 141.897,
+    "chunkIndex": 1
+  },
+  {
+    "text": "hacer",
+    "startSec": 141.897,
+    "endSec": 142.052,
+    "chunkIndex": 1
+  },
+  {
+    "text": "el",
+    "startSec": 142.052,
+    "endSec": 142.144,
+    "chunkIndex": 1
+  },
+  {
+    "text": "fin",
+    "startSec": 142.144,
+    "endSec": 142.315,
+    "chunkIndex": 1
+  },
+  {
+    "text": "de",
+    "startSec": 142.315,
+    "endSec": 142.408,
+    "chunkIndex": 1
+  },
+  {
+    "text": "semana.",
+    "startSec": 142.408,
+    "endSec": 142.764,
+    "chunkIndex": 1
+  },
+  {
+    "text": "La",
+    "startSec": 143.274,
+    "endSec": 143.398,
+    "chunkIndex": 1
+  },
+  {
+    "text": "mayoría",
+    "startSec": 143.398,
+    "endSec": 143.692,
+    "chunkIndex": 1
+  },
+  {
+    "text": "dice:",
+    "startSec": 143.692,
+    "endSec": 144.033,
+    "chunkIndex": 1
+  },
+  {
+    "text": "nada,",
+    "startSec": 144.358,
+    "endSec": 144.714,
+    "chunkIndex": 1
+  },
+  {
+    "text": "quedarme",
+    "startSec": 144.838,
+    "endSec": 145.194,
+    "chunkIndex": 1
+  },
+  {
+    "text": "en",
+    "startSec": 145.194,
+    "endSec": 145.287,
+    "chunkIndex": 1
+  },
+  {
+    "text": "casa,",
+    "startSec": 145.287,
+    "endSec": 145.643,
+    "chunkIndex": 1
+  },
+  {
+    "text": "quizá",
+    "startSec": 145.829,
+    "endSec": 146.123,
+    "chunkIndex": 1
+  },
+  {
+    "text": "ver",
+    "startSec": 146.123,
+    "endSec": 146.247,
+    "chunkIndex": 1
+  },
+  {
+    "text": "una",
+    "startSec": 146.247,
+    "endSec": 146.401,
+    "chunkIndex": 1
+  },
+  {
+    "text": "película.",
+    "startSec": 146.401,
+    "endSec": 146.85,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Totalmente",
+    "startSec": 147.33,
+    "endSec": 147.81,
+    "chunkIndex": 1
+  },
+  {
+    "text": "transparente,",
+    "startSec": 147.81,
+    "endSec": 148.414,
+    "chunkIndex": 1
+  },
+  {
+    "text": "pero",
+    "startSec": 148.553,
+    "endSec": 148.739,
+    "chunkIndex": 1
+  },
+  {
+    "text": "sin",
+    "startSec": 148.739,
+    "endSec": 148.894,
+    "chunkIndex": 1
+  },
+  {
+    "text": "ningún",
+    "startSec": 148.894,
+    "endSec": 149.157,
+    "chunkIndex": 1
+  },
+  {
+    "text": "peso.",
+    "startSec": 149.157,
+    "endSec": 149.466,
+    "chunkIndex": 1
+  },
+  {
+    "text": "Ahora",
+    "startSec": 149.679,
+    "endSec": 149.85,
+    "chunkIndex": 2
+  },
+  {
+    "text": "cambia",
+    "startSec": 149.85,
+    "endSec": 150.113,
+    "chunkIndex": 2
+  },
+  {
+    "text": "la",
+    "startSec": 150.113,
+    "endSec": 150.175,
+    "chunkIndex": 2
+  },
+  {
+    "text": "respuesta:",
+    "startSec": 150.175,
+    "endSec": 150.624,
+    "chunkIndex": 2
+  },
+  {
+    "text": "tengo",
+    "startSec": 150.624,
+    "endSec": 150.918,
+    "chunkIndex": 2
+  },
+  {
+    "text": "algo",
+    "startSec": 150.918,
+    "endSec": 151.088,
+    "chunkIndex": 2
+  },
+  {
+    "text": "importante",
+    "startSec": 151.088,
+    "endSec": 151.568,
+    "chunkIndex": 2
+  },
+  {
+    "text": "que",
+    "startSec": 151.568,
+    "endSec": 151.692,
+    "chunkIndex": 2
+  },
+  {
+    "text": "resolver.",
+    "startSec": 151.692,
+    "endSec": 152.048,
+    "chunkIndex": 2
+  },
+  {
+    "text": "Y",
+    "startSec": 152.327,
+    "endSec": 152.388,
+    "chunkIndex": 2
+  },
+  {
+    "text": "cambias",
+    "startSec": 152.388,
+    "endSec": 152.698,
+    "chunkIndex": 2
+  },
+  {
+    "text": "de",
+    "startSec": 152.698,
+    "endSec": 152.775,
+    "chunkIndex": 2
+  },
+  {
+    "text": "tema.",
+    "startSec": 152.775,
+    "endSec": 153.054,
+    "chunkIndex": 2
+  },
+  {
+    "text": "Sientes",
+    "startSec": 153.333,
+    "endSec": 153.673,
+    "chunkIndex": 2
+  },
+  {
+    "text": "la",
+    "startSec": 153.673,
+    "endSec": 153.766,
+    "chunkIndex": 2
+  },
+  {
+    "text": "diferencia?",
+    "startSec": 153.766,
+    "endSec": 154.293,
+    "chunkIndex": 2
+  },
+  {
+    "text": "La",
+    "startSec": 154.68,
+    "endSec": 154.772,
+    "chunkIndex": 2
+  },
+  {
+    "text": "primera",
+    "startSec": 154.772,
+    "endSec": 155.067,
+    "chunkIndex": 2
+  },
+  {
+    "text": "respuesta",
+    "startSec": 155.067,
+    "endSec": 155.531,
+    "chunkIndex": 2
+  },
+  {
+    "text": "te",
+    "startSec": 155.531,
+    "endSec": 155.67,
+    "chunkIndex": 2
+  },
+  {
+    "text": "hace",
+    "startSec": 155.67,
+    "endSec": 155.825,
+    "chunkIndex": 2
+  },
+  {
+    "text": "predecible.",
+    "startSec": 155.825,
+    "endSec": 156.46,
+    "chunkIndex": 2
+  },
+  {
+    "text": "La",
+    "startSec": 156.971,
+    "endSec": 157.048,
+    "chunkIndex": 2
+  },
+  {
+    "text": "segunda",
+    "startSec": 157.048,
+    "endSec": 157.419,
+    "chunkIndex": 2
+  },
+  {
+    "text": "te",
+    "startSec": 157.419,
+    "endSec": 157.528,
+    "chunkIndex": 2
+  },
+  {
+    "text": "da",
+    "startSec": 157.528,
+    "endSec": 157.621,
+    "chunkIndex": 2
+  },
+  {
+    "text": "densidad.",
+    "startSec": 157.621,
+    "endSec": 158.023,
+    "chunkIndex": 2
+  },
+  {
+    "text": "No",
+    "startSec": 158.72,
+    "endSec": 158.828,
+    "chunkIndex": 2
+  },
+  {
+    "text": "se",
+    "startSec": 158.828,
+    "endSec": 158.952,
+    "chunkIndex": 2
+  },
+  {
+    "text": "trata",
+    "startSec": 158.952,
+    "endSec": 159.122,
+    "chunkIndex": 2
+  },
+  {
+    "text": "de",
+    "startSec": 159.122,
+    "endSec": 159.184,
+    "chunkIndex": 2
+  },
+  {
+    "text": "esconder",
+    "startSec": 159.184,
+    "endSec": 159.571,
+    "chunkIndex": 2
+  },
+  {
+    "text": "todo.",
+    "startSec": 159.571,
+    "endSec": 159.865,
+    "chunkIndex": 2
+  },
+  {
+    "text": "Se",
+    "startSec": 160.314,
+    "endSec": 160.438,
+    "chunkIndex": 2
+  },
+  {
+    "text": "trata",
+    "startSec": 160.438,
+    "endSec": 160.717,
+    "chunkIndex": 2
+  },
+  {
+    "text": "de",
+    "startSec": 160.717,
+    "endSec": 160.794,
+    "chunkIndex": 2
+  },
+  {
+    "text": "elegir:",
+    "startSec": 160.794,
+    "endSec": 161.166,
+    "chunkIndex": 2
+  },
+  {
+    "text": "cuándo",
+    "startSec": 161.444,
+    "endSec": 161.692,
+    "chunkIndex": 2
+  },
+  {
+    "text": "hablar,",
+    "startSec": 161.692,
+    "endSec": 162.017,
+    "chunkIndex": 2
+  },
+  {
+    "text": "a",
+    "startSec": 162.125,
+    "endSec": 162.218,
+    "chunkIndex": 2
+  },
+  {
+    "text": "quién",
+    "startSec": 162.218,
+    "endSec": 162.419,
+    "chunkIndex": 2
+  },
+  {
+    "text": "hablar,",
+    "startSec": 162.419,
+    "endSec": 162.698,
+    "chunkIndex": 2
+  },
+  {
+    "text": "y",
+    "startSec": 162.946,
+    "endSec": 162.977,
+    "chunkIndex": 2
+  },
+  {
+    "text": "cuánto",
+    "startSec": 162.977,
+    "endSec": 163.224,
+    "chunkIndex": 2
+  },
+  {
+    "text": "decir.",
+    "startSec": 163.224,
+    "endSec": 163.55,
+    "chunkIndex": 2
+  },
+  {
+    "text": "Tu",
+    "startSec": 163.998,
+    "endSec": 164.091,
+    "chunkIndex": 2
+  },
+  {
+    "text": "información",
+    "startSec": 164.091,
+    "endSec": 164.571,
+    "chunkIndex": 2
+  },
+  {
+    "text": "es",
+    "startSec": 164.571,
+    "endSec": 164.68,
+    "chunkIndex": 2
+  },
+  {
+    "text": "tu",
+    "startSec": 164.68,
+    "endSec": 164.757,
+    "chunkIndex": 2
+  },
+  {
+    "text": "moneda.",
+    "startSec": 164.757,
+    "endSec": 165.098,
+    "chunkIndex": 2
+  },
+  {
+    "text": "No",
+    "startSec": 165.748,
+    "endSec": 165.872,
+    "chunkIndex": 2
+  },
+  {
+    "text": "la",
+    "startSec": 165.872,
+    "endSec": 165.98,
+    "chunkIndex": 2
+  },
+  {
+    "text": "gastes",
+    "startSec": 165.98,
+    "endSec": 166.274,
+    "chunkIndex": 2
+  },
+  {
+    "text": "de",
+    "startSec": 166.274,
+    "endSec": 166.351,
+    "chunkIndex": 2
+  },
+  {
+    "text": "golpe.",
+    "startSec": 166.351,
+    "endSec": 166.661,
+    "chunkIndex": 2
+  },
+  {
+    "text": "Cuando",
+    "startSec": 167.249,
+    "endSec": 167.404,
+    "chunkIndex": 2
+  },
+  {
+    "text": "empiezas",
+    "startSec": 167.404,
+    "endSec": 167.714,
+    "chunkIndex": 2
+  },
+  {
+    "text": "a",
+    "startSec": 167.714,
+    "endSec": 167.745,
+    "chunkIndex": 2
+  },
+  {
+    "text": "practicar",
+    "startSec": 167.745,
+    "endSec": 168.116,
+    "chunkIndex": 2
+  },
+  {
+    "text": "la",
+    "startSec": 168.116,
+    "endSec": 168.178,
+    "chunkIndex": 2
+  },
+  {
+    "text": "ambigüedad",
+    "startSec": 168.178,
+    "endSec": 168.472,
+    "chunkIndex": 2
+  },
+  {
+    "text": "calculada,",
+    "startSec": 168.472,
+    "endSec": 168.998,
+    "chunkIndex": 2
+  },
+  {
+    "text": "descubres",
+    "startSec": 169.308,
+    "endSec": 169.742,
+    "chunkIndex": 2
+  },
+  {
+    "text": "algo:",
+    "startSec": 169.742,
+    "endSec": 170.268,
+    "chunkIndex": 2
+  },
+  {
+    "text": "la",
+    "startSec": 170.268,
+    "endSec": 170.454,
+    "chunkIndex": 2
+  },
+  {
+    "text": "gente",
+    "startSec": 170.454,
+    "endSec": 170.67,
+    "chunkIndex": 2
+  },
+  {
+    "text": "empieza",
+    "startSec": 170.67,
+    "endSec": 170.701,
+    "chunkIndex": 2
+  },
+  {
+    "text": "a",
+    "startSec": 170.701,
+    "endSec": 171.042,
+    "chunkIndex": 2
+  },
+  {
+    "text": "tomarse",
+    "startSec": 171.042,
+    "endSec": 171.119,
+    "chunkIndex": 2
+  },
+  {
+    "text": "en",
+    "startSec": 171.119,
+    "endSec": 171.413,
+    "chunkIndex": 2
+  },
+  {
+    "text": "serio",
+    "startSec": 171.413,
+    "endSec": 171.615,
+    "chunkIndex": 2
+  },
+  {
+    "text": "cada",
+    "startSec": 171.615,
+    "endSec": 171.94,
+    "chunkIndex": 2
+  },
+  {
+    "text": "palabra",
+    "startSec": 171.94,
+    "endSec": 172.048,
+    "chunkIndex": 2
+  },
+  {
+    "text": "que",
+    "startSec": 172.048,
+    "endSec": 172.373,
+    "chunkIndex": 2
+  },
+  {
+    "text": "dices.",
+    "startSec": 173.519,
+    "endSec": 173.72,
+    "chunkIndex": 2
+  },
+  {
+    "text": "Porque",
+    "startSec": 173.72,
+    "endSec": 173.921,
+    "chunkIndex": 2
+  },
+  {
+    "text": "saben",
+    "startSec": 173.921,
+    "endSec": 174.029,
+    "chunkIndex": 2
+  },
+  {
+    "text": "que",
+    "startSec": 174.029,
+    "endSec": 174.169,
+    "chunkIndex": 2
+  },
+  {
+    "text": "tú",
+    "startSec": 174.169,
+    "endSec": 174.293,
+    "chunkIndex": 2
+  },
+  {
+    "text": "no",
+    "startSec": 174.293,
+    "endSec": 174.54,
+    "chunkIndex": 2
+  },
+  {
+    "text": "hablas",
+    "startSec": 174.54,
+    "endSec": 174.68,
+    "chunkIndex": 2
+  },
+  {
+    "text": "por",
+    "startSec": 174.68,
+    "endSec": 174.989,
+    "chunkIndex": 2
+  },
+  {
+    "text": "hablar.",
+    "startSec": 175.964,
+    "endSec": 176.119,
+    "chunkIndex": 2
+  },
+  {
+    "text": "Tus",
+    "startSec": 176.119,
+    "endSec": 176.522,
+    "chunkIndex": 2
+  },
+  {
+    "text": "palabras,",
+    "startSec": 176.522,
+    "endSec": 176.63,
+    "chunkIndex": 2
+  },
+  {
+    "text": "por",
+    "startSec": 176.63,
+    "endSec": 177.172,
+    "chunkIndex": 2
+  },
+  {
+    "text": "escasas,",
+    "startSec": 177.512,
+    "endSec": 177.791,
+    "chunkIndex": 2
+  }
+]

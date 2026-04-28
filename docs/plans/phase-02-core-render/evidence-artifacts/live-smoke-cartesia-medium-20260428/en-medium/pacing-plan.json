@@ -1,0 +1,16 @@
+{
+  "version": "natural_basic_v1",
+  "requestedMode": "exact",
+  "effectiveMode": "exact",
+  "provider": "cartesia",
+  "language": "en",
+  "sourceScriptHash": "324ae118057a1a8bce51cc5feff9c3db8f794bdaa2f39cc8f4e0a420b89548f8",
+  "spokenScriptHash": "324ae118057a1a8bce51cc5feff9c3db8f794bdaa2f39cc8f4e0a420b89548f8",
+  "providerInputHash": "324ae118057a1a8bce51cc5feff9c3db8f794bdaa2f39cc8f4e0a420b89548f8",
+  "tokenPreserved": true,
+  "insertedBreakCount": 0,
+  "maxBreakTagsPerRequest": 0,
+  "markupOverheadChars": 0,
+  "pauses": [],
+  "warnings": []
+}
