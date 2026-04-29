@@ -4,11 +4,11 @@
 > Scope: design only
 > Runtime changes: none
 > Provider calls: none
-> Last reviewed: 2026-04-28
+> Last reviewed: 2026-04-29
 
 ## Decision
 
-MVP should build a controlled platform-owned flagship voice mechanism based on prompt-generated voice design. This is not voice cloning, does not use user uploads, and does not use the reference WAV files as clone inputs.
+MVP should build a controlled platform-designed flagship voice mechanism based on prompt-generated voice design. This is not voice cloning, does not use user uploads, and does not use the reference WAV files as clone inputs.
 
 The near-term voice strategy is:
 
@@ -18,7 +18,7 @@ The near-term voice strategy is:
 4. Use Inworld Voice Design: write a text description and short script, generate previews, select, publish, and use the resulting `voiceId`.
 5. Keep both user-submitted clone creation and platform audio-clone creation out of this MVP mechanism.
 
-This is a staged platform voice-library decision, not a clone promise and not a launch-readiness claim.
+This is a staged platform voice-library decision, not a clone promise, not a launch-readiness claim, and not a permanent provider-rights claim.
 
 ## Reference Samples
 
@@ -41,19 +41,32 @@ Current official Inworld documentation supports the intended prompt-generated vo
 
 Implication: Inworld can plausibly expand our voice library through prompt-generated Voice Design. The MVP-safe path is platform-controlled prompts, preview review, publishing selected voices, and no user-facing clone upload.
 
-Primary references checked on 2026-04-28:
+Primary references checked on 2026-04-29:
 
 1. Inworld Voice Design: `https://docs.inworld.ai/tts/voice-design`
 2. Inworld Voice Cloning: `https://docs.inworld.ai/tts/voice-cloning`
 3. Inworld Service Specific Terms: `https://inworld.ai/service-specific-terms`
 4. Inworld Terms of Service: `https://inworld.ai/terms`
 5. Inworld Acceptable Use Policy: `https://inworld.ai/aup/`
+6. ElevenLabs Voice Design: `https://elevenlabs.io/docs/eleven-creative/voices/voice-design`
+7. ElevenLabs commercial-use help: `https://help.elevenlabs.io/hc/en-us/articles/13313564601361-Can-I-publish-the-content-I-generate-on-the-platform`
+8. ElevenLabs AI-generated voice sharing help: `https://help.elevenlabs.io/hc/en-us/articles/30192704002321-Can-I-share-an-AI-generated-voice-in-the-Voice-Library`
+9. ElevenLabs Prohibited Use Policy: `https://elevenlabs.io/use-policy`
+10. Murf commercial-rights help: `https://help.murf.ai/do-i-have-commercial-rights-over-the-voice-over-created`
 
 ## Commercial Rights Readout
 
 This section is an implementation guardrail, not legal advice.
 
 Inworld Voice Design is a text-prompt voice generation feature, not an audio clone. Inworld's terms state that, as between the customer and Inworld, the customer retains rights in input and output, subject to the agreement and acceptable use rules. The Terms and Service Specific Terms still put the burden on us to ensure our inputs, actions, and resulting use do not violate laws, third-party rights, or Inworld's acceptable-use rules.
+
+The rights gap is now narrower and more explicit:
+
+1. Rendered audio and a provider-hosted `voiceId` are different assets.
+2. A provider may allow commercial use of generated audio while still limiting account access, reusable voice IDs, marketplace sharing, B2B2C distribution, or post-termination use.
+3. Inworld's public Voice Design page presents designed voices as reusable published voice IDs, but Inworld Terms also include termination language requiring deletion of Outputs. Treat Inworld-designed voices as `supplier_confirmation_required` before using them as permanent platform assets.
+4. ElevenLabs' public commercial-use help is clearer for paid-plan rendered content and says paid-subscription content can be used commercially and indefinitely when generated during the paid period and used within terms. ElevenLabs still restricts unauthorized impersonation, public Voice Library sharing of AI-generated voices, and less-restrictive downstream B2B2C terms.
+5. Market pages from Murf and smaller creator-facing TTS tools confirm that commercial AI voiceover licensing is common, but they do not prove Orpheus' rights under any specific provider.
 
 Operational meaning for Orpheus:
 
@@ -64,6 +77,9 @@ Operational meaning for Orpheus:
 5. Do not market a generated voice as a real speaker.
 6. Generated voices may not be exclusive or guaranteed unique unless a provider contract explicitly says so.
 7. Any prompt-generated flagship voice must carry provenance before it can move from internal candidate to user-selectable catalog voice.
+8. Any provider-hosted `voiceId` must carry an explicit post-cancel / post-termination status before it is treated as a durable product dependency.
+
+The detailed closeout is recorded in [`12-platform-voice-design-rights-and-provenance-2026-04-29.md`](../../plans/phase-02-core-render/12-platform-voice-design-rights-and-provenance-2026-04-29.md).
 
 ## Prompt Provenance Gate
 
@@ -79,8 +95,47 @@ Before a prompt-generated voice can become a user-selectable platform voice, rec
 8. Human reviewer and review verdict.
 9. Confirmation that the prompt does not request a real-person, celebrity, brand, or marketplace soundalike.
 10. Commercial-status field for the future `voice_assets` / `voices` catalog record.
+11. Whether rendered audio remains usable after subscription cancellation.
+12. Whether the provider-hosted `voiceId` remains callable after subscription cancellation.
+13. Whether the use is allowed inside a B2B2C SaaS product where Orpheus users select the voice.
+14. Whether standalone sample-pack, voice-pack, resale, or model-training uses are prohibited.
 
 The founder reference WAV files remain `reference_only` taste anchors. They may inform prompt wording and human review, but they are not provider cloning inputs in this mechanism.
+
+## Prompt Safety Policy
+
+Prompt-designed Orpheus voices must describe qualities, not identities.
+
+Allowed prompt attributes:
+
+1. Age range, perceived maturity, gender presentation, language or dialect target.
+2. Pitch, pace, timbre, clarity, steadiness, warmth, authority, calmness.
+3. Use case, such as documentary explainer, psychology narration, podcast host, or educational voice.
+4. Audio quality target, such as broadcast quality or clean studio signal.
+
+Disallowed prompt attributes:
+
+1. Celebrity, creator, narrator, actor, political figure, public figure, brand, or marketplace-voice references.
+2. Phrases such as `sounds like X`, `close to X`, `same as X`, `clone of X`, or `in the style of X` when `X` is a real person, brand, or proprietary voice.
+3. Voice names or descriptions that imply a real person endorsed, performed, or owns the generated voice.
+4. Prompts intended to deceive listeners into believing the audio is a real human speaker.
+5. Prompts that create voice or biometric recognition assets, impersonation, scams, political persuasion, or high-risk regulated uses.
+
+## Documentation-Only Candidate Statuses
+
+These statuses are planning labels for provider-prep packets. They are not runtime enums and do not update `voice-metadata-schema.md`.
+
+| Status | Meaning |
+|---|---|
+| `draft_prompt` | Prompt and script are drafted but no provider call has happened. |
+| `preview_generated` | Provider previews exist and local preview evidence is retained. |
+| `rights_pending` | Quality may be promising, but provider rights, B2B2C, or post-cancel terms are unresolved. |
+| `voice_fit_review` | Founder/operator review is evaluating persona, language, pacing, and fatigue risk. |
+| `catalog_candidate` | Candidate can be wired into internal catalog planning. |
+| `active_internal` | Candidate can be used for internal tests or controlled smoke runs. |
+| `active_user_selectable` | Candidate can appear in the product voice picker only after a separate runtime/catalog truth lane. |
+| `retired` | Candidate is no longer offered but retained for audit history. |
+| `blocked` | Candidate cannot proceed without new evidence or rights review. |
 
 ## Asset Handling Model
 
@@ -102,6 +157,7 @@ The current repo lane only stores originals and documentation. It does not creat
 | Platform flagship voices | Continue. |
 | Prompt-generated platform voice mechanism | Allow as internal flagship-library capability. |
 | Platform audio-clone mechanism | Hold; not this MVP mechanism. |
+| Prompt-designed voice rights | Require provider-specific provenance and supplier confirmation before user-selectable catalog use. |
 | EN target | Mature, steady, male-presenting educational explainer. |
 | ES target | Mature, steady Spanish educational explainer using the provided Spanish reference as the review target. |
 | Existing Ashley evidence | Still valid for pipeline evidence, not final EN persona fit. |
@@ -117,9 +173,10 @@ This preserves the existing product truth: private clone remains controlled and 
 3. Use Inworld Voice Design to generate up to three candidate previews per language.
 4. Founder reviews short previews against the reference samples.
 5. Promote at most one candidate per language to the Phase 2 voice shortlist.
-6. Publish the selected preview to the provider voice library only after the prompt provenance gate clears.
-7. Only after a short candidate passes, consider a medium-length sample.
-8. Only after medium-length voice fit passes, consider another long-form provider run.
+6. Publish the selected preview only to the provider account/workspace voice library, not a public marketplace, and only after the prompt provenance gate clears.
+7. Keep the candidate at `rights_pending` until B2B2C, post-cancel audio, and post-cancel `voiceId` questions are resolved.
+8. Only after a short candidate passes, consider a medium-length sample.
+9. Only after medium-length voice fit passes, consider another long-form provider run.
 
 If Voice Design cannot produce a fit, fallback order is:
 
@@ -148,14 +205,13 @@ If Voice Design cannot produce a fit, fallback order is:
 5. No provider-specific prompt-pack or derivative generation in this design lane.
 6. No claim that prompt-generated voices are exclusive unless a provider contract says so.
 7. No long-form rerun until short voice-fit samples pass manual review.
+8. No claim that a provider-hosted `voiceId` remains callable after cancellation unless the provider confirms it.
 
 ## Open Follow-Up
 
 The next implementation plan should be narrow:
 
-1. Create a Phase 2 platform-voice-library packet that indexes the two copied originals.
-2. Add prompt-provenance checklist and status fields before any generated voice becomes selectable.
-3. Add provider-prep rules that preserve originals and produce provider-specific prompt packs.
-4. Draft EN and ES Voice Design prompts and short scripts.
-5. Add a manual-review worksheet for short candidate samples.
-6. Stop before any provider call unless the user explicitly approves the paid/hosted generation step.
+1. Draft EN and ES Voice Design prompt packs with no real-person soundalike language.
+2. Add a manual-review worksheet for short candidate samples.
+3. Keep all candidates at `draft_prompt`.
+4. Stop before any provider call unless the user explicitly approves the paid/hosted generation step.
