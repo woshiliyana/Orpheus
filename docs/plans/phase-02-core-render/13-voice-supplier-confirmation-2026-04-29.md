@@ -40,6 +40,7 @@ Blocked output:
 3. No claim that generated voices are owned forever.
 4. No claim that a provider-hosted `voiceId` remains callable after cancellation.
 5. No public promise of cloned, exclusive, celebrity-like, creator-like, or marketplace-like voices.
+6. No claim that Orpheus users download or own the underlying platform voice; the intended user deliverable is generated audio.
 
 ## Research Method
 
@@ -182,7 +183,7 @@ Body:
 ```text
 Hello Inworld team,
 
-We are evaluating Inworld TTS and Voice Design for Orpheus, a SaaS product for long-form educational narration. We are not planning to offer public self-serve voice cloning. Our intended use is platform-controlled prompt-designed voices: Orpheus would write safe text descriptions, generate short previews, select/publish a voice, and make selected platform voices available in our product voice picker for users to generate narration.
+We are evaluating Inworld TTS and Voice Design for Orpheus, a SaaS product for long-form educational narration. We are not planning to offer public self-serve voice cloning. Our intended use is platform-controlled prompt-designed voices: Orpheus would write safe text descriptions, generate short previews, select/publish a voice, and make selected platform voices available in our product voice picker for users to generate narration. Users would not download, own, export, or receive the underlying voice, prompt, model, or voiceId. They would download only the generated long-form narration audio when their Orpheus plan allows it.
 
 Could you confirm the following in writing?
 
@@ -209,7 +210,7 @@ Body:
 ```text
 Hello ElevenLabs team,
 
-We are evaluating ElevenLabs Voice Design as a benchmark and possible fallback for Orpheus, a SaaS product for long-form educational narration. We are not planning to offer public self-serve voice cloning. Our intended use is platform-controlled prompt-designed voices: Orpheus would write safe text descriptions, generate short previews, save selected generated voices, and make selected platform voices available in our product voice picker for users to generate narration.
+We are evaluating ElevenLabs Voice Design as a benchmark and possible fallback for Orpheus, a SaaS product for long-form educational narration. We are not planning to offer public self-serve voice cloning. Our intended use is platform-controlled prompt-designed voices: Orpheus would write safe text descriptions, generate short previews, save selected generated voices, and make selected platform voices available in our product voice picker for users to generate narration. Users would not download, own, export, or receive the underlying voice, prompt, model, or voiceId. They would download only the generated long-form narration audio when their Orpheus plan allows it.
 
 Could you confirm the following in writing?
 
@@ -277,3 +278,4 @@ Until written answers are retained:
 2. Keep provider preview spend on hold.
 3. Keep public launch wording to `curated platform voices` or `designed AI narration voices`.
 4. Keep `cloned voices`, `exclusive voices`, `ours forever`, and real-person soundalike language blocked.
+5. Keep the product boundary from [`14-voice-selector-output-license-positioning-2026-04-29.md`](./14-voice-selector-output-license-positioning-2026-04-29.md): voice choice is a generation control, and the user-downloadable asset is generated audio only.

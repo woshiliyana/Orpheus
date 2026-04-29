@@ -17,6 +17,7 @@ This packet keeps the MVP direction narrow:
 3. Do not expose public clone upload or public self-serve voice cloning in MVP.
 4. Do not claim designed voices are exclusive or permanently owned unless the provider contract says so.
 5. Do not use a designed voice as a user-selectable catalog voice until its provenance and supplier-rights review are complete.
+6. Treat user voice choice as a generation parameter. The user-downloadable asset is generated audio, not the underlying voice, prompt, provider `voiceId`, model, or clone/source asset.
 
 This is not legal advice. Before public launch, provider confirmation or counsel review is required for any platform voice that becomes user-selectable.
 
@@ -65,6 +66,7 @@ Orpheus must not collapse rendered audio rights and provider-hosted voice access
 | Provider-hosted voice ID | The reusable provider-side voice handle used for future generations | May be unavailable after cancellation, account suspension, provider withdrawal, beta changes, marketplace withdrawal, or terms changes. |
 | Orpheus voice catalog entry | Our product record that makes a voice selectable | Must store the provider ID plus rights status; it is not itself proof of ownership or permanence. |
 | User-facing voice choice | The product surface exposed to creators | Must never imply exclusivity, real-person endorsement, or permanent provider-independent access unless a contract proves it. |
+| Generated long-form audio | The final user deliverable for an entitled project | May be downloadable for paid long-form members after capability, pricing, and supplier-rights gates clear; it does not transfer the underlying voice asset. |
 
 Operational rule: keep local copies of approved preview audio, representative final samples, prompt text, preview script, selected provider `voiceId`, terms review URL/date, and reviewer verdict before promoting any prompt-designed voice.
 
@@ -132,6 +134,8 @@ These statuses are planning/provenance labels only. They are not runtime enum va
 
 Public launch copy must continue to avoid public self-serve clone claims. If the public surface needs to mention the richer library later, it should point to `flagship library` / `starter library` language from `capability-entitlements.md`, not to clone language.
 
+The voice-selector and generated-audio delivery boundary is now retained in [`14-voice-selector-output-license-positioning-2026-04-29.md`](./14-voice-selector-output-license-positioning-2026-04-29.md).
+
 ## Provider Readout
 
 ### Inworld
@@ -179,4 +183,4 @@ After supplier answers are retained, the safe prompt-pack lane is `phase2-platfo
 3. Keep all candidate statuses at `draft_prompt`.
 4. Stop before provider calls unless the user explicitly approves paid preview generation.
 
-No runtime, pricing, PRD canonical, or public-launch change is required from this closeout.
+This closeout itself did not require runtime, pricing, PRD canonical, or public-launch changes. The later product-boundary sync is retained in [`14-voice-selector-output-license-positioning-2026-04-29.md`](./14-voice-selector-output-license-positioning-2026-04-29.md).

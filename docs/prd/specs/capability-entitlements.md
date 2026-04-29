@@ -6,7 +6,7 @@
 > Consumers: product, growth, frontend, support, ops, agents
 > Depends on: `/docs/prd/source-of-truth-index.md`, `/docs/prd/specs/mksaas-boundary-contract.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`
 > Supersedes: entitlement wording scattered across `/docs/prd/prd.md`
-> Last reviewed: 2026-04-23
+> Last reviewed: 2026-04-29
 
 ## Purpose
 
@@ -24,6 +24,8 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 | `closed_beta` | A capability exists in V1 but is disabled by default until ops explicitly enables it for an account |
 | `starter library` | The broad, lower-cost AI voice catalog intended to give users meaningful free choice inside the active V1 niche cluster and approved first-gate render-language boundary |
 | `flagship library` | The smaller curated voice set with stronger consistency, sharper persona definition, and paid-plan positioning |
+| `voice selector` | The product control that lets a user choose an approved platform voice for generation; it is a generation parameter, not a downloadable or user-owned voice asset |
+| `longform paid member` | A paid account entitled to long-form production delivery under the current matrix; in the working V1 ladder this means `Pro` or `Ultimate` |
 | `hidden_orchestration` | Backend-only chunking, retry, stitching, and reconciliation that absorbs provider limits without becoming a user task |
 | `production_master_audio` | The highest-fidelity provider-native lossless audio asset retained by the platform for post-processing, derivative generation, QA, and later export decisions. Examples include provider-native `WAV`, Linear PCM, or raw PCM wrapped losslessly for storage |
 | `delivery_audio` | A user-downloadable audio derivative optimized for playback, sharing, storage, and broad compatibility. Delivery may expose `MP3` by default and later `WAV` as an optional download after export evidence passes |
@@ -35,8 +37,10 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 
 | Capability | Platform-level status in V1 | User-facing default |
 |---|---|---|
-| Audio generation and download | Core | Open to every successful project |
-| `MP3` delivery audio | Core | Default user-facing download format for the first stable-audio gate; product default target is `>=192 kbps` when encoded as MP3 |
+| Voice selector for generation | Core workflow capability | Users may choose an entitled platform voice for generation, but may not download, export, own, or receive the underlying voice, prompt, model, or provider `voiceId` |
+| Short trial / preview audio | Later growth capability | May exist as a bounded guest or free experience, but must not be framed as full long-form production delivery |
+| Long-form audio generation and download | Core paid production capability | Long-form final-audio download is available only to `longform paid member` accounts |
+| `MP3` delivery audio | Core | Default user-facing download format for entitled long-form production runs; product default target is `>=192 kbps` when encoded as MP3 |
 | Provider-native lossless production master | Core workflow capability | Internal by default; request and retain the highest-fidelity provider-native lossless output when the provider supports it |
 | Optional `WAV` user download / export | Controlled V1 capability | Disabled by default; may open only after an explicit `audio_format_verdict=ready_for_export` |
 | Backend-only long-form orchestration | Core workflow capability | Internal only; must never become a user-side manual requirement |
@@ -53,14 +57,15 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 | Capability | `guest_trial` | `Free` | `Pro` | `Ultimate` |
 |---|---|---|---|---|
 | Create project | Yes, one trial project | Yes | Yes | Yes |
-| Download final `MP3` audio | Yes | Yes | Yes | Yes |
+| Browse starter library | Yes | Yes | Yes | Yes |
+| Use starter library for generation | Yes, trial-safe subset | Yes, bounded by short/free limits | Yes | Yes |
+| Use flagship library for generation | No | No | Yes | Yes |
+| Download bounded short-trial `MP3` audio | Yes, if trial is enabled | Yes, if free generation is enabled | Yes | Yes |
+| Download final long-form `MP3` audio | No | No | Yes | Yes |
 | Download optional `WAV` audio | No | No | Disabled until Phase 2 export verdict | Disabled until Phase 2 export verdict |
 | Segment preview | Yes | Yes | Yes | Yes |
 | Export `SRT` | No | No | Yes | Yes |
 | Trigger segment repair | No | No | Yes | Yes |
-| Browse starter library | Yes | Yes | Yes | Yes |
-| Use starter library for generation | Yes, trial-safe subset | Yes, large library | Yes | Yes |
-| Use flagship library for generation | No | No | Yes | Yes |
 | Request private clone creation | No | No | `closed_beta`, manual enable | `closed_beta`, manual enable |
 | Max active private clones | 0 | 0 | 1 | 3 |
 | Queue priority | low | low | standard | high |
@@ -70,7 +75,9 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 
 | Capability | Default launch state | Activation rule |
 |---|---|---|
-| `MP3` delivery audio | open | Every successful project must provide a broadly compatible downloadable audio file; Phase 2 must record bitrate before approving it as the commercial default |
+| Voice selector for generation | open for entitled plans | Voice choice is a generation control only; the user never receives the underlying provider voice, `voiceId`, prompt, model, or clone/source asset |
+| Short trial / preview audio | held until growth surface is approved | May become a bounded low-risk trial takeaway, but must not create a free full-long-form download path |
+| `MP3` long-form delivery audio | open for `longform paid member` accounts | Every entitled long-form successful project must provide a broadly compatible downloadable audio file; Phase 2 must record bitrate before approving it as the commercial default |
 | Provider-native lossless production master | internal | The platform should request and keep the highest-fidelity provider-native lossless master when provider output and storage economics support it |
 | Optional `WAV` user download / export | held | Requires a successful Phase 2 format verdict covering decode, stitch, storage, download, and audible quality |
 | Starter library access | open | Starter library must remain broad enough for meaningful free voice choice within the active V1 niche cluster and approved EN/ES output boundary |
@@ -94,15 +101,15 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 
 | Surface | Allowed wording |
 |---|---|
-| Free plan copy | Emphasize real trial, audio takeaway, and large starter-library access |
-| Pro plan copy | Emphasize the first real stable-audio production path, plus flagship voices and full workflow, including `SRT` export and segment repair |
+| Free plan copy | Emphasize bounded trial or preview value only; do not imply downloadable full long-form production audio |
+| Pro plan copy | Emphasize the first real stable-audio production path, downloadable long-form audio, flagship voices, and full workflow, including `SRT` export and segment repair |
 | Ultimate plan copy | Emphasize higher limits, broader flagship access, faster queue, and stronger controlled clone access |
 | Clone marketing copy | Must say controlled or gated access until launch state changes from `closed_beta` |
 
 ## Narrative Notes
 
 1. The system may generate internal subtitle/alignment assets for all successful projects even when export is plan-gated.
-2. Free users should feel meaningful voice abundance through the starter library without receiving the same voice tier as paid users.
+2. Free users may browse or preview meaningful voice choice through the starter library, but full long-form downloadable production audio belongs to `longform paid member` accounts.
 3. This lets the platform keep one workflow pipeline while still enforcing differentiated plans.
 4. Private clone creation is intentionally scoped as a controlled V1 capability to avoid making unsupported self-serve promises.
 5. `hidden_orchestration` is allowed and expected in V1, but it must remain backend-only so users still experience one project, not a manual chunking workflow.
@@ -110,6 +117,7 @@ This spec closes V1 scope questions for clone access, `SRT` export, segment repa
 7. The working audio-format product posture is provider-native lossless audio as the internal production-master target and `MP3` as the default user-facing delivery format. A user-facing `WAV` option is allowed only after Phase 2 evidence returns an explicit `audio_format_verdict=ready_for_export`.
 8. For every provider, the preferred generation path is one paid provider run that requests the highest-fidelity provider-native lossless output available for that provider, then derives user-facing delivery files locally. For Cartesia streaming this may be raw PCM; for providers that expose file containers directly this may be provider-native `WAV` / Linear PCM. A provider-native `MP3` or an `MP3`-derived `WAV` must not be used as proof of production-master quality.
 9. For long-form narration, `MP3` is commercially acceptable as the default delivery derivative when it passes audible QA and uses `>=192 kbps` or a documented higher-quality setting. Optional user-facing `WAV` download should be derived from the retained lossless master, not from `MP3`, and remains held until export readiness is proven. Lower-bitrate MP3 output may be used for smoke comparability but must not be treated as the final commercial default without a new verdict.
+10. A platform voice in the selector is not a sold or transferred voice asset. Orpheus may expose the choice as part of generation, but the delivered user asset is the generated audio file for an entitled project.
 
 ## Update Checklist
 
