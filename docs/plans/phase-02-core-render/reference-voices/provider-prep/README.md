@@ -16,5 +16,9 @@ Rules:
 6. Keep provider-specific constraints separate because future providers may require different prompt shape, script length, format, channel layout, loudness, transcript packaging, plan tier, or review proof.
 7. Do not create clone-ready derivatives unless a separate audio-clone lane is explicitly approved.
 8. Do not put celebrity, creator, brand, political figure, public-figure, marketplace-voice, or real-person soundalike language in prompt packs.
+9. Do not move a prompt-designed voice beyond `draft_prompt` unless the supplier confirmation packet has a retained answer for catalog use, B2B2C / resale / sublicensing classification, rendered-audio post-cancel rights, hosted `voiceId` post-cancel access, prohibited resale boundaries, and AI disclosure or traceability duties.
+10. Keep supplier answers as first-class evidence. A support-ticket answer, email, order-form clause, or contract clause belongs beside the prompt and review packet; a public marketing page alone is not enough to clear `active_user_selectable`.
 
 Documentation-only candidate statuses are defined in [`../../12-platform-voice-design-rights-and-provenance-2026-04-29.md`](../../12-platform-voice-design-rights-and-provenance-2026-04-29.md). They are not runtime enum values.
+
+Supplier-confirmation questions and outreach copy are defined in [`../../13-voice-supplier-confirmation-2026-04-29.md`](../../13-voice-supplier-confirmation-2026-04-29.md).

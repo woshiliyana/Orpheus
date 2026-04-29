@@ -79,7 +79,7 @@ Operational meaning for Orpheus:
 7. Any prompt-generated flagship voice must carry provenance before it can move from internal candidate to user-selectable catalog voice.
 8. Any provider-hosted `voiceId` must carry an explicit post-cancel / post-termination status before it is treated as a durable product dependency.
 
-The detailed closeout is recorded in [`12-platform-voice-design-rights-and-provenance-2026-04-29.md`](../../plans/phase-02-core-render/12-platform-voice-design-rights-and-provenance-2026-04-29.md).
+The detailed closeout is recorded in [`12-platform-voice-design-rights-and-provenance-2026-04-29.md`](../../plans/phase-02-core-render/12-platform-voice-design-rights-and-provenance-2026-04-29.md). The supplier-confirmation packet and outreach copy are recorded in [`13-voice-supplier-confirmation-2026-04-29.md`](../../plans/phase-02-core-render/13-voice-supplier-confirmation-2026-04-29.md).
 
 ## Prompt Provenance Gate
 
@@ -211,7 +211,8 @@ If Voice Design cannot produce a fit, fallback order is:
 
 The next implementation plan should be narrow:
 
-1. Draft EN and ES Voice Design prompt packs with no real-person soundalike language.
-2. Add a manual-review worksheet for short candidate samples.
-3. Keep all candidates at `draft_prompt`.
-4. Stop before any provider call unless the user explicitly approves the paid/hosted generation step.
+1. Send supplier-confirmation questions to Inworld first and ElevenLabs second.
+2. Retain written answers beside the provider-prep packet.
+3. Draft EN and ES Voice Design prompt packs with no real-person soundalike language only after the supplier-confirmation package is accepted.
+4. Keep all candidates at `draft_prompt`.
+5. Stop before any provider call unless the user explicitly approves the paid/hosted generation step.

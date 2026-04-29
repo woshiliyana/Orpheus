@@ -170,7 +170,9 @@ These pages are market evidence only. They do not establish Orpheus' rights to u
 
 ## Next Lane
 
-After this packet is accepted, the safe next lane is `phase2-platform-voice-design-prompt-pack-r1`:
+The accepted next lane is `phase2-voice-supplier-confirmation-r1`, retained in [`13-voice-supplier-confirmation-2026-04-29.md`](./13-voice-supplier-confirmation-2026-04-29.md). It must ask Inworld and ElevenLabs for written confirmation before paid preview generation or user-selectable catalog use.
+
+After supplier answers are retained, the safe prompt-pack lane is `phase2-platform-voice-design-prompt-pack-r1`:
 
 1. Draft EN and ES prompt packs with no real-person soundalike language.
 2. Add a short candidate-review worksheet.
