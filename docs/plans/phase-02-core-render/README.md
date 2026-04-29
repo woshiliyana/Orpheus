@@ -11,6 +11,7 @@ Use filename format `NN-short-name.md`.
 - [`10-inworld-en-manual-review-2026-04-28.md`](./10-inworld-en-manual-review-2026-04-28.md) prepares the retained Inworld EN pressure audio for founder listening review, verifies local audio assets against the tracked hashes, and keeps EN product readiness blocked until actual listening acceptance is recorded.
 - [`11-inworld-en-voice-direction-2026-04-28.md`](./11-inworld-en-voice-direction-2026-04-28.md) records the post-spot-check English voice direction: Ashley remains useful pipeline evidence but not the final persona candidate; future EN selection should target a mature, steady male educational-explainer voice before any new long-form run.
 - [`12-platform-voice-design-rights-and-provenance-2026-04-29.md`](./12-platform-voice-design-rights-and-provenance-2026-04-29.md) closes the prompt-designed platform voice rights gap: separate rendered audio from provider-hosted `voiceId`, require supplier confirmation for user-selectable catalog use, and keep public clone / exclusivity / permanent-rights claims out of MVP copy.
+- [`13-voice-supplier-confirmation-2026-04-29.md`](./13-voice-supplier-confirmation-2026-04-29.md) turns that rights gap into retained supplier-confirmation work: official source register, Inworld / ElevenLabs outreach copy, promotion gates, and the hold on paid preview generation until written answers are retained.
 
 ## Internal Reference Assets
 
