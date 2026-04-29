@@ -20,6 +20,8 @@ The near-term voice strategy is:
 
 This is a staged platform voice-library decision, not a clone promise, not a launch-readiness claim, and not a permanent provider-rights claim.
 
+The user-facing selector boundary is now explicit: users may choose an entitled narration voice for generation, but they do not download, own, export, or receive the underlying voice, prompt, provider `voiceId`, model, or clone/source asset. The downloadable user asset is generated audio for an entitled project.
+
 ## Reference Samples
 
 The samples have been copied into the repo as internal reference artifacts:
@@ -80,6 +82,8 @@ Operational meaning for Orpheus:
 8. Any provider-hosted `voiceId` must carry an explicit post-cancel / post-termination status before it is treated as a durable product dependency.
 
 The detailed closeout is recorded in [`12-platform-voice-design-rights-and-provenance-2026-04-29.md`](../../plans/phase-02-core-render/12-platform-voice-design-rights-and-provenance-2026-04-29.md). The supplier-confirmation packet and outreach copy are recorded in [`13-voice-supplier-confirmation-2026-04-29.md`](../../plans/phase-02-core-render/13-voice-supplier-confirmation-2026-04-29.md).
+
+The product entitlement and selector boundary is recorded in [`14-voice-selector-output-license-positioning-2026-04-29.md`](../../plans/phase-02-core-render/14-voice-selector-output-license-positioning-2026-04-29.md).
 
 ## Prompt Provenance Gate
 
@@ -158,6 +162,8 @@ The current repo lane only stores originals and documentation. It does not creat
 | Prompt-generated platform voice mechanism | Allow as internal flagship-library capability. |
 | Platform audio-clone mechanism | Hold; not this MVP mechanism. |
 | Prompt-designed voice rights | Require provider-specific provenance and supplier confirmation before user-selectable catalog use. |
+| User voice selector | Allow as generation control only; do not expose underlying provider voice assets to users. |
+| User downloadable asset | Generated audio only, with full long-form download gated to paid long-form member entitlement. |
 | EN target | Mature, steady, male-presenting educational explainer. |
 | ES target | Mature, steady Spanish educational explainer using the provided Spanish reference as the review target. |
 | Existing Ashley evidence | Still valid for pipeline evidence, not final EN persona fit. |
@@ -206,6 +212,7 @@ If Voice Design cannot produce a fit, fallback order is:
 6. No claim that prompt-generated voices are exclusive unless a provider contract says so.
 7. No long-form rerun until short voice-fit samples pass manual review.
 8. No claim that a provider-hosted `voiceId` remains callable after cancellation unless the provider confirms it.
+9. No claim that users can download, own, export, or resell Orpheus platform voices.
 
 ## Open Follow-Up
 

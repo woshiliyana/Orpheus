@@ -6,7 +6,7 @@
 > Consumers: product, growth, frontend, content, SEO, agents
 > Depends on: `/docs/prd/source-of-truth-index.md`, `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/guest-trial-identity.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`, `/docs/prd/reviews/2026-04-23-competitive-benchmark-longform-audio.md`
 > Supersedes: distribution rules implied only by PRD summary or roadmap phase wording
-> Last reviewed: 2026-04-23
+> Last reviewed: 2026-04-29
 
 ## Purpose
 
@@ -22,6 +22,7 @@ This spec defines the V1 distribution surface for Orpheus: homepage promise, the
 | `seo_landing_page` | A search-facing page localized for discovery rather than a fully localized product workflow |
 | `primary_funnel` | The shortest path from landing to real trial output |
 | `core_hook` | The shortest public sentence that explains why Orpheus exists |
+| `voice selector` | A product control for choosing the narration voice used to generate audio; it is not a store, voice download surface, or transfer of the underlying voice asset |
 
 ## Decision Tables
 
@@ -50,6 +51,8 @@ This spec defines the V1 distribution surface for Orpheus: homepage promise, the
 | Promise a concrete result, not generic AI capability | Yes |
 | Promise stable long-text-to-audio for explainer creators | Yes |
 | Mention many starter voice choices for free users as the lead hook | No |
+| Promise downloadable full long-form audio to free or guest users | No |
+| Promise users can download, own, export, or reuse Orpheus platform voices | No |
 | Mention subtitles or automated visuals as already solved in the first release | No |
 | Claim unlimited free usage | No |
 | Claim full multilingual product support in V1 | No |
@@ -104,7 +107,10 @@ This spec defines the V1 distribution surface for Orpheus: homepage promise, the
 | Stable long-form narration for educational explainer creators | Yes |
 | English + Spanish output and timing readiness | Yes |
 | Many AI starter voices in the active V1 niche cluster as a first-wave promise | No |
+| Voice selector as a way to choose narration style | Yes, if framed as generation choice rather than voice ownership |
 | Flagship voices with stronger consistency for paid plans | Yes, but not as the first technical promise |
+| Downloadable generated long-form audio for paid long-form members | Yes, after stable-audio and pricing guardrails clear |
+| Downloadable or owned platform voices | No |
 | No-login real trial | Yes, but only after technical feasibility is proven |
 | Unlimited free narration | No |
 | All-language full workflow support | No |
@@ -130,6 +136,8 @@ This spec defines the V1 distribution surface for Orpheus: homepage promise, the
 5. Orpheus must not talk like long-form AI narration is an empty category. Existing products already handle long-form generation. The first public promise has to win on stability, creator-fit workflow, and alignment-ready delivery, not on the vague claim that long scripts are possible.
 6. The first gate may promise English and Spanish output / timing readiness while still keeping the workspace UI English-first.
 7. The core hook should be concrete enough that a creator can repeat it to a friend without needing a demo video to decode it.
+8. Public voice language should say that users choose a narration voice for generation. It must not imply that users download, own, resell, or keep the underlying platform voice, prompt, provider `voiceId`, model, or clone/source asset.
+9. Free or guest surfaces may later provide a bounded short trial or preview, but full downloadable long-form production audio belongs to paid long-form plans.
 
 ## Update Checklist
 

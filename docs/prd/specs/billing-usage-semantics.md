@@ -6,7 +6,7 @@
 > Consumers: billing, backend, support, ops, product, agents
 > Depends on: `/docs/prd/source-of-truth-index.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`
 > Supersedes: scattered billing wording in `/docs/prd/prd.md`
-> Last reviewed: 2026-04-23
+> Last reviewed: 2026-04-29
 
 ## Purpose
 
@@ -23,6 +23,7 @@ This spec defines the canonical metering model for successful generation, partia
 | `usage_event` | A workflow usage record tied to project execution |
 | `billing_event` | A commercial record such as subscription change, refund, or compensation |
 | `compensation` | A negative adjustment that reverses some or all prior billable usage |
+| `voice_selection` | The selected platform or private voice used for generation; it affects generation configuration but is not a separate downloadable or billable voice asset |
 
 ## Decision Tables
 
@@ -54,10 +55,13 @@ This spec defines the canonical metering model for successful generation, partia
 | Validation failure | 0 | Covers malformed request, missing input, or invalid file |
 | Entitlement failure | 0 | Covers blocked plan access or closed beta restriction |
 | Provider pre-check failure | 0 | Covers quota/auth failure before rendering starts |
+| Voice-selection entitlement failure | 0 | Covers a user selecting a voice tier, private clone, or long-form download path their plan cannot access |
 | Orchestration failure before usable audio | 0 | Covers backend chunk planning, retry graph, or stitch coordination failure before successful delivery |
 | Rendering failure before usable audio | 0 | No bill until usable output exists |
 | Audio success, alignment or `SRT` export failure | Bill audio only | No extra subtitle charge |
 | Delivery/storage failure after asset creation | 0 extra | Retry delivery without new usage |
+| Downloading generated audio after entitlement check | 0 extra | The paid usage event is tied to generated audio duration, not to every download click |
+| Attempting to download an underlying platform voice, provider `voiceId`, prompt, model, or clone/source asset | 0 | This is not an allowed product action, so it should be blocked before billing |
 
 ### 4. Balance and Exhaustion Rules
 
@@ -99,6 +103,7 @@ This spec defines the canonical metering model for successful generation, partia
 3. Segment repair is a real paid consumption event, but only for the repaired duration.
 4. Backend-only orchestration sub-runs never create extra billable events unless a user-triggered repair succeeds.
 5. Pricing copy may change more often than ledger rules, but `included_seconds`, reset policy, and exhaustion handling still have to remain in sync with the pricing spec.
+6. Voice choice does not create a separate usage unit. The billable artifact is the delivered generated audio duration for an entitled run; the underlying platform voice remains a provider/platform asset and is never sold, downloaded, or metered as a user-owned asset.
 
 ## Update Checklist
 
