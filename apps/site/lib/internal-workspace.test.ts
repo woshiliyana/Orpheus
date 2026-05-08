@@ -1,8 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
+import { tmpdir } from "node:os";
+import path from "node:path";
 
 import {
   getWorkspaceAccess,
+  getWorkspaceDataDir,
   hasWorkspaceAccessToken,
 } from "./internal-workspace.ts";
 
@@ -84,6 +87,21 @@ test("durable Neon and R2 workspace is enabled on Vercel when all server env is 
       assert.equal(access.storageMode, "neon_r2");
       assert.equal(access.storagePosture, "durable");
       assert.equal(hasWorkspaceAccessToken("production-token"), true);
+    },
+  );
+});
+
+test("Vercel workspace scratch data uses writable tmp storage by default", () => {
+  withEnv(
+    {
+      VERCEL: "1",
+      ORPHEUS_PROJECT_RUNS_DIR: undefined,
+    },
+    () => {
+      assert.equal(
+        getWorkspaceDataDir(),
+        path.join(tmpdir(), "orpheus-workspace", "site-project-runs"),
+      );
     },
   );
 });

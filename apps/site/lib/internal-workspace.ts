@@ -1,4 +1,5 @@
 import path from "node:path";
+import { tmpdir } from "node:os";
 
 import {
   createProjectRun,
@@ -24,13 +25,14 @@ import type {
 
 loadProjectEnv();
 
-const DEFAULT_DATA_DIR = path.join(
+const DEFAULT_LOCAL_DATA_DIR = path.join(
   /* turbopackIgnore: true */ process.cwd(),
   "..",
   "..",
   "runs",
   "site-project-runs",
 );
+const VERCEL_SCRATCH_DATA_DIR = path.join(tmpdir(), "orpheus-workspace", "site-project-runs");
 export const WORKSPACE_SESSION_COOKIE = "orpheus_internal_workspace";
 
 export interface WorkspaceAccess {
@@ -42,7 +44,15 @@ export interface WorkspaceAccess {
 }
 
 export function getWorkspaceDataDir(): string {
-  return process.env.ORPHEUS_PROJECT_RUNS_DIR ?? DEFAULT_DATA_DIR;
+  if (process.env.ORPHEUS_PROJECT_RUNS_DIR !== undefined && process.env.ORPHEUS_PROJECT_RUNS_DIR.length > 0) {
+    return process.env.ORPHEUS_PROJECT_RUNS_DIR;
+  }
+
+  if (process.env.VERCEL === "1") {
+    return VERCEL_SCRATCH_DATA_DIR;
+  }
+
+  return DEFAULT_LOCAL_DATA_DIR;
 }
 
 function hasDurableWorkspaceEnv(): boolean {
