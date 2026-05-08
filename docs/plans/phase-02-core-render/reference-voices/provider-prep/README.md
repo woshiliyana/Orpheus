@@ -26,3 +26,8 @@ Documentation-only candidate statuses are defined in [`../../12-platform-voice-d
 Supplier-confirmation questions and outreach copy are defined in [`../../13-voice-supplier-confirmation-2026-04-29.md`](../../13-voice-supplier-confirmation-2026-04-29.md).
 
 Voice selector and generated-audio download boundaries are defined in [`../../14-voice-selector-output-license-positioning-2026-04-29.md`](../../14-voice-selector-output-license-positioning-2026-04-29.md).
+
+Provider supplier-confirmation packets:
+
+1. [`inworld/supplier-confirmation-20260507.md`](./inworld/supplier-confirmation-20260507.md): `submitted_awaiting_supplier_response`
+2. [`elevenlabs/supplier-confirmation-20260507.md`](./elevenlabs/supplier-confirmation-20260507.md): `submitted_awaiting_supplier_response`

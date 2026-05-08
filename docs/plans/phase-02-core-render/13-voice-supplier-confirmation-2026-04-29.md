@@ -1,10 +1,10 @@
 # Voice Supplier Confirmation Packet
 
-> Status: supplier-confirmation packet
+> Status: ready-to-send supplier-confirmation packet
 > Scope: docs / supplier rights / provenance only
 > Runtime changes: none
 > Provider calls: none
-> Last reviewed: 2026-04-29
+> Last reviewed: 2026-05-07
 
 ## Decision
 
@@ -20,6 +20,28 @@ This packet converts the rights/provenance gap into a supplier-confirmation lane
 6. `public_clone_or_exclusive_voice_claim=blocked`
 
 This is not legal advice. It is a retained research and outreach packet for supplier confirmation and later counsel review.
+
+## 2026-05-07 Official Form Submission Update
+
+The provider packets have now been submitted through the official website routes. This only changes dispatch evidence; it does not clear supplier rights, catalog eligibility, preview spend, or provider-hosted voice durability.
+
+| Provider | Packet | Submission status | Browser result | Next action |
+|---|---|---|---|---|
+| Inworld | [`reference-voices/provider-prep/inworld/supplier-confirmation-20260507.md`](./reference-voices/provider-prep/inworld/supplier-confirmation-20260507.md) | `submitted_awaiting_supplier_response` | Official form submitted; no browser ticket or confirmation ID shown. | Check `founder@orpheusnarration.com` and retain any auto-reply or supplier response. |
+| ElevenLabs | [`reference-voices/provider-prep/elevenlabs/supplier-confirmation-20260507.md`](./reference-voices/provider-prep/elevenlabs/supplier-confirmation-20260507.md) | `submitted_awaiting_supplier_response` | Success page shown: `Thanks for reaching out!`; contact-sales API returned 200. | Check `founder@orpheusnarration.com` and retain any auto-reply or supplier response. |
+
+Until a written supplier answer is retained, keep `supplier_confirmation_status=pending_written_confirmation`.
+
+## 2026-05-07 Dispatch Prep Update
+
+The supplier-confirmation lane now has provider-level ready-to-send packets:
+
+| Provider | Packet | Status | Primary send route |
+|---|---|---|---|
+| Inworld | [`reference-voices/provider-prep/inworld/supplier-confirmation-20260507.md`](./reference-voices/provider-prep/inworld/supplier-confirmation-20260507.md) | `submitted_awaiting_supplier_response` | `https://inworld.ai/contact-sales` |
+| ElevenLabs | [`reference-voices/provider-prep/elevenlabs/supplier-confirmation-20260507.md`](./reference-voices/provider-prep/elevenlabs/supplier-confirmation-20260507.md) | `submitted_awaiting_supplier_response` | `https://elevenlabs.io/contact-sales` |
+
+Current action is supplier reply capture. No provider preview generation, paid voice design, runtime catalog work, or canonical entitlement change is authorized by this update.
 
 ## Scope Boundary
 
@@ -271,6 +293,8 @@ Recommended files:
 ## Next Step
 
 Send the Inworld confirmation request first because Inworld remains the current primary TTS path. Send the ElevenLabs confirmation request second as the rights/commercial benchmark and possible fallback.
+
+Use the prepared packet links above as the source for the outbound body and reply-capture fields. After a supplier replies, retain the answer beside the matching provider packet before changing any candidate status.
 
 Until written answers are retained:
 
