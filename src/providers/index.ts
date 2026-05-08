@@ -1,7 +1,7 @@
-import type { ProviderName, TtsProviderAdapter } from "../domain/types.js";
-import { readIntegerEnv, readNumberEnv, requireServerEnv } from "../config/env.js";
-import { CartesiaProviderAdapter } from "./cartesia.js";
-import { InworldProviderAdapter } from "./inworld.js";
+import type { ProviderName, TtsProviderAdapter } from "../domain/types.ts";
+import { readIntegerEnv, readNumberEnv, requireServerEnv } from "../config/env.ts";
+import { CartesiaProviderAdapter } from "./cartesia.ts";
+import { InworldProviderAdapter } from "./inworld.ts";
 
 export function createProviderAdapter(name: ProviderName): TtsProviderAdapter {
   if (name === "inworld") {

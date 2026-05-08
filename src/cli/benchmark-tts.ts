@@ -1,13 +1,13 @@
 import path from "node:path";
 import { readFile, writeFile } from "node:fs/promises";
 
-import type { BenchmarkRow, ProviderName } from "../domain/types.js";
-import { loadCorpusEntries } from "../benchmark/corpus.js";
-import { buildBenchmarkSummary } from "../benchmark/summary.js";
-import { runNarrationJob } from "../pipeline/narration.js";
-import { createProviderAdapter } from "../providers/index.js";
-import { ensureDir } from "../utils/files.js";
-import { parseArgs } from "./shared.js";
+import type { BenchmarkRow, ProviderName } from "../domain/types.ts";
+import { loadCorpusEntries } from "../benchmark/corpus.ts";
+import { buildBenchmarkSummary } from "../benchmark/summary.ts";
+import { runNarrationJob } from "../pipeline/narration.ts";
+import { createProviderAdapter } from "../providers/index.ts";
+import { ensureDir } from "../utils/files.ts";
+import { parseArgs } from "./shared.ts";
 
 async function main(): Promise<void> {
   const args = parseArgs(process.argv.slice(2));

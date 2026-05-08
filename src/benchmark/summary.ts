@@ -1,4 +1,4 @@
-import type { BenchmarkRow } from "../domain/types.js";
+import type { BenchmarkRow } from "../domain/types.ts";
 
 export function buildBenchmarkSummary(rows: BenchmarkRow[]): { csv: string; markdown: string } {
   const csvHeader = "provider,corpusId,success,chunkCount,chunkRetryCount,totalWallTimeMs,audioDurationSec,timestampCoveragePct,estimatedTotalCostUsd,outputDir";

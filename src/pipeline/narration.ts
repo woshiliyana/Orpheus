@@ -17,15 +17,15 @@ import type {
   ProviderAttemptError,
   ScriptChunk,
   TtsProviderAdapter,
-} from "../domain/types.js";
-import { readNumberEnv } from "../config/env.js";
-import { buildRunMetrics } from "../observability/metrics.js";
-import { buildPacingArtifacts } from "./pacing-adapter.js";
-import { assertReadableScriptInput } from "./script-input-quality.js";
-import { stitchAudioSegments } from "./stitch.js";
-import { buildSubtitleCues, renderSrt, renderVtt } from "./subtitles.js";
-import { mapWithConcurrency } from "../utils/async.js";
-import { ensureDir, writeJson } from "../utils/files.js";
+} from "../domain/types.ts";
+import { readNumberEnv } from "../config/env.ts";
+import { buildRunMetrics } from "../observability/metrics.ts";
+import { buildPacingArtifacts } from "./pacing-adapter.ts";
+import { assertReadableScriptInput } from "./script-input-quality.ts";
+import { stitchAudioSegments } from "./stitch.ts";
+import { buildSubtitleCues, renderSrt, renderVtt } from "./subtitles.ts";
+import { mapWithConcurrency } from "../utils/async.ts";
+import { ensureDir, writeJson } from "../utils/files.ts";
 
 const PHASE2_READINESS_LANGUAGES = new Set(["en", "es"]);
 

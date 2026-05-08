@@ -8,9 +8,9 @@ import type {
   ProviderInputChunkReport,
   ProviderName,
   ScriptChunk,
-} from "../domain/types.js";
-import { chunkScript } from "./chunking.js";
-import { validateReadableScriptInput } from "./script-input-quality.js";
+} from "../domain/types.ts";
+import { chunkScript } from "./chunking.ts";
+import { validateReadableScriptInput } from "./script-input-quality.ts";
 
 const BREAK_TAG_REGEX = /\s*<break\s+time=["']\d+(?:ms|s)["']\s*\/?>\s*/giu;
 const BREAK_TAG_COUNT_REGEX = /<break\s+time=["']\d+(?:ms|s)["']\s*\/>/giu;

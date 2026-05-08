@@ -1,9 +1,9 @@
 import path from "node:path";
 
-import type { InputValidationMode, PacingMode, ProviderName } from "../domain/types.js";
-import { runNarrationJob } from "../pipeline/narration.js";
-import { createProviderAdapter } from "../providers/index.js";
-import { parseArgs, readScriptInput } from "./shared.js";
+import type { InputValidationMode, PacingMode, ProviderName } from "../domain/types.ts";
+import { runNarrationJob } from "../pipeline/narration.ts";
+import { createProviderAdapter } from "../providers/index.ts";
+import { parseArgs, readScriptInput } from "./shared.ts";
 
 function parsePacingMode(value: string | undefined): PacingMode {
   if (value === undefined) {

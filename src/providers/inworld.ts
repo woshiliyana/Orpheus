@@ -9,10 +9,10 @@ import type {
   ProviderAttemptError,
   TtsProviderAdapter,
   WordTiming,
-} from "../domain/types.js";
-import { retryWithExponentialBackoff } from "../utils/async.js";
-import { getAudioDurationSec } from "../utils/audio.js";
-import { ensureDir } from "../utils/files.js";
+} from "../domain/types.ts";
+import { retryWithExponentialBackoff } from "../utils/async.ts";
+import { getAudioDurationSec } from "../utils/audio.ts";
+import { ensureDir } from "../utils/files.ts";
 
 interface InworldResponse {
   audioContent?: string;

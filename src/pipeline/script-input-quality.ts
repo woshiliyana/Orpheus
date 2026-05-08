@@ -2,7 +2,7 @@ import type {
   InputQualityIssue,
   InputQualityReport,
   InputValidationMode,
-} from "../domain/types.js";
+} from "../domain/types.ts";
 
 const TERMINAL_PUNCTUATION_REGEX = /[.!?。！？…]+/u;
 const TERMINAL_PUNCTUATION_GLOBAL_REGEX = /[.!?。！？…]+/gu;

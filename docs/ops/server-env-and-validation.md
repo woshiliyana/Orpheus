@@ -28,11 +28,18 @@ These values must remain server-only:
 
 - `INWORLD_API_KEY`
 - `CARTESIA_API_KEY`
+- `ORPHEUS_INTERNAL_WORKSPACE_TOKEN`
+- `DATABASE_URL`
+- `ORPHEUS_R2_ACCESS_KEY_ID`
+- `ORPHEUS_R2_SECRET_ACCESS_KEY`
 - `TURNSTILE_SECRET_KEY`
 - future database, storage, payment, webhook, and OAuth secrets
 
 These values are configuration knobs, not browser secrets:
 
+- `ORPHEUS_WORKSPACE_STORE`
+- `ORPHEUS_R2_BUCKET`
+- `ORPHEUS_R2_ENDPOINT`
 - `INWORLD_RATE_USD_PER_1M_CHARS`
 - `INWORLD_MAX_ATTEMPTS`
 - `CARTESIA_API_VERSION`
@@ -69,3 +76,22 @@ When the web app shell exists, keep this exact shape:
 4. Keep the shared env file and `.env.local` only on trusted machines/servers.
 5. Use shell-exported values only when intentionally overriding file defaults.
 6. Before live smoke, confirm the required provider key is set in the shell, the project-shared env file, or `.env.local`.
+
+## Vercel internal workspace variables
+
+Use the same names in repo-root `.env.local` and Vercel Project Settings -> Environment Variables.
+
+Required to unlock the internal workspace:
+
+- `ORPHEUS_INTERNAL_WORKSPACE_TOKEN`
+
+Required for durable Neon + R2 workspace storage:
+
+- `ORPHEUS_WORKSPACE_STORE=neon_r2`
+- `DATABASE_URL`
+- `ORPHEUS_R2_BUCKET`
+- `ORPHEUS_R2_ENDPOINT`
+- `ORPHEUS_R2_ACCESS_KEY_ID`
+- `ORPHEUS_R2_SECRET_ACCESS_KEY`
+
+Do not use `NEXT_PUBLIC_` for any workspace, database, R2, or provider secret. On Vercel, file-backed workspace storage is blocked by default unless `ORPHEUS_ENABLE_FILE_BACKED_WORKSPACE_ON_VERCEL=1` is set intentionally for a non-durable preview.

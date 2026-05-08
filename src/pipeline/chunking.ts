@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 
-import type { ScriptChunk } from "../domain/types.js";
+import type { ScriptChunk } from "../domain/types.ts";
 
 interface ChunkingOptions {
   minChunkSize: number;

@@ -1,4 +1,4 @@
-import type { NormalizedWordTiming, SubtitleCue } from "../domain/types.js";
+import type { NormalizedWordTiming, SubtitleCue } from "../domain/types.ts";
 
 interface CueOptions {
   minWords: number;

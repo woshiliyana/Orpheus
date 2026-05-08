@@ -1,4 +1,4 @@
-import type { ProviderName, RunMetrics } from "../domain/types.js";
+import type { ProviderName, RunMetrics } from "../domain/types.ts";
 
 interface BuildRunMetricsInput {
   provider: ProviderName;

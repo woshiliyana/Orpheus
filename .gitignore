@@ -40,3 +40,8 @@ __pycache__/
 .claude/settings.local.json
 runs/
 benchmark-results/
+
+# Local Codex third-party isolated state
+.codex-thirdparty-home/
+.env.codex-thirdparty
+codex-thirdparty.sh

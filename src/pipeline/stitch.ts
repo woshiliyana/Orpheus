@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { promisify } from "node:util";
 
-import { getAudioDurationSec } from "../utils/audio.js";
+import { getAudioDurationSec } from "../utils/audio.ts";
 
 const execFileAsync = promisify(execFile);
 
