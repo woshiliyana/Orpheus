@@ -42,6 +42,7 @@ test("loadProjectEnv reads .env and .env.local without overriding existing shell
   delete process.env.CARTESIA_API_KEY;
   delete process.env.INWORLD_RATE_USD_PER_1M_CHARS;
   delete process.env.INWORLD_MAX_ATTEMPTS;
+  process.env.ORPHEUS_SHARED_ENV_PATH = path.join(tmpDir, "missing-orpheus-server-env");
 
   await writeFile(path.join(tmpDir, ".env"), "CARTESIA_API_KEY=from-dot-env\nINWORLD_RATE_USD_PER_1M_CHARS=44.5\n", "utf8");
   await writeFile(path.join(tmpDir, ".env.local"), "INWORLD_API_KEY=from-dot-env-local\nINWORLD_MAX_ATTEMPTS=7\n", "utf8");
@@ -66,8 +67,10 @@ test("loadProjectEnv reads .env and .env.local without overriding existing shell
 });
 
 test("requireServerEnv tells operators to use repo-root .env.local when a key is missing", () => {
-  const previousValue = process.env.INWORLD_API_KEY;
+  const previousEnv = Object.fromEntries(envKeysToReset.map((key) => [key, process.env[key]]));
+
   delete process.env.INWORLD_API_KEY;
+  process.env.ORPHEUS_SHARED_ENV_PATH = path.join(os.tmpdir(), "missing-orpheus-server-env");
 
   try {
     assert.throws(
@@ -75,10 +78,12 @@ test("requireServerEnv tells operators to use repo-root .env.local when a key is
       /Set it in the shell, in ORPHEUS_SHARED_ENV_PATH, in this project's shared env file \(\.git\/orpheus\.server\.env\), or in repo-root \.env\.local/,
     );
   } finally {
-    if (previousValue === undefined) {
-      delete process.env.INWORLD_API_KEY;
-    } else {
-      process.env.INWORLD_API_KEY = previousValue;
+    for (const [key, value] of Object.entries(previousEnv)) {
+      if (value === undefined) {
+        delete process.env[key];
+      } else {
+        process.env[key] = value;
+      }
     }
   }
 });

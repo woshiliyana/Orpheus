@@ -1,12 +1,18 @@
 import type { NextConfig } from "next";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { resolve } from "node:path";
 
-const siteRoot = dirname(fileURLToPath(import.meta.url));
-const repoRoot = resolve(siteRoot, "../..");
+const repoRoot = resolve(__dirname, "../..");
+const serverMediaToolTraceFiles = [
+  "../../node_modules/.pnpm/ffmpeg-static@*/node_modules/ffmpeg-static/ffmpeg",
+  "../../node_modules/.pnpm/ffprobe-static@*/node_modules/ffprobe-static/bin/linux/**/*",
+];
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  outputFileTracingRoot: repoRoot,
+  outputFileTracingIncludes: {
+    "/*": serverMediaToolTraceFiles,
+  },
   turbopack: {
     root: repoRoot,
   },
