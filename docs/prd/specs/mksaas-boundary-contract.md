@@ -6,7 +6,7 @@
 > Consumers: frontend, backend, product, architecture, agents
 > Depends on: `/docs/prd/prd.md`, `/docs/prd/agent-conventions.md`
 > Supersedes: implicit assumption that template defaults are product rules
-> Last reviewed: 2026-04-23
+> Last reviewed: 2026-05-07
 
 ## Purpose
 
@@ -16,9 +16,10 @@
 
 | Term | Canonical meaning |
 |---|---|
-| `template shell` | UI, routing, and scaffolding borrowed from MkSaaS |
+| `template shell` | UI, routing, and scaffolding borrowed from MkSaaS or the approved free starter fallback |
 | `business semantics` | Product-specific plan rules, lifecycle rules, accounting rules, and compliance rules |
 | `adapter takeover` | Wrapping or replacing a template default so Orpheus keeps semantic control |
+| `starter fallback` | A minimal official-source `Next.js + Vercel` shell used before MkSaaS purchase or integration is justified |
 
 ## Decision Tables
 
@@ -26,7 +27,7 @@
 
 | Capability area | May borrow MkSaaS shell | May use MkSaaS default semantics as final truth | Orpheus integration rule |
 |---|---|---|---|
-| Marketing page layout | Yes | No | Copy and structure remain owned by PRD + content governance |
+| Marketing page layout | Yes | No | Copy and structure remain owned by PRD + content governance; a minimal starter fallback may be used for provider-confirmation credibility before full shell integration |
 | Auth screens and session shell | Yes | No | Guest trial identity and claim flow override template assumptions |
 | Billing UI shell | Yes | No | Plan gating and ledger semantics come from entitlement and billing specs |
 | Provider SDK calls from the browser | No | No | Frontend must call Orpheus-owned `/api/**`; provider auth, orchestration, and artifact signing stay server-side |
@@ -65,6 +66,7 @@
 2. Orpheus owns its workflow semantics even when implementation starts from MkSaaS.
 3. If template defaults and normative specs disagree, the specs win.
 4. Direct provider calls from the browser are out of bounds even if a template example supports them.
+5. The current public-site starter fallback is allowed to establish `orpheusnarration.com`, business email, and supplier-confirmation credibility before MkSaaS is purchased or integrated; it must not introduce auth, checkout, pricing, trial, or provider-call semantics ahead of the relevant specs.
 
 ## Update Checklist
 

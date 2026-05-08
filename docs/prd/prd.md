@@ -1,12 +1,18 @@
 # 产品 PRD（工作名：Orpheus）
 
 > 状态：初版需求文档，尚未进入开发实现
-> 当前版本：v0.42
+> 当前版本：v0.43
 > 首次创建：2026-04-21
-> 最近更新：2026-04-25
+> 最近更新：2026-05-07
 > 文档定位：当前阶段唯一主 PRD，后续迭代默认持续更新本文件
 
 ## 更新记录
+
+### 2026-05-07 v0.43
+
+1. 将 V1 当前支付工作候选从 `Paddle` 调整为 `Creem`，同时保留 `Paddle` 作为 fallback / future provider。
+2. 明确同一 Creem 账号可通过独立 product / price mapping 与 webhook disambiguation 服务多个产品，但 Orpheus 必须保留自己的计费映射、幂等和 entitlement 语义。
+3. 允许先用最小 `Next.js + Vercel` starter fallback 建立 `orpheusnarration.com` 和供应商确认可信入口，但不得提前开放 checkout、pricing、trial、provider calls 或音色目录。
 
 ### 2026-04-25 v0.42
 
@@ -90,7 +96,7 @@
 ### 2026-04-22 v0.30
 
 1. 新增支付 provider 抽象原则。
-2. 明确当前主体条件下，支付默认优先采用 `Paddle`，而不是把 `Stripe` 当作 V1 前提。
+2. 明确当前主体条件下，支付默认优先采用 provider abstraction；当前 V1 工作候选为 `Creem`，`Paddle` 保留为 fallback / future provider。
 3. 明确支付层也必须具备 provider abstraction，以适应未来主体变化和支付方式扩展。
 
 ### 2026-04-22 v0.29
@@ -1068,14 +1074,15 @@ Provider 抽象层的目标不是给用户暴露“模型选择器”，而是�
 当前建议：
 
 1. 支付层也做 provider abstraction
-2. 当前主体与收款现实条件下，默认优先采用 `Paddle`
+2. 当前主体与收款现实条件下，默认优先采用 `Creem`
 3. `Stripe` 作为未来可扩展路径，而不是 V1 前提
 
 这样做的原因是：
 
 1. 中国大陆主体对 `Stripe` 的可行性限制更大
-2. `Paddle` 对当前阶段更现实
-3. 支付层后续仍可能因为主体变化、国家策略或业务扩展而切换
+2. `Creem` 是当前已具备账号条件的 V1 工作候选
+3. `Paddle` 保留为 fallback / future provider
+4. 支付层后续仍可能因为主体变化、国家策略或业务扩展而切换
 
 ### 11.4.1 当前首版能力矩阵
 

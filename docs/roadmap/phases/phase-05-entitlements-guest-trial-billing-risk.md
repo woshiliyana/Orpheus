@@ -5,7 +5,7 @@
 > Normative for product rules: no
 > Canonical owner: Product architecture / delivery
 > Depends on truth docs: `/docs/prd/specs/capability-entitlements.md`, `/docs/prd/specs/guest-trial-identity.md`, `/docs/prd/specs/billing-usage-semantics.md`
-> Last reviewed: 2026-04-22
+> Last reviewed: 2026-05-07
 
 ## Goal
 
@@ -30,7 +30,7 @@ Commercial systems should sit on top of a stable workflow and quality baseline, 
 1. Guest trial identity and claim flow
 2. Starter-vs-flagship entitlement enforcement
 3. Full plan entitlements, quotas, and balance logic
-4. Paddle checkout and webhook sync
+4. Creem checkout and webhook sync through the Orpheus billing-provider abstraction
 5. Compensation and admin adjustments
 6. Risk controls for guest, render, repair, uploads, and downloads
 

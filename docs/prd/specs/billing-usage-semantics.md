@@ -6,7 +6,7 @@
 > Consumers: billing, backend, support, ops, product, agents
 > Depends on: `/docs/prd/source-of-truth-index.md`, `/docs/prd/specs/project-run-lifecycle.md`, `/docs/prd/specs/pricing-packaging-and-unit-economics.md`
 > Supersedes: scattered billing wording in `/docs/prd/prd.md`
-> Last reviewed: 2026-04-29
+> Last reviewed: 2026-05-07
 
 ## Purpose
 
@@ -24,6 +24,7 @@ This spec defines the canonical metering model for successful generation, partia
 | `billing_event` | A commercial record such as subscription change, refund, or compensation |
 | `compensation` | A negative adjustment that reverses some or all prior billable usage |
 | `voice_selection` | The selected platform or private voice used for generation; it affects generation configuration but is not a separate downloadable or billable voice asset |
+| `billing_provider` | The payment processor or merchant-of-record integration that creates external checkout, subscription, invoice, and webhook events |
 
 ## Decision Tables
 
@@ -87,7 +88,20 @@ This spec defines the canonical metering model for successful generation, partia
 | `refund` | Commercial refund | Does not automatically delete usage history |
 | `admin_adjustment` | Internal correction | May increase or decrease usable balance with audit reason |
 
-### 6. Compensation Rules
+### 6. Billing Provider Integration Rules
+
+| Rule | V1 requirement |
+|---|---|
+| Billing provider abstraction | Required; provider-specific event names, product IDs, and checkout session IDs must be normalized before they affect Orpheus ledger semantics |
+| Current working provider | `Creem` is the current working V1 billing provider candidate because the founder already has an account and can create separate products under the same provider account |
+| Prior provider assumption | `Paddle` remains a viable fallback / future provider, but it is no longer the default V1 assumption |
+| Multiple products in one provider account | Allowed only if each Orpheus plan maps to an explicit provider product or price identifier and every webhook path validates the product or price identifier before applying entitlements |
+| Webhook disambiguation | Required; route by provider event type plus provider product / price ID, subscription ID, customer ID, and Orpheus-owned metadata such as `orpheus_account_id` or `orpheus_checkout_intent_id` |
+| Metadata role | Metadata may correlate a checkout or subscription back to Orpheus records, but it may not be the only trust boundary for granting access |
+| Secret handling | Checkout creation, webhook verification, product mapping, and billing secret use stay server-side |
+| Public site posture before Phase 5 | No live checkout, public pricing, paid entitlement grant, or billing webhook mutation before Phase 5 implementation and acceptance |
+
+### 7. Compensation Rules
 
 | Situation | Default compensation rule |
 |---|---|
@@ -104,6 +118,7 @@ This spec defines the canonical metering model for successful generation, partia
 4. Backend-only orchestration sub-runs never create extra billable events unless a user-triggered repair succeeds.
 5. Pricing copy may change more often than ledger rules, but `included_seconds`, reset policy, and exhaustion handling still have to remain in sync with the pricing spec.
 6. Voice choice does not create a separate usage unit. The billable artifact is the delivered generated audio duration for an entitled run; the underlying platform voice remains a provider/platform asset and is never sold, downloaded, or metered as a user-owned asset.
+7. Creem product identifiers can separate Orpheus from other products in the same Creem account, but Orpheus must still keep its own product-to-plan mapping and webhook idempotency records.
 
 ## Update Checklist
 
@@ -111,3 +126,4 @@ This spec defines the canonical metering model for successful generation, partia
 2. Re-check `capability-entitlements.md` if repair availability or plan limits change.
 3. Re-check PRD sections `19.3-19.11` after any metering change.
 4. Re-check `pricing-packaging-and-unit-economics.md` if included seconds, reset policy, top-up behavior, or public minute copy changes.
+5. Re-check provider setup docs and environment configuration if the active `billing_provider` changes.

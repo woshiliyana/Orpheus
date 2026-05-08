@@ -21,7 +21,7 @@ This is a runtime reference for execution, not a second source of product truth:
 - Same-cycle benchmark path: `Cartesia`
 - Data: `Postgres / Neon`
 - Storage: `Cloudflare R2`
-- Payments: `Paddle`
+- Payments: `Creem` via Orpheus-owned billing-provider abstraction; `Paddle` remains fallback / future-provider only
 - Email: `Resend`
 - Scheduled triggers: `cron-job.org`
 - Human verification: `Cloudflare Turnstile`
