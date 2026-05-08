@@ -1,0 +1,16 @@
+{
+  "provider": "inworld",
+  "requestId": "run_mowvwl40_136199c2",
+  "scriptChars": 166,
+  "chunkCount": 1,
+  "chunkRetryCount": 0,
+  "cachedChunkCount": 0,
+  "providerCharactersReused": 0,
+  "totalWallTimeMs": 4433,
+  "audioDurationSec": 11.856,
+  "timestampCoveragePct": 100,
+  "estimatedTtsCostUsd": 0.005,
+  "estimatedTotalCostUsd": 0.007,
+  "estimatedCostPerCompletedAudioMinuteUsd": 0.037,
+  "timestampWordCount": 50
+}

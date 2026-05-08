@@ -1,0 +1,88 @@
+{
+  "project_id": "project_mowvwl40_c9faa5fd",
+  "run_id": "run_mowvwl40_136199c2",
+  "run_status": "succeeded",
+  "source_script_hash": "d67ca9851390e757261a1a84c65ed794f7c91d8b6bde45b4200fd700903cf7c4",
+  "provider_summary": {
+    "primary_provider": "inworld",
+    "selected_voice": "Ashley"
+  },
+  "orchestration_summary": {
+    "chunk_count": 1,
+    "stitch_count": 0,
+    "retry_count": 0,
+    "cached_chunk_count": 0,
+    "warning_flags": []
+  },
+  "input_adapter_ref": {
+    "pacing_mode": "natural_basic",
+    "requested_pacing_mode": "natural_basic",
+    "effective_pacing_mode": "natural_basic",
+    "input_validation_mode": "strict",
+    "token_preserved": true,
+    "inserted_break_count": 0,
+    "max_break_tags_per_request": 0,
+    "source_script": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/source-script.md",
+    "spoken_script": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/spoken-script.md",
+    "provider_input": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/provider-input.inworld.txt",
+    "provider_input_chunks_json": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/provider-input.chunks.json",
+    "pacing_plan_json": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/pacing-plan.json",
+    "input_quality_report_json": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/input-quality-report.json"
+  },
+  "output_language": "en",
+  "final_audio_asset_ref": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/final.mp3",
+  "final_audio_duration_seconds": 11.856,
+  "audio_format_policy": {
+    "requested_provider_source_format": "mp3",
+    "provider_source_encoding": "MP3",
+    "provider_source_lossless": false,
+    "production_master_audio": {
+      "status": "not_generated",
+      "audio_format_verdict": "blocked",
+      "reason": "The requested provider output did not produce a retained lossless source; do not treat delivery audio as master evidence."
+    },
+    "default_delivery_audio": {
+      "format": "mp3",
+      "generated": true,
+      "audio_format_verdict": "ready_for_delivery"
+    },
+    "delivery_audio_formats": [
+      "mp3"
+    ],
+    "optional_wav_export": {
+      "audio_format_verdict": "hold_for_export",
+      "reason": "WAV export was not generated; derive it only from a retained lossless master in a later export-readiness pass."
+    },
+    "notes": [
+      "No provider-native lossless production master was generated for this run.",
+      "Default MP3 delivery audio is present for this run.",
+      "Optional WAV export remains held until an explicit export-readiness verdict is recorded."
+    ]
+  },
+  "production_master_audio_ref": [],
+  "delivery_audio_ref": [
+    {
+      "role": "delivery_audio",
+      "asset_ref": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/final.mp3",
+      "format": "mp3",
+      "source": "provider_native_lossy",
+      "provider_native": false,
+      "lossless": false,
+      "container": "mp3",
+      "codec": "mp3",
+      "audio_format_verdict": "ready_for_delivery"
+    }
+  ],
+  "internal_alignment_asset_ref": {
+    "word_timings_json": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/word-timings.json",
+    "srt": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/subtitles.srt",
+    "vtt": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/subtitles.vtt",
+    "alignment_source": "provider_native"
+  },
+  "billing_fact": {
+    "billable_seconds": 12,
+    "usage_event_type": "initial_render_success",
+    "estimated_total_cost_usd": 0.007
+  },
+  "delivery_ref": "/tmp/orpheus-workspace/site-project-runs/artifacts/run_mowvwl40_136199c2/artifacts/final.mp3"
+}

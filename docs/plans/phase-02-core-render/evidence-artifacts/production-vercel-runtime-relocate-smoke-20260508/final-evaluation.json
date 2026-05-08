@@ -1,0 +1,35 @@
+{
+  "scorecard": "tts_ux_readiness_scorecard",
+  "run_id": "run_mowvwl40_136199c2",
+  "evaluated_at": "2026-05-08T12:26:00Z",
+  "evaluation_scope": "production_runtime_delivery_path_smoke",
+  "hard_gate_verdict": "passed_for_runtime_smoke",
+  "audio_generation_smoke": {
+    "verdict": "passed",
+    "status": "succeeded",
+    "final_audio_present": true,
+    "artifact_manifest_present": true,
+    "metrics_present": true,
+    "token_gated_downloads_verified": true,
+    "vercel_error_logs_checked": true
+  },
+  "format_verdict": {
+    "default_mp3_delivery": "ready_for_delivery_for_this_smoke",
+    "production_master": "blocked",
+    "optional_wav_export": "hold_for_export",
+    "reason": "This run requested MP3 delivery only and did not retain a provider-native lossless production master."
+  },
+  "evidence_coverage": {
+    "provider": "covered",
+    "language": "en_only",
+    "durable_storage": "covered",
+    "download_route": "covered",
+    "input_adapter": "covered_in_manifest",
+    "manual_seam_review": "not_performed",
+    "full_en_es_corpus": "not_covered"
+  },
+  "broader_product_readiness_evaluation": {
+    "verdict": "blocked_by_missing_evidence",
+    "reason": "This short English-only production smoke does not satisfy the full Phase 2 EN plus ES long-form readiness gate."
+  }
+}
