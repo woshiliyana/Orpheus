@@ -1,12 +1,9 @@
-import { execFile } from "node:child_process";
 import { mkdtemp, rm, writeFile } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
-import { promisify } from "node:util";
 
 import { getAudioDurationSec } from "../utils/audio.ts";
-
-const execFileAsync = promisify(execFile);
+import { execMediaTool } from "../utils/media-tools.ts";
 
 export interface StitchResult {
   outputPath: string;
@@ -34,7 +31,7 @@ export async function stitchAudioSegments(input: StitchInput): Promise<StitchRes
       .join("\n");
     await writeFile(concatFilePath, concatFile, "utf8");
 
-    await execFileAsync("ffmpeg", [
+    await execMediaTool("ffmpeg", [
       "-y",
       "-f",
       "concat",

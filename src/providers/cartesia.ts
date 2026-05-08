@@ -1,7 +1,5 @@
 import path from "node:path";
-import { execFile } from "node:child_process";
 import { writeFile } from "node:fs/promises";
-import { promisify } from "node:util";
 
 import type {
   ChunkSynthesisInput,
@@ -13,6 +11,7 @@ import type {
 import { retryWithExponentialBackoff } from "../utils/async.ts";
 import { getAudioDurationSec } from "../utils/audio.ts";
 import { ensureDir } from "../utils/files.ts";
+import { execMediaTool } from "../utils/media-tools.ts";
 
 interface CartesiaEvent {
   type?: string;
@@ -29,7 +28,6 @@ interface CartesiaEvent {
   message?: string;
 }
 
-const execFileAsync = promisify(execFile);
 const RAW_ENCODING = "pcm_s16le";
 const RAW_SAMPLE_RATE = 48000;
 const RAW_CHANNELS = 1;
@@ -130,7 +128,7 @@ async function transcodeRawAudio(input: {
     ? ["-c:a", "pcm_s16le"]
     : ["-c:a", "libmp3lame", "-b:a", "192k"];
 
-  await execFileAsync("ffmpeg", [
+  await execMediaTool("ffmpeg", [
     "-y",
     "-f",
     "s16le",

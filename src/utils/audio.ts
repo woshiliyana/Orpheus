@@ -1,10 +1,7 @@
-import { execFile } from "node:child_process";
-import { promisify } from "node:util";
-
-const execFileAsync = promisify(execFile);
+import { execMediaTool } from "./media-tools.ts";
 
 export async function getAudioDurationSec(audioPath: string): Promise<number> {
-  const { stdout } = await execFileAsync("ffprobe", [
+  const { stdout } = await execMediaTool("ffprobe", [
     "-v",
     "error",
     "-show_entries",
