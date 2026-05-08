@@ -16,6 +16,7 @@ This directory is the default merge-tracked home for selected Phase 2 provider-b
 - [`../08-provider-decision-scorecard-2026-04-28.md`](../08-provider-decision-scorecard-2026-04-28.md) synthesizes the retained Inworld and Cartesia packets into the staged Phase 2 provider decision.
 - [`../09-inworld-product-readiness-closeout-2026-04-28.md`](../09-inworld-product-readiness-closeout-2026-04-28.md) synthesizes retained Inworld packets into a product-readiness evidence-gap closeout and names EN manual review as the next no-new-provider-call lane.
 - [`live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/manual-review-20260428.md`](./live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/manual-review-20260428.md) prepares the retained Inworld EN pressure audio for founder listening review and keeps manual acceptance pending.
+- [`live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/manual-review-r1-20260508.md`](./live-smoke-inworld-ashley-en-machiavellian-ep01-20260426-input/manual-review-r1-20260508.md) records the local clip-based listening kit for the next EN product-gate review without adding provider calls.
 - [`../10-inworld-en-manual-review-2026-04-28.md`](../10-inworld-en-manual-review-2026-04-28.md) records the EN manual-review lane decision boundary: retained assets verified, no provider calls, and product readiness still blocked until listening acceptance.
 
 ## Rules

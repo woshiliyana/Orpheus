@@ -23,6 +23,7 @@ Preserve the founder-supplied English Machiavellian Psychology EP01 voiceover sc
 | `audio-probe-metadata.json` | `ffprobe` / `volumedetect` | Technical probe metadata for the WAV and derived MP3 assets |
 | `final-evaluation.json` | Scorecard review | Current `tts_ux_readiness_scorecard` verdict |
 | `manual-review-20260428.md` | Current manual-review lane | Founder listening worksheet for perceptual quality, seams, pronunciation, text fidelity, timing, and format delivery |
+| `manual-review-r1-20260508.md` | Local review-kit note | Opening, stitch-boundary, timing, and closing clip list for the next no-provider-call product-gate review |
 
 ## Source Probe
 
@@ -63,6 +64,8 @@ This result does not justify a provider-native MP3 retry. The remaining work is 
 ## Manual Review
 
 [`manual-review-20260428.md`](./manual-review-20260428.md) prepares the founder listening review for the retained MP3 delivery candidate and WAV master spot checks. The note verifies the local asset hashes and review rubric, but it does not record a passed listening verdict yet.
+
+[`manual-review-r1-20260508.md`](./manual-review-r1-20260508.md) adds a local clip-based review kit under ignored `runs/manual-review/`. It prepares the next listening pass without changing the current `blocked_by_missing_evidence` product-readiness verdict.
 
 ## Preparation Checklist
 

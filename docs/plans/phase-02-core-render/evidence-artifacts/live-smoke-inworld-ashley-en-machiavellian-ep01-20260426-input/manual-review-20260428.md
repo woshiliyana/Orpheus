@@ -115,3 +115,9 @@ Fill or replace this section only after actual listening.
 `en_pressure_product_readiness=blocked_until_full_listen_or_revised_voice_decision`
 
 No new provider call is justified by this note alone. If founder listening finds blocking issues, classify the issue first; do not rerun the provider by default.
+
+## 2026-05-08 Review Kit
+
+[`manual-review-r1-20260508.md`](./manual-review-r1-20260508.md) adds a local listening kit for the next product-gate review. It cuts opening, stitch-boundary, timing, and closing clips into `runs/manual-review/phase2-inworld-en-manual-review-r1-20260508/` and records clip hashes for auditability.
+
+The kit prepares the review only. It does not complete the manual listening verdict or change product readiness.
