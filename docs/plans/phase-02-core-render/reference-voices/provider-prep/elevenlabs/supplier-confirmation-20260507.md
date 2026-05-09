@@ -42,7 +42,7 @@ It does not approve paid Voice Design previews, create a voice, change product e
 | `submitted_body` | Ready-to-send copy below, placed in the use-case/details field because the form did not expose a subject field. |
 | `browser_result` | Success page shown: `Thanks for reaching out!`; `POST https://api.elevenlabs.io/v1/marketing/contact-sales` returned 200. |
 | `ticket_or_thread_id` | `founder_email_thread_2026-05-08` |
-| `next_action` | Reply with founder availability, early-stage volume/use-case detail, product needs, timeline, and the written confirmation questions; retain the next supplier answer before classifying the rights verdict. |
+| `next_action` | Reply with a written-first clarification request, early-stage volume/use-case detail, product needs, timeline, and the written confirmation questions; retain the next supplier answer before classifying the rights verdict. |
 
 ## 2026-05-08 Supplier Follow-Up
 

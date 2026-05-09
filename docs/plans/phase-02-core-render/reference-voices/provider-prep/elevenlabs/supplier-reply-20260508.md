@@ -55,14 +55,11 @@ Body:
 ```text
 Hi Henry,
 
-Thanks for getting back to me. Happy to organize a call.
+Thanks for getting back to me.
 
-Availability:
+Before scheduling a call, I would like to share one important note: I am originally from China and Chinese is my native language. I can express the product requirements and legal/commercial concerns much more clearly in written Chinese, and I use translation for English communication. Because these questions involve commercial rights, B2B2C classification, resale/sublicensing boundaries, and post-cancellation usage, I would prefer to keep the first step in writing to avoid any misunderstanding.
 
-- [Add 2-3 time windows in your timezone], or
-- [Add calendar link]
-
-A bit more context ahead of the call:
+A bit more context:
 
 Orpheus Narration is an early-stage SaaS product for long-form educational narration. The intended workflow is that a creator pastes a full educational explainer script once, Orpheus handles backend-owned narration orchestration, and the user downloads only the generated long-form audio. We are not planning to offer public self-serve voice cloning, voice resale, sample packs, model-training datasets, or downloads of the underlying voice, prompt, model, or provider voice ID.
 
@@ -89,7 +86,9 @@ The specific questions we need answered in writing are:
 10. Is Voice Design currently production/commercial-ready for this use, or does any experimental / beta restriction apply?
 11. Which paid plan, API plan, enterprise addendum, DPA, order form, or SLA path would be required for this use?
 
-If there is a legal, commercial, or partnerships owner who should answer these questions, please feel free to include them. We are looking for the correct paid or contracted path before generating or exposing any platform voices.
+If a call is still needed after the written clarification, I am open to arranging one, ideally with a clear written agenda and written follow-up notes. If there is a legal, commercial, or partnerships owner who should answer these questions, please feel free to include them.
+
+We are looking for the correct paid or contracted path before generating or exposing any platform voices.
 
 Best,
 Yana

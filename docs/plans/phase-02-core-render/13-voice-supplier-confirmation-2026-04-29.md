@@ -40,7 +40,7 @@ This is a supplier follow-up request, not a rights answer. It does not clear cat
 
 | Provider | Capture | Status | Next action |
 |---|---|---|---|
-| ElevenLabs | [`reference-voices/provider-prep/elevenlabs/supplier-reply-20260508.md`](./reference-voices/provider-prep/elevenlabs/supplier-reply-20260508.md) | `supplier_followup_requested_no_rights_verdict` | Reply with founder availability, early-stage volume/use-case detail, product needs, timeline, and the written confirmation checklist. |
+| ElevenLabs | [`reference-voices/provider-prep/elevenlabs/supplier-reply-20260508.md`](./reference-voices/provider-prep/elevenlabs/supplier-reply-20260508.md) | `supplier_followup_requested_no_rights_verdict` | Reply with a written-first clarification request, early-stage volume/use-case detail, product needs, timeline, and the written confirmation checklist. |
 
 ## 2026-05-07 Dispatch Prep Update
 
