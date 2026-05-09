@@ -30,4 +30,4 @@ Voice selector and generated-audio download boundaries are defined in [`../../14
 Provider supplier-confirmation packets:
 
 1. [`inworld/supplier-confirmation-20260507.md`](./inworld/supplier-confirmation-20260507.md): `submitted_awaiting_supplier_response`
-2. [`elevenlabs/supplier-confirmation-20260507.md`](./elevenlabs/supplier-confirmation-20260507.md): `submitted_awaiting_supplier_response`
+2. [`elevenlabs/supplier-confirmation-20260507.md`](./elevenlabs/supplier-confirmation-20260507.md): `supplier_followup_requested_no_rights_verdict`; first follow-up captured in [`elevenlabs/supplier-reply-20260508.md`](./elevenlabs/supplier-reply-20260508.md)

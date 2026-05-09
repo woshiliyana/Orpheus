@@ -32,6 +32,16 @@ The provider packets have now been submitted through the official website routes
 
 Until a written supplier answer is retained, keep `supplier_confirmation_status=pending_written_confirmation`.
 
+## 2026-05-08 ElevenLabs Supplier Follow-Up Update
+
+ElevenLabs replied through the sales route and asked to organize a call, with availability or calendar link plus more detail on volume, use case, product needs, timelines, and specific questions.
+
+This is a supplier follow-up request, not a rights answer. It does not clear catalog eligibility, B2B2C classification, rendered-audio rights, hosted voice durability, disclosure duties, or required contract path.
+
+| Provider | Capture | Status | Next action |
+|---|---|---|---|
+| ElevenLabs | [`reference-voices/provider-prep/elevenlabs/supplier-reply-20260508.md`](./reference-voices/provider-prep/elevenlabs/supplier-reply-20260508.md) | `supplier_followup_requested_no_rights_verdict` | Reply with founder availability, early-stage volume/use-case detail, product needs, timeline, and the written confirmation checklist. |
+
 ## 2026-05-07 Dispatch Prep Update
 
 The supplier-confirmation lane now has provider-level ready-to-send packets:
@@ -39,7 +49,7 @@ The supplier-confirmation lane now has provider-level ready-to-send packets:
 | Provider | Packet | Status | Primary send route |
 |---|---|---|---|
 | Inworld | [`reference-voices/provider-prep/inworld/supplier-confirmation-20260507.md`](./reference-voices/provider-prep/inworld/supplier-confirmation-20260507.md) | `submitted_awaiting_supplier_response` | `https://inworld.ai/contact-sales` |
-| ElevenLabs | [`reference-voices/provider-prep/elevenlabs/supplier-confirmation-20260507.md`](./reference-voices/provider-prep/elevenlabs/supplier-confirmation-20260507.md) | `submitted_awaiting_supplier_response` | `https://elevenlabs.io/contact-sales` |
+| ElevenLabs | [`reference-voices/provider-prep/elevenlabs/supplier-confirmation-20260507.md`](./reference-voices/provider-prep/elevenlabs/supplier-confirmation-20260507.md) | `supplier_followup_requested_no_rights_verdict` | `https://elevenlabs.io/contact-sales` |
 
 Current action is supplier reply capture. No provider preview generation, paid voice design, runtime catalog work, or canonical entitlement change is authorized by this update.
 

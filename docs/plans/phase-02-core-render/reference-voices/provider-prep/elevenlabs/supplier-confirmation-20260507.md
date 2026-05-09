@@ -1,11 +1,12 @@
 # ElevenLabs Supplier Confirmation Packet
 
-> Status: submitted_awaiting_supplier_response
+> Status: supplier_followup_requested_no_rights_verdict
 > Scope: supplier rights / voice selector confirmation only
 > Runtime changes: none
 > Provider calls: none
 > Prepared: 2026-05-07
 > Submitted: 2026-05-07 via official contact-sales form
+> Latest supplier contact: 2026-05-08 via ElevenLabs sales email follow-up
 
 ## Purpose
 
@@ -19,7 +20,7 @@ It does not approve paid Voice Design previews, create a voice, change product e
 |---|---|
 | `provider` | `ElevenLabs` |
 | `orpheus_role` | `rights_commercial_benchmark_and_possible_fallback` |
-| `confirmation_status` | `pending_written_confirmation` |
+| `confirmation_status` | `supplier_followup_requested_no_rights_verdict` |
 | `send_route_primary` | `https://elevenlabs.io/contact-sales` |
 | `send_route_escalation` | Ask the sales route to route to legal / commercial terms review if needed. |
 | `preview_generation_spend` | `hold` |
@@ -40,8 +41,18 @@ It does not approve paid Voice Design previews, create a voice, change product e
 | `route_used` | `https://elevenlabs.io/contact-sales` |
 | `submitted_body` | Ready-to-send copy below, placed in the use-case/details field because the form did not expose a subject field. |
 | `browser_result` | Success page shown: `Thanks for reaching out!`; `POST https://api.elevenlabs.io/v1/marketing/contact-sales` returned 200. |
-| `ticket_or_thread_id` | `pending_email_confirmation` |
-| `next_action` | Check `founder@orpheusnarration.com`, retain any auto-reply or supplier response beside this packet, then classify the rights verdict. |
+| `ticket_or_thread_id` | `founder_email_thread_2026-05-08` |
+| `next_action` | Reply with founder availability, early-stage volume/use-case detail, product needs, timeline, and the written confirmation questions; retain the next supplier answer before classifying the rights verdict. |
+
+## 2026-05-08 Supplier Follow-Up
+
+ElevenLabs replied from the sales route and asked to organize a call, including availability or a calendar link plus more detail on volume, use case, product needs, timelines, and specific questions.
+
+This response does not answer the supplier-confirmation checklist and does not clear catalog use, B2B2C classification, rendered-audio rights, hosted voice durability, disclosure duties, or required contract path.
+
+Reply capture and follow-up draft:
+
+[`supplier-reply-20260508.md`](./supplier-reply-20260508.md)
 
 ## Source Snapshot
 
